@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@tailwind screens;
+
+.firebase-emulator-warning {
+  visibility: hidden;
+}
+
+::selection {
+  color: white;
+  background: #6a9fe4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Londrina Solid', 'Noto Sans TC', cursive, sans-serif;
+}
+
+.root {
+  @apply bg-neutral-100 text-slate-900 antialiased dark:bg-neutral-900 dark:text-slate-200;
+}
+
+.error-page {
+  @apply h-screen w-screen bg-gray-200 text-black;
+}
+
+.button-normal {
+  @apply rounded-lg bg-neutral-900 px-5 py-3 text-xl
+    text-white duration-150 hover:bg-neutral-800 hover:ring-4 hover:ring-blue-400
+    dark:bg-neutral-700;
+}
+
+.layout-default {
+  @apply flex min-h-screen flex-col justify-between text-lg;
+}
+
+.headbar-default {
+  @apply z-50;
+}
+.footer-theme {
+  @apply flex flex-col items-center space-y-2 border-t border-gray-200
+    py-4 text-center
+    text-gray-700 dark:border-gray-700 dark:text-gray-400;
+}
+
+.footer-text-interaction {
+  @apply cursor-pointer text-sky-500 hover:text-sky-600 hover:underline dark:text-sky-400 hover:dark:text-sky-200;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+.tooltip {
+  @apply invisible absolute rounded bg-gray-300 px-1 text-black shadow-xl ring-1 ring-gray-500 transition-all
+    duration-200 ease-in-out dark:bg-gray-700 dark:text-white;
+}

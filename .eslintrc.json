@@ -1,0 +1,41 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2022": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next",
+    "next/core-web-vitals",
+    "plugin:unicorn/recommended",
+    "plugin:promise/recommended",
+    "plugin:sonarjs/recommended"
+  ],
+  "plugins": [
+    "autofix",
+    "no-secrets",
+    "simple-import-sort",
+    "sonarjs",
+    "unicorn",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "unicorn/prevent-abbreviations": 0,
+    "unicorn/prefer-module": 0,
+    "unicorn/no-nested-ternary": 0,
+    "no-secrets/no-secrets": "error"
+  }
+}

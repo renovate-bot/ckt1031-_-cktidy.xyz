@@ -1,0 +1,54 @@
+{
+  "name": "cktidy",
+  "author": {
+    "name": "ckt1031",
+    "email": "me@cktidy.xyz",
+    "social": {
+      "instagram": "https://www.instagram.com/cktidy.1031",
+      "github": "https://github.com/cktsun1031",
+      "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "twitter": "https://github.com/cktsun1031",
+      "discordServer": "https://discord.gg/wHVPbYHG"
+    }
+  },
+  "headbar": {
+    "routes": [
+      {
+        "name": "Home",
+        "href": "/"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      },
+      {
+        "name": "About",
+        "href": "/about"
+      },
+      {
+        "name": "Account",
+        "href": "/account"
+      }
+    ]
+  },
+  "footer": {
+    "routes": [
+      {
+        "name": "About Me",
+        "href": "/about"
+      },
+      {
+        "name": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "name": "Terms",
+        "href": "/terms"
+      },
+      {
+        "name": "Techs",
+        "href": "/technology"
+      }
+    ]
+  }
+}
