@@ -20,11 +20,11 @@ let app: FirebaseApp;
 if (getApps().length === 0) {
   app = initializeApp(config);
   auth = getAuth(app);
-  if (!isProduction) {
-    connectAuthEmulator(auth, 'http://localhost:9099', {
-      disableWarnings: true,
-    });
-  }
+  // if (!isProduction) {
+  //   connectAuthEmulator(auth, 'http://localhost:9099', {
+  //     disableWarnings: true,
+  //   });
+  // }
 }
 
 export { app, auth, config };
