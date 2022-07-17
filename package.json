@@ -1,9 +1,9 @@
 {
   "private": true,
   "name": "cktidy",
-  "version": "0.0.7-Alpha",
+  "version": "0.0.10-Alpha",
   "description": "Cktidy's Personal Website",
-  "license": "ISC",
+  "license": "MIT",
   "author": "CKTSUN",
   "homepage": "https://github.com/cktsun1031/cktidy#readme",
   "repository": {
