@@ -60,8 +60,7 @@ export function AuthWrapperPage({
           setUserInfo(undefined);
         }
       },
-      error => {
-        console.error(error);
+      () => {
         setError(true);
       },
     );
@@ -80,59 +79,3 @@ export function AuthWrapperPage({
     </AuthContext.Provider>
   );
 }
-
-//     useEffect(() => {
-//       const unsubscribe = () => {
-//         try {
-//           onAuthStateChanged(auth, user => {
-//             if (user) {
-//               // IF USER IS LOGGED IN
-
-//               // Redirect to dashboard
-//               if (window.location.pathname === '/login') {
-//                 window.location.replace('/account');
-//               } else {
-//                 // ok to show content
-//                 setLoadingState(false);
-//               }
-
-//               setUserInfo(user);
-//             } else {
-//               // Redirect to login
-//               if (
-//                 redirectToLoginPage &&
-//                 window.location.pathname !== '/login'
-//               ) {
-//                 window.location.replace('/login');
-//               } else {
-//                 setLoadingState(false);
-//               }
-//               // eslint-disable-next-line unicorn/no-useless-undefined
-//               setUserInfo(undefined);
-//             }
-//           });
-//         } catch (error) {
-//           setError(true);
-//           setLoadingState(false);
-//           console.error(error);
-//         }
-//       };
-
-//       return () => unsubscribe();
-//     }, []);
-
-//     const logout = () => {
-//       signOut(auth);
-//       // eslint-disable-next-line unicorn/no-useless-undefined
-//       setUserInfo(undefined);
-//     };
-
-//     return (
-//       <AuthContext.Provider value={{ user: userInfo, signOut: logout }}>
-//         {hasError && <LoadingPage />}
-//         {!disableLoading && isLoading ? <LoadingPage /> : <></>}
-//         {!isLoading && <ChildComponent />}
-//       </AuthContext.Provider>
-//     );
-//   }
-// }
