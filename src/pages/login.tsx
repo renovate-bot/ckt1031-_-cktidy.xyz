@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
 
-import { AuthUserPage } from '../components/context/auth';
+import { AuthWrapperPage } from '../components/context/auth';
 import { DefaultMetaData } from '../components/seo';
 import { signWithGoogle } from '../utils/firebase/auth';
 
@@ -50,15 +50,15 @@ function LoginBlock() {
 
 function LoginPage() {
   return (
-    <>
+    <AuthWrapperPage>
       <DefaultMetaData
         description="A cool website by cktsun1031!"
         title="Login"
       />
 
       <LoginBlock />
-    </>
+    </AuthWrapperPage>
   );
 }
 
-export default AuthUserPage(LoginPage);
+export default LoginPage;

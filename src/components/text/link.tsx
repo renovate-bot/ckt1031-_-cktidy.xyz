@@ -41,6 +41,7 @@ export default function Textlink({
         )}>
         {children}
       </span>
+
       <span className="relative inline-block align-middle">
         <HiExternalLink />
       </span>

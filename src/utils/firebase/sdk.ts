@@ -18,12 +18,16 @@ let auth: Auth;
 let app: FirebaseApp;
 
 if (getApps().length === 0) {
-  app = initializeApp(config);
-  auth = getAuth(app);
-  if (!isProduction) {
-    connectAuthEmulator(auth, 'http://localhost:9099', {
-      disableWarnings: true,
-    });
+  try {
+    app = initializeApp(config);
+    auth = getAuth(app);
+    if (!isProduction) {
+      connectAuthEmulator(auth, 'http://localhost:9099', {
+        disableWarnings: true,
+      });
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
 

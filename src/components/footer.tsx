@@ -13,13 +13,11 @@ function SocialMediaRow() {
           <BsInstagram />
         </a>
       </div>
-
       <div className="cursor-pointer">
         <a href={config.author.social.github}>
           <BsGithub />
         </a>
       </div>
-
       <div className="cursor-pointer">
         <a href={config.author.social.youtube}>
           <BsYoutube />
@@ -47,10 +45,8 @@ function FooterLinksAndCopyright() {
           );
         })}
       </div>
-
       <p className="text-2xl">
-        &copy; {new Date().getFullYear()} &#x2022;
-        {config.author.name}
+        &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
       </p>
     </div>
   );
@@ -60,7 +56,6 @@ export default function DefaultFooter() {
   return (
     <footer className="footer-theme">
       <SocialMediaRow />
-
       <FooterLinksAndCopyright />
     </footer>
   );

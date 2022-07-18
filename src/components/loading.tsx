@@ -1,14 +1,18 @@
 import { Ring } from '@uiball/loaders';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export function LoadingPage() {
   const { resolvedTheme } = useTheme();
+  const [themeName, setThemeName] = useState('light');
 
-  const isDarkMode = resolvedTheme === 'dark';
+  useEffect(() => {
+    setThemeName(resolvedTheme ?? themeName);
+  }, [resolvedTheme, themeName]);
 
   return (
     <div className="mt-10 md:mt-20">
-      <Ring color={isDarkMode ? 'white' : 'black'} size={75} />
+      <Ring color={themeName === 'dark' ? 'white' : 'black'} size={75} />
     </div>
   );
 }

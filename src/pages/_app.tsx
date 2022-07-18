@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Toaster } from 'react-hot-toast';
+import { RecoilRoot } from 'recoil';
 
 import { ErrorDemostrationPage } from '../components/error';
 import ApplicationLayout from '../components/layouts/application';
@@ -17,22 +18,21 @@ export default function NextApplcation({ Component, pageProps }: AppProps) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-
-      <ThemeProvider attribute="class" enableSystem>
-        <Toaster />
-
-        <NextNProgress
-          color="#eb7236"
-          height={1}
-          options={{
-            showSpinner: false,
-          }}
-        />
-
-        <ApplicationLayout>
-          <Component {...pageProps} />
-        </ApplicationLayout>
-      </ThemeProvider>
+      <RecoilRoot>
+        <ThemeProvider attribute="class" enableSystem>
+          <Toaster />
+          <NextNProgress
+            color="#eb7236"
+            height={1}
+            options={{
+              showSpinner: false,
+            }}
+          />
+          <ApplicationLayout>
+            <Component {...pageProps} />
+          </ApplicationLayout>
+        </ThemeProvider>
+      </RecoilRoot>
     </ErrorBoundary>
   );
 }

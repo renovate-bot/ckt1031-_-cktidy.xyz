@@ -60,11 +60,9 @@ export default function NavigationBarMobileMenu() {
       <button className="item-center flex" onClick={toggleMenu} type="button">
         {showMenu ? <MdClose /> : <MdMenu />}
       </button>
-
       <div className="tooltip z-10">
         <p>Navigation Menu</p>
       </div>
-
       <MenuNavigationPages showMenu={showMenu} toggleMenu={toggleMenu} />
     </div>
   );

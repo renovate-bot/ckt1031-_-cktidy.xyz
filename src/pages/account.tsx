@@ -1,11 +1,11 @@
-import { AuthUserPage, useAuth } from '../components/context/auth';
+import { AuthWrapperPage, useAuth } from '../components/context/auth';
 import { DefaultMetaData } from '../components/seo';
 
 function AccountPage() {
   const { signOut, user } = useAuth();
 
   return (
-    <>
+    <AuthWrapperPage>
       <DefaultMetaData
         description="Manage your account in cktidy.xyz"
         title="Account"
@@ -27,8 +27,8 @@ function AccountPage() {
           Sign Out
         </button>
       </div>
-    </>
+    </AuthWrapperPage>
   );
 }
 
-export default AuthUserPage(AccountPage);
+export default AccountPage;

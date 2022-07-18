@@ -10,8 +10,8 @@ interface DefaultMetaDataType {
 
 export function DefaultMetaData({
   title,
-  description,
-  disableIndex,
+  description = '',
+  disableIndex = false,
 }: DefaultMetaDataType) {
   const titleDisplayName = `${title} - ${config.name}`;
 
@@ -21,7 +21,7 @@ export function DefaultMetaData({
       <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
       <meta content={title} property="og:title" />
       <meta content={config.name} property="og:site_name" />
-      {description && typeof description === 'string' ? (
+      {description && description.length > 0 ? (
         <>
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />

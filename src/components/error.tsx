@@ -9,11 +9,9 @@ export function ErrorDemostrationPage({
       <div className="flex flex-col items-center justify-center text-center">
         <div className="mt-10">
           <h1 className="text-6xl font-bold">Error occurred!</h1>
-
           <div className="mt-6 block max-w-md overflow-auto rounded bg-gray-300 text-xl text-red-600">
             <p className="p-2">{error.message}</p>
           </div>
-
           <button
             type="button"
             className="button-normal mt-5"
