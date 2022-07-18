@@ -1,19 +1,17 @@
 import { AuthWrapperPage, useAuth } from '../components/context/auth';
 import { DefaultMetaData } from '../components/seo';
 
-function AccountPage() {
+function AccountDashboard() {
   const { signOut, user } = useAuth();
 
   return (
-    <AuthWrapperPage>
+    <>
       <DefaultMetaData
         description="Manage your account in cktidy.xyz"
         title="Account"
       />
-
       <div className="flex flex-col items-center">
         <h1 className="text-5xl">Account Data</h1>
-
         <div className="mt-2 text-3xl">
           <p>
             Hello,{' '}
@@ -22,13 +20,18 @@ function AccountPage() {
             </span>
           </p>
         </div>
-
         <button className="button-normal mt-3" onClick={signOut} type="button">
           Sign Out
         </button>
       </div>
-    </AuthWrapperPage>
+    </>
   );
 }
 
-export default AccountPage;
+export default function AccountPage() {
+  return (
+    <AuthWrapperPage>
+      <AccountDashboard />
+    </AuthWrapperPage>
+  );
+}

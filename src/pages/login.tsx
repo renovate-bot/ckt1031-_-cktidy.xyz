@@ -18,7 +18,6 @@ function OauthLoginBlock() {
   return (
     <div className="mt-3 flex flex-col items-center border-t-2 border-gray-300 dark:border-gray-600">
       <p className="mt-2">OAuth login:</p>
-
       <button
         className="button-normal mt-2 flex flex-row items-center"
         onClick={loginAction}
@@ -36,13 +35,10 @@ function LoginBlock() {
   return (
     <div className="min-w-sm mt-3 mb-5 block rounded-xl bg-zinc-200 p-5 text-center shadow-lg dark:bg-zinc-800 md:mt-10 md:mb-0">
       <h1 className="text-4xl">Login to access secret features</h1>
-
       <div className="text-orange-500">
         <h3 className="mt-2 text-3xl">&#8226; Comment Access</h3>
-
         <h3 className="mt-2 text-3xl">&#8226; Communitcation</h3>
       </div>
-
       <OauthLoginBlock />
     </div>
   );
@@ -55,7 +51,6 @@ function LoginPage() {
         description="A cool website by cktsun1031!"
         title="Login"
       />
-
       <LoginBlock />
     </AuthWrapperPage>
   );

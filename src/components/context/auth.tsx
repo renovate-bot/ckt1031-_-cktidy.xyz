@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useResetRecoilState } from 'recoil';
 
 import { firebaseUserAtom } from '../../recoil/user';
 import { auth } from '../../utils/firebase/sdk';
@@ -31,50 +31,44 @@ export function AuthWrapperPage({
   children,
   disableLoading = false,
 }: PropsWithChildren<AuthUserPageOptions>) {
-  const [hasError, setError] = useState(false);
   const [isInitalizing, setInitalizing] = useState(true);
+  const resetUser = useResetRecoilState(firebaseUserAtom);
   const [userInfo, setUserInfo] = useRecoilState(firebaseUserAtom);
-  // const [userInfo, setUserInfo] = useState<User | undefined>();
 
   useEffect(() => {
-    return onAuthStateChanged(
-      auth,
-      user => {
-        const location = window.location;
+    const subscribe = onAuthStateChanged(auth, user => {
+      const location = window.location;
 
-        if (user) {
-          if (location.pathname === '/login') {
-            location.replace('/account');
-          } else {
-            setInitalizing(false);
-          }
-
-          setUserInfo(user);
+      if (user) {
+        if (location.pathname === '/login') {
+          location.replace('/account');
         } else {
-          if (location.pathname !== '/login') {
-            location.replace('/login');
-          } else {
-            setInitalizing(false);
-          }
-          // eslint-disable-next-line unicorn/no-useless-undefined
-          setUserInfo(undefined);
+          setInitalizing(false);
         }
-      },
-      () => {
-        setError(true);
-      },
-    );
-  }, [setUserInfo]);
 
-  const logout = useCallback(() => {
-    signOut(auth);
+        if (!userInfo) setUserInfo(user);
+      } else {
+        if (location.pathname !== '/login') {
+          location.replace('/login');
+        } else {
+          setInitalizing(false);
+        }
+        // eslint-disable-next-line unicorn/no-useless-undefined
+        resetUser();
+      }
+    });
+
+    return () => subscribe();
+  }, [resetUser, setUserInfo, userInfo]);
+
+  const logout = useCallback(async () => {
+    await signOut(auth);
     // eslint-disable-next-line unicorn/no-useless-undefined
-    setUserInfo(undefined);
-  }, [setUserInfo]);
+    resetUser();
+  }, [resetUser]);
 
   return (
     <AuthContext.Provider value={{ user: userInfo, signOut: logout }}>
-      {hasError && <LoadingPage />}
       {!disableLoading && isInitalizing ? <LoadingPage /> : <>{children}</>}
     </AuthContext.Provider>
   );
