@@ -19,6 +19,7 @@
     "postbuild": "next-sitemap",
     "dev": "cross-env NODE_ENV=development next dev",
     "lint": "tsc && prettier . --write && eslint . --fix && next lint",
+    "lint:check": "tsc && eslint . --fix && next lint",
     "lint:style": "prettier . --write",
     "lint:type": "tsc",
     "start": "next start"
