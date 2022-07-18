@@ -5,9 +5,11 @@
     "node": true,
     "es6": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "prettier",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "next",
     "next/core-web-vitals",
@@ -17,6 +19,7 @@
   ],
   "plugins": [
     "autofix",
+    "@typescript-eslint",
     "no-secrets",
     "simple-import-sort",
     "sonarjs",
@@ -38,5 +41,13 @@
     "unicorn/no-nested-ternary": 0,
     "no-secrets/no-secrets": "error",
     "react/jsx-newline": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }

@@ -19,7 +19,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
     <div
       className={classnames(
         showMenu ? 'translate-y-0' : 'translate-y-full',
-        'fixed left-0 z-[100] mt-4 flex h-screen w-screen flex-col bg-gray-100 duration-150 ease-in-out dark:bg-gray-900',
+        'fixed left-0 z-10 mt-3 flex h-screen w-screen flex-col bg-gray-100 duration-150 ease-in-out dark:bg-gray-900',
       )}>
       <div className="flex flex-col items-center justify-center space-y-2 overflow-auto">
         {config.headbar.routes.map(item => {

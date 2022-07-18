@@ -7,12 +7,14 @@ export default function Textlink({
   children,
   href,
   noDefaultColours = false,
+  enableExternalIcon = false,
   ...rest
 }: DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 > & {
   noDefaultColours?: boolean;
+  enableExternalIcon?: boolean;
 }) {
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
@@ -41,10 +43,11 @@ export default function Textlink({
         )}>
         {children}
       </span>
-
-      <span className="relative inline-block align-middle">
-        <HiExternalLink />
-      </span>
+      {enableExternalIcon && (
+        <span className="relative inline-block align-middle">
+          <HiExternalLink />
+        </span>
+      )}
     </a>
   );
 }

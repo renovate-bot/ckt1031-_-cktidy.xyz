@@ -19,11 +19,11 @@ export default function NextApplcation({ Component, pageProps }: AppProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <RecoilRoot>
-        <ThemeProvider attribute="class" enableSystem>
+        <ThemeProvider enableSystem attribute="class">
           <Toaster />
           <NextNProgress
             color="#eb7236"
-            height={1}
+            height={2}
             options={{
               showSpinner: false,
             }}

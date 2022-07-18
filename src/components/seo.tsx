@@ -2,6 +2,8 @@ import Head from 'next/head';
 
 import config from '../data/config.json';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 interface DefaultMetaDataType {
   title: string;
   description?: string;
@@ -21,13 +23,13 @@ export function DefaultMetaData({
       <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
       <meta content={title} property="og:title" />
       <meta content={config.name} property="og:site_name" />
-      {description && description.length > 0 ? (
+      {description && description.length > 0 && (
         <>
           <meta content={description} name="description" />
           <meta content={description} property="og:description" />
         </>
-      ) : undefined}
-      {disableIndex ? (
+      )}
+      {!isProduction || disableIndex ? (
         <meta content="noindex, nofollow, noarchive, nosnippet" name="robots" />
       ) : (
         <meta content="follow, index" name="robots" />

@@ -63,28 +63,38 @@ export default function AboutPage() {
                   <BsInstagram />
                   <p>Instagram:</p>
                 </div>
-                <Link href={config.author.social.instagram}>@cktidy.1031</Link>
+                <Link enableExternalIcon href={config.author.social.instagram}>
+                  @cktidy.1031
+                </Link>
               </div>
               <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
                 <div className="flex flex-row space-x-1">
                   <BsDiscord />
                   <p>Discord:</p>
                 </div>
-                <Link href={config.author.social.discordServer}>wHVPbYHG</Link>
+                <Link
+                  enableExternalIcon
+                  href={config.author.social.discordServer}>
+                  wHVPbYHG
+                </Link>
               </div>
               <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
                 <div className="flex flex-row space-x-1">
                   <BsTwitter />
                   <p>Twitter:</p>
                 </div>
-                <Link href={config.author.social.twitter}>@cktsun1031</Link>
+                <Link enableExternalIcon href={config.author.social.twitter}>
+                  @cktsun1031
+                </Link>
               </div>
               <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
                 <div className="flex flex-row space-x-1">
                   <BsGithub />
                   <p>Github:</p>
                 </div>
-                <Link href={config.author.social.github}>@cktsun1031</Link>
+                <Link enableExternalIcon href={config.author.social.github}>
+                  @cktsun1031
+                </Link>
               </div>
             </div>
           </div>

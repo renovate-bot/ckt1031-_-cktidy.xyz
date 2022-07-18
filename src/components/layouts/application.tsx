@@ -1,13 +1,11 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import Footer from '../footer';
 import Header from '../header';
 
-interface LayoutArgs {
-  children: ReactNode;
-}
-
-export default function ApplicationLayout({ children }: LayoutArgs) {
+export default function ApplicationLayout({
+  children,
+}: PropsWithChildren<unknown>) {
   return (
     <div className="layout-default xl:px-20">
       <Header />

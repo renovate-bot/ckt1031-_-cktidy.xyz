@@ -7,8 +7,8 @@ function AccountDashboard() {
   return (
     <>
       <DefaultMetaData
-        description="Manage your account in cktidy.xyz"
         title="Account"
+        description="Manage your account in cktidy.xyz"
       />
       <div className="flex flex-col items-center">
         <h1 className="text-5xl">Account Data</h1>

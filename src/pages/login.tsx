@@ -46,13 +46,15 @@ function LoginBlock() {
 
 function LoginPage() {
   return (
-    <AuthWrapperPage>
+    <>
       <DefaultMetaData
         description="A cool website by cktsun1031!"
         title="Login"
       />
-      <LoginBlock />
-    </AuthWrapperPage>
+      <AuthWrapperPage>
+        <LoginBlock />
+      </AuthWrapperPage>
+    </>
   );
 }
 

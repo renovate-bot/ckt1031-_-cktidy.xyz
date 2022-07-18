@@ -27,6 +27,7 @@
     "@next/env": "^12.2.2",
     "@uiball/loaders": "^1.2.6",
     "classnames": "^2.3.1",
+    "csstype": "^3.1.0",
     "dayjs": "^1.11.3",
     "firebase": "^9.9.0",
     "hoist-non-react-statics": "^3.3.2",
@@ -40,7 +41,8 @@
     "react-error-boundary": "^3.1.4",
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
-    "recoil": "^0.7.4"
+    "recoil": "^0.7.4",
+    "webpack": "^5.73.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.2.1",
@@ -49,6 +51,8 @@
     "@types/randomstring": "^1.1.8",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "autoprefixer": "^10.4.7",
     "compression-webpack-plugin": "^10.0.0",
     "cross-env": "^7.0.3",

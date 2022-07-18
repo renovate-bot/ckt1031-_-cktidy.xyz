@@ -46,12 +46,21 @@ export default function TechnologyPage({ buildDate }: Props) {
             </div>
             <div className="text-gray-600 dark:text-gray-400">
               <p>
-                <TextLink href="https://nextjs.org/">Next.js</TextLink> which is
-                based on <TextLink href="https://reactjs.org/">React</TextLink>.
+                <TextLink enableExternalIcon href="https://nextjs.org/">
+                  Next.js
+                </TextLink>{' '}
+                which is based on{' '}
+                <TextLink enableExternalIcon href="https://reactjs.org/">
+                  React
+                </TextLink>
+                .
               </p>
               <p>
                 Built with{' '}
-                <TextLink href="https://nodejs.org/">Node.js</TextLink>.
+                <TextLink enableExternalIcon href="https://nodejs.org/">
+                  Node.js
+                </TextLink>
+                .
               </p>
             </div>
           </div>

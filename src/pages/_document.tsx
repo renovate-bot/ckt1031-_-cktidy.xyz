@@ -5,7 +5,6 @@ export default class AppDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link href="https://fonts.googleapis.com" rel="preconnect" />
           <link
             // eslint-disable-next-line no-secrets/no-secrets
             href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap"

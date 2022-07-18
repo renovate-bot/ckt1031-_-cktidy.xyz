@@ -16,16 +16,14 @@ export default function NotFoundPage() {
               </div>
               <p className="mb-4 md:text-left">404</p>
             </div>
-            <p className="text-3xl md:text-5xl">
-              URL request cannot be found from the server!
-            </p>
-            <div className="mt-4 text-2xl text-green-500">
-              <p>Have you double check the URL?</p>
+            <p className="text-3xl md:text-5xl">Did you get lost?</p>
+            <div className="mt-4 text-2xl text-red-500">
+              <p>URL requested cannot be found!</p>
             </div>
           </div>
         </div>
-        <Link href="/" passHref>
-          <button className="button-normal mt-5" type="button">
+        <Link passHref href="/">
+          <button className="button-normal mt-6" type="button">
             Navigate to HOME
           </button>
         </Link>

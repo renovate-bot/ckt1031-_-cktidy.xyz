@@ -14,26 +14,32 @@ interface ThemeData {
   index: number;
 }
 
+enum Themes {
+  Dark = 'dark',
+  System = 'system',
+  Light = 'light',
+}
+
 function ThemeSwitcher() {
   const { setTheme, theme, themes } = useTheme();
   const [themeData, setThemeData] = useState<ThemeData>({
-    name: 'system',
-    index: themes.indexOf('system'),
+    name: Themes.System,
+    index: themes.indexOf(Themes.System),
   });
-
-  const toggleThemes = useCallback(() => {
-    const themeIndex = themeData.index + 1;
-    setTheme(themes[themeIndex % 3]);
-  }, [setTheme, themeData.index, themes]);
 
   useEffect(() => {
     if (theme) {
       setThemeData({
         name: theme,
-        index: themes.indexOf(theme ?? 'system'),
+        index: themes.indexOf(theme),
       });
     }
   }, [theme, themes]);
+
+  const toggleThemes = useCallback(() => {
+    const themeIndex = themeData.index + 1;
+    setTheme(themes[themeIndex % 3]);
+  }, [setTheme, themeData.index, themes]);
 
   return (
     <button
@@ -43,9 +49,9 @@ function ThemeSwitcher() {
       <div className="tooltip mt-20 mr-5">
         <p>{themeData.name}</p>
       </div>
-      {themeData.name === 'system' ? (
+      {themeData.name === Themes.System ? (
         <MdComputer />
-      ) : themeData.name === 'dark' ? (
+      ) : themeData.name === Themes.Dark ? (
         <MdDarkMode />
       ) : (
         <MdLightMode />

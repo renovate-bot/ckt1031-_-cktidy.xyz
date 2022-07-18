@@ -8,21 +8,15 @@ import Link from './text/link';
 function SocialMediaRow() {
   return (
     <div className="flex flex-row space-x-3 text-xl">
-      <div className="cursor-pointer">
-        <a href={config.author.social.instagram}>
-          <BsInstagram />
-        </a>
-      </div>
-      <div className="cursor-pointer">
-        <a href={config.author.social.github}>
-          <BsGithub />
-        </a>
-      </div>
-      <div className="cursor-pointer">
-        <a href={config.author.social.youtube}>
-          <BsYoutube />
-        </a>
-      </div>
+      <Link noDefaultColours href={config.author.social.instagram}>
+        <BsInstagram />
+      </Link>
+      <Link noDefaultColours href={config.author.social.github}>
+        <BsGithub />
+      </Link>
+      <Link noDefaultColours href={config.author.social.youtube}>
+        <BsYoutube />
+      </Link>
     </div>
   );
 }
@@ -30,16 +24,18 @@ function SocialMediaRow() {
 function FooterLinksAndCopyright() {
   return (
     <div>
-      <div className="mb-1 flex flex-col items-center justify-center space-y-2 text-lg sm:flex-row sm:space-y-0 sm:space-x-2 md:text-xl">
+      <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 text-lg sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0 md:text-xl">
         {config.footer.routes.map((item, index) => {
           return (
             <Fragment key={randomString.generate(5)}>
               <p className="footer-text-interaction">
                 <Link href={item.href}>{item.name}</Link>
               </p>
-
               {config.footer.routes.length - 1 !== index && (
-                <p className="hidden sm:block"> | </p>
+                <p className="hidden text-gray-400 dark:text-gray-500 sm:block">
+                  {' '}
+                  |{' '}
+                </p>
               )}
             </Fragment>
           );

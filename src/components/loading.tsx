@@ -7,7 +7,7 @@ export function LoadingPage() {
   const [themeName, setThemeName] = useState('light');
 
   useEffect(() => {
-    setThemeName(resolvedTheme ?? themeName);
+    if (resolvedTheme) setThemeName(resolvedTheme);
   }, [resolvedTheme, themeName]);
 
   return (
@@ -19,8 +19,11 @@ export function LoadingPage() {
 
 export function LoadingComponent() {
   const { resolvedTheme } = useTheme();
+  const [themeName, setThemeName] = useState('light');
 
-  const isDarkMode = resolvedTheme === 'dark';
+  useEffect(() => {
+    if (resolvedTheme) setThemeName(resolvedTheme);
+  }, [resolvedTheme, themeName]);
 
-  return <Ring color={isDarkMode ? 'white' : 'black'} size={50} />;
+  return <Ring color={themeName === 'dark' ? 'white' : 'black'} size={50} />;
 }

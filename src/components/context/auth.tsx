@@ -40,30 +40,29 @@ export function AuthWrapperPage({
       const location = window.location;
 
       if (user) {
+        // route to private pages when they tried to pass login page
         if (location.pathname === '/login') {
           location.replace('/account');
         } else {
           setInitalizing(false);
         }
 
-        if (!userInfo) setUserInfo(user);
+        if (userInfo?.uid !== user.uid) setUserInfo(user);
       } else {
+        resetUser();
         if (location.pathname !== '/login') {
           location.replace('/login');
         } else {
           setInitalizing(false);
         }
-        // eslint-disable-next-line unicorn/no-useless-undefined
-        resetUser();
       }
     });
 
     return () => subscribe();
-  }, [resetUser, setUserInfo, userInfo]);
+  }, [resetUser, setUserInfo, userInfo?.uid]);
 
   const logout = useCallback(async () => {
     await signOut(auth);
-    // eslint-disable-next-line unicorn/no-useless-undefined
     resetUser();
   }, [resetUser]);
 
