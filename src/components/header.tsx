@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
-import randomString from 'randomstring';
 import { useCallback, useEffect, useState } from 'react';
 import { MdComputer, MdDarkMode, MdLightMode } from 'react-icons/md';
 
@@ -66,7 +65,7 @@ function NavigationBarPages() {
   return (
     <div className="hidden flex-row space-x-1 md:flex">
       <div className="hidden flex-row space-x-1 md:flex">
-        {config.headbar.routes.map(item => {
+        {config.headbar.routes.map((item, index) => {
           const _className = classnames(
             item.href === route
               ? 'bg-gray-300 dark:bg-gray-800'
@@ -75,8 +74,8 @@ function NavigationBarPages() {
           );
 
           return (
-            <Link href={item.href} key={randomString.generate(5)}>
-              <span className={_className}>{item.name}</span>
+            <Link href={item.href} key={`NAVBAR-LINKS-${index}`}>
+              <p className={_className}>{item.name}</p>
             </Link>
           );
         })}

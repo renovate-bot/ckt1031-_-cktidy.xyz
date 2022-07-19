@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
-import randomString from 'randomstring';
 import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
@@ -22,7 +21,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
         'fixed left-0 z-10 mt-3 flex h-screen w-screen flex-col bg-gray-100 duration-150 ease-in-out dark:bg-gray-900',
       )}>
       <div className="flex flex-col items-center justify-center space-y-2 overflow-auto">
-        {config.headbar.routes.map(item => {
+        {config.headbar.routes.map((item, index) => {
           const _className = classnames(
             item.href === route
               ? 'bg-gray-300 dark:bg-gray-800'
@@ -34,7 +33,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
             <button
               type="button"
               className={_className}
-              key={randomString.generate(5)}
+              key={`MOBILENAV-PAGES-${index}`}
               onClick={toggleMenu}>
               <Link href={item.href}>{item.name}</Link>
             </button>

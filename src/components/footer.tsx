@@ -1,4 +1,3 @@
-import randomString from 'randomstring';
 import { Fragment } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
@@ -27,7 +26,7 @@ function FooterLinksAndCopyright() {
       <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 text-lg sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0 md:text-xl">
         {config.footer.routes.map((item, index) => {
           return (
-            <Fragment key={randomString.generate(5)}>
+            <Fragment key={`FOOTER-LINKS-${index}`}>
               <p className="footer-text-interaction">
                 <Link href={item.href}>{item.name}</Link>
               </p>

@@ -44,7 +44,7 @@ function LoginBlock() {
   );
 }
 
-function LoginPage() {
+export default function LoginPage() {
   return (
     <>
       <DefaultMetaData
@@ -57,5 +57,3 @@ function LoginPage() {
     </>
   );
 }
-
-export default LoginPage;

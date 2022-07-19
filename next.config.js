@@ -18,6 +18,7 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
     legacyBrowsers: false,
+    forceSwcTransforms: true,
   },
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY ?? '',

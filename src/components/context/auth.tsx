@@ -15,8 +15,8 @@ import { auth } from '../../utils/firebase/sdk';
 import { LoadingPage } from '../loading';
 
 interface UserInfoData {
-  user?: User;
-  signOut: () => void;
+  userInfo?: User;
+  logOut: () => void;
 }
 
 interface AuthUserPageOptions {
@@ -49,25 +49,26 @@ export function AuthWrapperPage({
 
         if (userInfo?.uid !== user.uid) setUserInfo(user);
       } else {
-        resetUser();
         if (location.pathname !== '/login') {
           location.replace('/login');
         } else {
           setInitalizing(false);
         }
+
+        resetUser();
       }
     });
 
     return () => subscribe();
   }, [resetUser, setUserInfo, userInfo?.uid]);
 
-  const logout = useCallback(async () => {
+  const logOut = useCallback(async () => {
     await signOut(auth);
     resetUser();
   }, [resetUser]);
 
   return (
-    <AuthContext.Provider value={{ user: userInfo, signOut: logout }}>
+    <AuthContext.Provider value={{ userInfo, logOut }}>
       {!disableLoading && isInitalizing ? <LoadingPage /> : <>{children}</>}
     </AuthContext.Provider>
   );

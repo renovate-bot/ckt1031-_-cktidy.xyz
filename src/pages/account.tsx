@@ -2,7 +2,7 @@ import { AuthWrapperPage, useAuth } from '../components/context/auth';
 import { DefaultMetaData } from '../components/seo';
 
 function AccountDashboard() {
-  const { signOut, user } = useAuth();
+  const { logOut, userInfo } = useAuth();
 
   return (
     <>
@@ -16,11 +16,11 @@ function AccountDashboard() {
           <p>
             Hello,{' '}
             <span className="text-blue-500 dark:text-blue-300">
-              {user?.displayName ?? user?.email}
+              {userInfo?.displayName ?? userInfo?.email ?? ''}
             </span>
           </p>
         </div>
-        <button className="button-normal mt-3" onClick={signOut} type="button">
+        <button className="button-normal mt-3" onClick={logOut} type="button">
           Sign Out
         </button>
       </div>

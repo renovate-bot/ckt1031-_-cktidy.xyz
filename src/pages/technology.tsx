@@ -5,9 +5,9 @@ import packageInfo from '../../package.json';
 import { DefaultMetaData } from '../components/seo';
 import TextLink from '../components/text/link';
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>;
-
-export default function TechnologyPage({ buildDate }: Props) {
+export default function TechnologyPage({
+  buildDate,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <DefaultMetaData
@@ -19,7 +19,7 @@ export default function TechnologyPage({ buildDate }: Props) {
         <div className="mt-10 space-y-8">
           <div className="mb-5">
             <p className="italic text-green-600 dark:text-green-500">
-              This site was last modified at {buildDate}
+              Last built at {buildDate}
             </p>
             <p>Edition: v{packageInfo.version}</p>
           </div>
@@ -28,7 +28,11 @@ export default function TechnologyPage({ buildDate }: Props) {
               <h2 className="mb-1 text-4xl">Quick Look</h2>
             </div>
             <div className="text-gray-600 dark:text-gray-400">
-              <p>I have started this website since 06/07/2022</p>
+              <p>
+                I have started this website since 06/07/2022
+                <br />
+                Actually an experimental site
+              </p>
             </div>
           </div>
           <div className="mb-5">
@@ -36,8 +40,8 @@ export default function TechnologyPage({ buildDate }: Props) {
               <h2 className="mb-1 text-4xl">Language</h2>
             </div>
             <div className="text-gray-600 dark:text-gray-400">
-              <p>We will only provide English version at this moment.</p>
-              <p>Programmed with TypeScript and HTML.</p>
+              <p>We only provide English version at this moment.</p>
+              <p>Programmed with HTML and TypeScript.</p>
             </div>
           </div>
           <div>

@@ -15,7 +15,7 @@ export default class AppDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap"
             rel="stylesheet"
           />
-          <link href="/media/icons/favicon.ico" rel="icon" />
+          <link href="/icons/favicon.ico" rel="icon" />
           <link href="/icons/favicon.ico" rel="shortcut icon" />
           <link
             href="/icons/favicon-32x32.png"
