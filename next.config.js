@@ -1,4 +1,5 @@
 // @ts-check
+const withPWA = require('next-pwa');
 const withPlugins = require('next-compose-plugins');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -60,4 +61,13 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([], nextConfig);
+const pwaOptions = {
+  pwa: {
+    scope: '/app',
+    dest: 'public',
+    register: true,
+    disable: !isProduction,
+  },
+};
+
+module.exports = withPlugins([[withPWA, pwaOptions]], nextConfig);
