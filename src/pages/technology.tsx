@@ -31,7 +31,7 @@ export default function TechnologyPage({
               <p>
                 I have started this website since 06/07/2022
                 <br />
-                Actually an experimental site
+                Actually this is an experimental site
               </p>
             </div>
           </div>

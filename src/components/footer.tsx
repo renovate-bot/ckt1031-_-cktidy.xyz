@@ -40,8 +40,9 @@ function FooterLinksAndCopyright() {
           );
         })}
       </div>
-      <p className="text-2xl">
-        &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
+      <p className="text-xl">
+        &copy; {new Date().getFullYear()} &#x2022; {config.author.name} - All
+        Rights Reserved.
       </p>
     </div>
   );
