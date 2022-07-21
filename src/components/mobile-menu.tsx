@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import trim from 'lodash/trim';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
@@ -22,7 +23,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
       )}>
       <div className="overflow-auto">
         <div className="flex flex-col items-center justify-center space-y-2 p-3">
-          {config.headbar.routes.map((item, index) => {
+          {config.headbar.routes.map(item => {
             const _className = classnames(
               item.href === route
                 ? 'bg-gray-300 dark:bg-gray-800'
@@ -34,7 +35,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
               <button
                 type="button"
                 className={_className}
-                key={`MOBILENAV-PAGES-${index}`}
+                key={`MOBILENAV-PAGES-${trim(item.name)}`}
                 onClick={toggleMenu}>
                 <Link href={item.href}>{item.name}</Link>
               </button>

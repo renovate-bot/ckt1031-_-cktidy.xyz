@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import trim from 'lodash/trim';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useCallback, useEffect, useState } from 'react';
@@ -61,7 +62,7 @@ function NavigationBarPages() {
 
   return (
     <nav className="hidden flex-row space-x-1 md:flex">
-      {config.headbar.routes.map((item, index) => {
+      {config.headbar.routes.map(item => {
         const _className = classnames(
           item.href === route && 'text-orange-500',
           ' hover:bg-gray-200 dark:hover:bg-gray-600 rounded',
@@ -69,7 +70,7 @@ function NavigationBarPages() {
         );
 
         return (
-          <Link href={item.href} key={`NAVBAR-LINKS-${index}`}>
+          <Link href={item.href} key={`NAVBAR-LINKS-${trim(item.name)}`}>
             <p className={_className}>{item.name}</p>
           </Link>
         );
