@@ -30,6 +30,7 @@ function FooterLinksAndCopyright() {
               <p className="footer-text-interaction">
                 <Link href={item.href}>{item.name}</Link>
               </p>
+              
               {config.footer.routes.length - 1 !== index && (
                 <p className="hidden text-gray-400 dark:text-gray-500 sm:block">
                   {' '}
@@ -41,8 +42,7 @@ function FooterLinksAndCopyright() {
         })}
       </div>
       <p className="text-xl">
-        &copy; {new Date().getFullYear()} &#x2022; {config.author.name} - All
-        Rights Reserved.
+        &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
       </p>
     </div>
   );

@@ -1,5 +1,6 @@
 {
   "name": "cktidy",
+  "sitename": "ckt",
   "author": {
     "name": "ckt1031",
     "email": "me@cktidy.xyz",
@@ -18,16 +19,8 @@
         "href": "/"
       },
       {
-        "name": "Blog",
-        "href": "/blog"
-      },
-      {
         "name": "About",
         "href": "/about"
-      },
-      {
-        "name": "Account",
-        "href": "/account"
       }
     ]
   },
@@ -42,5 +35,6 @@
         "href": "/technology"
       }
     ]
-  }
+  },
+  "github_project_url": "https://github.com/cktsun1031/cktidy.xyz"
 }

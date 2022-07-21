@@ -43,11 +43,8 @@ function ThemeSwitcher() {
   return (
     <button
       type="button"
-      className="has-tooltip flex h-9 w-9 items-center justify-center rounded-lg ring-gray-300 transition-all hover:bg-gray-200 hover:dark:bg-gray-800"
+      className="flex h-9 w-9 items-center justify-center rounded-lg ring-gray-300 transition-all hover:bg-gray-200 hover:dark:bg-gray-800"
       onClick={toggleThemes}>
-      <div className="tooltip mt-20 mr-5">
-        <p>{themeData.name}</p>
-      </div>
       {themeData.name === Themes.System ? (
         <MdComputer />
       ) : themeData.name === Themes.Dark ? (
@@ -63,34 +60,35 @@ function NavigationBarPages() {
   const { route } = useRouter();
 
   return (
-    <div className="hidden flex-row space-x-1 md:flex">
-      <div className="hidden flex-row space-x-1 md:flex">
-        {config.headbar.routes.map((item, index) => {
-          const _className = classnames(
-            item.href === route
-              ? 'bg-gray-300 dark:bg-gray-800'
-              : 'hover:bg-gray-200 dark:hover:bg-gray-600',
-            'block py-2 px-3 rounded-lg duration-150 cursor-pointer text-center',
-          );
+    <nav className="hidden flex-row space-x-1 md:flex">
+      {config.headbar.routes.map((item, index) => {
+        const _className = classnames(
+          item.href === route && 'text-orange-500',
+          ' hover:bg-gray-200 dark:hover:bg-gray-600 rounded',
+          'block py-2 px-3 text-center link-underline',
+        );
 
-          return (
-            <Link href={item.href} key={`NAVBAR-LINKS-${index}`}>
-              <p className={_className}>{item.name}</p>
-            </Link>
-          );
-        })}
-      </div>
-    </div>
+        return (
+          <Link href={item.href} key={`NAVBAR-LINKS-${index}`}>
+            <p className={_className}>{item.name}</p>
+          </Link>
+        );
+      })}
+    </nav>
   );
 }
 
 export default function Header() {
   return (
     <header>
-      <div className="headbar-default">
-        <div className="flex flex-row items-center justify-between py-3 px-5 text-2xl">
-          <MobileMenu />
-          <NavigationBarPages />
+      <div className="headbar-default fixed w-screen backdrop-blur-lg">
+        <div className="absolute bg-gray-500" />
+        <div className="relative flex flex-row items-center justify-between py-3 px-6 text-2xl md:px-16">
+          <div className="flex flex-row items-center">
+            {/* <p className='hidden md:block md:mr-5'>{config.sitename}</p> */}
+            <MobileMenu />
+            <NavigationBarPages />
+          </div>
           <div className="flex flex-row">
             <ThemeSwitcher />
           </div>

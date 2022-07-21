@@ -1,5 +1,6 @@
 import '../utils/firebase/sdk';
-import '../styles/default-theme.css';
+import '../styles/default.css';
+import '../styles/addon.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';

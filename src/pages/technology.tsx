@@ -4,6 +4,7 @@ import { InferGetStaticPropsType } from 'next';
 import packageInfo from '../../package.json';
 import { DefaultMetaData } from '../components/seo';
 import TextLink from '../components/text/link';
+import config from '../data/config.json';
 
 export default function TechnologyPage({
   buildDate,
@@ -63,6 +64,21 @@ export default function TechnologyPage({
                 Built with{' '}
                 <TextLink enableExternalIcon href="https://nodejs.org/">
                   Node.js
+                </TextLink>
+                .
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-3 border-b-2 border-gray-500">
+              <h2 className="mb-1 text-4xl">How this works</h2>
+            </div>
+            <div className="text-gray-600 dark:text-gray-400">
+              <p>
+                Checkour source code of this website (or project) on{' '}
+                <TextLink enableExternalIcon href={config.github_project_url}>
+                  Github Repository
                 </TextLink>
                 .
               </p>

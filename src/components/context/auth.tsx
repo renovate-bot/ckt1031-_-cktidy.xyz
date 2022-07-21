@@ -35,6 +35,7 @@ export function AuthWrapperPage({
   const resetUser = useResetRecoilState(firebaseUserAtom);
   const [userInfo, setUserInfo] = useRecoilState(firebaseUserAtom);
 
+  // Listen to Auth State
   useEffect(() => {
     const subscribe = onAuthStateChanged(auth, user => {
       const location = window.location;

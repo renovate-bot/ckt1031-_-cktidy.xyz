@@ -20,25 +20,27 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
         showMenu ? 'translate-y-0' : 'translate-y-full',
         'fixed left-0 z-10 mt-3 flex h-screen w-screen flex-col bg-gray-100 duration-150 ease-in-out dark:bg-gray-900',
       )}>
-      <div className="flex flex-col items-center justify-center space-y-2 overflow-auto">
-        {config.headbar.routes.map((item, index) => {
-          const _className = classnames(
-            item.href === route
-              ? 'bg-gray-300 dark:bg-gray-800'
-              : 'hover:bg-gray-200 dark:hover:bg-gray-600',
-            'block py-2 px-3 rounded-lg duration-150 cursor-pointer text-center',
-          );
+      <div className="overflow-auto">
+        <div className="flex flex-col items-center justify-center space-y-2 p-3">
+          {config.headbar.routes.map((item, index) => {
+            const _className = classnames(
+              item.href === route
+                ? 'bg-gray-300 dark:bg-gray-800'
+                : 'hover:bg-gray-200 dark:hover:bg-gray-600',
+              'block py-2 px-3 rounded-lg duration-150 cursor-pointer text-center',
+            );
 
-          return (
-            <button
-              type="button"
-              className={_className}
-              key={`MOBILENAV-PAGES-${index}`}
-              onClick={toggleMenu}>
-              <Link href={item.href}>{item.name}</Link>
-            </button>
-          );
-        })}
+            return (
+              <button
+                type="button"
+                className={_className}
+                key={`MOBILENAV-PAGES-${index}`}
+                onClick={toggleMenu}>
+                <Link href={item.href}>{item.name}</Link>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -55,13 +57,10 @@ export default function NavigationBarMobileMenu() {
   }, []);
 
   return (
-    <div className="has-tooltip md:hidden">
-      <button className="item-center flex" onClick={toggleMenu} type="button">
+    <div className="md:hidden">
+      <button type="button" className="item-center flex" onClick={toggleMenu}>
         {showMenu ? <MdClose /> : <MdMenu />}
       </button>
-      <div className="tooltip z-10">
-        <p>Navigation Menu</p>
-      </div>
       <MenuNavigationPages showMenu={showMenu} toggleMenu={toggleMenu} />
     </div>
   );

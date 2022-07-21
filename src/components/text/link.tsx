@@ -39,6 +39,7 @@ export default function Textlink({
     <a href={href} rel="noopener noreferrer" target="_blank" {...rest}>
       <span
         className={cn(
+          'link-underline',
           noDefaultColours ? '' : 'text-blue-600 dark:text-blue-300',
         )}>
         {children}

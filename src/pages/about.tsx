@@ -13,7 +13,7 @@ export default function AboutPage() {
         title="About Me"
       />
       <div className="flex flex-col items-center">
-        <h1 className="mb-10 text-5xl">About Me</h1>
+        <h1 className="mb-5 text-6xl">About Me</h1>
         <div className="mb-10 max-w-2xl space-y-10 text-left">
           <div className="mb-7 text-2xl">
             <div
