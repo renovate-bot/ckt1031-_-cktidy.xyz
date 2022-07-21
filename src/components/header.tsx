@@ -9,11 +9,6 @@ import config from '../data/config.json';
 import MobileMenu from './mobile-menu';
 import Link from './text/link';
 
-interface ThemeData {
-  name: string;
-  index: number;
-}
-
 enum Themes {
   Dark = 'dark',
   System = 'system',
@@ -22,33 +17,27 @@ enum Themes {
 
 function ThemeSwitcher() {
   const { setTheme, theme, themes } = useTheme();
-  const [themeData, setThemeData] = useState<ThemeData>({
-    name: Themes.System,
-    index: themes.indexOf(Themes.System),
-  });
-
-  useEffect(() => {
-    if (theme) {
-      setThemeData({
-        name: theme,
-        index: themes.indexOf(theme),
-      });
-    }
-  }, [theme, themes]);
+  const [themeName, setThemeName] = useState<string>(Themes.System);
 
   const toggleThemes = useCallback(() => {
-    const themeIndex = themeData.index + 1;
-    setTheme(themes[themeIndex % 3]);
-  }, [setTheme, themeData.index, themes]);
+    if (theme) {
+      const themeIndex = themes.indexOf(theme) + 1;
+      setTheme(themes[themeIndex % 3]);
+    }
+  }, [setTheme, theme, themes]);
+
+  useEffect(() => {
+    if (theme) setThemeName(theme);
+  }, [theme]);
 
   return (
     <button
       type="button"
       className="flex h-9 w-9 items-center justify-center rounded-lg ring-gray-300 transition-all hover:bg-gray-200 hover:dark:bg-gray-800"
       onClick={toggleThemes}>
-      {themeData.name === Themes.System ? (
+      {themeName === Themes.System ? (
         <MdComputer />
-      ) : themeData.name === Themes.Dark ? (
+      ) : themeName === Themes.Dark ? (
         <MdDarkMode />
       ) : (
         <MdLightMode />
