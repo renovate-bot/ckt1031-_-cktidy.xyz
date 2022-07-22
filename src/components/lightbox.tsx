@@ -10,6 +10,7 @@ import {
   MdZoomIn,
   MdZoomOut,
 } from 'react-icons/md';
+import ReactTooltip from 'react-tooltip';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 
@@ -20,6 +21,12 @@ const onCopy = () => toast.success('Copyied Image URL');
 export default function Lightbox() {
   const data = useRecoilValue(lightboxAtom);
   const resetData = useResetRecoilState(lightboxAtom);
+
+  const imageUrlForCopy = data.imageUrl.startsWith('/')
+    ? window.location.origin + data.imageUrl
+    : data.imageUrl;
+
+  console.log(imageUrlForCopy);
 
   useEffect(() => {
     const handleKeydown = (e: { key: string }) => {
@@ -36,10 +43,7 @@ export default function Lightbox() {
   }, [data.display, resetData]);
 
   return (
-    <TransformWrapper
-      initialScale={1}
-      initialPositionX={200}
-      initialPositionY={100}>
+    <TransformWrapper initialScale={1} maxScale={30}>
       {({ zoomIn, zoomOut, resetTransform }) => (
         <div
           className={cn(
@@ -50,36 +54,62 @@ export default function Lightbox() {
             <div className="absolute z-10 w-full p-3 md:p-4">
               <div className="flex flex-row justify-end space-x-2 md:space-x-4">
                 <button
+                  data-tip
+                  data-for="reset-zoom"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => resetTransform()}>
-                  <MdRestorePage size={25} />
+                  <MdRestorePage size={21} />
+                  <ReactTooltip id="reset-zoom" effect="solid">
+                    <span className="text-xl">Reset Zoom</span>
+                  </ReactTooltip>
                 </button>
                 <button
+                  data-tip
+                  data-for="zoom-in"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => zoomIn()}>
-                  <MdZoomIn size={25} />
+                  <MdZoomIn size={21} />
+                  <ReactTooltip id="zoom-in" effect="solid">
+                    <span className="text-xl">Zoom in</span>
+                  </ReactTooltip>
                 </button>
                 <button
+                  data-tip
+                  data-for="zoom-out"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => zoomOut()}>
-                  <MdZoomOut size={25} />
-                </button>
-                <button className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl">
-                  <CopyToClipboard text={data.imageUrl} onCopy={onCopy}>
-                    <MdCopyAll size={25} />
-                  </CopyToClipboard>
+                  <MdZoomOut size={21} />
+                  <ReactTooltip id="zoom-out" effect="solid">
+                    <span className="text-xl">Zoom Out</span>
+                  </ReactTooltip>
                 </button>
                 <button
+                  data-tip
+                  data-for="copy-url"
+                  className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl">
+                  <CopyToClipboard text={imageUrlForCopy} onCopy={onCopy}>
+                    <MdCopyAll size={21} />
+                  </CopyToClipboard>
+                  <ReactTooltip id="copy-url" effect="solid">
+                    <span className="text-xl">Copy URL</span>
+                  </ReactTooltip>
+                </button>
+                <button
+                  data-tip
+                  data-for="close-lb"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={resetData}>
-                  <MdClose size={25} />
+                  <MdClose size={21} />
+                  <ReactTooltip id="close-lb" effect="solid">
+                    <span className="text-xl">Close Lightbox</span>
+                  </ReactTooltip>
                 </button>
               </div>
             </div>
             <div className="absolute h-screen w-screen cursor-zoom-out bg-gray-600 opacity-90" />
             <TransformComponent>
               <div className="relative flex h-screen w-screen flex-col items-center justify-center">
-                <div className="relative px-20">
+                <div className="px-20">
                   <img alt={data.imageAlt} src={data.imageUrl} />
                 </div>
               </div>
