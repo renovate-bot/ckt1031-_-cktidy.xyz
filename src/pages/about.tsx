@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import { BsDiscord, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
+import Image from '../components/image';
+import Link from '../components/link';
 import { DefaultMetaData } from '../components/seo';
-import Link from '../components/text/link';
 import config from '../data/config.json';
 
 export default function AboutPage() {
@@ -20,6 +20,7 @@ export default function AboutPage() {
               className="mb-4 flex flex-row items-center justify-start border-b-2 border-gray-500"
               id="bio">
               <Image
+                lightboxEnabled
                 alt="ckt"
                 height={57.7 * 2.3}
                 src="/media/user-pic/real-cktsun-face-tb.png"

@@ -2,8 +2,8 @@ import dayjs from 'dayjs';
 import { InferGetStaticPropsType } from 'next';
 
 import packageInfo from '../../package.json';
+import TextLink from '../components/link';
 import { DefaultMetaData } from '../components/seo';
-import TextLink from '../components/text/link';
 import config from '../data/config.json';
 
 export default function TechnologyPage({

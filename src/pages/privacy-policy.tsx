@@ -1,5 +1,5 @@
+import Link from '../components/link';
 import { DefaultMetaData } from '../components/seo';
-import Link from '../components/text/link';
 
 export default function PrivacyPolicyPage() {
   return (

@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
 import config from '../data/config.json';
-import Link from './text/link';
+import Link from './link';
 
 type NavPages = {
   showMenu: boolean;

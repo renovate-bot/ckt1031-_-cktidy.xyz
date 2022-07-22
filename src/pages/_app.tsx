@@ -12,6 +12,7 @@ import { RecoilRoot } from 'recoil';
 
 import { ErrorDemostrationPage } from '../components/error';
 import ApplicationLayout from '../components/layouts/application';
+import Lightbox from '../components/lightbox';
 
 export default function NextApplcation({ Component, pageProps }: AppProps) {
   return (
@@ -30,6 +31,7 @@ export default function NextApplcation({ Component, pageProps }: AppProps) {
             }}
           />
           <ApplicationLayout>
+            <Lightbox />
             <Component {...pageProps} />
           </ApplicationLayout>
         </ThemeProvider>

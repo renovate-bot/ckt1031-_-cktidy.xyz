@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
 import config from '../data/config.json';
-import Link from './text/link';
+import Link from './link';
 
 function SocialMediaRow() {
   return (
@@ -30,7 +30,7 @@ function FooterLinksAndCopyright() {
               <p className="footer-text-interaction">
                 <Link href={item.href}>{item.name}</Link>
               </p>
-              
+
               {config.footer.routes.length - 1 !== index && (
                 <p className="hidden text-gray-400 dark:text-gray-500 sm:block">
                   {' '}

@@ -6,8 +6,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { MdComputer, MdDarkMode, MdLightMode } from 'react-icons/md';
 
 import config from '../data/config.json';
+import Link from './link';
 import MobileMenu from './mobile-menu';
-import Link from './text/link';
 
 enum Themes {
   Dark = 'dark',
