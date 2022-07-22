@@ -45,7 +45,7 @@ export default function Image({
   };
 
   return (
-    <div className={cn(lightboxEnabled && 'cursor-pointer')}>
+    <div className={cn(lightboxEnabled && 'cursor-zoom-in')}>
       <NextImage src={src} onClick={showLightBox} {...rest} {...blurData} />
     </div>
   );

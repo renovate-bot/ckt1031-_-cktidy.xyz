@@ -9,7 +9,9 @@ const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   generateEstags: false,
   reactStrictMode: false,

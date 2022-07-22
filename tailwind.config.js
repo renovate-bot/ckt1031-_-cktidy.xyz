@@ -2,7 +2,9 @@
 
 const { neutral } = require('tailwindcss/colors');
 
-/** @type {import('tailwindcss').Config} */
+/**
+ * @type {import('tailwindcss').Config}
+ * */
 const config = {
   darkMode: 'class',
   content: [

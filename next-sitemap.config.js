@@ -1,7 +1,8 @@
 // @ts-check
 
-/** @type {import('next-sitemap').IConfig} */
-
+/**
+ * @type {import('next-sitemap').IConfig}
+ */
 const config = {
   siteUrl: process.env.PRODUCTION_URL ?? 'localhost:3000',
   generateRobotsTxt: true,
