@@ -23,7 +23,7 @@ export default function AboutPage() {
                 lightboxEnabled
                 alt="ckt"
                 height={57.7 * 2.3}
-                src="/media/user-pic/real-cktsun-face-tb.png"
+                src="/media/ckt-face.png"
                 width={43.2 * 2.3}
               />
               <h2 className="text-4xl ">👍BIO</h2>

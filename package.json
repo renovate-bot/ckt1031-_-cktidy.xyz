@@ -22,6 +22,7 @@
     "lint:check": "tsc && eslint . --fix && next lint",
     "lint:style": "prettier . -w",
     "lint:type": "tsc",
+    "prepare": "husky install",
     "start": "next start"
   },
   "dependencies": {
@@ -75,6 +76,7 @@
     "eslint-plugin-sonarjs": "^0.14.0",
     "eslint-plugin-unicorn": "^43.0.2",
     "html-minimizer-webpack-plugin": "^4.0.0",
+    "husky": "^8.0.1",
     "json-minimizer-webpack-plugin": "^4.0.0",
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.14",
