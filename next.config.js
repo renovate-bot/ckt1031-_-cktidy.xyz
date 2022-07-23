@@ -9,6 +9,42 @@ const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+const ContentSecurityPolicy = `
+  style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com;
+  font-src 'self' fonts.googleapis.com fonts.gstatic.com;  
+`;
+
+const securityHeaders = [
+  {
+    key: "Cache-Control",
+    value: "public, max-age=10368000, immutable",
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN'
+  },
+  {
+    key: "X-DNS-Prefetch-Control",
+    value: "on",
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff',
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'origin-when-cross-origin',
+  },
+  {
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
+  }
+];
+
 /**
  * @type {import('next').NextConfig}
  */
@@ -61,6 +97,14 @@ const nextConfig = {
 
     return config;
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      }
+    ];
+  }
 };
 
 const pwaOptions = {

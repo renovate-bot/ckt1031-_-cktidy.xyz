@@ -22,9 +22,9 @@ export default function AboutPage() {
               <Image
                 lightboxEnabled
                 alt="ckt"
-                height={57.7 * 2.3}
                 src="/media/ckt-face.png"
-                width={43.2 * 2.3}
+                height={1850 / 15}
+                width={1470 / 15}
               />
               <h2 className="text-4xl ">👍BIO</h2>
             </div>

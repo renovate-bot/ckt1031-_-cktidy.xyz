@@ -76,7 +76,7 @@ export default function TechnologyPage({
             </div>
             <div className="text-gray-600 dark:text-gray-400">
               <p>
-                Checkour source code of this website (or project) on{' '}
+                Check our source code on{' '}
                 <TextLink enableExternalIcon href={config.github_project_url}>
                   Github Repository
                 </TextLink>

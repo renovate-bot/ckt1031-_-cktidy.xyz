@@ -7,7 +7,7 @@ interface LightBoxAtomProp {
 }
 
 export const lightboxAtom = atom<LightBoxAtomProp>({
-  key: 'fimage-lightbox',
+  key: 'image-lightbox',
   default: {
     display: false,
     imageUrl: '',

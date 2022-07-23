@@ -58,8 +58,8 @@ export default function Lightbox() {
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => resetTransform()}>
                   <MdRestorePage size={21} />
-                  <ReactTooltip id="reset-zoom" effect="solid">
-                    <span className="text-xl">Reset Zoom</span>
+                  <ReactTooltip id="reset-zoom">
+                    <span className="tooltip">Reset Zoom</span>
                   </ReactTooltip>
                 </button>
                 <button
@@ -69,8 +69,8 @@ export default function Lightbox() {
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => zoomIn()}>
                   <MdZoomIn size={21} />
-                  <ReactTooltip id="zoom-in" effect="solid">
-                    <span className="text-xl">Zoom in</span>
+                  <ReactTooltip id="zoom-in">
+                    <span className="tooltip">Zoom in</span>
                   </ReactTooltip>
                 </button>
                 <button
@@ -80,8 +80,8 @@ export default function Lightbox() {
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => zoomOut()}>
                   <MdZoomOut size={21} />
-                  <ReactTooltip id="zoom-out" effect="solid">
-                    <span className="text-xl">Zoom Out</span>
+                  <ReactTooltip id="zoom-out">
+                    <span className="tooltip">Zoom Out</span>
                   </ReactTooltip>
                 </button>
                 <button
@@ -92,8 +92,8 @@ export default function Lightbox() {
                   <CopyToClipboard text={imageUrlForCopy} onCopy={onCopy}>
                     <MdCopyAll size={21} />
                   </CopyToClipboard>
-                  <ReactTooltip id="copy-url" effect="solid">
-                    <span className="text-xl">Copy URL</span>
+                  <ReactTooltip id="copy-url">
+                    <span className="tooltip">Copy URL</span>
                   </ReactTooltip>
                 </button>
                 <button
@@ -104,7 +104,7 @@ export default function Lightbox() {
                   onClick={resetData}>
                   <MdClose size={21} />
                   <ReactTooltip id="close-lb" effect="solid">
-                    <span className="text-xl">Close Lightbox</span>
+                    <span className="tooltip">Close Lightbox</span>
                   </ReactTooltip>
                 </button>
               </div>
@@ -113,7 +113,11 @@ export default function Lightbox() {
             <TransformComponent>
               <div className="relative flex h-screen w-screen flex-col items-center justify-center">
                 <div className="px-20">
-                  <img alt={data.imageAlt} src={data.imageUrl} />
+                  <img
+                    className="img-lightbox"
+                    alt={data.imageAlt}
+                    src={data.imageUrl}
+                  />
                 </div>
               </div>
             </TransformComponent>
