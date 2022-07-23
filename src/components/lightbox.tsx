@@ -26,8 +26,6 @@ export default function Lightbox() {
     ? window.location.origin + data.imageUrl
     : data.imageUrl;
 
-  console.log(imageUrlForCopy);
-
   useEffect(() => {
     const handleKeydown = (e: { key: string }) => {
       if (e.key === 'Escape') resetData();
@@ -56,6 +54,7 @@ export default function Lightbox() {
                 <button
                   data-tip
                   data-for="reset-zoom"
+                  type="button"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => resetTransform()}>
                   <MdRestorePage size={21} />
@@ -66,6 +65,7 @@ export default function Lightbox() {
                 <button
                   data-tip
                   data-for="zoom-in"
+                  type="button"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => zoomIn()}>
                   <MdZoomIn size={21} />
@@ -76,6 +76,7 @@ export default function Lightbox() {
                 <button
                   data-tip
                   data-for="zoom-out"
+                  type="button"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={() => zoomOut()}>
                   <MdZoomOut size={21} />
@@ -86,6 +87,7 @@ export default function Lightbox() {
                 <button
                   data-tip
                   data-for="copy-url"
+                  type="button"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl">
                   <CopyToClipboard text={imageUrlForCopy} onCopy={onCopy}>
                     <MdCopyAll size={21} />
@@ -97,6 +99,7 @@ export default function Lightbox() {
                 <button
                   data-tip
                   data-for="close-lb"
+                  type="button"
                   className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl"
                   onClick={resetData}>
                   <MdClose size={21} />
