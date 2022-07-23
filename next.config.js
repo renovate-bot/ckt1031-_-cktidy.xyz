@@ -16,20 +16,20 @@ const ContentSecurityPolicy = `
 
 const securityHeaders = [
   {
-    key: "Cache-Control",
-    value: "public, max-age=10368000, immutable",
+    key: 'Cache-Control',
+    value: 'public, max-age=10368000, immutable',
   },
   {
     key: 'X-XSS-Protection',
-    value: '1; mode=block'
+    value: '1; mode=block',
   },
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
+    value: 'SAMEORIGIN',
   },
   {
-    key: "X-DNS-Prefetch-Control",
-    value: "on",
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on',
   },
   {
     key: 'X-Content-Type-Options',
@@ -41,8 +41,8 @@ const securityHeaders = [
   },
   {
     key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
-  }
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+  },
 ];
 
 /**
@@ -102,9 +102,9 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: securityHeaders,
-      }
+      },
     ];
-  }
+  },
 };
 
 const pwaOptions = {
