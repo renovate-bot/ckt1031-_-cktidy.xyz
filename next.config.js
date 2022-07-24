@@ -1,5 +1,7 @@
 // @ts-check
+
 const withPWA = require('next-pwa');
+const withTM = require('next-transpile-modules');
 const withPlugins = require('next-compose-plugins');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -8,11 +10,6 @@ const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
-
-const ContentSecurityPolicy = `
-  style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com;
-  font-src 'self' fonts.googleapis.com fonts.gstatic.com;  
-`;
 
 const securityHeaders = [
   {
@@ -38,10 +35,6 @@ const securityHeaders = [
   {
     key: 'Referrer-Policy',
     value: 'origin-when-cross-origin',
-  },
-  {
-    key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   },
 ];
 
@@ -116,4 +109,6 @@ const pwaOptions = {
   },
 };
 
-module.exports = withPlugins([[withPWA, pwaOptions]], nextConfig);
+const modules = withTM(['three']);
+
+module.exports = withPlugins([[modules], [withPWA, pwaOptions]], nextConfig);

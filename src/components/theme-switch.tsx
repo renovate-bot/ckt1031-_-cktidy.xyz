@@ -31,10 +31,10 @@ export default function ThemeSwitcher() {
         type="button"
         className="p-2"
         whileTap={{
-          scale: 1.5,
-          rotate: 180,
+          scale: 1.1,
+          rotate: 90,
         }}
-        whileHover={{ scale: 1.3 }}
+        whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.2, ease: 'easeInOut' }}
         onClick={toggleThemes}>
         {themeName === Themes.System ? (

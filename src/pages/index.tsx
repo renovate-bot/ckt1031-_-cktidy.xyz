@@ -8,7 +8,7 @@ export default function HomePage() {
         title="Home"
       />
       <div className="flex flex-col items-center justify-center">
-        <p className="text-center text-4xl text-green-500">what is this?</p>
+        <p className="text-center text-4xl text-green-500">What is this?</p>
       </div>
     </>
   );
