@@ -31,17 +31,15 @@ function NavigationBarPages() {
 
 export default function Header() {
   return (
-    <header>
-      <div className="headbar-default fixed w-screen backdrop-blur-lg">
-        <div className="absolute bg-gray-500" />
-        <div className="relative flex flex-row items-center justify-between py-2 px-6 text-2xl md:py-3 md:px-16">
-          <div className="flex flex-row items-center">
-            <MobileMenu />
-            <NavigationBarPages />
-          </div>
-          <div className="flex flex-row">
-            <ThemeSwitcher />
-          </div>
+    <header className="headbar-default fixed w-screen backdrop-blur-lg">
+      <div className="absolute bg-gray-500" />
+      <div className="relative flex flex-row items-center justify-between py-2 px-6 text-2xl md:py-3 md:px-16">
+        <div className="flex flex-row items-center">
+          <MobileMenu />
+          <NavigationBarPages />
+        </div>
+        <div className="flex flex-row">
+          <ThemeSwitcher />
         </div>
       </div>
     </header>

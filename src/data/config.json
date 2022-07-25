@@ -21,6 +21,10 @@
       {
         "name": "About",
         "href": "/about"
+      },
+      {
+        "name": "Account",
+        "href": "/account"
       }
     ]
   },
