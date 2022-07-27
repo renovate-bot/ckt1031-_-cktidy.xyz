@@ -1,13 +1,14 @@
-import '../utils/firebase/sdk';
-import '../styles/default.css';
 import '../styles/addon.css';
+import '../styles/default.css';
+import '../utils/firebase/sdk';
+import 'react-toastify/dist/ReactToastify.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 import { ErrorBoundary } from 'react-error-boundary';
-import { Toaster } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
 import { RecoilRoot } from 'recoil';
 
 import { ErrorDemostrationPage } from '../components/error';
@@ -22,7 +23,17 @@ export default function NextApplcation({ Component, pageProps }: AppProps) {
       </Head>
       <RecoilRoot>
         <ThemeProvider enableSystem attribute="class">
-          <Toaster />
+          <ToastContainer
+            position="top-center"
+            autoClose={7500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <NextNProgress
             color="#eb7236"
             height={2}

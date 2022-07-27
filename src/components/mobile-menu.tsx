@@ -59,7 +59,11 @@ export default function NavigationBarMobileMenu() {
 
   return (
     <div className="md:hidden">
-      <button id="mobile-nav-menu" type="button" className="item-center flex" onClick={toggleMenu}>
+      <button
+        id="mobile-nav-menu"
+        type="button"
+        className="item-center flex"
+        onClick={toggleMenu}>
         {showMenu ? <MdClose /> : <MdMenu />}
       </button>
       <MenuNavigationPages showMenu={showMenu} toggleMenu={toggleMenu} />

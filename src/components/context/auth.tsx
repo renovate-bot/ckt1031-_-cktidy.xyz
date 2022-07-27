@@ -55,7 +55,6 @@ export function AuthWrapperPage({
         } else {
           setInitalizing(false);
         }
-
       }
     });
 

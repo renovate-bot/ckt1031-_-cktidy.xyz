@@ -1,7 +1,8 @@
 import { FirebaseApp, getApps, initializeApp } from 'firebase/app';
 import { Auth, connectAuthEmulator, getAuth } from 'firebase/auth';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isNextDevelopment = process.env.IS_NEXT_DEV === 'yes';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -21,7 +22,7 @@ if (getApps().length === 0) {
   try {
     app = initializeApp(config);
     auth = getAuth(app);
-    if (!isProduction) {
+    if (isDevelopment && isNextDevelopment) {
       connectAuthEmulator(auth, 'http://localhost:9099', {
         disableWarnings: true,
       });

@@ -1,7 +1,6 @@
 // @ts-check
 
 const withPWA = require('next-pwa');
-const withTM = require('next-transpile-modules');
 const withPlugins = require('next-compose-plugins');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -78,7 +77,6 @@ const nextConfig = {
     });
 
     if (!dev) {
-      config.plugins.push(new CompressionPlugin());
       config.optimization.minimizer = [];
       config.optimization.minimizer.push(
         new TerserPlugin(),
@@ -86,6 +84,7 @@ const nextConfig = {
         new HtmlMinimizerPlugin(),
         new CssMinimizerPlugin(),
       );
+      config.plugins.push(new CompressionPlugin());
     }
 
     return config;
@@ -109,6 +108,4 @@ const pwaOptions = {
   },
 };
 
-const modules = withTM(['three']);
-
-module.exports = withPlugins([[modules], [withPWA, pwaOptions]], nextConfig);
+module.exports = withPlugins([[withPWA, pwaOptions]], nextConfig);

@@ -1,7 +1,7 @@
 import { AuthErrorCodes } from 'firebase/auth';
 import { useCallback } from 'react';
-import toast from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'react-toastify';
 
 import { AuthWrapperPage } from '../components/context/auth';
 import { DefaultMetaData } from '../components/seo';

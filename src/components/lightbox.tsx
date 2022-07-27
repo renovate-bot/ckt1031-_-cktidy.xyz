@@ -2,7 +2,6 @@
 import cn from 'classnames';
 import { useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import toast from 'react-hot-toast';
 import {
   MdClose,
   MdCopyAll,
@@ -10,13 +9,14 @@ import {
   MdZoomIn,
   MdZoomOut,
 } from 'react-icons/md';
+import { toast } from 'react-toastify';
 import ReactTooltip from 'react-tooltip';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 
 import { lightboxAtom } from '../recoil/image';
 
-const onCopy = () => toast.success('Copyied Image URL');
+const onCopy = () => toast.success('Copied');
 
 export default function Lightbox() {
   const data = useRecoilValue(lightboxAtom);
