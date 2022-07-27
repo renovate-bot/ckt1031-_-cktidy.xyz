@@ -27,8 +27,9 @@ export default function ThemeSwitcher() {
   return (
     <div className="flex items-center justify-center rounded-lg ring-gray-300 hover:bg-gray-200 hover:dark:bg-gray-800">
       <motion.button
-        aria-label="Toggle Theme Mode"
+        id="theme-switcher"
         type="button"
+        aria-label="Toggle Theme Mode"
         className="p-2"
         whileTap={{
           scale: 1.1,

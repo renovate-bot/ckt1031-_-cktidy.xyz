@@ -56,7 +56,6 @@ export function AuthWrapperPage({
           setInitalizing(false);
         }
 
-        resetUser();
       }
     });
 
