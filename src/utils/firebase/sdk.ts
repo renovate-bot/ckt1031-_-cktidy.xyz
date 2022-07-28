@@ -1,7 +1,6 @@
 import { FirebaseApp, getApps, initializeApp } from 'firebase/app';
 import { Auth, connectAuthEmulator, getAuth } from 'firebase/auth';
 
-const isNextDevelopment = process.env.IS_NEXT_DEV === 'yes';
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 const config = {
@@ -22,7 +21,7 @@ if (getApps().length === 0) {
   try {
     app = initializeApp(config);
     auth = getAuth(app);
-    if (isDevelopment && isNextDevelopment) {
+    if (isDevelopment) {
       connectAuthEmulator(auth, 'http://localhost:9099', {
         disableWarnings: true,
       });

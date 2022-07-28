@@ -104,8 +104,9 @@ const pwaOptions = {
     scope: '/app',
     dest: 'public',
     register: true,
-    disable: !isProduction,
   },
 };
 
-module.exports = withPlugins([[withPWA, pwaOptions]], nextConfig);
+const plugins = isProduction ? [[withPWA, pwaOptions]] : [];
+
+module.exports = withPlugins(plugins, nextConfig);

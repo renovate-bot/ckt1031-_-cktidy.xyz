@@ -25,20 +25,21 @@ function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
         <div className="flex flex-col items-center justify-center space-y-2 p-3">
           {config.headbar.routes.map(item => {
             const _className = classnames(
-              item.href === route
-                ? 'bg-gray-300 dark:bg-gray-800'
-                : 'hover:bg-gray-200 dark:hover:bg-gray-600',
-              'block py-2 px-3 rounded-lg duration-150 cursor-pointer text-center',
+              item.href === route && 'text-orange-600 dark:text-orange-300',
+              'block py-3 px-3 rounded-lg duration-150 cursor-pointer text-center',
             );
 
             return (
-              <button
-                type="button"
-                className={_className}
+              <div
                 key={`MOBILENAV-PAGES-${trim(item.name)}`}
-                onClick={toggleMenu}>
-                <Link href={item.href}>{item.name}</Link>
-              </button>
+                className="flex w-full items-center justify-center border-b border-gray-400 dark:border-gray-600">
+                <button
+                  type="button"
+                  className={_className}
+                  onClick={toggleMenu}>
+                  <Link href={item.href}>{item.name}</Link>
+                </button>
+              </div>
             );
           })}
         </div>

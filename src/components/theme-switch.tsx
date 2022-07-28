@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 import { useCallback, useEffect, useState } from 'react';
 import { MdComputer, MdDarkMode, MdLightMode } from 'react-icons/md';
 
-enum Themes {
+export enum Themes {
   Dark = 'dark',
   System = 'system',
   Light = 'light',

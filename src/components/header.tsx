@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import config from '../data/config.json';
 import Link from './link';
 import MobileMenu from './mobile-menu';
+import Spotlight from './spotlight';
 import ThemeSwitcher from './theme-switch';
 
 function NavigationBarPages() {
@@ -39,6 +40,7 @@ export default function Header() {
           <NavigationBarPages />
         </div>
         <div className="flex flex-row">
+          <Spotlight />
           <ThemeSwitcher />
         </div>
       </div>
