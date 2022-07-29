@@ -29,11 +29,14 @@ export function DefaultMetaData({
           <meta content={description} property="og:description" />
         </>
       )}
-      {!isProduction || disableIndex ? (
-        <meta content="noindex, nofollow, noarchive, nosnippet" name="robots" />
-      ) : (
-        <meta content="follow, index" name="robots" />
-      )}
+      <meta
+        content={
+          !isProduction || disableIndex
+            ? 'noindex, nofollow, noarchive, nosnippet'
+            : 'follow, index'
+        }
+        name="robots"
+      />
     </Head>
   );
 }

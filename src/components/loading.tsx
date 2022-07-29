@@ -14,7 +14,7 @@ export function LoadingPage() {
   }, [isDark]);
 
   return (
-    <div className="mt-10 md:mt-20">
+    <div className="mt-10 overflow-hidden md:mt-20">
       <Ring color={themeStyle.color} size={75} />
     </div>
   );
