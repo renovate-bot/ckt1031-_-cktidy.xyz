@@ -20,9 +20,19 @@ export default function Spotlight() {
     val.name.toLowerCase(),
   );
 
+  const onEsc = (event: KeyboardEvent) => {
+    if (event.key === 'Escape' && display) setDisplay(false);
+  };
+
   useAsyncEffect(() => {
     setSearchList(pageList);
-  }, []);
+
+    document.addEventListener('keydown', onEsc);
+
+    return () => {
+      document.removeEventListener('keydown', onEsc);
+    };
+  }, [display]);
 
   const toggleSpotlightDisplay = useCallback(() => {
     setDisplay(value => !value);
@@ -52,10 +62,10 @@ export default function Spotlight() {
         {display && (
           <motion.div
             className="fixed inset-0 z-50 h-screen w-screen bg-gray-500/80 dark:bg-gray-900/80"
-            transition={{ duration: 0.15, ease: 'easeIn' }}
-            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15, ease: 'easeIn' }}>
             <div className="relative flex h-screen w-screen items-center justify-center">
               <div className="p-5">
                 <div className="rounded-lg bg-gray-200 p-3 shadow-2xl dark:bg-gray-600 md:w-[650px]">

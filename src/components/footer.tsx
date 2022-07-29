@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
 import config from '../data/config.json';
+import Image from './image';
 import Link from './link';
 
 function SocialMediaRow() {
@@ -23,7 +24,7 @@ function SocialMediaRow() {
 function FooterLinksAndCopyright() {
   return (
     <div>
-      <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 text-lg sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0 md:text-xl">
+      <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0">
         {config.footer.routes.map((item, index) => {
           return (
             <Fragment key={`FOOTER-LINKS-${index}`}>
@@ -41,18 +42,32 @@ function FooterLinksAndCopyright() {
           );
         })}
       </div>
-      <p className="text-xl">
+      <p>
         &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
       </p>
     </div>
   );
 }
 
+function LicenseBadge() {
+  return (
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+      <Image
+        width={88}
+        height={31}
+        alt="Creative Commons License"
+        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+      />
+    </a>
+  );
+}
+
 export default function DefaultFooter() {
   return (
-    <footer className="footer-theme">
+    <footer className="footer-theme display-font">
       <SocialMediaRow />
       <FooterLinksAndCopyright />
+      <LicenseBadge />
     </footer>
   );
 }

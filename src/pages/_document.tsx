@@ -1,3 +1,4 @@
+/* eslint-disable no-secrets/no-secrets */
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class AppDocument extends Document {
@@ -5,13 +6,17 @@ export default class AppDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            // eslint-disable-next-line no-secrets/no-secrets
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+            rel="stylesheet"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap"
             rel="stylesheet"
           />
           <link
-            // eslint-disable-next-line no-secrets/no-secrets
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap"
             rel="stylesheet"
           />

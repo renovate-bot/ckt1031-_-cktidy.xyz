@@ -21,6 +21,10 @@ body {
   font-family: 'Londrina Solid', 'Noto Sans TC', cursive, sans-serif;
 }
 
+.display-font {
+  font-family: 'Roboto Condensed', system-ui, sans-serif;
+}
+
 .root {
   @apply bg-neutral-100 text-slate-900 antialiased dark:bg-neutral-900 dark:text-slate-200;
 }

@@ -1,8 +1,8 @@
 {
   "private": true,
   "name": "cktidy",
-  "version": "0.0.17",
-  "description": "Cktidy's Personal Website",
+  "version": "0.0.18",
+  "description": "CKT Personal Website",
   "license": "MIT",
   "author": "cktsun1031",
   "homepage": "https://github.com/cktsun1031/cktidy#readme",
@@ -19,6 +19,7 @@
     "postbuild": "next-sitemap",
     "dev": "next dev",
     "lint": "tsc && prettier . -w && eslint . --fix && next lint",
+    "lint-staged": "lint-staged",
     "lint:check": "tsc && eslint . --fix && next lint",
     "lint:style": "prettier . -w",
     "lint:type": "tsc",
@@ -71,7 +72,6 @@
     "eslint-config-next": "12.2.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-autofix": "^1.1.0",
-    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-no-secrets": "^0.8.9",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
@@ -82,6 +82,7 @@
     "html-minimizer-webpack-plugin": "^4.0.0",
     "husky": "^8.0.1",
     "json-minimizer-webpack-plugin": "^4.0.0",
+    "lint-staged": "^13.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^9.0.0",
     "postcss": "^8.4.14",
@@ -90,5 +91,13 @@
     "tailwindcss": "^3.1.6",
     "terser-webpack-plugin": "^5.3.3",
     "typescript": "4.7.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{html,scss,css,vue}": [
+      "prettier -w"
+    ]
   }
 }
