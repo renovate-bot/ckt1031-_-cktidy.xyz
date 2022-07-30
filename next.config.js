@@ -52,7 +52,7 @@ const nextConfig = {
     forceSwcTransforms: true,
   },
   images: {
-    domains: ['i.creativecommons.org'],
+    domains: ['i.creativecommons.org', 'cdn.sanity.io'],
   },
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY ?? '',
@@ -64,6 +64,7 @@ const nextConfig = {
       process.env.FIREBASE_MESSAGING_SENDER_ID ?? '',
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID ?? '',
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',
+    SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
   },
   eslint: {
     dirs: ['src'],

@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { InferGetStaticPropsType } from 'next';
+import type { InferGetStaticPropsType } from 'next';
 
 import packageInfo from '../../package.json';
 import TextLink from '../components/link';
@@ -69,7 +69,6 @@ export default function TechnologyPage({
               </p>
             </div>
           </div>
-
           <div>
             <div className="mb-3 border-b-2 border-gray-500">
               <h2 className="mb-1 text-4xl">How this works</h2>
@@ -91,11 +90,11 @@ export default function TechnologyPage({
 }
 
 export function getStaticProps() {
-  const _buildDate = dayjs(Date.now()).format('YYYY/MM/DD hh:mm');
+  const buildDate = dayjs(Date.now()).format('YYYY/MM/DD hh:mm');
 
   return {
     props: {
-      buildDate: _buildDate,
+      buildDate,
     },
   };
 }

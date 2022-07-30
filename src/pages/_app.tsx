@@ -1,6 +1,7 @@
 import '../styles/addon.css';
 import '../styles/default.css';
 import '../utils/firebase/sdk';
+import '../utils/analytics';
 import 'react-toastify/dist/ReactToastify.css';
 
 import type { AppProps } from 'next/app';

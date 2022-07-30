@@ -7,11 +7,7 @@ export default function ScollUpButton() {
 
   useEffect(() => {
     const scrollEvent = () => {
-      if (window.scrollY > 400) {
-        setShowScrollUpBtn(true);
-      } else {
-        setShowScrollUpBtn(false);
-      }
+      setShowScrollUpBtn(window.scrollY > 400);
     };
 
     window.addEventListener('scroll', scrollEvent);

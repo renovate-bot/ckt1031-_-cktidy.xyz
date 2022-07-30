@@ -62,7 +62,7 @@ export default function Lightbox() {
                       onClick={() => resetTransform()}>
                       <MdRestorePage size={21} />
                       <ReactTooltip id="reset-zoom">
-                        <span className="tooltip">Reset Zoom</span>
+                        <span className="text-2xl">Reset Zoom</span>
                       </ReactTooltip>
                     </button>
                     <button
@@ -73,7 +73,7 @@ export default function Lightbox() {
                       onClick={() => zoomIn()}>
                       <MdZoomIn size={21} />
                       <ReactTooltip id="zoom-in">
-                        <span className="tooltip">Zoom in</span>
+                        <span className="text-2xl">Zoom in</span>
                       </ReactTooltip>
                     </button>
                     <button
@@ -84,7 +84,7 @@ export default function Lightbox() {
                       onClick={() => zoomOut()}>
                       <MdZoomOut size={21} />
                       <ReactTooltip id="zoom-out">
-                        <span className="tooltip">Zoom Out</span>
+                        <span className="text-2xl">Zoom Out</span>
                       </ReactTooltip>
                     </button>
                     <button
@@ -96,7 +96,7 @@ export default function Lightbox() {
                         <MdCopyAll size={21} />
                       </CopyToClipboard>
                       <ReactTooltip id="copy-url">
-                        <span className="tooltip">Copy URL</span>
+                        <span className="text-2xl">Copy URL</span>
                       </ReactTooltip>
                     </button>
                     <button
@@ -107,7 +107,7 @@ export default function Lightbox() {
                       onClick={resetData}>
                       <MdClose size={21} />
                       <ReactTooltip id="close-lb" effect="solid">
-                        <span className="tooltip">Close Lightbox</span>
+                        <span className="text-2xl">Close Lightbox</span>
                       </ReactTooltip>
                     </button>
                   </div>

@@ -63,3 +63,7 @@ body {
 .tooltip {
   @apply rounded-lg bg-gray-400 p-2 text-xl text-black shadow-2xl ring-2 ring-gray-800 dark:bg-gray-700 dark:text-white;
 }
+
+.blog-article-container {
+  @apply prose max-w-none dark:prose-dark;
+}
