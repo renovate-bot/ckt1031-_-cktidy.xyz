@@ -69,7 +69,7 @@ function Pageination({ pagination }: PageinationProp) {
                         'bg-orange-400 dark:bg-orange-700',
                       'rounded-lg px-2 py-1',
                     )}
-                    key={index}>
+                    key={`PAGINATION-${index}`}>
                     <Link passHref href={`/blog/page/${pageNumber}`}>
                       {pageNumber}
                     </Link>

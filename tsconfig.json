@@ -22,5 +22,6 @@
     "**/*.tsx",
     "cypress.config.ts",
     "src/components/mdx.jsx"
-  ]
+  ],
+  "typeRoots": ["./src/", "./node_modules/@types/"]
 }

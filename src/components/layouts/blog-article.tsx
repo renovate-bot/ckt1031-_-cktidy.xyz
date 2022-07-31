@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import { MDXRemote } from 'next-mdx-remote';
 import { Suspense } from 'react';
 
@@ -11,12 +10,11 @@ import { DefaultMetaData } from '../seo';
 export interface BlogProp {
   post: Post;
   author?: Author;
+  dateName: string;
   content: Post['body'];
 }
 
-export function BlogDisplayPage({ author, post, content }: BlogProp) {
-  const dateName = dayjs(post._createdAt).format('YYYY/MM/DD hh:mm');
-
+export function BlogDisplayPage({ author, post, content, dateName }: BlogProp) {
   return (
     <>
       <DefaultMetaData title={post.title} />
