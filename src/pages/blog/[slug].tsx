@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
+import readingTimeModule from 'reading-time';
 
 import {
   BlogDisplayPage,
@@ -37,7 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params || typeof params.slug !== 'string') {
     return { notFound: true };
   }
-  // Fetch Blog Article's actual detials and content
+
   const post: Post = await sanityClient.fetch(postSingleQuery, {
     slug: params.slug,
   });
@@ -46,18 +47,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true };
   }
 
-  // Generate parsed mdx content
+  const author = await getAuthor(post.author._ref);
   const content = await parseMdx(post.body as unknown as string);
-
   const dateName = dayjs(post._createdAt).format('YYYY/MM/DD hh:mm');
+  const readingTime = readingTimeModule(post.body as unknown as string);
 
   return {
-    props: {
-      content,
-      dateName,
-      post: post,
-      author: await getAuthor(post.author._ref),
-    },
+    props: { author, readingTime, post, content, dateName },
   };
 };
 

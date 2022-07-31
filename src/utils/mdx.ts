@@ -5,11 +5,19 @@ import imageSize from 'rehype-external-img-size';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import remarkNormalizeHeadings from 'remark-normalize-headings';
+import remarkParse from 'remark-parse';
+import remarkUnwrapImages from 'remark-unwrap-images';
 
 export async function parseMdx(body: string) {
   return await serialize(body, {
     mdxOptions: {
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [
+        remarkParse,
+        remarkGfm,
+        remarkNormalizeHeadings,
+        remarkUnwrapImages,
+      ],
       rehypePlugins: [
         rehypeSlug,
         rehypeCodeTitles,
