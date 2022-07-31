@@ -1,6 +1,11 @@
 import cn from 'classnames';
 import trim from 'lodash/trim';
+import Link from 'next/link';
 import { ChangeEvent, useCallback, useState } from 'react';
+import {
+  FaRegArrowAltCircleLeft,
+  FaRegArrowAltCircleRight,
+} from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 
 import { Post } from '../../utils/sanity/schema';
@@ -17,7 +22,131 @@ export interface BlogListProp {
   };
 }
 
-export default function BlogList({ posts, displayPosts }: BlogListProp) {
+interface PageinationProp {
+  pagination: BlogListProp['pagination'];
+}
+
+interface ListPrtop {
+  postList: Post[];
+}
+
+function Pageination({ pagination }: PageinationProp) {
+  return (
+    <div className="border-t-2 border-gray-400 dark:border-gray-600">
+      <div className="mt-3 flex flex-row justify-between px-2 py-1">
+        <div>
+          {pagination.currentPage - 1 > 0 && (
+            <Link
+              passHref
+              href={
+                pagination.currentPage - 1 === 1
+                  ? '/blog'
+                  : `/blog/page/${pagination.currentPage - 1}`
+              }>
+              <button
+                type="button"
+                className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700">
+                <FaRegArrowAltCircleLeft />
+                <p className="hidden md:block">Previous</p>
+              </button>
+            </Link>
+          )}
+        </div>
+        <div className="flex flex-row items-center justify-center space-x-1">
+          {pagination.currentPage - 2 > 0 && <div>...</div>}
+          {[...Array.from({ length: pagination.totalPages })].map(
+            (_, index) => {
+              const pageNumber = index + 1;
+
+              if (
+                pageNumber >= pagination.currentPage - 3 &&
+                pageNumber <= pagination.currentPage + 3
+              ) {
+                return (
+                  <div
+                    className={cn(
+                      pagination.currentPage === pageNumber &&
+                        'bg-orange-400 dark:bg-orange-700',
+                      'rounded-lg px-2 py-1',
+                    )}
+                    key={index}>
+                    <Link passHref href={`/blog/page/${pageNumber}`}>
+                      {pageNumber}
+                    </Link>
+                  </div>
+                );
+              }
+            },
+          )}
+          {pagination.currentPage + 2 - pagination.totalPages < 0 && (
+            <div>...</div>
+          )}
+        </div>
+        <div>
+          {pagination.currentPage + 1 <= pagination.totalPages && (
+            <Link passHref href={`/blog/page/${pagination.currentPage + 1}`}>
+              <button
+                type="button"
+                className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700">
+                <p className="hidden md:block">Next</p>
+                <FaRegArrowAltCircleRight />
+              </button>
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function List({ postList }: ListPrtop) {
+  return (
+    <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
+      {postList.length > 0 ? (
+        postList.map(post => {
+          return (
+            <div
+              key={`BLOG-LIST-${trim(post.slug.current)}`}
+              className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
+              <div
+                className={cn(
+                  post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
+                  'break-words',
+                )}>
+                <a href={`/blog/${post.slug.current}`} className="text-3xl">
+                  {post.title}
+                </a>
+                <p className="text-xl text-gray-600 dark:text-gray-400">
+                  {post.breif}
+                </p>
+              </div>
+              {post.thumbnail && (
+                <Image
+                  alt="Thumbnail"
+                  className="rounded md:mt-0"
+                  lightboxEnabled
+                  src={urlForImage(post.thumbnail).url()}
+                  width={1600 * 0.15}
+                  height={900 * 0.15}
+                />
+              )}
+            </div>
+          );
+        })
+      ) : (
+        <div className="flex flex-col items-center">
+          <p className="p-5">Nothing can be found!</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function ListPage({
+  posts,
+  displayPosts,
+  pagination,
+}: BlogListProp) {
   const [searchKey, setSearchKey] = useState('');
 
   const onSearch = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -56,48 +185,12 @@ export default function BlogList({ posts, displayPosts }: BlogListProp) {
             </div>
           </div>
         </div>
-        <div>
-          <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
-            {localList.length > 0 ? (
-              localList.map(post => {
-                return (
-                  <div
-                    key={`BLOG-LIST-${trim(post.slug.current)}`}
-                    className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
-                    <div
-                      className={cn(
-                        post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
-                        'break-words',
-                      )}>
-                      <a
-                        href={`/blog/${post.slug.current}`}
-                        className="text-3xl">
-                        {post.title}
-                      </a>
-                      <p className="text-xl text-gray-600 dark:text-gray-400">
-                        {post.breif}
-                      </p>
-                    </div>
-                    {post.thumbnail && (
-                      <Image
-                        alt="Thumbnail"
-                        className="rounded md:mt-0"
-                        lightboxEnabled
-                        src={urlForImage(post.thumbnail).url()}
-                        width={1600 * 0.15}
-                        height={900 * 0.15}
-                      />
-                    )}
-                  </div>
-                );
-              })
-            ) : (
-              <div className="flex flex-col items-center">
-                <p className="p-5">Nothing can be found!</p>
-              </div>
-            )}
-          </div>
-        </div>
+        <List postList={localList} />
+        {searchKey.length === 0 &&
+          pagination.totalPages > 0 &&
+          pagination.totalPages - 1 !== 0 && (
+            <Pageination pagination={pagination} />
+          )}
       </div>
     </>
   );

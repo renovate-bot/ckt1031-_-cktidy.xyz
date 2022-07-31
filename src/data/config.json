@@ -12,6 +12,9 @@
       "discordServer": "https://discord.gg/Y2ZnZc5Nnh"
     }
   },
+  "blog": {
+    "maxDisplayPerPage": 10
+  },
   "headbar": {
     "routes": [
       {

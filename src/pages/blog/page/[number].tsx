@@ -2,6 +2,7 @@ import type { GetStaticProps } from 'next';
 
 import BlogList, { BlogListProp } from '../../../components/layouts/blog-list';
 import { DefaultMetaData } from '../../../components/seo';
+import config from '../../../data/config.json';
 import sanityClient from '../../../utils/sanity/client';
 import { allPostQuery } from '../../../utils/sanity/query';
 import { Post } from '../../../utils/sanity/schema';
@@ -9,15 +10,16 @@ import { Post } from '../../../utils/sanity/schema';
 export async function getStaticPaths() {
   const posts: Post[] = await sanityClient.fetch(allPostQuery);
 
-  const totalPages = Math.ceil(posts.length / 10);
+  const totalPagesNumber = Math.ceil(
+    posts.length / config.blog.maxDisplayPerPage,
+  );
 
   return {
-    paths:
-      totalPages === 1
-        ? []
-        : Array.from({ length: totalPages }, (_, i) => ({
-            params: { page: (i + 1).toString() },
-          })),
+    paths: Array.from({ length: totalPagesNumber }, (_, i) => ({
+      params: {
+        number: (i + 1).toString(),
+      },
+    })),
     fallback: false,
   };
 }
@@ -29,15 +31,18 @@ export const getStaticProps: GetStaticProps<BlogListProp> = async ({
     return { notFound: true };
   }
 
-  const pageNumber = Number.parseInt(params.number);
+  const pageNumber = Number(params.number);
 
   const posts: Post[] = await sanityClient.fetch(allPostQuery);
 
-  const displayPosts = posts.slice(10 * (pageNumber - 1), 10 * pageNumber);
+  const displayPosts = posts.slice(
+    config.blog.maxDisplayPerPage * (pageNumber - 1),
+    config.blog.maxDisplayPerPage * pageNumber,
+  );
 
   const pagination = {
     currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / 10),
+    totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
   };
 
   return { props: { posts, displayPosts, pagination } };
