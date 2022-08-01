@@ -6,9 +6,12 @@ import config from '../../data/config.json';
 import sanityClient from '../../utils/sanity/client';
 import { allPostQuery } from '../../utils/sanity/query';
 import { Post } from '../../utils/sanity/schema';
+import { generateRss } from '../../utils/static-files';
 
 export async function getStaticProps() {
   const posts: Post[] = await sanityClient.fetch(allPostQuery);
+
+  generateRss(posts);
 
   const displayPosts = posts.slice(0, config.blog.maxDisplayPerPage);
 

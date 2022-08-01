@@ -19,3 +19,4 @@ pnpm-lock.yaml
 .firebaserc
 firebase-debug.log
 ui-debug.log
+public/feed.xml

@@ -1,16 +1,18 @@
 import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
-import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 import readingTimeModule from 'reading-time';
 
 import {
   BlogDisplayPage,
   BlogProp,
 } from '../../components/layouts/blog-article';
+import config from '../../data/config.json';
 import { parseMdx } from '../../utils/mdx';
 import sanityClient from '../../utils/sanity/client';
 import { postSingleQuery, postSlugQuery } from '../../utils/sanity/query';
-import { Post } from '../../utils/sanity/schema';
+import { Author, Post } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
 
 export async function getStaticPaths() {
@@ -49,29 +51,56 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function Blog(props: BlogProp) {
-  const ogImage = props.post.thumbnail
-    ? [
-        {
-          url: urlForImage(props.post.thumbnail).url(),
-          width: props.post.thumbnail.hotspot?.width,
-          height: props.post.thumbnail.hotspot?.height,
-          alt: props.post.title,
-        },
-      ]
-    : [];
+  const router = useRouter();
+
+  const post = props.post;
+  const author = post.author as unknown as Author;
+  const thumbnail = props.post.thumbnail;
+
+  const ogImage = [];
+  const articleImages = [];
+
+  if (thumbnail) {
+    const _url = urlForImage(thumbnail).url();
+
+    ogImage.push({
+      url: _url,
+      width: thumbnail.hotspot?.width,
+      height: thumbnail.hotspot?.height,
+      alt: props.post.title,
+    });
+
+    articleImages.push(_url);
+  }
 
   return (
     <>
       <NextSeo
-        title={props.post.title}
-        description={props.post.breif}
+        title={post.title}
+        description={post.breif}
         openGraph={{
           type: 'website',
-          title: props.post.title,
-          description: props.post.breif,
+          url: config.url + router.asPath,
+          title: post.title,
+          description: post.breif,
           images: ogImage,
         }}
         titleTemplate="%s"
+      />
+      <ArticleJsonLd
+        url={config.url + router.asPath}
+        images={articleImages}
+        title={post.title}
+        description={post.breif}
+        authorName={[
+          {
+            name: author.name,
+          },
+        ]}
+        dateModified={post._updatedAt}
+        datePublished={post._createdAt}
+        publisherName={author.name}
+        publisherLogo={urlForImage(author.avatar).url()}
       />
       <BlogDisplayPage {...props} />
     </>

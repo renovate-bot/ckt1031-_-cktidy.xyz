@@ -31,6 +31,13 @@ export interface Author extends SanityDocument {
   slug: { _type: 'slug'; current: string };
 
   /**
+   * Email — `string`
+   *
+   *
+   */
+  email: string;
+
+  /**
    * Avatar — `image`
    *
    *

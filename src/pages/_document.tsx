@@ -34,6 +34,7 @@ export default class AppDocument extends Document {
             sizes="16x16"
             type="image/png"
           />
+          <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
         <body className="root">
           <Main />
