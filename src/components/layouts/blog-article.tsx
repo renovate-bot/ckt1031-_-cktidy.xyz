@@ -1,8 +1,9 @@
+import trim from 'lodash/trim';
 import { MDXRemote } from 'next-mdx-remote';
 import { Suspense } from 'react';
 import type { ReadTimeResults } from 'reading-time';
 
-import { Author, Post } from '../../utils/sanity/schema';
+import { Author, Post, Tag } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
 import Image from '../image';
 import mdxComponents from '../mdx-components';
@@ -10,19 +11,20 @@ import { DefaultMetaData } from '../seo';
 
 export interface BlogProp {
   post: Post;
-  author?: Author;
   dateName: string;
   readingTime: ReadTimeResults;
   content: Post['body'];
 }
 
 export function BlogDisplayPage({
-  author,
   post,
   readingTime,
   content,
   dateName,
 }: BlogProp) {
+  const author = post.author as unknown as Author;
+  const tags = post.tags ? (post.tags as unknown as Tag[]) : undefined;
+
   const readingMinutes =
     readingTime.minutes >= 1
       ? `${Math.round(readingTime.minutes)}`
@@ -79,6 +81,26 @@ export function BlogDisplayPage({
           <div className="blog-article-container">
             <MDXRemote {...content} components={{ ...mdxComponents }} />
           </div>
+          {tags && (
+            <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
+              <div className="py-4 text-xl">
+                <div>
+                  <p className="text-gray-700 dark:text-gray-300">Tags:</p>
+                </div>
+                <div className="mt-3 flex items-center space-x-2">
+                  {tags.map(tag => {
+                    return (
+                      <div key={trim(tag.name)}>
+                        <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
+                          #{tag.name}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
         </article>
       </Suspense>
     </>

@@ -7,6 +7,16 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
+const intercept = require('intercept-stdout');
+
+function interceptStdout(text) {
+  if (text.includes('Duplicate atom key')) {
+    return '';
+  }
+  return text;
+}
+
+intercept(interceptStdout);
 
 const isProduction = process.env.NODE_ENV === 'production';
 
