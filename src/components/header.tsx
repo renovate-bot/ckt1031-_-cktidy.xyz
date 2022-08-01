@@ -18,7 +18,7 @@ function NavigationBarPages() {
         const className = cn(
           item.href === route && 'text-orange-500',
           ' hover:bg-gray-200 dark:hover:bg-gray-600 rounded',
-          'block py-2 px-3 text-center link-underline',
+          'block py-1 px-3 text-center link-underline',
         );
 
         return (
@@ -50,10 +50,9 @@ export default function Header() {
     <header
       className={cn(
         showShadow && 'shadow-md',
-        'headbar-default fixed w-screen backdrop-blur-lg',
+        'headbar-default fixed w-screen bg-gray-100 dark:bg-gray-900',
       )}>
-      <div className="absolute bg-gray-500" />
-      <div className="relative flex flex-row items-center justify-between py-2 px-6 text-2xl md:py-3 md:px-16">
+      <div className="flex flex-row items-center justify-between py-2 px-6 text-2xl md:py-3 md:px-16">
         <div className="flex flex-row items-center">
           <MobileMenu />
           <NavigationBarPages />

@@ -46,6 +46,7 @@ body {
 .headbar-default {
   @apply z-50;
 }
+
 .footer-theme {
   @apply flex flex-col items-center space-y-2 border-t border-gray-200
     py-4 text-center
