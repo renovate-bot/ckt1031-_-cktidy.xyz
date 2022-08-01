@@ -1,12 +1,13 @@
+import { NextSeo } from 'next-seo';
+
 import { AuthWrapperPage, useAuth } from '../components/context/auth';
-import { DefaultMetaData } from '../components/seo';
 
 function AccountDashboard() {
   const { logOut, userInfo } = useAuth();
 
   return (
     <>
-      <DefaultMetaData
+      <NextSeo
         title="Account"
         description="Manage your account in cktidy.xyz"
       />

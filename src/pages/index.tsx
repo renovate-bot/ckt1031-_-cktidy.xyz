@@ -1,12 +1,17 @@
+import { NextSeo } from 'next-seo';
+
 import Image from '../components/image';
-import { DefaultMetaData } from '../components/seo';
 
 export default function HomePage() {
+  const title = 'Home';
+  const description = 'A cool website by cktsun1031!';
+
   return (
     <>
-      <DefaultMetaData
-        description="A cool website by cktsun1031!"
-        title="Home"
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{ title, description }}
       />
       <div className="mt-5 mb-10 flex flex-col items-start justify-start">
         <h1 className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-center text-6xl text-transparent">

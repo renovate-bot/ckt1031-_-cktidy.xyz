@@ -1,15 +1,20 @@
+import { NextSeo } from 'next-seo';
 import { BsDiscord, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 import Link from '../components/link';
-import { DefaultMetaData } from '../components/seo';
 import config from '../data/config.json';
 
 export default function AboutPage() {
+  const title = 'About Me';
+  const description =
+    'Hello, I am Chan Ka Tsun which is a energetic boy living in Hong Kong SAR, I love programming and reading!';
+
   return (
     <>
-      <DefaultMetaData
-        description="Hello, I am Chan Ka Tsun which is a energetic boy living in Hong Kong SAR, I love programming and reading!"
-        title="About Me"
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{ title, description }}
       />
       <div className="flex flex-col items-center">
         <h1 className="mb-5 text-6xl">About Me</h1>

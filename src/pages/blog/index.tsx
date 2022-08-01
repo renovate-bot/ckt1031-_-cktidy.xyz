@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 
 import BlogList from '../../components/layouts/blog-list';
-import { DefaultMetaData } from '../../components/seo';
 import config from '../../data/config.json';
 import sanityClient from '../../utils/sanity/client';
 import { allPostQuery } from '../../utils/sanity/query';
@@ -25,7 +25,7 @@ export default function BlogHome(
 ) {
   return (
     <>
-      <DefaultMetaData title="Blog" />
+      <NextSeo title="Blog" description="A cool website by cktsun1031!" />
       <BlogList {...prop} />
     </>
   );

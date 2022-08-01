@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
 import readingTimeModule from 'reading-time';
 
 import {
@@ -10,6 +11,7 @@ import { parseMdx } from '../../utils/mdx';
 import sanityClient from '../../utils/sanity/client';
 import { postSingleQuery, postSlugQuery } from '../../utils/sanity/query';
 import { Post } from '../../utils/sanity/schema';
+import { urlForImage } from '../../utils/sanity/tools';
 
 export async function getStaticPaths() {
   const paths: string[] = await sanityClient.fetch(postSlugQuery);
@@ -47,5 +49,31 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function Blog(props: BlogProp) {
-  return <BlogDisplayPage {...props} />;
+  const ogImage = props.post.thumbnail
+    ? [
+        {
+          url: urlForImage(props.post.thumbnail).url(),
+          width: props.post.thumbnail.hotspot?.width,
+          height: props.post.thumbnail.hotspot?.height,
+          alt: props.post.title,
+        },
+      ]
+    : [];
+
+  return (
+    <>
+      <NextSeo
+        title={props.post.title}
+        description={props.post.breif}
+        openGraph={{
+          type: 'website',
+          title: props.post.title,
+          description: props.post.breif,
+          images: ogImage,
+        }}
+        titleTemplate="%s"
+      />
+      <BlogDisplayPage {...props} />
+    </>
+  );
 }

@@ -1,10 +1,10 @@
 import { AuthErrorCodes } from 'firebase/auth';
+import { NextSeo } from 'next-seo';
 import { useCallback } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 
 import { AuthWrapperPage } from '../components/context/auth';
-import { DefaultMetaData } from '../components/seo';
 import { signWithGoogle } from '../utils/firebase/auth';
 
 function OauthLoginBlock() {
@@ -45,11 +45,15 @@ function LoginBlock() {
 }
 
 export default function LoginPage() {
+  const title = 'Login';
+  const description = 'Login to unlock secret features!';
+
   return (
     <>
-      <DefaultMetaData
-        description="A cool website by cktsun1031!"
-        title="Login"
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{ title, description }}
       />
       <AuthWrapperPage>
         <LoginBlock />

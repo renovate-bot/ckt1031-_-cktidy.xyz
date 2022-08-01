@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -15,10 +16,12 @@ import { RecoilRoot } from 'recoil';
 import { ErrorDemostrationPage } from '../components/error';
 import ApplicationLayout from '../components/layouts/application';
 import Lightbox from '../components/lightbox';
+import seoConfig from '../utils/seo-config';
 
 export default function NextApplcation({ Component, pageProps }: AppProps) {
   return (
     <ErrorBoundary FallbackComponent={ErrorDemostrationPage}>
+      <DefaultSeo {...seoConfig} />
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>

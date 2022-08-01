@@ -11,7 +11,6 @@ import { FiSearch } from 'react-icons/fi';
 import { Post } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
 import Image from '../image';
-import { DefaultMetaData } from '../seo';
 
 export interface BlogListProp {
   posts: Post[];
@@ -165,33 +164,30 @@ export default function ListPage({
   const localList = searchKey.length > 0 ? filteredPosts : displayPosts;
 
   return (
-    <>
-      <DefaultMetaData title="Blog" />
-      <div className="max-w-[700px] text-2xl">
-        <div className="border-b-2 border-gray-300 dark:border-gray-600">
-          <div className="mb-2">
-            <h1 className="text-6xl">Blog</h1>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              I have started this website since July 2022, I am writing blog to
-              share meaningful things to the world
-            </p>
-            <div className="mt-3 mb-2 flex flex-row items-center space-x-3 rounded-xl bg-gray-300 py-1 px-3 dark:bg-gray-600">
-              <FiSearch />
-              <input
-                placeholder="Search"
-                onChange={onSearch}
-                className="w-full bg-transparent p-1"
-              />
-            </div>
+    <div className="max-w-[700px] text-2xl">
+      <div className="border-b-2 border-gray-300 dark:border-gray-600">
+        <div className="mb-2">
+          <h1 className="text-6xl">Blog</h1>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
+            I have started this website since July 2022, I am writing blog to
+            share meaningful things to the world
+          </p>
+          <div className="mt-3 mb-2 flex flex-row items-center space-x-3 rounded-xl bg-gray-300 py-1 px-3 dark:bg-gray-600">
+            <FiSearch />
+            <input
+              placeholder="Search"
+              onChange={onSearch}
+              className="w-full bg-transparent p-1"
+            />
           </div>
         </div>
-        <List postList={localList} />
-        {searchKey.length === 0 &&
-          pagination.totalPages > 0 &&
-          pagination.totalPages - 1 !== 0 && (
-            <Pageination pagination={pagination} />
-          )}
       </div>
-    </>
+      <List postList={localList} />
+      {searchKey.length === 0 &&
+        pagination.totalPages > 0 &&
+        pagination.totalPages - 1 !== 0 && (
+          <Pageination pagination={pagination} />
+        )}
+    </div>
   );
 }

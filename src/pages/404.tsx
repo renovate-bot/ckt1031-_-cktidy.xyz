@@ -1,11 +1,10 @@
 import Link from 'next/link';
-
-import { DefaultMetaData } from '../components/seo';
+import { NextSeo } from 'next-seo';
 
 export default function NotFoundPage() {
   return (
     <>
-      <DefaultMetaData disableIndex title="404" />
+      <NextSeo nofollow noindex title="404" />
       <div className="flex flex-col items-center justify-center">
         <div className="xs:mt-40 flex flex-col items-center justify-center md:flex-row">
           <div className="flex flex-col text-center">
