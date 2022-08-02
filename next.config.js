@@ -1,22 +1,23 @@
 // @ts-check
 
 const withPWA = require('next-pwa');
-const withPlugins = require('next-compose-plugins');
+const intercept = require('intercept-stdout');
 const TerserPlugin = require('terser-webpack-plugin');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 const CompressionPlugin = require('compression-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
-const intercept = require('intercept-stdout');
+const { withRoutes } = require('nextjs-routes/next-config.cjs');
 
-function interceptStdout(text) {
+intercept(text => {
   if (text.includes('Duplicate atom key')) {
     return '';
   }
   return text;
-}
-
-intercept(interceptStdout);
+});
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -51,8 +52,7 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  generateEstags: false,
-  reactStrictMode: false,
+  reactStrictMode: true,
   poweredByHeader: false,
   compress: isProduction,
   swcMinify: isProduction,
@@ -94,9 +94,9 @@ const nextConfig = {
       config.optimization.minimizer = [];
       config.optimization.minimizer.push(
         new TerserPlugin(),
+        new CssMinimizerPlugin(),
         new JsonMinimizerPlugin(),
         new HtmlMinimizerPlugin(),
-        new CssMinimizerPlugin(),
       );
       config.plugins.push(new CompressionPlugin());
     }
@@ -113,14 +113,16 @@ const nextConfig = {
   },
 };
 
-const pwaOptions = {
-  pwa: {
-    scope: '/app',
-    dest: 'public',
-    register: true,
-  },
-};
+const options = isProduction
+  ? withPWA({
+      ...nextConfig,
+      pwa: {
+        scope: '/app',
+        dest: 'public',
+        register: isProduction,
+        disable: !isProduction,
+      },
+    })
+  : nextConfig;
 
-const plugins = isProduction ? [[withPWA, pwaOptions]] : [];
-
-module.exports = withPlugins(plugins, nextConfig);
+module.exports = withBundleAnalyzer(withRoutes(options));

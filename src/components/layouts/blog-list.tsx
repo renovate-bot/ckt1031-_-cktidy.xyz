@@ -30,6 +30,9 @@ interface ListPrtop {
 }
 
 function Pageination({ pagination }: PageinationProp) {
+  const isTopPage = pagination.currentPage - 1 === 1;
+  const toPagePath = '/blog/page/[number]';
+
   return (
     <div className="border-t-2 border-gray-400 dark:border-gray-600">
       <div className="mt-3 flex flex-row justify-between px-2 py-1">
@@ -37,11 +40,12 @@ function Pageination({ pagination }: PageinationProp) {
           {pagination.currentPage - 1 > 0 && (
             <Link
               passHref
-              href={
-                pagination.currentPage - 1 === 1
-                  ? '/blog'
-                  : `/blog/page/${pagination.currentPage - 1}`
-              }>
+              href={{
+                pathname: isTopPage ? '/blog' : toPagePath,
+                query: {
+                  number: (pagination.currentPage - 1).toString(),
+                },
+              }}>
               <button
                 type="button"
                 className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700">
@@ -69,7 +73,14 @@ function Pageination({ pagination }: PageinationProp) {
                       'rounded-lg px-2 py-1',
                     )}
                     key={`PAGINATION-${index}`}>
-                    <Link passHref href={`/blog/page/${pageNumber}`}>
+                    <Link
+                      passHref
+                      href={{
+                        pathname: toPagePath,
+                        query: {
+                          number: pageNumber.toString(),
+                        },
+                      }}>
                       {pageNumber}
                     </Link>
                   </div>
@@ -83,7 +94,14 @@ function Pageination({ pagination }: PageinationProp) {
         </div>
         <div>
           {pagination.currentPage + 1 <= pagination.totalPages && (
-            <Link passHref href={`/blog/page/${pagination.currentPage + 1}`}>
+            <Link
+              passHref
+              href={{
+                pathname: toPagePath,
+                query: {
+                  number: (pagination.currentPage + 1).toString(),
+                },
+              }}>
               <button
                 type="button"
                 className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700">
@@ -112,9 +130,16 @@ function List({ postList }: ListPrtop) {
                   post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
                   'break-words',
                 )}>
-                <a href={`/blog/${post.slug.current}`} className="text-3xl">
-                  {post.title}
-                </a>
+                <Link
+                  passHref
+                  href={{
+                    pathname: '/blog/[slug]',
+                    query: {
+                      slug: post.slug.current,
+                    },
+                  }}>
+                  <span className="cursor-pointer text-3xl">{post.title}</span>
+                </Link>
                 <p className="text-xl text-gray-600 dark:text-gray-400">
                   {post.breif}
                 </p>

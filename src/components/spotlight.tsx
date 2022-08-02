@@ -93,7 +93,9 @@ export default function Spotlight() {
                               type="button"
                               className="w-full text-left"
                               onClick={() => {
-                                push(value.href);
+                                push({
+                                  pathname: value.href as never,
+                                });
                                 toggleSpotlightDisplay();
                               }}>
                               {value.name}

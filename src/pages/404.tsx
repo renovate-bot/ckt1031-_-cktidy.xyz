@@ -17,7 +17,7 @@ export default function NotFoundPage() {
             </div>
           </div>
         </div>
-        <Link passHref href="/">
+        <Link passHref href={{ pathname: '/' }}>
           <button className="button-normal mt-6" type="button">
             Return to home
           </button>

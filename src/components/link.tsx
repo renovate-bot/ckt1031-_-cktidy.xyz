@@ -19,9 +19,11 @@ export default function Textlink({
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
 
+  const pathname = href as never;
+
   if (isInternalLink) {
     return (
-      <Link href={href}>
+      <Link passHref href={{ pathname }}>
         <a {...rest}>{children}</a>
       </Link>
     );
