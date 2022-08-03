@@ -180,9 +180,14 @@ export default function ListPage({
 
   const filteredPosts = posts.filter(post => {
     const searchContent = [post.title, post.breif, post.slug.current];
-    for (const content of searchContent) {
-      if (typeof content !== 'string') return false;
-      return content.toLowerCase().includes(searchKey.toLowerCase());
+    for (let i = 0, l = searchContent.length; i < l; i++) {
+      const content = searchContent[i];
+
+      const isMatched = content.toLowerCase().includes(searchKey.toLowerCase());
+
+      if (isMatched) return true;
+      else if (i === 2) return false;
+      else continue;
     }
   });
 
