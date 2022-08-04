@@ -5,7 +5,7 @@ const intercept = require('intercept-stdout');
 const TerserPlugin = require('terser-webpack-plugin');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-  openAnalyzer: false
+  openAnalyzer: false,
 });
 const CompressionPlugin = require('compression-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');

@@ -1,20 +1,15 @@
-import dayjs from 'dayjs';
-import type { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
 import packageInfo from '../../package.json';
 import TextLink from '../components/link';
 import config from '../data/config.json';
 
-function Details(props: InferGetStaticPropsType<typeof getStaticProps>) {
+function DetailBlock() {
   return (
     <div className="flex flex-col items-center text-2xl">
       <h1 className="text-5xl">Technology</h1>
       <div className="mt-10 space-y-8">
         <div className="mb-5">
-          <p className="italic text-green-600 dark:text-green-500">
-            Last built at {props.buildDate}
-          </p>
           <p>Edition: v{packageInfo.version}</p>
         </div>
         <div>
@@ -81,9 +76,7 @@ function Details(props: InferGetStaticPropsType<typeof getStaticProps>) {
   );
 }
 
-export default function TechnologyPage(
-  props: InferGetStaticPropsType<typeof getStaticProps>,
-) {
+export default function TechnologyPage() {
   const title = 'Technology';
   const description =
     'You can have a quick look of what technologies I have been using when building this website.';
@@ -95,17 +88,7 @@ export default function TechnologyPage(
         description={description}
         openGraph={{ title, description }}
       />
-      <Details {...props} />
+      <DetailBlock />
     </>
   );
-}
-
-export function getStaticProps() {
-  const buildDate = dayjs(Date.now()).format('YYYY/MM/DD hh:mm');
-
-  return {
-    props: {
-      buildDate,
-    },
-  };
 }
