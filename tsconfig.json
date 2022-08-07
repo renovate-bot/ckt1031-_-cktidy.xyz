@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "checkJs": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,12 +17,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "cypress.config.ts",
-    "src/components/mdx.jsx"
-  ],
-  "typeRoots": ["./src/", "./node_modules/@types/"]
+  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"]
 }

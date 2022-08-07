@@ -21,15 +21,11 @@ export interface BlogListProp {
   };
 }
 
-interface PageinationProp {
+function Pageination({
+  pagination,
+}: {
   pagination: BlogListProp['pagination'];
-}
-
-interface ListPrtop {
-  postList: Post[];
-}
-
-function Pageination({ pagination }: PageinationProp) {
+}) {
   const isTopPage = pagination.currentPage - 1 === 1;
   const toPagePath = '/blog/page/[number]';
 
@@ -116,7 +112,7 @@ function Pageination({ pagination }: PageinationProp) {
   );
 }
 
-function List({ postList }: ListPrtop) {
+function List({ postList }: { postList: Post[] }) {
   return (
     <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
       {postList.length > 0 ? (

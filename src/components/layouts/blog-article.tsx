@@ -7,8 +7,13 @@ import { urlForImage } from '../../utils/sanity/tools';
 import Image from '../image';
 import mdxComponents from '../mdx-components';
 
+interface BlogPropExtend {
+  author: Author;
+  tags: Tag[];
+}
+
 export interface BlogProp {
-  post: Post;
+  post: Omit<Post, keyof BlogPropExtend> & BlogPropExtend;
   dateName: string;
   readingTime: ReadTimeResults;
   content: Post['body'];
@@ -20,12 +25,12 @@ export function BlogDisplayPage({
   content,
   dateName,
 }: BlogProp) {
-  const author = post.author as unknown as Author;
-  const tags = post.tags ? (post.tags as unknown as Tag[]) : undefined;
+  const author = post.author;
+  const tags = post.tags;
 
   const readingMinutes =
     readingTime.minutes >= 1
-      ? `${Math.round(readingTime.minutes)}`
+      ? Math.round(readingTime.minutes)
       : 'Less than 1 ' + 'minutes';
 
   return (

@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useRecoilState, useResetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import { firebaseUserAtom } from '../../recoil/user';
 import { auth } from '../../utils/firebase/sdk';
@@ -32,7 +32,6 @@ export function AuthWrapperPage({
   disableLoading = false,
 }: PropsWithChildren<AuthUserPageOptions>) {
   const [isInitalizing, setInitalizing] = useState(true);
-  const resetUser = useResetRecoilState(firebaseUserAtom);
   const [userInfo, setUserInfo] = useRecoilState(firebaseUserAtom);
 
   // Listen to Auth State
@@ -59,12 +58,12 @@ export function AuthWrapperPage({
     });
 
     return () => subscribe();
-  }, [resetUser, setUserInfo, userInfo?.uid]);
+  }, [setUserInfo, userInfo?.uid]);
 
   const logOut = useCallback(async () => {
     await signOut(auth);
-    resetUser();
-  }, [resetUser]);
+    setUserInfo(undefined);
+  }, [setUserInfo]);
 
   return (
     <AuthContext.Provider value={{ userInfo, logOut }}>

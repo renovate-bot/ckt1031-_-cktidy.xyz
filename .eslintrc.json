@@ -41,7 +41,8 @@
     "unicorn/no-nested-ternary": 0,
     "no-secrets/no-secrets": "error",
     "react/jsx-newline": 0,
-    "unicorn/no-abusive-eslint-disable": 0
+    "unicorn/no-abusive-eslint-disable": 0,
+    "unicorn/no-useless-undefined": 0
   },
   "overrides": [
     {

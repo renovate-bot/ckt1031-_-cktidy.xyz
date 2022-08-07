@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
+import type { OpenGraphMedia } from 'next-seo/lib/types';
 import readingTimeModule from 'reading-time';
 
 import {
@@ -57,20 +58,20 @@ export default function Blog(props: BlogProp) {
   const author = post.author as unknown as Author;
   const thumbnail = props.post.thumbnail;
 
-  const ogImage = [];
-  const articleImages = [];
+  const articleImages: string[] = [];
+  const ogImage: OpenGraphMedia[] = [];
 
   if (thumbnail) {
-    const _url = urlForImage(thumbnail).url();
+    const thumbUrl = urlForImage(thumbnail).url();
 
     ogImage.push({
-      url: _url,
+      url: thumbUrl,
       width: thumbnail.hotspot?.width,
       height: thumbnail.hotspot?.height,
       alt: props.post.title,
     });
 
-    articleImages.push(_url);
+    articleImages.push(thumbUrl);
   }
 
   return (

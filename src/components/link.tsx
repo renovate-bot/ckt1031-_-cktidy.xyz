@@ -3,27 +3,31 @@ import Link from 'next/link';
 import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import { HiExternalLink } from 'react-icons/hi';
 
+type TextLinkProp = DetailedHTMLProps<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+> & {
+  noDefaultColours?: boolean;
+  enableExternalIcon?: boolean;
+};
+
 export default function Textlink({
   children,
   href,
   noDefaultColours = false,
   enableExternalIcon = false,
   ...rest
-}: DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
-> & {
-  noDefaultColours?: boolean;
-  enableExternalIcon?: boolean;
-}) {
+}: TextLinkProp) {
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
 
-  const pathname = href as never;
-
   if (isInternalLink) {
     return (
-      <Link passHref href={{ pathname }}>
+      <Link
+        passHref
+        href={{
+          pathname: href as never,
+        }}>
         <a {...rest}>{children}</a>
       </Link>
     );

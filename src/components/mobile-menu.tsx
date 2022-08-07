@@ -7,12 +7,12 @@ import { MdClose, MdMenu } from 'react-icons/md';
 import config from '../data/config.json';
 import Link from './link';
 
-type NavPages = {
+interface PagesProp {
   showMenu: boolean;
   toggleMenu: () => void;
-};
+}
 
-function MenuNavigationPages({ showMenu, toggleMenu }: NavPages) {
+function MenuNavigationPages({ showMenu, toggleMenu }: PagesProp) {
   const { route } = useRouter();
 
   return (
