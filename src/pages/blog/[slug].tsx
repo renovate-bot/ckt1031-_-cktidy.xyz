@@ -9,6 +9,7 @@ import {
   BlogDisplayPage,
   BlogProp,
 } from '../../components/layouts/blog-article';
+import ScrollProgressBar from '../../components/scroll-progress-bar';
 import config from '../../data/config.json';
 import { parseMdx } from '../../utils/mdx';
 import sanityClient from '../../utils/sanity/client';
@@ -103,6 +104,7 @@ export default function Blog(props: BlogProp) {
         publisherName={author.name}
         publisherLogo={urlForImage(author.avatar).url()}
       />
+      <ScrollProgressBar />
       <BlogDisplayPage {...props} />
     </>
   );

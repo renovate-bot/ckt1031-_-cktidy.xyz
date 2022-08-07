@@ -17,7 +17,7 @@
   "scripts": {
     "build": "next build",
     "postbuild": "next-sitemap",
-    "dev": "cross-env ANALYZE=true next dev",
+    "dev": "cross-env ANALYZE=false next dev",
     "lint": "tsc && prettier . -w && eslint . --fix && next lint",
     "lint-staged": "lint-staged",
     "lint:check": "tsc && eslint . --fix && next lint",
