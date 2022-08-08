@@ -3,10 +3,6 @@
 const withPWA = require('next-pwa');
 const intercept = require('intercept-stdout');
 const TerserPlugin = require('terser-webpack-plugin');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-  openAnalyzer: false,
-});
 const CompressionPlugin = require('compression-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
@@ -124,4 +120,4 @@ const options = isProduction
     })
   : nextConfig;
 
-module.exports = withBundleAnalyzer(withRoutes(options));
+module.exports = withRoutes(options);

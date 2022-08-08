@@ -3,4 +3,4 @@
 
 npm run lint:next
 npm run lint:type
-npm run lint-staged
+npx lint-staged
