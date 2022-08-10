@@ -1,0 +1,31 @@
+name: TypeCheck and Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version: 18
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Lint Project
+        run: pnpm lint
+
+      - name: Super-Lint Project
+        uses: github/super-linter@v4.9.5
+        with:
+          DEFAULT_BRANCH: main
+

@@ -19,9 +19,8 @@
     "postbuild": "next-sitemap",
     "commit": "cz",
     "dev": "cross-env next dev",
-    "lint": "tsc && prettier . -w && eslint . --fix && next lint",
-    "lint:next": "next lint",
-    "lint:style": "prettier . -w",
+    "format": "prettier . -w",
+    "lint": "tsc --noEmit && eslint . --fix && next lint",
     "lint:type": "tsc",
     "prepare": "husky install",
     "start": "next start"
