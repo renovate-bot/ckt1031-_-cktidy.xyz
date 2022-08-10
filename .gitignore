@@ -15,7 +15,6 @@ yarn-error.log*
 .env*.local
 .vercel
 *.tsbuildinfo
-pnpm-lock.yaml
 .firebaserc
 firebase-debug.log
 ui-debug.log
