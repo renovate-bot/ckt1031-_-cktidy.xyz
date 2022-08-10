@@ -25,10 +25,4 @@ jobs:
         run: pnpm install
 
       - name: Lint Project
-        run: pnpm lint
-
-      - name: Super-Lint Project
-        uses: github/super-linter@v4.9.5
-        with:
-          DEFAULT_BRANCH: main
-
+        run: pnpm lint        
