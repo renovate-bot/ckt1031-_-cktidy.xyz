@@ -10,6 +10,7 @@ import { signWithGoogle } from '../utils/firebase/auth';
 function OauthLoginBlock() {
   const loginAction = useCallback(async () => {
     const status = await signWithGoogle();
+
     if (status === AuthErrorCodes.USER_DISABLED) {
       toast.error('Account Disabled!');
     }

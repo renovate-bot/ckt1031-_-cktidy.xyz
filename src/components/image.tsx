@@ -14,8 +14,8 @@ interface ImageProp {
 }
 
 interface ImageDataProp {
-  placeholder: ImageProps['placeholder'];
   blurDataURL: string;
+  placeholder: ImageProps['placeholder'];
 }
 
 export default function Image({
@@ -40,7 +40,6 @@ export default function Image({
   const blurData: ImageDataProp = {
     placeholder: blurEnabled ? 'blur' : 'empty',
     blurDataURL:
-      // eslint-disable-next-line no-secrets/no-secrets
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcvWS1LgAGJQIpt50GkgAAAABJRU5ErkJggg==',
   };
 

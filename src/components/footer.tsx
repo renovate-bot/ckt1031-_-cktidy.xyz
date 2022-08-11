@@ -24,28 +24,23 @@ function SocialMediaRow() {
 
 function FooterLinksAndCopyright() {
   return (
-    <div>
-      <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0">
-        {config.footer.routes.map((item, index) => {
-          return (
-            <Fragment key={`FOOTER-LINKS-${trim(item.name)}`}>
-              <p className="footer-text-interaction">
-                <Link href={item.href}>{item.name}</Link>
-              </p>
+    <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0">
+      {config.footer.routes.map((item, index) => {
+        return (
+          <Fragment key={`FOOTER-LINKS-${trim(item.name)}`}>
+            <span className="footer-text-interaction">
+              <Link href={item.href}>{item.name}</Link>
+            </span>
 
-              {config.footer.routes.length - 1 !== index && (
-                <p className="hidden text-gray-400 dark:text-gray-500 sm:block">
-                  {' '}
-                  |{' '}
-                </p>
-              )}
-            </Fragment>
-          );
-        })}
-      </div>
-      <p>
-        &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
-      </p>
+            {config.footer.routes.length - 1 !== index && (
+              <span className="hidden text-gray-400 dark:text-gray-500 sm:block">
+                {' '}
+                |{' '}
+              </span>
+            )}
+          </Fragment>
+        );
+      })}
     </div>
   );
 }
@@ -65,9 +60,12 @@ function LicenseBadge() {
 
 export default function DefaultFooter() {
   return (
-    <footer className="footer-theme display-font">
+    <footer className="footer-default display-font">
       <SocialMediaRow />
       <FooterLinksAndCopyright />
+      <p>
+        &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
+      </p>
       <LicenseBadge />
     </footer>
   );

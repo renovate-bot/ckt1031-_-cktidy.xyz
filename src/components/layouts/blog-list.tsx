@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { Omit } from 'lodash';
 import trim from 'lodash/trim';
 import Link from 'next/link';
 import { ChangeEvent, useCallback, useState } from 'react';
@@ -21,11 +22,7 @@ export interface BlogListProp {
   };
 }
 
-function Pageination({
-  pagination,
-}: {
-  pagination: BlogListProp['pagination'];
-}) {
+function Pageination({ pagination }: Omit<BlogListProp, 'posts' | 'displayPosts'>) {
   const isTopPage = pagination.currentPage - 1 === 1;
   const toPagePath = '/blog/page/[number]';
 

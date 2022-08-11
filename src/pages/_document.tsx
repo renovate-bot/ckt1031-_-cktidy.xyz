@@ -1,4 +1,3 @@
-/* eslint-disable no-secrets/no-secrets */
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class AppDocument extends Document {

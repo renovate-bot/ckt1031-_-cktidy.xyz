@@ -3,10 +3,9 @@ import sortBy from 'lodash/sortBy';
 import trim from 'lodash/trim';
 import uniqBy from 'lodash/uniqBy';
 import { useRouter } from 'next/router';
-import { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
-import useAsyncEffect from 'use-async-effect';
 
 import { pageList, PageListProp } from '../data/pages';
 
@@ -20,11 +19,20 @@ export default function Spotlight() {
     val.name.toLowerCase(),
   );
 
-  const onEsc = (event: KeyboardEvent) => {
-    if (event.key === 'Escape' && display) setDisplay(false);
-  };
+  const onEsc = useCallback(
+    (event: KeyboardEvent) => {
+      if (display && event.key === 'Escape') {
+        setDisplay(false);
+      }
+    },
+    [display],
+  );
 
-  useAsyncEffect(() => {
+  useEffect(() => {
+    document.body.style.overflow = display ? 'hidden' : 'auto';
+  }, [display]);
+
+  useEffect(() => {
     setSearchList(pageList);
 
     document.addEventListener('keydown', onEsc);
@@ -32,21 +40,21 @@ export default function Spotlight() {
     return () => {
       document.removeEventListener('keydown', onEsc);
     };
-  }, [display]);
+  }, [onEsc]);
 
   const toggleSpotlightDisplay = useCallback(() => {
-    setDisplay(value => !value);
+    setDisplay(state => !state);
   }, []);
 
   const onType = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (!value) setSearchList(pageList);
     else {
-      setSearchList(list => {
-        return list.filter(page => {
-          return page.name.toLowerCase().includes(value.toLowerCase());
-        });
-      });
+      setSearchList(list =>
+        list.filter(page =>
+          page.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      );
     }
   }, []);
 
@@ -61,12 +69,12 @@ export default function Spotlight() {
       <AnimatePresence>
         {display && (
           <motion.div
-            className="fixed inset-0 z-50 h-screen w-screen bg-gray-500/80 dark:bg-gray-900/80"
+            className="fixed inset-0 z-50 h-screen w-screen bg-gray-500/80 backdrop-blur-sm dark:bg-gray-900/80"
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease: 'easeIn' }}>
-            <div className="relative flex h-screen w-screen items-center justify-center">
+            <div className="flex h-screen w-screen items-center justify-center">
               <div className="p-5">
                 <div className="rounded-lg bg-gray-200 p-3 shadow-2xl dark:bg-gray-600 md:w-[650px]">
                   <div className="border-b border-gray-500">
