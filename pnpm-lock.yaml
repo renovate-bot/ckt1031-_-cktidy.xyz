@@ -27,7 +27,6 @@ specifiers:
   eslint-config-next: ^12.2.4
   eslint-config-prettier: ^8.5.0
   eslint-plugin-autofix: ^1.1.0
-  eslint-plugin-no-secrets: ^0.8.9
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-promise: ^6.0.0
   eslint-plugin-react: ^7.30.1
@@ -144,7 +143,6 @@ devDependencies:
   eslint-config-next: 12.2.4_qugx7qdu5zevzvxaiqyxfiwquq
   eslint-config-prettier: 8.5.0_eslint@8.21.0
   eslint-plugin-autofix: 1.1.0_eslint@8.21.0
-  eslint-plugin-no-secrets: 0.8.9_eslint@8.21.0
   eslint-plugin-prettier: 4.2.1_h62lvancfh4b7r6zn2dgodrh5e
   eslint-plugin-promise: 6.0.0_eslint@8.21.0
   eslint-plugin-react: 7.30.1_eslint@8.21.0
@@ -4508,15 +4506,6 @@ packages:
       language-tags: 1.0.5
       minimatch: 3.1.2
       semver: 6.3.0
-    dev: true
-
-  /eslint-plugin-no-secrets/0.8.9_eslint@8.21.0:
-    resolution: {integrity: sha512-CqaBxXrImABCtxMWspAnm8d5UKkpNylC7zqVveb+fJHEvsSiNGJlSWzdSIvBUnW1XhJXkzifNIZQC08rEII5Ng==}
-    engines: {node: '>=10.0.0', npm: '>=6.9.0'}
-    peerDependencies:
-      eslint: '>=3.0.0'
-    dependencies:
-      eslint: 8.21.0
     dev: true
 
   /eslint-plugin-prettier/4.2.1_h62lvancfh4b7r6zn2dgodrh5e:
