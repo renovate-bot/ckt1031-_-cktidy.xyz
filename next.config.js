@@ -2,11 +2,6 @@
 
 const withPWA = require('next-pwa');
 const intercept = require('intercept-stdout');
-const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
-const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
 const { withRoutes } = require('nextjs-routes/next-config.cjs');
 
 intercept(text => {
@@ -79,23 +74,11 @@ const nextConfig = {
     styledComponents: isProduction,
     reactRemoveProperties: isProduction,
   },
-  webpack: (config, { dev }) => {
+  webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
-    if (!dev) {
-      config.optimization.minimizer = [];
-      config.optimization.minimizer.push(
-        new TerserPlugin(),
-        new CssMinimizerPlugin(),
-        new JsonMinimizerPlugin(),
-        new HtmlMinimizerPlugin(),
-      );
-      config.plugins.push(new CompressionPlugin());
-    }
-
     return config;
   },
   async headers() {

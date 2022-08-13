@@ -1,9 +1,10 @@
 {
   "env": {
-    "commonjs": true,
-    "es2022": true,
+    "es6": true,
     "node": true,
-    "es6": true
+    "es2022": true,
+    "browser": true,
+    "commonjs": true
   },
   "parser": "@typescript-eslint/parser",
   "extends": [

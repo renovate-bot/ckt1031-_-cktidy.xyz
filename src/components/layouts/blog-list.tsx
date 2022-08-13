@@ -22,7 +22,9 @@ export interface BlogListProp {
   };
 }
 
-function Pageination({ pagination }: Omit<BlogListProp, 'posts' | 'displayPosts'>) {
+function Pageination({
+  pagination,
+}: Omit<BlogListProp, 'posts' | 'displayPosts'>) {
   const isTopPage = pagination.currentPage - 1 === 1;
   const toPagePath = '/blog/page/[number]';
 
