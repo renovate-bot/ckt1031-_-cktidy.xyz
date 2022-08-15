@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useCallback, useEffect } from 'react';
 import {
   MdClose,
   MdCopyAll,
@@ -15,8 +14,6 @@ import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 
 import { lightboxAtom } from '../recoil/image';
-
-const onCopy = () => toast.success('Copied');
 
 export default function Lightbox() {
   const data = useRecoilValue(lightboxAtom);
@@ -39,6 +36,11 @@ export default function Lightbox() {
       window.addEventListener('keydown', handleKeydown);
     };
   }, [data.display, resetData]);
+
+  const onCopy = useCallback(async (content: string) => {
+    await navigator.clipboard.writeText(content);
+    toast.success('Copied');
+  }, []);
 
   return (
     <AnimatePresence>
@@ -92,9 +94,11 @@ export default function Lightbox() {
                       data-for="copy-url"
                       type="button"
                       className="rounded-lg bg-slate-700 p-2 text-white shadow-2xl">
-                      <CopyToClipboard text={imageUrlForCopy} onCopy={onCopy}>
+                      <button
+                        type="button"
+                        onClick={() => onCopy(imageUrlForCopy)}>
                         <MdCopyAll size={21} />
-                      </CopyToClipboard>
+                      </button>
                       <ReactTooltip id="copy-url">
                         <span className="text-2xl">Copy URL</span>
                       </ReactTooltip>

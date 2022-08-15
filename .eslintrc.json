@@ -8,24 +8,12 @@
   },
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "next",
     "next/core-web-vitals",
-    "prettier",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:unicorn/recommended",
-    "plugin:promise/recommended",
-    "plugin:sonarjs/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": [
-    "autofix",
-    "sonarjs",
-    "unicorn",
-    "prettier",
-    "simple-import-sort",
-    "@typescript-eslint"
-  ],
+  "plugins": ["simple-import-sort", "@typescript-eslint"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "ecmaFeatures": {
@@ -37,12 +25,7 @@
     "react/react-in-jsx-scope": 0,
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "unicorn/prevent-abbreviations": 0,
-    "unicorn/prefer-module": 0,
-    "unicorn/no-nested-ternary": 0,
-    "react/jsx-newline": 0,
-    "unicorn/no-abusive-eslint-disable": 0,
-    "unicorn/no-useless-undefined": 0
+    "react/jsx-newline": 0
   },
   "overrides": [
     {

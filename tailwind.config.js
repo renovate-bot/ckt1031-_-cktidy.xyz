@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 // @ts-check
 
 const { neutral } = require('tailwindcss/colors');
