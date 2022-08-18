@@ -1,9 +1,8 @@
-import cn from 'classnames';
-import trim from 'lodash/trim';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import config from '../data/config.json';
+import { classnames, trim } from '../utils/tools';
 import Link from './link';
 import MobileMenu from './mobile-menu';
 import Spotlight from './spotlight';
@@ -15,7 +14,7 @@ function NavigationBarPages() {
   return (
     <nav className="hidden flex-row space-x-1 md:flex">
       {config.headbar.routes.map(item => {
-        const className = cn(
+        const className = classnames(
           item.href === route && 'text-orange-500',
           ' hover:bg-gray-200 dark:hover:bg-gray-600 rounded',
           'block py-1 px-3 text-center link-underline',
@@ -48,7 +47,7 @@ export default function Header() {
 
   return (
     <header
-      className={cn(
+      className={classnames(
         showShadow && 'shadow-md',
         'headbar-default fixed w-screen bg-gray-100 dark:bg-gray-900',
       )}>

@@ -1,8 +1,8 @@
-import trim from 'lodash/trim';
 import { Fragment } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
 import config from '../data/config.json';
+import { trim } from '../utils/tools';
 import Image from './image';
 import Link from './link';
 

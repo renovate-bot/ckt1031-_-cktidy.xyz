@@ -1,6 +1,3 @@
-import cn from 'classnames';
-import { Omit } from 'lodash';
-import trim from 'lodash/trim';
 import Link from 'next/link';
 import { ChangeEvent, useCallback, useState } from 'react';
 import {
@@ -11,6 +8,7 @@ import { FiSearch } from 'react-icons/fi';
 
 import { Post } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
+import { classnames, trim } from '../../utils/tools';
 import Image from '../image';
 
 export interface BlogListProp {
@@ -62,7 +60,7 @@ function Pageination({
               ) {
                 return (
                   <div
-                    className={cn(
+                    className={classnames(
                       pagination.currentPage === pageNumber &&
                         'bg-orange-400 dark:bg-orange-700',
                       'rounded-lg px-2 py-1',
@@ -121,7 +119,7 @@ function List({ postList }: { postList: Post[] }) {
               key={`BLOG-LIST-${trim(post.slug.current)}`}
               className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
               <div
-                className={cn(
+                className={classnames(
                   post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
                   'break-words',
                 )}>

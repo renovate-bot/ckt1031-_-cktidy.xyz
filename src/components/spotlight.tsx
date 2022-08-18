@@ -1,13 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import sortBy from 'lodash/sortBy';
-import trim from 'lodash/trim';
-import uniqBy from 'lodash/uniqBy';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 
 import { pageList, PageListProp } from '../data/pages';
+import { trim } from '../utils/tools';
 
 export default function Spotlight() {
   const { push } = useRouter();
@@ -15,24 +13,20 @@ export default function Spotlight() {
   const [display, setDisplay] = useState(false);
   const [searchList, setSearchList] = useState<PageListProp[]>([]);
 
-  const sortedList = sortBy(uniqBy(searchList, 'href'), val =>
-    val.name.toLowerCase(),
-  );
-
-  const onEsc = useCallback(
-    (event: KeyboardEvent) => {
-      if (display && event.key === 'Escape') {
-        setDisplay(false);
-      }
-    },
-    [display],
-  );
+  // sort by alphabetical order.
+  const sortedList = searchList.sort((a, b) => a.name.localeCompare(b.name));
 
   useEffect(() => {
     document.body.style.overflow = display ? 'hidden' : 'auto';
   }, [display]);
 
   useEffect(() => {
+    const onEsc = (e: KeyboardEvent) => {
+      if (display && e.key === 'Escape') {
+        setDisplay(false);
+      }
+    };
+
     setSearchList(pageList);
 
     document.addEventListener('keydown', onEsc);
@@ -40,7 +34,7 @@ export default function Spotlight() {
     return () => {
       document.removeEventListener('keydown', onEsc);
     };
-  }, [onEsc]);
+  }, [display]);
 
   const toggleSpotlightDisplay = useCallback(() => {
     setDisplay(state => !state);

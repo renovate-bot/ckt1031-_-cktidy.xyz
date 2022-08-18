@@ -1,10 +1,9 @@
-import classnames from 'classnames';
-import trim from 'lodash/trim';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
 import config from '../data/config.json';
+import { classnames, trim } from '../utils/tools';
 import Link from './link';
 
 interface PagesProp {

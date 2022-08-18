@@ -1,7 +1,8 @@
-import cn from 'classnames';
 import Link from 'next/link';
 import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import { HiExternalLink } from 'react-icons/hi';
+
+import { classnames } from '../utils/tools';
 
 type TextLinkProp = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -44,7 +45,7 @@ export default function Textlink({
   return (
     <a href={href} rel="noopener noreferrer" target="_blank" {...rest}>
       <span
-        className={cn(
+        className={classnames(
           'link-underline',
           noDefaultColours ? '' : 'text-blue-600 dark:text-blue-300',
         )}>

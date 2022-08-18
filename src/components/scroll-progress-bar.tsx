@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import { useEffect, useState } from 'react';
 
 export default function ScrollProgressBar() {
@@ -30,9 +29,7 @@ export default function ScrollProgressBar() {
 
   return (
     <div
-      className={cn(
-        'fixed top-0 left-0 z-50 h-1 bg-blue-700 shadow-xl dark:bg-blue-200',
-      )}
+      className="fixed top-0 left-0 z-50 h-1 bg-blue-700 shadow-xl dark:bg-blue-200"
       style={{
         width: `${barPercentage}%`,
       }}

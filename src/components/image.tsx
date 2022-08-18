@@ -1,9 +1,9 @@
-import cn from 'classnames';
 import NextImage, { type ImageProps } from 'next/image';
 import { useCallback } from 'react';
 import { useSetRecoilState } from 'recoil';
 
 import { lightboxAtom } from '../recoil/image';
+import { classnames } from '../utils/tools';
 
 interface ImageProp {
   src: string;
@@ -44,7 +44,7 @@ export default function Image({
   };
 
   return (
-    <div className={cn(lightboxEnabled && 'cursor-zoom-in')}>
+    <div className={classnames(lightboxEnabled && 'cursor-zoom-in')}>
       <NextImage src={src} onClick={showLightBox} {...rest} {...blurData} />
     </div>
   );

@@ -1,6 +1,7 @@
-import cn from 'classnames';
 import { useCallback, useEffect, useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
+
+import { classnames } from '../utils/tools';
 
 export default function ScollUpButton() {
   const [showScrollUpBtn, setShowScrollUpBtn] = useState(false);
@@ -31,7 +32,7 @@ export default function ScollUpButton() {
           visibility: showScrollUpBtn ? 'visible' : 'hidden',
         }}
         onClick={scrollToTop}
-        className={cn(
+        className={classnames(
           'transition-all ease-linear',
           'rounded-lg bg-gray-300 p-2 shadow-2xl hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-600',
         )}>

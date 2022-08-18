@@ -6,7 +6,6 @@ specifiers:
   '@sanity/webhook': 2.0.0
   '@svgr/webpack': 6.3.1
   '@tailwindcss/typography': 0.5.4
-  '@types/lodash': 4.14.183
   '@types/node': 18.7.6
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -14,7 +13,6 @@ specifiers:
   '@typescript-eslint/parser': 5.33.1
   '@uiball/loaders': 1.2.6
   autoprefixer: 10.4.8
-  classnames: 2.3.1
   commitizen: 4.2.5
   cross-env: 7.0.3
   cssnano: 5.1.13
@@ -31,22 +29,20 @@ specifiers:
   husky: 8.0.1
   intercept-stdout: 0.1.2
   lint-staged: 13.0.3
-  lodash: 4.17.21
   next: 12.2.5
   next-mdx-remote: 4.1.0
   next-pwa: 5.5.5
   next-sanity: 0.8.1
   next-seo: 5.5.0
-  next-sitemap: 3.1.18
+  next-sitemap: 3.1.20
   next-themes: 0.2.0
   nextjs-progressbar: 0.0.14
-  nextjs-routes: 0.0.20
+  nextjs-routes: 0.0.21
   postcss: 8.4.16
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13
   react: 18.2.0
   react-dom: 18.2.0
-  react-error-boundary: 3.1.4
   react-ga: 3.3.1
   react-icons: 4.4.0
   react-toastify: 9.0.8
@@ -73,26 +69,23 @@ dependencies:
   '@sanity/image-url': 1.0.1
   '@sanity/webhook': 2.0.0
   '@uiball/loaders': 1.2.6_biqbaboplfbrettd7655fr4n2y
-  classnames: 2.3.1
   cssnano: 5.1.13_postcss@8.4.16
   csstype: 3.1.0
   dayjs: 1.11.5
   feed: 4.2.2
   firebase: 9.9.2
   framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
-  lodash: 4.17.21
   next: 12.2.5_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
   next-pwa: 5.5.5_next@12.2.5
   next-sanity: 0.8.1_react@18.2.0
   next-seo: 5.5.0_3xcjr4wz26biff45sz3jtokgje
-  next-sitemap: 3.1.18_gzpnnaylvtfluxe3m63vhk6hhm
+  next-sitemap: 3.1.20_gzpnnaylvtfluxe3m63vhk6hhm
   next-themes: 0.2.0_3xcjr4wz26biff45sz3jtokgje
   nextjs-progressbar: 0.0.14_next@12.2.5+react@18.2.0
-  nextjs-routes: 0.0.20_next@12.2.5
+  nextjs-routes: 0.0.21_next@12.2.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-error-boundary: 3.1.4_react@18.2.0
   react-ga: 3.3.1_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   react-toastify: 9.0.8_biqbaboplfbrettd7655fr4n2y
@@ -114,7 +107,6 @@ dependencies:
 devDependencies:
   '@svgr/webpack': 6.3.1
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.8
-  '@types/lodash': 4.14.183
   '@types/node': 18.7.6
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -2792,10 +2784,6 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/lodash/4.14.183:
-    resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
-    dev: true
-
   /@types/long/4.0.2:
     resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
     dev: false
@@ -3519,10 +3507,6 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
-
-  /classnames/2.3.1:
-    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
-    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -6623,8 +6607,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /next-sitemap/3.1.18_gzpnnaylvtfluxe3m63vhk6hhm:
-    resolution: {integrity: sha512-kt0I8Aeepd8NrsExUnexFwQy8ln8Bx4+cBLfcxflyLyVhlTwchDZ/XA/VzqUbhEAqPDfWkNiezPSP9U9+JblJA==}
+  /next-sitemap/3.1.20_gzpnnaylvtfluxe3m63vhk6hhm:
+    resolution: {integrity: sha512-ugcSQpAtwc9fk7fsr5to0yrlA/RjY0kw2wHOUqcrRXnZDwFfBwGnEVvaYbI7C4ZlhvxjJTA3G15QMpvpmvPquw==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
@@ -6706,8 +6690,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /nextjs-routes/0.0.20_next@12.2.5:
-    resolution: {integrity: sha512-ZatVnzv02AGsPOGTmRFQ8zE9/DkGIe3yQei1Zp2mQtqgw7cGJs71OOHXMblhS1gTE203xQG46YDUUVoSrfit9g==}
+  /nextjs-routes/0.0.21_next@12.2.5:
+    resolution: {integrity: sha512-QIbGSF0pHcALkDGjJ8tTgSw1cnwiypTzs0Dqrc0kJPnVLaxEJaGM9Js6lBbs7MEFznv0rV5NTrT7gMv+GwIYZQ==}
     hasBin: true
     peerDependencies:
       next: '*'
@@ -7638,16 +7622,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
-
-  /react-error-boundary/3.1.4_react@18.2.0:
-    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
-    engines: {node: '>=10', npm: '>=6'}
-    peerDependencies:
-      react: '>=16.13.1'
-    dependencies:
-      '@babel/runtime': 7.18.9
-      react: 18.2.0
     dev: false
 
   /react-ga/3.3.1_react@18.2.0:

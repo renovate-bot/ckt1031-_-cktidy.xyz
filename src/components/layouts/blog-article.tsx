@@ -1,9 +1,9 @@
-import trim from 'lodash/trim';
 import { MDXRemote } from 'next-mdx-remote';
 import type { ReadTimeResults } from 'reading-time';
 
 import { Author, Post, Tag } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
+import { trim } from '../../utils/tools';
 import Image from '../image';
 import mdxComponents from '../mdx-components';
 
