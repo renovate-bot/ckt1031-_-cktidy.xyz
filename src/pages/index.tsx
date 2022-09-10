@@ -14,13 +14,15 @@ export default function HomePage() {
         openGraph={{ title, description }}
       />
       <div className="mt-5 mb-10 flex flex-col items-start justify-start">
-        <h1 className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-center text-6xl text-transparent">
+        <h1 className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-center text-4xl font-extrabold text-transparent">
           Chan Ka Tsun
         </h1>
         <div className="flex h-full flex-row justify-between space-x-10">
-          <div className="mt-4 max-w-xl text-2xl text-gray-700 dark:text-gray-400">
-            <p>A secondary school year 4 student in Hong Kong.</p>
-            <div className="mt-5 space-y-2">
+          <div className="mt-2 max-w-xl text-gray-700 dark:text-gray-400">
+            <p className="text-black dark:text-white">
+              A secondary school year 4 student in Hong Kong.
+            </p>
+            <div className="mt-3 space-y-1">
               <p>I started programming since 2022.</p>
               <p>Also love reading especially philosophy.</p>
               <p>

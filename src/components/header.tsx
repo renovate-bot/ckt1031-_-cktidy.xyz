@@ -12,7 +12,7 @@ function NavigationBarPages() {
   const { route } = useRouter();
 
   return (
-    <nav className="hidden flex-row space-x-1 md:flex">
+    <nav className="hidden flex-row gap-1 md:flex">
       {config.headbar.routes.map(item => {
         const className = classnames(
           item.href === route && 'text-orange-500',
@@ -51,7 +51,7 @@ export default function Header() {
         showShadow && 'shadow-md',
         'headbar-default fixed w-screen bg-gray-100 dark:bg-gray-900',
       )}>
-      <div className="flex flex-row items-center justify-between py-2 px-6 text-2xl md:py-3 md:px-16">
+      <div className="flex flex-row items-center justify-between py-2 px-6 text-lg md:py-3 md:px-16">
         <div className="flex flex-row items-center">
           <MobileMenu />
           <NavigationBarPages />

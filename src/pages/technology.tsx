@@ -5,12 +5,12 @@ import config from '../constants/config.json';
 
 function DetailBlock() {
   return (
-    <div className="flex flex-col items-center text-2xl">
+    <div className="flex flex-col items-center">
       <h1 className="text-5xl">Technology</h1>
       <div className="mt-10 space-y-8">
         <div>
-          <div className="mb-3 border-b-2 border-gray-500">
-            <h2 className="mb-1 text-4xl">Quick Look</h2>
+          <div className="mb-3 border-b base-border">
+            <h2 className="mb-1 text-2xl">Quick Look</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
             <p>
@@ -21,8 +21,8 @@ function DetailBlock() {
           </div>
         </div>
         <div className="mb-5">
-          <div className="mb-3 border-b-2 border-gray-500">
-            <h2 className="mb-1 text-4xl">Language</h2>
+          <div className="mb-3 border-b base-border">
+            <h2 className="mb-1 text-2xl">Language</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
             <p>We only provide English version at this moment.</p>
@@ -30,8 +30,8 @@ function DetailBlock() {
           </div>
         </div>
         <div>
-          <div className="mb-3 border-b-2 border-gray-500">
-            <h2 className="mb-1 text-4xl">Frameworks</h2>
+          <div className="mb-3 border-b base-border">
+            <h2 className="mb-1 text-2xl">Frameworks</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
             <p>
@@ -54,8 +54,8 @@ function DetailBlock() {
           </div>
         </div>
         <div>
-          <div className="mb-3 border-b-2 border-gray-500">
-            <h2 className="mb-1 text-4xl">How this works</h2>
+          <div className="mb-3 border-b base-border">
+            <h2 className="mb-1 text-2xl">How this works</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
             <p>

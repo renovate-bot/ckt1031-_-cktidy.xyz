@@ -1,7 +1,6 @@
 // @ts-check
 
 const { neutral } = require('tailwindcss/colors');
-const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -11,15 +10,6 @@ const config = {
     extend: {
       colors: {
         gray: neutral,
-      },
-      fontFamily: {
-        sans: [
-          'Londrina Solid',
-          'Noto Sans TC',
-          'cursive',
-          'sans-serif',
-          ...fontFamily.sans,
-        ],
       },
       typography: theme => ({
         DEFAULT: {

@@ -7,6 +7,7 @@ import {
 import { FiSearch } from 'react-icons/fi';
 
 import classnames from '../../utils/classnames';
+import { getDaysDifference } from '../../utils/date';
 import { Post } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
 import Image from '../image';
@@ -121,20 +122,27 @@ function List({ postList }: { postList: Post[] }) {
               <div
                 className={classnames(
                   post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
-                  'break-words',
+                  'flex max-h-fit flex-col justify-between break-words',
                 )}>
-                <Link
-                  passHref
-                  href={{
-                    pathname: '/blog/[slug]',
-                    query: {
-                      slug: post.slug.current,
-                    },
-                  }}>
-                  <span className="cursor-pointer text-2xl">{post.title}</span>
-                </Link>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
-                  {post.breif}
+                <div>
+                  <Link
+                    passHref
+                    href={{
+                      pathname: '/blog/[slug]',
+                      query: {
+                        slug: post.slug.current,
+                      },
+                    }}>
+                    <span className="cursor-pointer text-2xl">
+                      {post.title}
+                    </span>
+                  </Link>
+                  <p className="text-xl text-gray-600 dark:text-gray-300">
+                    {post.breif}
+                  </p>
+                </div>
+                <p className="text-lg text-gray-500 dark:text-gray-400">
+                  Published: {getDaysDifference(post.publishedAt)}
                 </p>
               </div>
               {post.thumbnail && (
@@ -187,11 +195,11 @@ export default function ListPage({
   const localList = searchKey.length > 0 ? filteredPosts : displayPosts;
 
   return (
-    <div className="max-w-[700px] text-2xl">
+    <div className="max-w-[700px]">
       <div className="border-b-2 border-gray-300 dark:border-gray-600">
         <div className="mb-2">
-          <h1 className="text-4xl font-bold">Blog</h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-400">
+          <h1 className="text-3xl font-bold">Blog</h1>
+          <p className="mt-1 text-gray-600 dark:text-gray-400">
             I have started this website since July 2022, I am writing blog to
             share meaningful things to the world
           </p>

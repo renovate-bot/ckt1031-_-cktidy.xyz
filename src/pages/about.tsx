@@ -17,17 +17,17 @@ export default function AboutPage() {
         openGraph={{ title, description }}
       />
       <div className="flex flex-col items-center">
-        <h1 className="mb-5 text-6xl">About Me</h1>
+        <h1 className="mb-5 text-3xl font-bold">About Me</h1>
         <div className="mb-10 max-w-2xl space-y-10 text-left">
           <div className="mb-7">
             <h2
-              className="base-border mb-4 border-b text-4xl"
+              className="base-border mb-4 border-b text-2xl"
               id="social-media">
               🐋Social Media
             </h2>
             <div className="space-y-2 text-gray-600 dark:text-gray-400">
-              <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
-                <div className="flex flex-row space-x-1">
+              <div className="flex flex-row items-center justify-between space-x-20">
+                <div className="flex flex-row space-x-1 items-center">
                   <BsInstagram />
                   <p>Instagram:</p>
                 </div>
@@ -35,8 +35,8 @@ export default function AboutPage() {
                   @cktidy.1031
                 </Link>
               </div>
-              <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
-                <div className="flex flex-row space-x-1">
+              <div className="flex flex-row items-center justify-between space-x-20">
+                <div className="flex flex-row space-x-1 items-center">
                   <BsDiscord />
                   <p>Discord:</p>
                 </div>
@@ -46,8 +46,8 @@ export default function AboutPage() {
                   wHVPbYHG
                 </Link>
               </div>
-              <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
-                <div className="flex flex-row space-x-1">
+              <div className="flex flex-row items-center justify-between space-x-20">
+                <div className="flex flex-row space-x-1 items-center">
                   <BsTwitter />
                   <p>Twitter:</p>
                 </div>
@@ -55,8 +55,8 @@ export default function AboutPage() {
                   @cktsun1031
                 </Link>
               </div>
-              <div className="flex flex-row items-center justify-between space-x-20 text-2xl">
-                <div className="flex flex-row space-x-1">
+              <div className="flex flex-row items-center justify-between space-x-20">
+                <div className="flex flex-row space-x-1 items-center">
                   <BsGithub />
                   <p>Github:</p>
                 </div>
@@ -67,8 +67,8 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="mb-7">
-            <h2 className="base-border mb-4 border-b text-4xl">🔋Equipments</h2>
-            <div className="space-y-2 text-2xl text-gray-600 dark:text-gray-400">
+            <h2 className="base-border mb-4 border-b text-2xl">🔋Equipments</h2>
+            <div className="space-y-2 text-gray-600 dark:text-gray-400">
               <div className="flex flex-row justify-between space-x-10">
                 <p>Mobile:</p>
                 <p>Xiaomi 10T Pro 5G (8+256GB)</p>
@@ -84,10 +84,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <h2 className="base-border mb-4 border-b text-4xl">
+            <h2 className="base-border mb-4 border-b text-2xl">
               🦣Value of LIFE
             </h2>
-            <div className="space-y-2 text-2xl text-gray-600 dark:text-gray-400">
+            <div className="space-y-2 text-xl text-gray-600 dark:text-gray-400">
               <p>三萬六千日 夜夜當秉燭</p>
               <p>
                 Our life is so short. Seize the day you can play! Enjoy chasing

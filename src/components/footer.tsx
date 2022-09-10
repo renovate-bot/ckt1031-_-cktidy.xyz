@@ -7,7 +7,7 @@ import Link from './link';
 
 function SocialMediaRow() {
   return (
-    <div className="flex flex-row space-x-3 text-xl">
+    <div className="flex flex-row space-x-3">
       <Link noDefaultColours href={config.author.social.instagram}>
         <BsInstagram />
       </Link>
