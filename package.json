@@ -20,7 +20,7 @@
     "commit": "cz",
     "dev": "next dev",
     "format": "prettier . -w",
-    "lint": "tsc --noEmit && eslint . --fix && next lint",
+    "lint": "tsc && eslint . --fix && next lint",
     "lint:type": "tsc",
     "prepare": "husky install",
     "start": "next start"

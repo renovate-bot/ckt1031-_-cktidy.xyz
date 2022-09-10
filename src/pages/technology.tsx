@@ -1,8 +1,7 @@
 import { NextSeo } from 'next-seo';
 
-import packageInfo from '../../package.json';
 import TextLink from '../components/link';
-import config from '../data/config.json';
+import config from '../constants/config.json';
 
 function DetailBlock() {
   return (

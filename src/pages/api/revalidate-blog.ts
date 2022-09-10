@@ -1,7 +1,7 @@
 import { isValidRequest } from '@sanity/webhook';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import config from '../../data/config.json';
+import config from '../../constants/config.json';
 import sanityClient from '../../utils/sanity/client';
 import { allPostQuery, postUpdateQuery } from '../../utils/sanity/query';
 import { Post } from '../../utils/sanity/schema';

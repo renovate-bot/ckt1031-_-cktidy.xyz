@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import config from '../data/config.json';
+import config from '../constants/config.json';
 import classnames from '../utils/classnames';
 import Link from './link';
 import MobileMenu from './mobile-menu';

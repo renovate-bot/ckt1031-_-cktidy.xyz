@@ -1,6 +1,6 @@
 import type { DefaultSeoProps } from 'next-seo';
 
-import config from '../data/config.json';
+import config from '../constants/config.json';
 import { isDev } from './instance';
 
 const seoConfig: DefaultSeoProps = {

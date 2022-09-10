@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
-import config from '../data/config.json';
+import config from '../constants/config.json';
 import classnames from '../utils/classnames';
 import Link from './link';
 

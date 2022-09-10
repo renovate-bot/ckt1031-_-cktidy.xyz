@@ -4,7 +4,7 @@ import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 
-import { pageList, PageListProp } from '../data/pages';
+import { pageList, PageListProp } from '../constants/pages';
 
 export default function Spotlight() {
   const { push } = useRouter();
