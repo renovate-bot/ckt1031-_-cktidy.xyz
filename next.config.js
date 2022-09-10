@@ -70,14 +70,14 @@ const nextConfig = {
 
 const options = isProduction
   ? withPWA({
-    ...nextConfig,
-    pwa: {
-      scope: '/app',
-      dest: 'public',
-      register: isProduction,
-      disable: !isProduction,
-    },
-  })
+      ...nextConfig,
+      pwa: {
+        scope: '/app',
+        dest: 'public',
+        register: isProduction,
+        disable: !isProduction,
+      },
+    })
   : nextConfig;
 
 module.exports = withRoutes(options);

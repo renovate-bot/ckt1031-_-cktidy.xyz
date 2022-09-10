@@ -1,8 +1,0 @@
-{
-  "cleanUrls": true,
-  "github": {
-    "enabled": false
-  },
-  "public": false,
-  "trailingSlash": false
-}

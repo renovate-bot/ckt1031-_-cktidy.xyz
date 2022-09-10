@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="mb-10 max-w-2xl space-y-10 text-left">
           <div className="mb-7">
             <h2
-              className="mb-4 border-b base-border text-4xl"
+              className="base-border mb-4 border-b text-4xl"
               id="social-media">
               🐋Social Media
             </h2>
@@ -67,9 +67,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="mb-7">
-            <h2 className="mb-4 border-b base-border text-4xl">
-              🔋Equipments
-            </h2>
+            <h2 className="base-border mb-4 border-b text-4xl">🔋Equipments</h2>
             <div className="space-y-2 text-2xl text-gray-600 dark:text-gray-400">
               <div className="flex flex-row justify-between space-x-10">
                 <p>Mobile:</p>
@@ -86,7 +84,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <h2 className="mb-4 border-b base-border text-4xl">
+            <h2 className="base-border mb-4 border-b text-4xl">
               🦣Value of LIFE
             </h2>
             <div className="space-y-2 text-2xl text-gray-600 dark:text-gray-400">

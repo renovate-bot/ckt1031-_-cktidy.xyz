@@ -69,7 +69,7 @@ export default function Spotlight() {
             transition={{ duration: 0.15, ease: 'easeIn' }}>
             <div className="flex h-screen w-screen items-center justify-center">
               <div className="px-5">
-                <div className="mb-5 rounded-md base-border border bg-gray-100 p-3 shadow-2xl dark:bg-gray-800">
+                <div className="base-border mb-5 rounded-md border bg-gray-100 p-3 shadow-2xl dark:bg-gray-800">
                   <div className="border-b border-gray-500">
                     <div className="flex flex-row items-center justify-start space-x-4 px-3 py-1">
                       <FiSearch />
