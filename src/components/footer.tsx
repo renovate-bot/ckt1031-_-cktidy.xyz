@@ -2,7 +2,6 @@ import { Fragment } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
 import config from '../data/config.json';
-import { trim } from '../utils/tools';
 import Image from './image';
 import Link from './link';
 
@@ -27,7 +26,7 @@ function FooterLinksAndCopyright() {
     <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0">
       {config.footer.routes.map((item, index) => {
         return (
-          <Fragment key={`FOOTER-LINKS-${trim(item.name)}`}>
+          <Fragment key={`FOOTER-LINKS-${item.name.trim()}`}>
             <span className="footer-text-interaction">
               <Link href={item.href}>{item.name}</Link>
             </span>

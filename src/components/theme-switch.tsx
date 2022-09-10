@@ -3,15 +3,11 @@ import { useTheme } from 'next-themes';
 import { useCallback, useEffect, useState } from 'react';
 import { MdComputer, MdDarkMode, MdLightMode } from 'react-icons/md';
 
-export enum ThemeNames {
-  Dark = 'dark',
-  System = 'system',
-  Light = 'light',
-}
+type ThemeNames = 'system' | 'light' | 'dark';
 
 export default function ThemeSwitcher() {
   const { setTheme, theme, themes } = useTheme();
-  const [themeName, setThemeName] = useState<string>(ThemeNames.System);
+  const [themeName, setThemeName] = useState<ThemeNames>('system');
 
   const toggleThemes = useCallback(() => {
     if (theme) {
@@ -21,7 +17,7 @@ export default function ThemeSwitcher() {
   }, [setTheme, theme, themes]);
 
   useEffect(() => {
-    if (theme) setThemeName(theme);
+    if (theme) setThemeName(theme as ThemeNames);
   }, [theme]);
 
   return (
@@ -38,9 +34,9 @@ export default function ThemeSwitcher() {
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.2, ease: 'easeInOut' }}
         onClick={toggleThemes}>
-        {themeName === ThemeNames.System ? (
+        {themeName === 'system' ? (
           <MdComputer />
-        ) : themeName === ThemeNames.Dark ? (
+        ) : themeName === 'dark' ? (
           <MdDarkMode />
         ) : (
           <MdLightMode />

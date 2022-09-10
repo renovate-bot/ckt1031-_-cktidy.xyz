@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
 import config from '../data/config.json';
-import { classnames, trim } from '../utils/tools';
+import classnames from '../utils/classnames';
 import Link from './link';
 
 interface PagesProp {
@@ -31,7 +31,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: PagesProp) {
             return (
               <button
                 type="button"
-                key={`MOBILENAV-PAGES-${trim(item.name)}`}
+                key={`MOBILENAV-PAGES-${item.name.trim()}`}
                 className={_className}
                 onClick={toggleMenu}>
                 <Link href={item.href}>{item.name}</Link>

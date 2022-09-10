@@ -7,16 +7,21 @@ declare module "nextjs-routes" {
   export type Route =
     | { pathname: "/404"; query?: Query | undefined }
     | { pathname: "/about"; query?: Query | undefined }
-    | { pathname: "/account"; query?: Query | undefined }
     | { pathname: "/api/revalidate-blog"; query?: Query | undefined }
-    | { pathname: "/blog/[slug]"; query: Query<{ "slug": string }> }
     | { pathname: "/blog"; query?: Query | undefined }
     | { pathname: "/blog/page/[number]"; query: Query<{ "number": string }> }
+    | { pathname: "/blog/[slug]"; query: Query<{ "slug": string }> }
     | { pathname: "/"; query?: Query | undefined }
-    | { pathname: "/login"; query?: Query | undefined }
     | { pathname: "/technology"; query?: Query | undefined };
 
   type Query<Params = {}> = Params & { [key: string]: string | string[] | undefined };
+
+  /**
+   * A typesafe utility function for generating paths in your application.
+   *
+   * route({ pathname: '/foos/[foo]', query: { foo: 'bar' }}) will produce '/foos/bar'.
+   */
+  export declare function route(r: Route): string;
 }
 
 // prettier-ignore

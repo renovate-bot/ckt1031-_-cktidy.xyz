@@ -3,7 +3,6 @@ import type { ReadTimeResults } from 'reading-time';
 
 import { Author, Post, Tag } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
-import { trim } from '../../utils/tools';
 import Image from '../image';
 import mdxComponents from '../mdx-components';
 
@@ -90,7 +89,7 @@ export function BlogDisplayPage({
             <div className="mt-3 flex items-center space-x-2">
               {tags.map(tag => {
                 return (
-                  <div key={trim(tag.name)}>
+                  <div key={tag.name.trim()}>
                     <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
                       #{tag.name}
                     </p>

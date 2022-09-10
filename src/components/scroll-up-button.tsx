@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 
-import { classnames } from '../utils/tools';
+import classnames from '../utils/classnames';
 
 export default function ScollUpButton() {
   const [showScrollUpBtn, setShowScrollUpBtn] = useState(false);

@@ -6,9 +6,9 @@ import {
 } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 
+import classnames from '../../utils/classnames';
 import { Post } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
-import { classnames, trim } from '../../utils/tools';
 import Image from '../image';
 
 export interface BlogListProp {
@@ -116,7 +116,7 @@ function List({ postList }: { postList: Post[] }) {
         postList.map(post => {
           return (
             <div
-              key={`BLOG-LIST-${trim(post.slug.current)}`}
+              key={`BLOG-LIST-${post.slug.current.trim()}`}
               className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
               <div
                 className={classnames(
@@ -131,7 +131,7 @@ function List({ postList }: { postList: Post[] }) {
                       slug: post.slug.current,
                     },
                   }}>
-                  <span className="cursor-pointer text-3xl">{post.title}</span>
+                  <span className="cursor-pointer text-2xl">{post.title}</span>
                 </Link>
                 <p className="text-xl text-gray-600 dark:text-gray-400">
                   {post.breif}
@@ -190,12 +190,12 @@ export default function ListPage({
     <div className="max-w-[700px] text-2xl">
       <div className="border-b-2 border-gray-300 dark:border-gray-600">
         <div className="mb-2">
-          <h1 className="text-6xl">Blog</h1>
+          <h1 className="text-4xl font-bold">Blog</h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400">
             I have started this website since July 2022, I am writing blog to
             share meaningful things to the world
           </p>
-          <div className="mt-3 mb-2 flex flex-row items-center space-x-3 rounded-xl bg-gray-300 py-1 px-3 dark:bg-gray-600">
+          <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border bg-gray-200 py-1 px-3 dark:bg-gray-600">
             <FiSearch />
             <input
               placeholder="Search"

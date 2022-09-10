@@ -7,7 +7,7 @@ import config from '../data/config.json';
 export default function AboutPage() {
   const title = 'About Me';
   const description =
-    'Hello, I am Chan Ka Tsun which is a energetic boy living in Hong Kong SAR, I love programming and reading!';
+    'Hello, I am Chan Ka Tsun who is a energetic boy living in Hong Kong, I love programming and reading!';
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="mb-10 max-w-2xl space-y-10 text-left">
           <div className="mb-7">
             <h2
-              className="mb-4 border-spacing-y-9 border-b-2 border-gray-500 text-4xl"
+              className="mb-4 border-b base-border text-4xl"
               id="social-media">
               🐋Social Media
             </h2>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="mb-7">
-            <h2 className="mb-4 border-b-2 border-gray-500 text-4xl">
+            <h2 className="mb-4 border-b base-border text-4xl">
               🔋Equipments
             </h2>
             <div className="space-y-2 text-2xl text-gray-600 dark:text-gray-400">
@@ -86,7 +86,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <h2 className="mb-4 border-b-2 border-gray-500 text-4xl">
+            <h2 className="mb-4 border-b base-border text-4xl">
               🦣Value of LIFE
             </h2>
             <div className="space-y-2 text-2xl text-gray-600 dark:text-gray-400">

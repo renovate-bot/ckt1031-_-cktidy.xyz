@@ -1,5 +1,6 @@
-import { Feed } from 'feed';
 import { writeFileSync } from 'node:fs';
+
+import { Feed } from 'feed';
 
 import config from '../data/config.json';
 import { Author, Post } from './sanity/schema';

@@ -1,9 +1,10 @@
-import NextImage, { type ImageProps } from 'next/image';
-import { useCallback } from 'react';
-import { useSetRecoilState } from 'recoil';
+/* eslint-disable @next/next/no-img-element */
+import 'react-photo-view/dist/react-photo-view.css';
 
-import { lightboxAtom } from '../recoil/image';
-import { classnames } from '../utils/tools';
+import NextImage, { type ImageProps } from 'next/image';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+import classnames from '../utils/classnames';
 
 interface ImageProp {
   src: string;
@@ -25,18 +26,6 @@ export default function Image({
   lightboxEnabled = false,
   ...rest
 }: ImageProp) {
-  const setLightbox = useSetRecoilState(lightboxAtom);
-
-  const showLightBox = useCallback(() => {
-    if (lightboxEnabled) {
-      setLightbox({
-        display: true,
-        imageUrl: src,
-        imageAlt: alt ?? 'cktidy',
-      });
-    }
-  }, [alt, lightboxEnabled, setLightbox, src]);
-
   const blurData: ImageDataProp = {
     placeholder: blurEnabled ? 'blur' : 'empty',
     blurDataURL:
@@ -44,8 +33,21 @@ export default function Image({
   };
 
   return (
-    <div className={classnames(lightboxEnabled && 'cursor-zoom-in')}>
-      <NextImage src={src} onClick={showLightBox} {...rest} {...blurData} />
-    </div>
+    <PhotoProvider>
+      <div className={classnames(lightboxEnabled && 'cursor-zoom-in')}>
+        {lightboxEnabled ? (
+          <PhotoView src={src}>
+            <img
+              className="mx-auto cursor-zoom-in"
+              src={src}
+              alt={alt}
+              {...rest}
+            />
+          </PhotoView>
+        ) : (
+          <NextImage src={src} {...rest} {...blurData} />
+        )}
+      </div>
+    </PhotoProvider>
   );
 }

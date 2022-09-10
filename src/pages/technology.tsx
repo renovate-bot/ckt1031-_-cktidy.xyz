@@ -9,9 +9,6 @@ function DetailBlock() {
     <div className="flex flex-col items-center text-2xl">
       <h1 className="text-5xl">Technology</h1>
       <div className="mt-10 space-y-8">
-        <div className="mb-5">
-          <p>Edition: v{packageInfo.version}</p>
-        </div>
         <div>
           <div className="mb-3 border-b-2 border-gray-500">
             <h2 className="mb-1 text-4xl">Quick Look</h2>

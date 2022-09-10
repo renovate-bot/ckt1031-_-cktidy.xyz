@@ -4,10 +4,6 @@
 @tailwind variants;
 @tailwind screens;
 
-.firebase-emulator-warning {
-  visibility: hidden;
-}
-
 ::selection {
   color: white;
   background: #6a9fe4;
@@ -71,4 +67,8 @@ body {
 
 .blog-article-container {
   @apply prose max-w-none dark:prose-dark;
+}
+
+.base-border {
+  @apply border-gray-300 dark:border-gray-600;
 }

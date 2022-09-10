@@ -5,7 +5,6 @@ import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 
 import { pageList, PageListProp } from '../data/pages';
-import { trim } from '../utils/tools';
 
 export default function Spotlight() {
   const { push } = useRouter();
@@ -69,8 +68,8 @@ export default function Spotlight() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease: 'easeIn' }}>
             <div className="flex h-screen w-screen items-center justify-center">
-              <div className="p-5">
-                <div className="rounded-lg bg-gray-200 p-3 shadow-2xl dark:bg-gray-600 md:w-[650px]">
+              <div className="px-5">
+                <div className="mb-5 rounded-md base-border border bg-gray-100 p-3 shadow-2xl dark:bg-gray-800">
                   <div className="border-b border-gray-500">
                     <div className="flex flex-row items-center justify-start space-x-4 px-3 py-1">
                       <FiSearch />
@@ -89,7 +88,7 @@ export default function Spotlight() {
                       sortedList.map(value => {
                         return (
                           <div
-                            key={`SEARCHITEM-${trim(value.name)}`}
+                            key={`SEARCHITEM-${value.name.trim()}`}
                             className="rounded-lg py-2 px-3 hover:bg-gray-300 hover:dark:bg-gray-700">
                             <button
                               type="button"

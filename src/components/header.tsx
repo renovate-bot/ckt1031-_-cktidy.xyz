@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import config from '../data/config.json';
-import { classnames, trim } from '../utils/tools';
+import classnames from '../utils/classnames';
 import Link from './link';
 import MobileMenu from './mobile-menu';
 import Spotlight from './spotlight';
@@ -21,7 +21,7 @@ function NavigationBarPages() {
         );
 
         return (
-          <Link href={item.href} key={`NAVBAR-LINKS-${trim(item.name)}`}>
+          <Link href={item.href} key={`NAVBAR-LINKS-${item.name.trim()}`}>
             <p className={className}>{item.name}</p>
           </Link>
         );
