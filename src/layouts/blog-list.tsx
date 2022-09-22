@@ -6,11 +6,11 @@ import {
 } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 
-import classnames from '../../utils/classnames';
-import { getDaysDifference } from '../../utils/date';
-import { Post } from '../../utils/sanity/schema';
-import { urlForImage } from '../../utils/sanity/tools';
-import Image from '../image';
+import Image from '../components/image';
+import classnames from '../utils/classnames';
+import { getDaysDifference } from '../utils/date';
+import { Post } from '../utils/sanity/schema';
+import { urlForImage } from '../utils/sanity/tools';
 
 export interface BlogListProp {
   posts: Post[];

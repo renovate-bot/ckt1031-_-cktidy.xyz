@@ -1,5 +1,3 @@
-// @ts-check
-
 const { neutral } = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */

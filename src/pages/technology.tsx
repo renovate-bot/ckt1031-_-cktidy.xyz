@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 
 import TextLink from '../components/link';
-import config from '../constants/config.json';
+import config from '../data/config.json';
 
 function DetailBlock() {
   return (
@@ -9,7 +9,7 @@ function DetailBlock() {
       <h1 className="text-5xl">Technology</h1>
       <div className="mt-10 space-y-8">
         <div>
-          <div className="mb-3 border-b base-border">
+          <div className="base-border mb-3 border-b">
             <h2 className="mb-1 text-2xl">Quick Look</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
@@ -21,7 +21,7 @@ function DetailBlock() {
           </div>
         </div>
         <div className="mb-5">
-          <div className="mb-3 border-b base-border">
+          <div className="base-border mb-3 border-b">
             <h2 className="mb-1 text-2xl">Language</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
@@ -30,7 +30,7 @@ function DetailBlock() {
           </div>
         </div>
         <div>
-          <div className="mb-3 border-b base-border">
+          <div className="base-border mb-3 border-b">
             <h2 className="mb-1 text-2xl">Frameworks</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
@@ -54,7 +54,7 @@ function DetailBlock() {
           </div>
         </div>
         <div>
-          <div className="mb-3 border-b base-border">
+          <div className="base-border mb-3 border-b">
             <h2 className="mb-1 text-2xl">How this works</h2>
           </div>
           <div className="text-gray-600 dark:text-gray-400">

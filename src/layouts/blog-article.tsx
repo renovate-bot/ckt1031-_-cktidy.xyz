@@ -1,10 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote';
 import type { ReadTimeResults } from 'reading-time';
 
-import { Author, Post, Tag } from '../../utils/sanity/schema';
-import { urlForImage } from '../../utils/sanity/tools';
-import Image from '../image';
-import mdxComponents from '../mdx-components';
+import Image from '../components/image';
+import mdxComponents from '../components/mdx-components';
+import { Author, Post, Tag } from '../utils/sanity/schema';
+import { urlForImage } from '../utils/sanity/tools';
 
 interface BlogPropExtend {
   author: Author;

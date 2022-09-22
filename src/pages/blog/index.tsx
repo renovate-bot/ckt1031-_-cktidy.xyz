@@ -1,8 +1,8 @@
 import type { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
-import BlogList from '../../components/layouts/blog-list';
-import config from '../../constants/config.json';
+import config from '../../data/config.json';
+import BlogList from '../../layouts/blog-list';
 import sanityClient from '../../utils/sanity/client';
 import { allPostQuery } from '../../utils/sanity/query';
 import { Post } from '../../utils/sanity/schema';

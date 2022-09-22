@@ -1,7 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, memo } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
-import config from '../constants/config.json';
+import config from '../data/config.json';
 import Image from './image';
 import Link from './link';
 
@@ -57,7 +57,7 @@ function LicenseBadge() {
   );
 }
 
-export default function DefaultFooter() {
+function DefaultFooter() {
   return (
     <footer className="footer-default display-font">
       <SocialMediaRow />
@@ -69,3 +69,5 @@ export default function DefaultFooter() {
     </footer>
   );
 }
+
+export default memo(DefaultFooter);

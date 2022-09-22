@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { memo, useState } from 'react';
+import { useEvent } from 'react-use';
 
-import config from '../constants/config.json';
+import config from '../data/config.json';
 import classnames from '../utils/classnames';
 import Link from './link';
 import MobileMenu from './mobile-menu';
@@ -30,20 +31,12 @@ function NavigationBarPages() {
   );
 }
 
-export default function Header() {
+function Header() {
   const [showShadow, setShowShadow] = useState(false);
 
-  useEffect(() => {
-    const scrollEvent = () => {
-      setShowShadow(window.scrollY > 200);
-    };
-
-    window.addEventListener('scroll', scrollEvent);
-
-    return () => {
-      window.removeEventListener('scroll', scrollEvent);
-    };
-  }, []);
+  useEvent('scroll', () => {
+    setShowShadow(window.scrollY > 200);
+  });
 
   return (
     <header
@@ -64,3 +57,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default memo(Header);

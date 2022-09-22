@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import { BsDiscord, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 import Link from '../components/link';
-import config from '../constants/config.json';
+import config from '../data/config.json';
 
 export default function AboutPage() {
   const title = 'About Me';
@@ -27,7 +27,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-2 text-gray-600 dark:text-gray-400">
               <div className="flex flex-row items-center justify-between space-x-20">
-                <div className="flex flex-row space-x-1 items-center">
+                <div className="flex flex-row items-center space-x-1">
                   <BsInstagram />
                   <p>Instagram:</p>
                 </div>
@@ -36,7 +36,7 @@ export default function AboutPage() {
                 </Link>
               </div>
               <div className="flex flex-row items-center justify-between space-x-20">
-                <div className="flex flex-row space-x-1 items-center">
+                <div className="flex flex-row items-center space-x-1">
                   <BsDiscord />
                   <p>Discord:</p>
                 </div>
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 </Link>
               </div>
               <div className="flex flex-row items-center justify-between space-x-20">
-                <div className="flex flex-row space-x-1 items-center">
+                <div className="flex flex-row items-center space-x-1">
                   <BsTwitter />
                   <p>Twitter:</p>
                 </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
                 </Link>
               </div>
               <div className="flex flex-row items-center justify-between space-x-20">
-                <div className="flex flex-row space-x-1 items-center">
+                <div className="flex flex-row items-center space-x-1">
                   <BsGithub />
                   <p>Github:</p>
                 </div>

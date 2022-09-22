@@ -1,5 +1,3 @@
-// @ts-check
-
 const withPWA = require('next-pwa');
 const { withRoutes } = require('nextjs-routes/next-config.cjs');
 

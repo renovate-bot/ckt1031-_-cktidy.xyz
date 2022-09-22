@@ -5,12 +5,9 @@ import { ArticleJsonLd, NextSeo } from 'next-seo';
 import type { OpenGraphMedia } from 'next-seo/lib/types';
 import readingTimeModule from 'reading-time';
 
-import {
-  BlogDisplayPage,
-  BlogProp,
-} from '../../components/layouts/blog-article';
 import ScrollProgressBar from '../../components/scroll-progress-bar';
-import config from '../../constants/config.json';
+import config from '../../data/config.json';
+import { BlogDisplayPage, BlogProp } from '../../layouts/blog-article';
 import { parseMdx } from '../../utils/mdx';
 import sanityClient from '../../utils/sanity/client';
 import { postSingleQuery, postSlugQuery } from '../../utils/sanity/query';

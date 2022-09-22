@@ -1,26 +1,19 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
+import { useEvent } from 'react-use';
 
 import classnames from '../utils/classnames';
 
 export default function ScollUpButton() {
   const [showScrollUpBtn, setShowScrollUpBtn] = useState(false);
 
-  useEffect(() => {
-    const scrollEvent = () => {
-      setShowScrollUpBtn(window.scrollY > 400);
-    };
+  useEvent('scroll', () => {
+    setShowScrollUpBtn(window.scrollY > 400);
+  });
 
-    window.addEventListener('scroll', scrollEvent);
-
-    return () => {
-      window.removeEventListener('scroll', scrollEvent);
-    };
-  }, [showScrollUpBtn]);
-
-  const scrollToTop = useCallback(() => {
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+  };
 
   return (
     <div className="fixed right-6 bottom-6 flex flex-row">

@@ -3,14 +3,15 @@ import { useRouter } from 'next/router';
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
+import { useKeyPressEvent } from 'react-use';
 
-import { pageList, PageListProp } from '../constants/pages';
+import { pageList, PageListProp } from '../data/pages';
 
 export default function Spotlight() {
   const { push } = useRouter();
 
   const [display, setDisplay] = useState(false);
-  const [searchList, setSearchList] = useState<PageListProp[]>([]);
+  const [searchList, setSearchList] = useState<PageListProp[]>(pageList);
 
   // sort by alphabetical order.
   const sortedList = searchList.sort((a, b) => a.name.localeCompare(b.name));
@@ -19,27 +20,15 @@ export default function Spotlight() {
     document.body.style.overflow = display ? 'hidden' : 'auto';
   }, [display]);
 
-  useEffect(() => {
-    const onEsc = (e: KeyboardEvent) => {
-      if (display && e.key === 'Escape') {
-        setDisplay(false);
-      }
-    };
-
-    setSearchList(pageList);
-
-    document.addEventListener('keydown', onEsc);
-
-    return () => {
-      document.removeEventListener('keydown', onEsc);
-    };
-  }, [display]);
+  useKeyPressEvent('Escape', () => {
+    setDisplay(false);
+  });
 
   const toggleSpotlightDisplay = useCallback(() => {
     setDisplay(state => !state);
   }, []);
 
-  const onType = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+  const onType = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (!value) setSearchList(pageList);
     else {
@@ -49,7 +38,7 @@ export default function Spotlight() {
         ),
       );
     }
-  }, []);
+  };
 
   return (
     <>

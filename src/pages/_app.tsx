@@ -7,7 +7,7 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 
-import ApplicationLayout from '../components/layouts/application';
+import ApplicationLayout from '../layouts/application';
 import seoConfig from '../utils/seo-config';
 
 export default function NextApplcation({ Component, pageProps }: AppProps) {
