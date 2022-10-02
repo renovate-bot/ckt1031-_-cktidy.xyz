@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import { ChangeEvent, useCallback, useState } from 'react';
-import {
-  FaRegArrowAltCircleLeft,
-  FaRegArrowAltCircleRight,
-} from 'react-icons/fa';
+import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 
 import Image from '../components/image';
@@ -21,9 +18,7 @@ export interface BlogListProp {
   };
 }
 
-function Pageination({
-  pagination,
-}: Omit<BlogListProp, 'posts' | 'displayPosts'>) {
+function Pageination({ pagination }: Omit<BlogListProp, 'posts' | 'displayPosts'>) {
   const isTopPage = pagination.currentPage - 1 === 1;
   const toPagePath = '/blog/page/[number]';
 
@@ -51,40 +46,32 @@ function Pageination({
         </div>
         <div className="flex flex-row items-center justify-center space-x-1">
           {pagination.currentPage - 2 > 0 && <div>...</div>}
-          {[...Array.from({ length: pagination.totalPages })].map(
-            (_, index) => {
-              const pageNumber = index + 1;
+          {[...Array.from({ length: pagination.totalPages })].map((_, index) => {
+            const pageNumber = index + 1;
 
-              if (
-                pageNumber >= pagination.currentPage - 3 &&
-                pageNumber <= pagination.currentPage + 3
-              ) {
-                return (
-                  <div
-                    className={classnames(
-                      pagination.currentPage === pageNumber &&
-                        'bg-orange-400 dark:bg-orange-700',
-                      'rounded-lg px-2 py-1',
-                    )}
-                    key={`PAGINATION-${index}`}>
-                    <Link
-                      passHref
-                      href={{
-                        pathname: toPagePath,
-                        query: {
-                          number: pageNumber.toString(),
-                        },
-                      }}>
-                      {pageNumber}
-                    </Link>
-                  </div>
-                );
-              }
-            },
-          )}
-          {pagination.currentPage + 2 - pagination.totalPages < 0 && (
-            <div>...</div>
-          )}
+            if (pageNumber >= pagination.currentPage - 3 && pageNumber <= pagination.currentPage + 3) {
+              return (
+                <div
+                  className={classnames(
+                    pagination.currentPage === pageNumber && 'bg-orange-400 dark:bg-orange-700',
+                    'rounded-lg px-2 py-1',
+                  )}
+                  key={`PAGINATION-${index}`}>
+                  <Link
+                    passHref
+                    href={{
+                      pathname: toPagePath,
+                      query: {
+                        number: pageNumber.toString(),
+                      },
+                    }}>
+                    {pageNumber}
+                  </Link>
+                </div>
+              );
+            }
+          })}
+          {pagination.currentPage + 2 - pagination.totalPages < 0 && <div>...</div>}
         </div>
         <div>
           {pagination.currentPage + 1 <= pagination.totalPages && (
@@ -133,13 +120,9 @@ function List({ postList }: { postList: Post[] }) {
                         slug: post.slug.current,
                       },
                     }}>
-                    <span className="cursor-pointer text-2xl">
-                      {post.title}
-                    </span>
+                    <span className="cursor-pointer text-2xl">{post.title}</span>
                   </Link>
-                  <p className="text-xl text-gray-600 dark:text-gray-300">
-                    {post.breif}
-                  </p>
+                  <p className="text-xl text-gray-600 dark:text-gray-300">{post.breif}</p>
                 </div>
                 <p className="text-lg text-gray-500 dark:text-gray-400">
                   Published: {getDaysDifference(post.publishedAt)}
@@ -167,11 +150,7 @@ function List({ postList }: { postList: Post[] }) {
   );
 }
 
-export default function ListPage({
-  posts,
-  displayPosts,
-  pagination,
-}: BlogListProp) {
+export default function ListPage({ posts, displayPosts, pagination }: BlogListProp) {
   const [searchKey, setSearchKey] = useState('');
 
   const onSearch = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -200,25 +179,18 @@ export default function ListPage({
         <div className="mb-2">
           <h1 className="text-3xl font-bold">Blog</h1>
           <p className="mt-1 text-gray-600 dark:text-gray-400">
-            I have started this website since July 2022, I am writing blog to
-            share meaningful things to the world
+            I have started this website since July 2022, I am writing blog to share meaningful things to the world
           </p>
           <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border bg-gray-200 py-1 px-3 dark:bg-gray-600">
             <FiSearch />
-            <input
-              placeholder="Search"
-              onChange={onSearch}
-              className="w-full bg-transparent p-1"
-            />
+            <input placeholder="Search" onChange={onSearch} className="w-full bg-transparent p-1" />
           </div>
         </div>
       </div>
       <List postList={localList} />
-      {searchKey.length === 0 &&
-        pagination.totalPages > 0 &&
-        pagination.totalPages - 1 !== 0 && (
-          <Pageination pagination={pagination} />
-        )}
+      {searchKey.length === 0 && pagination.totalPages > 0 && pagination.totalPages - 1 !== 0 && (
+        <Pageination pagination={pagination} />
+      )}
     </div>
   );
 }

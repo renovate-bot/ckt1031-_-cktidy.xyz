@@ -11,18 +11,12 @@ export default function AboutPage() {
 
   return (
     <>
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={{ title, description }}
-      />
+      <NextSeo title={title} description={description} openGraph={{ title, description }} />
       <div className="flex flex-col items-center">
         <h1 className="mb-5 text-3xl font-bold">About Me</h1>
         <div className="mb-10 max-w-2xl space-y-10 text-left">
           <div className="mb-7">
-            <h2
-              className="base-border mb-4 border-b text-2xl"
-              id="social-media">
+            <h2 className="base-border mb-4 border-b text-2xl" id="social-media">
               🐋Social Media
             </h2>
             <div className="space-y-2 text-gray-600 dark:text-gray-400">
@@ -40,9 +34,7 @@ export default function AboutPage() {
                   <BsDiscord />
                   <p>Discord:</p>
                 </div>
-                <Link
-                  enableExternalIcon
-                  href={config.author.social.discordServer}>
+                <Link enableExternalIcon href={config.author.social.discordServer}>
                   wHVPbYHG
                 </Link>
               </div>
@@ -84,15 +76,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <h2 className="base-border mb-4 border-b text-2xl">
-              🦣Value of LIFE
-            </h2>
+            <h2 className="base-border mb-4 border-b text-2xl">🦣Value of LIFE</h2>
             <div className="space-y-2 text-xl text-gray-600 dark:text-gray-400">
               <p>三萬六千日 夜夜當秉燭</p>
-              <p>
-                Our life is so short. Seize the day you can play! Enjoy chasing
-                your DREAM!
-              </p>
+              <p>Our life is so short. Seize the day you can play! Enjoy chasing your DREAM!</p>
             </div>
           </div>
         </div>

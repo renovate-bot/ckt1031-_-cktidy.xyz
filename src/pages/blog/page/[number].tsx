@@ -10,9 +10,7 @@ import { Post } from '../../../utils/sanity/schema';
 export async function getStaticPaths() {
   const posts: Post[] = await sanityClient.fetch(allPostQuery);
 
-  const totalPagesNumber = Math.ceil(
-    posts.length / config.blog.maxDisplayPerPage,
-  );
+  const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
 
   return {
     paths: Array.from({ length: totalPagesNumber }, (_, i) => ({
@@ -24,9 +22,7 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps: GetStaticProps<BlogListProp> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<BlogListProp> = async ({ params }) => {
   if (!params || typeof params.number !== 'string') {
     return { notFound: true };
   }

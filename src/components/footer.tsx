@@ -23,7 +23,7 @@ function SocialMediaRow() {
 
 function FooterLinksAndCopyright() {
   return (
-    <div className="mt-1 mb-1 flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0">
+    <div className="my-1 flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 md:mt-0">
       {config.footer.routes.map((item, index) => {
         return (
           <Fragment key={`FOOTER-LINKS-${item.name.trim()}`}>
@@ -32,10 +32,7 @@ function FooterLinksAndCopyright() {
             </span>
 
             {config.footer.routes.length - 1 !== index && (
-              <span className="hidden text-gray-400 dark:text-gray-500 sm:block">
-                {' '}
-                |{' '}
-              </span>
+              <span className="hidden text-gray-400 dark:text-gray-500 sm:block"> | </span>
             )}
           </Fragment>
         );
@@ -59,7 +56,7 @@ function LicenseBadge() {
 
 function DefaultFooter() {
   return (
-    <footer className="footer-default display-font">
+    <footer className="footer-default">
       <SocialMediaRow />
       <FooterLinksAndCopyright />
       <p>

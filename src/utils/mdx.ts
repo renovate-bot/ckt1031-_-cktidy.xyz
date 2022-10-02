@@ -12,12 +12,7 @@ import remarkUnwrapImages from 'remark-unwrap-images';
 export async function parseMdx(body: string) {
   return await serialize(body, {
     mdxOptions: {
-      remarkPlugins: [
-        remarkParse,
-        remarkGfm,
-        remarkNormalizeHeadings,
-        remarkUnwrapImages,
-      ],
+      remarkPlugins: [remarkParse, remarkGfm, remarkNormalizeHeadings, remarkUnwrapImages],
       rehypePlugins: [
         rehypeSlug,
         rehypeCodeTitles,

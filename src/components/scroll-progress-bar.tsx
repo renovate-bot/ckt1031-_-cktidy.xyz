@@ -6,8 +6,7 @@ export default function ScrollProgressBar() {
   const [barPercentage, setPercentage] = useState(0);
 
   useEvent('scroll', () => {
-    const windowHeight =
-      document.documentElement.offsetHeight - window.innerHeight;
+    const windowHeight = document.documentElement.offsetHeight - window.innerHeight;
 
     window.requestAnimationFrame(() => {
       setPercentage(Math.floor((window.pageYOffset / windowHeight) * 100));
@@ -15,8 +14,7 @@ export default function ScrollProgressBar() {
   });
 
   useEffect(() => {
-    const scrollbarHeight =
-      window.innerHeight * (window.innerHeight / document.body.offsetHeight);
+    const scrollbarHeight = window.innerHeight * (window.innerHeight / document.body.offsetHeight);
 
     setDisplay(scrollbarHeight < 500);
   }, []);

@@ -17,8 +17,8 @@ function NavigationBarPages() {
       {config.headbar.routes.map(item => {
         const className = classnames(
           item.href === route && 'text-orange-500',
-          ' hover:bg-gray-200 dark:hover:bg-gray-600 rounded',
-          'block py-1 px-3 text-center link-underline',
+          ' rounded hover:bg-gray-200 dark:hover:bg-gray-600',
+          'block py-1 px-3 text-center',
         );
 
         return (
@@ -40,10 +40,7 @@ function Header() {
 
   return (
     <header
-      className={classnames(
-        showShadow && 'shadow-md',
-        'headbar-default fixed w-screen bg-gray-100 dark:bg-gray-900',
-      )}>
+      className={classnames(showShadow && 'shadow-md', 'headbar-default fixed w-screen bg-gray-100 dark:bg-gray-900')}>
       <div className="flex flex-row items-center justify-between py-2 px-6 text-lg md:py-3 md:px-16">
         <div className="flex flex-row items-center">
           <MobileMenu />

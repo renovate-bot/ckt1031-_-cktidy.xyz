@@ -19,13 +19,7 @@ interface ImageDataProp {
   placeholder: ImageProps['placeholder'];
 }
 
-export default function Image({
-  src,
-  alt,
-  blurEnabled = true,
-  lightboxEnabled = false,
-  ...rest
-}: ImageProp) {
+export default function Image({ src, alt, blurEnabled = true, lightboxEnabled = false, ...rest }: ImageProp) {
   const blurData: ImageDataProp = {
     placeholder: blurEnabled ? 'blur' : 'empty',
     blurDataURL:
@@ -37,12 +31,7 @@ export default function Image({
       <div className={classnames(lightboxEnabled && 'cursor-zoom-in')}>
         {lightboxEnabled ? (
           <PhotoView src={src}>
-            <img
-              className="mx-auto cursor-zoom-in"
-              src={src}
-              alt={alt}
-              {...rest}
-            />
+            <img className="mx-auto cursor-zoom-in" src={src} alt={alt} {...rest} />
           </PhotoView>
         ) : (
           <NextImage src={src} {...rest} {...blurData} />

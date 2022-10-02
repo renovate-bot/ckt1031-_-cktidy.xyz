@@ -18,19 +18,11 @@ export interface BlogProp {
   content: Post['body'];
 }
 
-export function BlogDisplayPage({
-  post,
-  readingTime,
-  content,
-  dateName,
-}: BlogProp) {
+export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogProp) {
   const author = post.author;
   const tags = post.tags;
 
-  const readingMinutes =
-    readingTime.minutes >= 1
-      ? Math.round(readingTime.minutes)
-      : 'Less than 1 ' + 'minutes';
+  const readingMinutes = readingTime.minutes >= 1 ? Math.round(readingTime.minutes) : 'Less than 1 ' + 'minutes';
 
   return (
     <article>
@@ -54,14 +46,10 @@ export function BlogDisplayPage({
                 <span className="text-gray-500">-</span>
               </>
             )}
-            <span className="italic text-gray-600 dark:text-gray-400">
-              {dateName}
-            </span>
+            <span className="italic text-gray-600 dark:text-gray-400">{dateName}</span>
           </div>
           <div>
-            <p className="italic text-slate-600 dark:text-slate-400">
-              {readingMinutes}
-            </p>
+            <p className="italic text-slate-600 dark:text-slate-400">{readingMinutes}</p>
           </div>
         </div>
       </div>
@@ -90,9 +78,7 @@ export function BlogDisplayPage({
               {tags.map(tag => {
                 return (
                   <div key={tag.name.trim()}>
-                    <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
-                      #{tag.name}
-                    </p>
+                    <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">#{tag.name}</p>
                   </div>
                 );
               })}

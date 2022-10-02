@@ -23,9 +23,7 @@ export async function getStaticProps() {
   return { props: { posts, displayPosts, pagination } };
 }
 
-export default function BlogHome(
-  prop: InferGetStaticPropsType<typeof getStaticProps>,
-) {
+export default function BlogHome(prop: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <NextSeo title="Blog" description="A cool website by cktsun1031!" />

@@ -34,13 +34,7 @@ export default function ThemeSwitcher() {
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.2, ease: 'easeInOut' }}
         onClick={toggleThemes}>
-        {themeName === 'system' ? (
-          <MdComputer />
-        ) : themeName === 'dark' ? (
-          <MdDarkMode />
-        ) : (
-          <MdLightMode />
-        )}
+        {themeName === 'system' ? <MdComputer /> : themeName === 'dark' ? <MdDarkMode /> : <MdLightMode />}
       </motion.button>
     </div>
   );

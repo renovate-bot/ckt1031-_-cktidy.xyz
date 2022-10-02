@@ -1,10 +1,4 @@
-type BaseArugmentType =
-  | BaseArugmentType[]
-  | string
-  | number
-  | boolean
-  | undefined
-  | null;
+type BaseArugmentType = BaseArugmentType[] | string | number | boolean | undefined | null;
 
 type ClassArguments = (BaseArugmentType | BaseArugmentType[])[];
 

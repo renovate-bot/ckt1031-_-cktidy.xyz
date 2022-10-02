@@ -3,11 +3,7 @@ import { ClassAttributes, ImgHTMLAttributes } from 'react';
 import Image from './image';
 
 const components = {
-  img: (
-    props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLImageElement> &
-      ImgHTMLAttributes<HTMLImageElement>,
-  ) => (
+  img: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLImageElement> & ImgHTMLAttributes<HTMLImageElement>) => (
     <Image
       src={props.src ?? ''}
       className="rounded-lg"

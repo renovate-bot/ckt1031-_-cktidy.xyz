@@ -74,16 +74,11 @@ function DetailBlock() {
 
 export default function TechnologyPage() {
   const title = 'Technology';
-  const description =
-    'You can have a quick look of what technologies I have been using when building this website.';
+  const description = 'You can have a quick look of what technologies I have been using when building this website.';
 
   return (
     <>
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={{ title, description }}
-      />
+      <NextSeo title={title} description={description} openGraph={{ title, description }} />
       <DetailBlock />
     </>
   );

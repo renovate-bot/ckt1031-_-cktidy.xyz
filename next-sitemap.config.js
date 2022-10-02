@@ -2,7 +2,7 @@
 const config = {
   siteUrl: process.env.PRODUCTION_URL ?? 'localhost:3000',
   generateRobotsTxt: true,
-  exclude: ['/private/*', '/api/*'],
+  exclude: ['/api/*'],
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/', disallow: ['/404', '/500'] }],
   },

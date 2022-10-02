@@ -1,13 +1,9 @@
 const withPWA = require('next-pwa');
-const { withRoutes } = require('nextjs-routes/next-config.cjs');
+const withRoutes = require('nextjs-routes/config')();
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const securityHeaders = [
-  {
-    key: 'Cache-Control',
-    value: 'public, max-age=10368000, immutable',
-  },
   {
     key: 'X-DNS-Prefetch-Control',
     value: 'on',
@@ -20,6 +16,14 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'origin-when-cross-origin',
   },
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()',
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=31536000; includeSubDomains; preload',
+  },
 ];
 
 /** @type {import('next').NextConfig} */
@@ -28,11 +32,6 @@ const nextConfig = {
   poweredByHeader: false,
   compress: isProduction,
   swcMinify: isProduction,
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true,
-  },
   images: {
     domains: ['i.creativecommons.org', 'cdn.sanity.io'],
   },
@@ -40,12 +39,8 @@ const nextConfig = {
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
   },
-  eslint: {
-    dirs: ['src'],
-  },
   compiler: {
     removeConsole: isProduction,
-    styledComponents: isProduction,
     reactRemoveProperties: isProduction,
   },
   webpack: config => {

@@ -4,10 +4,7 @@ import { HiExternalLink } from 'react-icons/hi';
 
 import classnames from '../utils/classnames';
 
-type TextLinkProp = DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
-> & {
+type TextLinkProp = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & {
   noDefaultColours?: boolean;
   enableExternalIcon?: boolean;
 };
@@ -40,12 +37,7 @@ export default function Textlink({
 
   return (
     <a href={href} rel="noopener noreferrer" target="_blank" {...rest}>
-      <span
-        className={classnames(
-          noDefaultColours ? '' : 'text-blue-600 dark:text-blue-300',
-        )}>
-        {children}
-      </span>
+      <span className={classnames(noDefaultColours ? '' : 'text-blue-600 dark:text-blue-300')}>{children}</span>
       {enableExternalIcon && (
         <span className="relative inline-block align-middle">
           <HiExternalLink />

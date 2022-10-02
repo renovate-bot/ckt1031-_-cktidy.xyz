@@ -32,11 +32,7 @@ export default function Spotlight() {
     const value = e.target.value;
     if (!value) setSearchList(pageList);
     else {
-      setSearchList(list =>
-        list.filter(page =>
-          page.name.toLowerCase().includes(value.toLowerCase()),
-        ),
-      );
+      setSearchList(list => list.filter(page => page.name.toLowerCase().includes(value.toLowerCase())));
     }
   };
 
@@ -44,6 +40,7 @@ export default function Spotlight() {
     <>
       <button
         type="button"
+        aria-label="Spotlight"
         className="rounded-lg p-2 ring-gray-300 hover:bg-gray-200 hover:dark:bg-gray-800"
         onClick={toggleSpotlightDisplay}>
         <FiSearch />
@@ -95,9 +92,7 @@ export default function Spotlight() {
                       })
                     ) : (
                       <div className="w-full">
-                        <p className="mt-3 p-2 text-center text-xl">
-                          No record
-                        </p>
+                        <p className="mt-3 p-2 text-center text-xl">No record</p>
                       </div>
                     )}
                   </div>

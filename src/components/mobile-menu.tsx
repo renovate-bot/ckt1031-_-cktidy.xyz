@@ -25,7 +25,7 @@ function MenuNavigationPages({ showMenu, toggleMenu }: PagesProp) {
           {config.headbar.routes.map(item => {
             const _className = classnames(
               item.href === route && 'text-orange-600 dark:text-orange-300',
-              'py-3 px-3 cursor-pointer text-center',
+              'cursor-pointer p-3 text-center',
             );
 
             return (
@@ -58,8 +58,9 @@ export default function NavigationBarMobileMenu() {
     <div className="md:hidden">
       <button
         id="mobile-nav-menu"
+        aria-label="Mobile Menu"
         type="button"
-        className="item-center flex"
+        className="flex items-center"
         onClick={toggleMenu}>
         {showMenu ? <MdClose /> : <MdMenu />}
       </button>
