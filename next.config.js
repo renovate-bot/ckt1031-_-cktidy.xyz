@@ -33,7 +33,7 @@ const nextConfig = {
   compress: isProduction,
   swcMinify: isProduction,
   images: {
-    domains: ['i.creativecommons.org', 'cdn.sanity.io'],
+    domains: ['licensebuttons.net', 'cdn.sanity.io'],
   },
   env: {
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',

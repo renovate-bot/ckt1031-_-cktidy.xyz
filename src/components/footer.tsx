@@ -48,7 +48,7 @@ function LicenseBadge() {
         width={88}
         height={31}
         alt="Creative Commons License"
-        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+        src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
       />
     </a>
   );

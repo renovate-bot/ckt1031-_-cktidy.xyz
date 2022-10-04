@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { memo, useState } from 'react';
 import { useEvent } from 'react-use';
@@ -5,9 +6,18 @@ import { useEvent } from 'react-use';
 import config from '../data/config.json';
 import classnames from '../utils/classnames';
 import Link from './link';
-import MobileMenu from './mobile-menu';
-import Spotlight from './spotlight';
-import ThemeSwitcher from './theme-switch';
+
+const MobileMenu = dynamic(() => import('./mobile-menu'), {
+  ssr: false,
+});
+
+const Spotlight = dynamic(() => import('./spotlight'), {
+  ssr: false,
+});
+
+const ThemeSwitcher = dynamic(() => import('./theme-switch'), {
+  ssr: false,
+});
 
 function NavigationBarPages() {
   const { route } = useRouter();
