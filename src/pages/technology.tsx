@@ -6,8 +6,8 @@ import config from '../data/config.json';
 function DetailBlock() {
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-5xl">Technology</h1>
-      <div className="mt-10 space-y-8">
+      <h1 className="mb-5 text-3xl font-bold">Technology</h1>
+      <div className="mb-10 space-y-8">
         <div>
           <div className="base-border mb-3 border-b">
             <h2 className="mb-1 text-2xl">Quick Look</h2>

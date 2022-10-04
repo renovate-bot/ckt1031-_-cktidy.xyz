@@ -62,7 +62,7 @@ export default function Spotlight() {
                       <input
                         onChange={onType}
                         placeholder="Search Here"
-                        className="w-full bg-transparent p-1 placeholder:items-center"
+                        className="w-full bg-transparent p-1 outline-none placeholder:items-center"
                       />
                       <button type="button" onClick={toggleSpotlightDisplay}>
                         <IoMdClose />
@@ -92,7 +92,7 @@ export default function Spotlight() {
                       })
                     ) : (
                       <div className="w-full">
-                        <p className="mt-3 p-2 text-center text-xl">No record</p>
+                        <p className="my-5 text-center text-xl">No record</p>
                       </div>
                     )}
                   </div>

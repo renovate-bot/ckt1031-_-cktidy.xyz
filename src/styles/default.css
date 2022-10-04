@@ -44,8 +44,8 @@ body {
 }
 
 .footer-default {
-  @apply flex flex-col items-center space-y-2 border-t border-gray-200
-    py-4 text-center
+  @apply flex flex-col items-center gap-1.5 border-t border-gray-200
+    py-3 text-center
     text-gray-700 dark:border-gray-700 dark:text-gray-400;
 }
 
