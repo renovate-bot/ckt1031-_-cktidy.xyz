@@ -1,4 +1,3 @@
-const withPWA = require('next-pwa');
 const withRoutes = require('nextjs-routes/config')();
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -33,11 +32,11 @@ const nextConfig = {
   compress: isProduction,
   swcMinify: isProduction,
   images: {
-    domains: ['licensebuttons.net', 'cdn.sanity.io'],
+    domains: ['cdn.sanity.io'],
   },
   env: {
-    FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
+    FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',
   },
   compiler: {
     removeConsole: isProduction,
@@ -61,16 +60,4 @@ const nextConfig = {
   },
 };
 
-const options = isProduction
-  ? withPWA({
-      ...nextConfig,
-      pwa: {
-        scope: '/app',
-        dest: 'public',
-        register: isProduction,
-        disable: !isProduction,
-      },
-    })
-  : nextConfig;
-
-module.exports = withRoutes(options);
+module.exports = withRoutes(nextConfig);
