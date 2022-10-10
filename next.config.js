@@ -1,4 +1,5 @@
 const withRoutes = require('nextjs-routes/config')();
+const { withSentryConfig } = require('@sentry/nextjs');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -58,6 +59,27 @@ const nextConfig = {
       },
     ];
   },
+  sentry: {
+    hideSourceMaps: true,
+  },
+  rewrites: async () => {
+    if (isProduction) {
+      return {
+        beforeFiles: [
+          {
+            source: '/:path*.map',
+            destination: '/404',
+          },
+        ],
+      };
+    }
+
+    return [];
+  },
 };
 
-module.exports = withRoutes(nextConfig);
+const sentryOptions = {
+  silent: true,
+};
+
+module.exports = withRoutes(isProduction ? withSentryConfig(nextConfig, sentryOptions) : nextConfig);
