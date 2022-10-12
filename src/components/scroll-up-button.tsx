@@ -26,8 +26,8 @@ export default function ScollUpButton() {
         }}
         onClick={scrollToTop}
         className={classnames(
-          'transition-all ease-linear',
-          'rounded-lg bg-gray-300 p-2 shadow-2xl hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-600',
+          'border border-gray-400 transition-all ease-linear dark:border-gray-500',
+          'rounded-lg bg-blue-100 p-2 shadow-2xl hover:bg-blue-200 dark:bg-blue-900 hover:dark:bg-blue-700',
         )}>
         <FaArrowUp />
       </button>

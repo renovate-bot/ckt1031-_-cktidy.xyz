@@ -18,13 +18,7 @@ export default function NextApplcation({ Component, pageProps }: AppProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <ThemeProvider enableSystem attribute="class">
-        <NextNProgress
-          color="#eb7236"
-          height={2}
-          options={{
-            showSpinner: false,
-          }}
-        />
+        <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />
         <ApplicationLayout>
           <Component {...pageProps} />
         </ApplicationLayout>

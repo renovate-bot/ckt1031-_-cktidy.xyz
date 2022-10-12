@@ -19,4 +19,4 @@ cktsun's portfolio
 This project is licensed under the [© MIT License](LICENSE)
 
 <hr>
-<p align="center">Made by cktsun1031</p>
+<p align="center">Made by ckt</p>

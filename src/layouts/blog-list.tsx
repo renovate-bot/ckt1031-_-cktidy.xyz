@@ -183,7 +183,7 @@ export default function ListPage({ posts, displayPosts, pagination }: BlogListPr
           </p>
           <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border bg-gray-200 py-1 px-3 dark:bg-gray-600">
             <FiSearch />
-            <input placeholder="Search" onChange={onSearch} className="w-full bg-transparent p-1" />
+            <input placeholder="Search" onChange={onSearch} className="w-full bg-transparent p-1 outline-none" />
           </div>
         </div>
       </div>

@@ -9,12 +9,36 @@
   background: #6a9fe4;
 }
 
+@font-face {
+  font-family: 'Apercu';
+  src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apercu';
+  src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu_Regular.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apercu';
+  src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  font-family: 'Apercu', 'Noto Sans TC', sans-serif;
 }
 
 .root {
