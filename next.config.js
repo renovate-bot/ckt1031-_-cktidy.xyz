@@ -1,5 +1,5 @@
-const withRoutes = require('nextjs-routes/config')();
-const { withSentryConfig } = require('@sentry/nextjs');
+import { withSentryConfig } from '@sentry/nextjs';
+import withRoutes from 'nextjs-routes/config';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -82,4 +82,4 @@ const sentryOptions = {
   silent: true,
 };
 
-module.exports = withRoutes(isProduction ? withSentryConfig(nextConfig, sentryOptions) : nextConfig);
+export default withRoutes()(isProduction ? withSentryConfig(nextConfig, sentryOptions) : nextConfig);

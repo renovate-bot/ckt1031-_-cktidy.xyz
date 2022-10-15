@@ -5,6 +5,8 @@
   "description": "CKT Personal Website",
   "license": "MIT",
   "author": "cktsun1031",
+  "type": "module",
+  "sideEffects": false,
   "homepage": "https://github.com/cktsun1031/cktidy#readme",
   "repository": {
     "type": "git",
@@ -13,7 +15,6 @@
   "bugs": {
     "url": "https://github.com/cktsun1031/cktidy/issues"
   },
-  "main": "pages/_app.tsx",
   "scripts": {
     "build": "next build",
     "postbuild": "next-sitemap",
@@ -42,16 +43,16 @@
     "framer-motion": "7.5.3",
     "next": "12.3.1",
     "next-mdx-remote": "4.1.0",
-    "next-sanity": "0.8.5",
+    "next-sanity": "1.0.0",
     "next-seo": "5.5.0",
-    "next-sitemap": "3.1.24",
+    "next-sitemap": "3.1.25",
     "next-themes": "0.2.1",
     "nextjs-progressbar": "0.0.15",
     "nextjs-routes": "0.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-ga": "3.3.1",
-    "react-icons": "4.4.0",
+    "react-icons": "4.6.0",
     "react-photo-view": "1.2.2",
     "react-use": "17.4.0",
     "reading-time": "1.5.0",
@@ -66,9 +67,9 @@
     "remark-unwrap-images": "3.0.1"
   },
   "devDependencies": {
-    "@svgr/webpack": "6.4.0",
+    "@svgr/webpack": "6.5.0",
     "@tailwindcss/typography": "0.5.7",
-    "@types/node": "18.8.4",
+    "@types/node": "18.11.0",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.40.0",
@@ -85,7 +86,7 @@
     "eslint-plugin-tailwindcss": "3.6.2",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
-    "postcss": "8.4.17",
+    "postcss": "8.4.18",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.13",
     "sanity-codegen": "0.9.8",
