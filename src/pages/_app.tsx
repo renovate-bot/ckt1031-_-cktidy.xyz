@@ -7,6 +7,7 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 
+import { THEME_KEY } from '../data/constants';
 import ApplicationLayout from '../layouts/application';
 import seoConfig from '../utils/seo-config';
 
@@ -17,7 +18,7 @@ export default function NextApplcation({ Component, pageProps }: AppProps) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <ThemeProvider enableSystem attribute="class">
+      <ThemeProvider enableSystem attribute="class" storageKey={THEME_KEY}>
         <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />
         <ApplicationLayout>
           <Component {...pageProps} />

@@ -5,17 +5,28 @@ import config from '../data/config.json';
 import Link from './link';
 
 function SocialMediaRow() {
+  const footerSocialLinks = [
+    {
+      href: config.author.social.instagram,
+      icon: <BsInstagram />,
+    },
+    {
+      href: config.author.social.github,
+      icon: <BsGithub />,
+    },
+    {
+      href: config.author.social.youtube,
+      icon: <BsYoutube />,
+    },
+  ];
+
   return (
     <div className="flex flex-row gap-3">
-      <Link noDefaultColours href={config.author.social.instagram}>
-        <BsInstagram />
-      </Link>
-      <Link noDefaultColours href={config.author.social.github}>
-        <BsGithub />
-      </Link>
-      <Link noDefaultColours href={config.author.social.youtube}>
-        <BsYoutube />
-      </Link>
+      {footerSocialLinks.map(({ href, icon }) => (
+        <Link noDefaultColours href={href} key={href}>
+          {icon}
+        </Link>
+      ))}
     </div>
   );
 }

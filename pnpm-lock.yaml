@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next/env': 12.3.1
+  '@playwright/test': 1.27.1
   '@sanity/image-url': 1.0.1
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.15.0
@@ -37,6 +38,7 @@ specifiers:
   next-themes: 0.2.1
   nextjs-progressbar: 0.0.16
   nextjs-routes: 0.1.4
+  playwright: 1.27.1
   postcss: 8.4.18
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13
@@ -96,6 +98,7 @@ dependencies:
   remark-unwrap-images: 3.0.1
 
 devDependencies:
+  '@playwright/test': 1.27.1
   '@svgr/webpack': 6.5.0
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   '@types/node': 18.11.0
@@ -115,6 +118,7 @@ devDependencies:
   eslint-plugin-tailwindcss: 3.6.2
   husky: 8.0.1
   lint-staged: 13.0.3
+  playwright: 1.27.1
   postcss: 8.4.18
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
@@ -1852,6 +1856,15 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@playwright/test/1.27.1:
+    resolution: {integrity: sha512-mrL2q0an/7tVqniQQF6RBL2saskjljXzqNcCOVMUjRIgE6Y38nCNaP+Dc2FBW06bcpD3tqIws/HT9qiMHbNU0A==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.11.0
+      playwright-core: 1.27.1
     dev: true
 
   /@rollup/plugin-sucrase/4.0.4_rollup@2.78.0:
@@ -6640,6 +6653,21 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 3.0.0
+    dev: true
+
+  /playwright-core/1.27.1:
+    resolution: {integrity: sha512-9EmeXDncC2Pmp/z+teoVYlvmPWUC6ejSSYZUln7YaP89Z6lpAaiaAnqroUt/BoLo8tn7WYShcfaCh+xofZa44Q==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
+  /playwright/1.27.1:
+    resolution: {integrity: sha512-xXYZ7m36yTtC+oFgqH0eTgullGztKSRMb4yuwLPl8IYSmgBM88QiB+3IWb1mRIC9/NNwcgbG0RwtFlg+EAFQHQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.27.1
     dev: true
 
   /popmotion/11.0.5:

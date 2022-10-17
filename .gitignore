@@ -22,3 +22,5 @@ public/feed.xml
 
 # Sentry
 .sentryclirc
+
+test-results
