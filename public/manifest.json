@@ -25,6 +25,5 @@
   "background_color": "#FFFFFF",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "prefer_related_applications": true
+  "orientation": "portrait"
 }

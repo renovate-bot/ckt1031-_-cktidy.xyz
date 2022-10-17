@@ -28,8 +28,8 @@ export default function Spotlight() {
     setDisplay(state => !state);
   }, []);
 
-  const onType = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+  const onType = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
     if (!value) setSearchList(pageList);
     else {
       setSearchList(list => list.filter(page => page.name.toLowerCase().includes(value.toLowerCase())));

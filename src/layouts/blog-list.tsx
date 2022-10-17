@@ -153,8 +153,8 @@ function List({ postList }: { postList: Post[] }) {
 export default function ListPage({ posts, displayPosts, pagination }: BlogListProp) {
   const [searchKey, setSearchKey] = useState('');
 
-  const onSearch = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+  const onSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
     setSearchKey(value);
   }, []);
 
