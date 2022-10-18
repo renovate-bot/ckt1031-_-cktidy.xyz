@@ -15,94 +15,94 @@ import { Author, Post } from '../../utils/sanity/schema';
 import { urlForImage } from '../../utils/sanity/tools';
 
 export async function getStaticPaths() {
-  const paths: string[] = await sanityClient.fetch(postSlugQuery);
+    const paths: string[] = await sanityClient.fetch(postSlugQuery);
 
-  return {
-    paths: paths.map((slug: string) => ({
-      params: {
-        slug,
-      },
-    })),
-    fallback: false,
-  };
+    return {
+        paths: paths.map((slug: string) => ({
+            params: {
+                slug,
+            },
+        })),
+        fallback: false,
+    };
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params || typeof params.slug !== 'string') {
-    return { notFound: true };
-  }
+    if (!params || typeof params.slug !== 'string') {
+        return { notFound: true };
+    }
 
-  const post: Post = await sanityClient.fetch(postSingleQuery, {
-    slug: params.slug,
-  });
+    const post: Post = await sanityClient.fetch(postSingleQuery, {
+        slug: params.slug,
+    });
 
-  if (!post) {
-    return { notFound: true };
-  }
+    if (!post) {
+        return { notFound: true };
+    }
 
-  const content = await parseMdx(post.body as unknown as string);
-  const dateName = dayjs(post._createdAt).format('YYYY/MM/DD hh:mm');
-  const readingTime = readingTimeModule(post.body as unknown as string);
+    const content = await parseMdx(post.body as unknown as string);
+    const dateName = dayjs(post._createdAt).format('YYYY/MM/DD hh:mm');
+    const readingTime = readingTimeModule(post.body as unknown as string);
 
-  return {
-    props: { readingTime, post, content, dateName },
-  };
+    return {
+        props: { readingTime, post, content, dateName },
+    };
 };
 
 export default function Blog(props: BlogProp) {
-  const router = useRouter();
+    const router = useRouter();
 
-  const post = props.post;
-  const author = post.author as unknown as Author;
-  const thumbnail = props.post.thumbnail;
+    const post = props.post;
+    const author = post.author as unknown as Author;
+    const thumbnail = props.post.thumbnail;
 
-  const articleImages: string[] = [];
-  const ogImage: OpenGraphMedia[] = [];
+    const articleImages: string[] = [];
+    const ogImage: OpenGraphMedia[] = [];
 
-  if (thumbnail) {
-    const thumbUrl = urlForImage(thumbnail).url();
+    if (thumbnail) {
+        const thumbUrl = urlForImage(thumbnail).url();
 
-    ogImage.push({
-      url: thumbUrl,
-      width: thumbnail.hotspot?.width,
-      height: thumbnail.hotspot?.height,
-      alt: props.post.title,
-    });
+        ogImage.push({
+            url: thumbUrl,
+            width: thumbnail.hotspot?.width,
+            height: thumbnail.hotspot?.height,
+            alt: props.post.title,
+        });
 
-    articleImages.push(thumbUrl);
-  }
+        articleImages.push(thumbUrl);
+    }
 
-  return (
-    <>
-      <NextSeo
-        title={post.title}
-        description={post.breif}
-        openGraph={{
-          type: 'website',
-          url: config.url + router.asPath,
-          title: post.title,
-          description: post.breif,
-          images: ogImage,
-        }}
-        titleTemplate="%s"
-      />
-      <ArticleJsonLd
-        url={config.url + router.asPath}
-        images={articleImages}
-        title={post.title}
-        description={post.breif}
-        authorName={[
-          {
-            name: author.name,
-          },
-        ]}
-        dateModified={post._updatedAt}
-        datePublished={post._createdAt}
-        publisherName={author.name}
-        publisherLogo={urlForImage(author.avatar).url()}
-      />
-      <ScrollProgressBar />
-      <BlogDisplayPage {...props} />
-    </>
-  );
+    return (
+        <>
+            <NextSeo
+                title={post.title}
+                description={post.breif}
+                openGraph={{
+                    type: 'website',
+                    url: config.url + router.asPath,
+                    title: post.title,
+                    description: post.breif,
+                    images: ogImage,
+                }}
+                titleTemplate="%s"
+            />
+            <ArticleJsonLd
+                url={config.url + router.asPath}
+                images={articleImages}
+                title={post.title}
+                description={post.breif}
+                authorName={[
+                    {
+                        name: author.name,
+                    },
+                ]}
+                dateModified={post._updatedAt}
+                datePublished={post._createdAt}
+                publisherName={author.name}
+                publisherLogo={urlForImage(author.avatar).url()}
+            />
+            <ScrollProgressBar />
+            <BlogDisplayPage {...props} />
+        </>
+    );
 }

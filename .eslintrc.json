@@ -1,38 +1,38 @@
 {
-  "env": {
-    "es6": true,
-    "es2022": true,
-    "browser": true
-  },
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:jsx-a11y/strict",
-    "plugin:react/recommended",
-    "plugin:tailwindcss/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "plugins": ["simple-import-sort", "@typescript-eslint", "jsx-a11y"],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "rules": {
-    "semi": [2, "always"],
-    "react/react-in-jsx-scope": 0,
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "react/jsx-newline": 0
-  },
-  "overrides": [
-    {
-      "files": ["*.js"],
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off"
-      }
-    }
-  ]
+    "env": {
+        "es6": true,
+        "es2022": true,
+        "browser": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:jsx-a11y/strict",
+        "plugin:react/recommended",
+        "plugin:tailwindcss/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": ["simple-import-sort", "@typescript-eslint", "jsx-a11y"],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": [2, "always"],
+        "react/react-in-jsx-scope": 0,
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "react/jsx-newline": 0
+    },
+    "overrides": [
+        {
+            "files": ["*.js"],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off"
+            }
+        }
+    ]
 }

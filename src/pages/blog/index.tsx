@@ -9,25 +9,25 @@ import { Post } from '../../utils/sanity/schema';
 import { generateRss } from '../../utils/static-files';
 
 export async function getStaticProps() {
-  const posts: Post[] = await sanityClient.fetch(allPostQuery);
+    const posts: Post[] = await sanityClient.fetch(allPostQuery);
 
-  generateRss(posts);
+    generateRss(posts);
 
-  const displayPosts = posts.slice(0, config.blog.maxDisplayPerPage);
+    const displayPosts = posts.slice(0, config.blog.maxDisplayPerPage);
 
-  const pagination = {
-    currentPage: 1,
-    totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
-  };
+    const pagination = {
+        currentPage: 1,
+        totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
+    };
 
-  return { props: { posts, displayPosts, pagination } };
+    return { props: { posts, displayPosts, pagination } };
 }
 
 export default function BlogHome(prop: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <>
-      <NextSeo title="Blog" description="A cool website by cktsun1031!" />
-      <BlogList {...prop} />
-    </>
-  );
+    return (
+        <>
+            <NextSeo title="Blog" description="A cool website by cktsun1031!" />
+            <BlogList {...prop} />
+        </>
+    );
 }

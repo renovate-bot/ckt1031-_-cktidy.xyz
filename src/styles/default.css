@@ -5,82 +5,85 @@
 @tailwind screens;
 
 ::selection {
-  color: white;
-  background: #6a9fe4;
+    color: white;
+    background: #6a9fe4;
 }
 
 @font-face {
-  font-family: 'Apercu';
-  src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Apercu';
+    src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Medium.otf')
+        format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Apercu';
-  src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu_Regular.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Apercu';
+    src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu_Regular.otf')
+        format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Apercu';
-  src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Apercu';
+    src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Bold.otf')
+        format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Apercu', 'Noto Sans TC', sans-serif;
+    font-family: 'Apercu', 'Noto Sans TC', sans-serif;
 }
 
 .root {
-  @apply bg-neutral-100 text-slate-900 antialiased dark:bg-neutral-900 dark:text-slate-200;
+    @apply bg-neutral-100 text-slate-900 antialiased dark:bg-neutral-900 dark:text-slate-200;
 }
 
 .error-page {
-  @apply h-screen w-screen bg-gray-200 text-black;
+    @apply h-screen w-screen bg-gray-200 text-black;
 }
 
 .button-normal {
-  @apply rounded-lg bg-neutral-900 px-5 py-3 text-xl
+    @apply rounded-lg bg-neutral-900 px-5 py-3 text-xl
     text-white duration-150 hover:bg-neutral-800 hover:ring-4 hover:ring-blue-400
     dark:bg-neutral-700;
 }
 
 .layout-default {
-  @apply flex min-h-screen flex-col justify-between text-lg;
+    @apply flex min-h-screen flex-col justify-between text-lg;
 }
 
 .headbar-default {
-  @apply z-50;
+    @apply z-50;
 }
 
 .page-container {
-  @apply m-auto mt-20 mb-10 max-w-4xl flex-1 overflow-y-auto px-4 sm:px-6 md:max-w-5xl xl:max-w-6xl xl:px-0;
+    @apply m-auto mt-20 mb-10 max-w-4xl flex-1 overflow-y-auto px-4 sm:px-6 md:max-w-5xl xl:max-w-6xl xl:px-0;
 }
 
 .footer-default {
-  @apply flex flex-col items-center gap-1.5 border-t border-gray-200
+    @apply flex flex-col items-center gap-1.5 border-t border-gray-200
     py-3 text-center
     text-gray-700 dark:border-gray-700 dark:text-gray-400;
 }
 
 .footer-text-interaction {
-  @apply cursor-pointer text-sky-500 hover:text-sky-600 hover:underline dark:text-sky-400 hover:dark:text-sky-200;
+    @apply cursor-pointer text-sky-500 hover:text-sky-600 hover:underline dark:text-sky-400 hover:dark:text-sky-200;
 }
 
 .blog-article-container {
-  @apply prose max-w-none dark:prose-dark;
+    @apply prose max-w-none dark:prose-dark;
 }
 
 .base-border {
-  @apply border-gray-300 dark:border-gray-600;
+    @apply border-gray-300 dark:border-gray-600;
 }

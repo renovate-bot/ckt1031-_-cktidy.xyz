@@ -1,47 +1,60 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class AppDocument extends Document {
-  override render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet" />
+    override render() {
+        return (
+            <Html lang="en">
+                <Head>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap"
+                        rel="stylesheet"
+                    />
 
-          <link href="/icons/favicon.ico" rel="icon" />
-          <link href="/icons/favicon.ico" rel="shortcut icon" />
-          <link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
-          <link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
-          <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+                    <link href="/icons/favicon.ico" rel="icon" />
+                    <link href="/icons/favicon.ico" rel="shortcut icon" />
+                    <link
+                        href="/icons/favicon-32x32.png"
+                        rel="icon"
+                        sizes="32x32"
+                        type="image/png"
+                    />
+                    <link
+                        href="/icons/favicon-16x16.png"
+                        rel="icon"
+                        sizes="16x16"
+                        type="image/png"
+                    />
+                    <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-          <link
-            rel="preload"
-            href="https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Medium.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu_Regular.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Bold.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-        </Head>
-        <body className="root">
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+                    <link
+                        rel="preload"
+                        href="https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Medium.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin="anonymous"
+                    />
+                    <link
+                        rel="preload"
+                        href="https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu_Regular.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin="anonymous"
+                    />
+                    <link
+                        rel="preload"
+                        href="https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Bold.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin="anonymous"
+                    />
+                </Head>
+                <body className="root">
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        );
+    }
 }

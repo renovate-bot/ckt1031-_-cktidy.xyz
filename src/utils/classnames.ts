@@ -3,5 +3,5 @@ type BaseArugmentType = BaseArugmentType[] | string | number | boolean | undefin
 type ClassArguments = (BaseArugmentType | BaseArugmentType[])[];
 
 export default function classnames(...args: ClassArguments) {
-  return args.flat().filter(Boolean).join(' ');
+    return args.flat().filter(Boolean).join(' ');
 }
