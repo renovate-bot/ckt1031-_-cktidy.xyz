@@ -26,7 +26,7 @@ jobs:
               run: pnpm install
 
             - name: Install Test Environment
-              run: npx playwright install
+              run: pnpm playwright install
 
             - name: Lint Project
               run: pnpm lint
