@@ -40,7 +40,7 @@ export default function Image({
                         <img className="mx-auto cursor-zoom-in" src={src} alt={alt} {...rest} />
                     </PhotoView>
                 ) : (
-                    <NextImage src={src} {...rest} {...blurData} />
+                    <NextImage src={src} alt={alt} {...rest} {...blurData} />
                 )}
             </div>
         </PhotoProvider>

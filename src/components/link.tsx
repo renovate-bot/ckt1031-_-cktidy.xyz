@@ -25,7 +25,7 @@ export default function Textlink({
     if (isInternalLink) {
         return (
             <Link passHref href={{ pathname: href as never }}>
-                <a {...rest}>{children}</a>
+                <span {...rest}>{children}</span>
             </Link>
         );
     }
