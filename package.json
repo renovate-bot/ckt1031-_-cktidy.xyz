@@ -6,7 +6,6 @@
     "license": "MIT",
     "author": "cktsun1031",
     "type": "module",
-    "sideEffects": false,
     "homepage": "https://github.com/cktsun1031/cktidy#readme",
     "repository": {
         "type": "git",
@@ -31,14 +30,15 @@
             "path": "cz-conventional-changelog"
         }
     },
+    "packageManager": "pnpm@7.14.0",
     "dependencies": {
         "@next/env": "13.0.0",
         "@next/font": "13.0.0",
         "@sanity/image-url": "1.0.1",
         "@sanity/webhook": "2.0.0",
-        "@sentry/nextjs": "7.17.1",
+        "@sentry/nextjs": "7.17.2",
         "clsx": "1.2.1",
-        "cssnano": "5.1.13",
+        "cssnano": "5.1.14",
         "csstype": "3.1.1",
         "dayjs": "1.11.6",
         "feed": "4.2.2",
@@ -46,7 +46,7 @@
         "next": "13.0.0",
         "next-mdx-remote": "4.1.0",
         "next-sanity": "1.0.2",
-        "next-seo": "5.11.0",
+        "next-seo": "5.11.1",
         "next-sitemap": "3.1.29",
         "next-themes": "0.2.1",
         "nextjs-progressbar": "0.0.16",
