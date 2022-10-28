@@ -5,14 +5,14 @@ import { ArticleJsonLd, NextSeo } from 'next-seo';
 import type { OpenGraphMedia } from 'next-seo/lib/types';
 import readingTimeModule from 'reading-time';
 
-import ScrollProgressBar from '../../components/scroll-progress-bar';
-import config from '../../data/config.json';
-import { BlogDisplayPage, BlogProp } from '../../layouts/blog-article';
-import { parseMdx } from '../../utils/mdx';
-import sanityClient from '../../utils/sanity/client';
-import { postSingleQuery, postSlugQuery } from '../../utils/sanity/query';
-import { Author, Post } from '../../utils/sanity/schema';
-import { urlForImage } from '../../utils/sanity/tools';
+import ScrollProgressBar from '$components/scroll-progress-bar';
+import config from '$data/config.json';
+import { BlogDisplayPage, BlogProp } from '$layouts/blog-article';
+import { parseMdx } from '$utils/mdx';
+import sanityClient from '$utils/sanity/client';
+import { postSingleQuery, postSlugQuery } from '$utils/sanity/query';
+import { Author, Post } from '$utils/sanity/schema';
+import { urlForImage } from '$utils/sanity/tools';
 
 export async function getStaticPaths() {
     const paths: string[] = await sanityClient.fetch(postSlugQuery);

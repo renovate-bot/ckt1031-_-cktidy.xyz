@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 
-import Image from '../components/image';
+import Image from '$components/image';
 
 export default function HomePage() {
     const title = 'Home';

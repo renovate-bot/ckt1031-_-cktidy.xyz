@@ -1,7 +1,5 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withRoutes from 'nextjs-routes/config';
-import TerserPlugin from 'terser-webpack-plugin';
-
 const isProduction = process.env.NODE_ENV === 'production';
 
 const securityHeaders = [
@@ -31,8 +29,6 @@ const securityHeaders = [
 const nextConfig = {
     reactStrictMode: true,
     poweredByHeader: false,
-    compress: isProduction,
-    swcMinify: isProduction,
     images: {
         domains: ['cdn.sanity.io'],
     },
@@ -43,23 +39,6 @@ const nextConfig = {
     compiler: {
         removeConsole: isProduction,
         reactRemoveProperties: isProduction,
-    },
-    webpack: (config, { dev, isServer }) => {
-        if (!dev && !isServer) {
-            config.optimization.minimize = true;
-            config.optimization.minimizer = [
-                new TerserPlugin({
-                    parallel: true,
-                }),
-            ];
-        }
-
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack'],
-        });
-
-        return config;
     },
     async headers() {
         return [

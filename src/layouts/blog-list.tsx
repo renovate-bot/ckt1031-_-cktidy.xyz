@@ -1,13 +1,13 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 
-import Image from '../components/image';
-import classnames from '../utils/classnames';
-import { getDaysDifference } from '../utils/date';
-import { Post } from '../utils/sanity/schema';
-import { urlForImage } from '../utils/sanity/tools';
+import Image from '$components/image';
+import { getDaysDifference } from '$utils/date';
+import { Post } from '$utils/sanity/schema';
+import { urlForImage } from '$utils/sanity/tools';
 
 export interface BlogListProp {
     posts: Post[];
@@ -55,7 +55,7 @@ function Pageination({ pagination }: Omit<BlogListProp, 'posts' | 'displayPosts'
                         ) {
                             return (
                                 <div
-                                    className={classnames(
+                                    className={clsx(
                                         pagination.currentPage === pageNumber &&
                                             'bg-orange-400 dark:bg-orange-700',
                                         'rounded-lg px-2 py-1',
@@ -111,7 +111,7 @@ function List({ postList }: { postList: Post[] }) {
                             key={`BLOG-LIST-${post.slug.current.trim()}`}
                             className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
                             <div
-                                className={classnames(
+                                className={clsx(
                                     post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
                                     'flex max-h-fit flex-col justify-between break-words',
                                 )}>

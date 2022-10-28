@@ -1,10 +1,11 @@
+import clsx from 'clsx';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { memo, useState } from 'react';
 import { useEvent } from 'react-use';
 
-import config from '../data/config.json';
-import classnames from '../utils/classnames';
+import config from '$data/config.json';
+
 import Link from './link';
 
 const Spotlight = dynamic(() => import('./spotlight'));
@@ -17,7 +18,7 @@ function NavigationBarPages() {
     return (
         <nav className="hidden flex-row gap-1 md:flex">
             {config.headbar.routes.map(item => {
-                const className = classnames(
+                const className = clsx(
                     item.href === route && 'text-orange-500',
                     ' rounded hover:bg-gray-200 dark:hover:bg-gray-600',
                     'block px-3 text-center',
@@ -42,7 +43,7 @@ function Header() {
 
     return (
         <header
-            className={classnames(
+            className={clsx(
                 showShadow && 'shadow-md',
                 'headbar-default fixed w-screen bg-gray-100 dark:bg-gray-900',
             )}>

@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import 'react-photo-view/dist/react-photo-view.css';
 
+import clsx from 'clsx';
 import NextImage, { type ImageProps } from 'next/image';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-
-import classnames from '../utils/classnames';
-
 interface ImageProp {
     src: string;
     alt: string;
@@ -34,7 +32,7 @@ export default function Image({
 
     return (
         <PhotoProvider>
-            <div className={classnames(lightboxEnabled && 'cursor-zoom-in')}>
+            <div className={clsx(lightboxEnabled && 'cursor-zoom-in')}>
                 {lightboxEnabled ? (
                     <PhotoView src={src}>
                         <img className="mx-auto cursor-zoom-in" src={src} alt={alt} {...rest} />

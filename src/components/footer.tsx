@@ -1,7 +1,8 @@
 import { Fragment, memo } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
-import config from '../data/config.json';
+import config from '$data/config.json';
+
 import Link from './link';
 
 function SocialMediaRow() {

@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 
-import TextLink from '../components/link';
+import TextLink from '$components/link';
+
 import config from '../data/config.json';
 
 function DetailBlock() {

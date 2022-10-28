@@ -1,10 +1,10 @@
 import { isValidRequest } from '@sanity/webhook';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import config from '../../data/config.json';
-import sanityClient from '../../utils/sanity/client';
-import { allPostQuery, postUpdateQuery } from '../../utils/sanity/query';
-import { Post } from '../../utils/sanity/schema';
+import config from '$data/config.json';
+import sanityClient from '$utils/sanity/client';
+import { allPostQuery, postUpdateQuery } from '$utils/sanity/query';
+import { Post } from '$utils/sanity/schema';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const validationSecret = process.env.SANITY_STUDIO_REVALIDATE_SECRET;

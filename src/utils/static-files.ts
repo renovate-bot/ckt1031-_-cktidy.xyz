@@ -5,7 +5,7 @@ import { Feed } from 'feed';
 import config from '../data/config.json';
 import { Author, Post } from './sanity/schema';
 
-export const generateRss = (posts: Post[]) => {
+const generateRSS = (posts: Post[]) => {
     const feed = new Feed({
         title: config.sitename,
         description: config.description,
@@ -41,3 +41,5 @@ export const generateRss = (posts: Post[]) => {
 
     writeFileSync('./public/feed.xml', feed.rss2());
 };
+
+export default generateRSS;

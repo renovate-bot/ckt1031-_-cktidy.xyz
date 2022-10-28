@@ -1,8 +1,7 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 import { useEvent } from 'react-use';
-
-import classnames from '../utils/classnames';
 
 export default function ScollUpButton() {
     const [showScrollUpBtn, setShowScrollUpBtn] = useState(false);
@@ -25,7 +24,7 @@ export default function ScollUpButton() {
                     visibility: showScrollUpBtn ? 'visible' : 'hidden',
                 }}
                 onClick={scrollToTop}
-                className={classnames(
+                className={clsx(
                     'border border-gray-400 transition-all ease-linear dark:border-gray-500',
                     'rounded-lg bg-blue-100 p-2 shadow-2xl hover:bg-blue-200 dark:bg-blue-900 hover:dark:bg-blue-700',
                 )}>

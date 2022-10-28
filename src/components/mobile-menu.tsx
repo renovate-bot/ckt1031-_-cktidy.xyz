@@ -1,9 +1,10 @@
+import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
-import config from '../data/config.json';
-import classnames from '../utils/classnames';
+import config from '$data/config.json';
+
 import Link from './link';
 
 interface PagesProp {
@@ -16,14 +17,14 @@ function MenuNavigationPages({ showMenu, toggleMenu }: PagesProp) {
 
     return (
         <div
-            className={classnames(
+            className={clsx(
                 showMenu ? 'translate-y-0' : 'translate-y-full',
                 'fixed left-0 z-10 mt-3 flex h-screen w-screen flex-col bg-gray-100 duration-150 ease-in-out dark:bg-gray-900',
             )}>
             <div className="overflow-auto">
                 <div className="grid space-y-2 divide-y divide-gray-300 p-3 dark:divide-gray-700">
                     {config.headbar.routes.map(item => {
-                        const _className = classnames(
+                        const _className = clsx(
                             item.href === route && 'text-orange-600 dark:text-orange-300',
                             'cursor-pointer p-3 text-center',
                         );
