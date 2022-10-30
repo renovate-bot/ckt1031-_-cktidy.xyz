@@ -1,5 +1,6 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withRoutes from 'nextjs-routes/config';
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 const securityHeaders = [

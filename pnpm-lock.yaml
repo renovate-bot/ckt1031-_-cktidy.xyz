@@ -33,12 +33,12 @@ specifiers:
   lint-staged: 13.0.3
   next: 13.0.0
   next-mdx-remote: 4.1.0
-  next-sanity: 1.0.2
+  next-sanity: 1.0.3
   next-seo: 5.11.1
   next-sitemap: 3.1.29
   next-themes: 0.2.1
   nextjs-progressbar: 0.0.16
-  nextjs-routes: 0.1.5
+  nextjs-routes: 0.1.6
   playwright: 1.27.1
   postcss: 8.4.18
   prettier: 2.7.1
@@ -77,12 +77,12 @@ dependencies:
   framer-motion: 7.6.2_biqbaboplfbrettd7655fr4n2y
   next: 13.0.0_qtpcxnaaarbm4ws7ughq6oxfve
   next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
-  next-sanity: 1.0.2_next@13.0.0+react@18.2.0
+  next-sanity: 1.0.3_next@13.0.0+react@18.2.0
   next-seo: 5.11.1_r5sq4deac3rmm2d5onhwvomqve
   next-sitemap: 3.1.29_qcnuwogvzn5dnsttittida2hji
   next-themes: 0.2.1_r5sq4deac3rmm2d5onhwvomqve
   nextjs-progressbar: 0.0.16_next@13.0.0+react@18.2.0
-  nextjs-routes: 0.1.5_next@13.0.0
+  nextjs-routes: 0.1.6_next@13.0.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-ga: 3.3.1_sh5qlbywuemxd2y3xkrw2y2kr4
@@ -1927,15 +1927,15 @@ packages:
       eventsource: 2.0.2
     dev: false
 
-  /@sanity/groq-store/1.0.2:
-    resolution: {integrity: sha512-EgqnLTlaVjY8J20t4NkRFjs/dk6uem7zKQAKFS2R++OGusKCGV1VM/foUwxkA0/DaopzVrQp0OMpKWmOZUZJqQ==}
+  /@sanity/groq-store/1.0.3:
+    resolution: {integrity: sha512-IUaMzaWYdYYcCAI4zrkWurm/n6AXsJP1hq7EPDmQcCg+n42aawp07lzWmOko9v9LUuUATJSDFhpmZktn9Zacew==}
     engines: {node: '>=14'}
     dependencies:
       '@sanity/types': 2.35.0
       eventsource: 2.0.2
       fast-deep-equal: 3.1.3
       groq: 2.33.2
-      groq-js: 1.1.0
+      groq-js: 1.1.1
       mendoza: 2.1.1
       simple-get: 4.0.1
       split2: 4.1.0
@@ -4501,8 +4501,8 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /groq-js/1.1.0:
-    resolution: {integrity: sha512-y87W921Jg9IAksKT9LFvDMrYG9KIcgUDyE4ccENV7K26CKvg1V0lOTJbE1UNI8DcSk/bvx/MWFI7j3iUkCe/gA==}
+  /groq-js/1.1.1:
+    resolution: {integrity: sha512-qzUfJepffRUcSwjU3x2m30SUrhbssAR1Qs1DUq9+xmT2yeyO/3Il8+AkML8Tc6twWv20bL/KQgE8ig2Sbixu0w==}
     dev: false
 
   /groq/2.33.2:
@@ -6042,8 +6042,8 @@ packages:
       - supports-color
     dev: false
 
-  /next-sanity/1.0.2_next@13.0.0+react@18.2.0:
-    resolution: {integrity: sha512-Ym0JRgh2QcInYo6K8Gq+lrRSykf5fhkbpOnUDPPQ/0/uyvTzOn/X40NudrqjFlasExJ04TdOPmILRpIVmKq9Dg==}
+  /next-sanity/1.0.3_next@13.0.0+react@18.2.0:
+    resolution: {integrity: sha512-9THbeAUGA3REPeLxEK4x9a4/k5WVK6gXU11kX2+zaP9Z2Q4cc5vcI0SglUrZ4FWeVXquLuULtC/iiO5p67LDhw==}
     engines: {node: '>=14'}
     peerDependencies:
       next: ^12 || ^13
@@ -6057,7 +6057,7 @@ packages:
         optional: true
     dependencies:
       '@sanity/client': 3.4.1
-      '@sanity/groq-store': 1.0.2
+      '@sanity/groq-store': 1.0.3
       groq: 2.33.2
       next: 13.0.0_qtpcxnaaarbm4ws7ughq6oxfve
       react: 18.2.0
@@ -6161,8 +6161,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /nextjs-routes/0.1.5_next@13.0.0:
-    resolution: {integrity: sha512-styKpyVM8xX4OqdYjzrjxLtcnhOonA2RxbYLbzMz2CcGSCfwunnOOBHvCqAxeCxFQcXxK6yGAM7GI5vKsbRPqg==}
+  /nextjs-routes/0.1.6_next@13.0.0:
+    resolution: {integrity: sha512-67y2IH9wTzkwwqu2LRZUz1/PJ2bTFAW3AHrM4IwdFK1Uce6OBj1Cg5uGU5OgjoGXgK30smuJzl51BVIjIqi/OQ==}
     hasBin: true
     peerDependencies:
       next: '*'

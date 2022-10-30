@@ -25,13 +25,5 @@ jobs:
             - name: Install Dependencies
               run: pnpm install
 
-            - name: Install Test Environment
-              run: pnpm playwright install
-
             - name: Lint Project
               run: pnpm lint
-
-            - name: End to End Tests
-              run: pnpm e2e
-              env:
-                  CI: true
