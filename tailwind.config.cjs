@@ -15,26 +15,23 @@ const config = {
                     css: {
                         color: theme('colors.gray.700'),
                         'h1,h2,h3,h4,h5,h6': {
-                            letterSpacing: '0.015em',
                             color: theme('colors.gray.900'),
                         },
                         h1: {
-                            fontSize: '40px',
+                            fontSize: '36px',
                         },
                         p: {
                             color: theme('colors.gray.700'),
-                            letterSpacing: '0.01em',
-                            fontSize: '24px',
+                            fontSize: '21px',
                         },
                         strong: {
-                            letterSpacing: '0.02em',
                             color: theme('colors.gray.600'),
                         },
                         a: {
                             color: theme('colors.blue.600'),
                         },
                         li: {
-                            fontSize: '23px',
+                            fontSize: '21px',
                         },
                         blockquote: {
                             borderLeftColor: theme('colors.gray.300'),

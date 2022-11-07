@@ -8,9 +8,9 @@ declare module "nextjs-routes" {
     | { pathname: "/404"; query?: Query | undefined }
     | { pathname: "/about"; query?: Query | undefined }
     | { pathname: "/api/revalidate-blog"; query?: Query | undefined }
-    | { pathname: "/blog/[slug]"; query: Query<{ "slug": string }> }
     | { pathname: "/blog"; query?: Query | undefined }
     | { pathname: "/blog/page/[number]"; query: Query<{ "number": string }> }
+    | { pathname: "/blog/[slug]"; query: Query<{ "slug": string }> }
     | { pathname: "/"; query?: Query | undefined }
     | { pathname: "/technology"; query?: Query | undefined };
 
