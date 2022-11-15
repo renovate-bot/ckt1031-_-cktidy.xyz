@@ -33,7 +33,7 @@ specifiers:
   lint-staged: 13.0.3
   next: 13.0.3
   next-mdx-remote: 4.2.0
-  next-sanity: 1.0.9
+  next-sanity: 1.1.0
   next-seo: 5.14.1
   next-sitemap: 3.1.31
   next-themes: 0.2.1
@@ -76,7 +76,7 @@ dependencies:
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   next: 13.0.3_mqvh5p7ejg4taogoj6tpk3gd5a
   next-mdx-remote: 4.2.0_biqbaboplfbrettd7655fr4n2y
-  next-sanity: 1.0.9_next@13.0.3+react@18.2.0
+  next-sanity: 1.1.0_next@13.0.3+react@18.2.0
   next-seo: 5.14.1_ogpkrxaz2lg6nectum6dl66tn4
   next-sitemap: 3.1.31_oh7tnma7hljgucaq4r2oan52oi
   next-themes: 0.2.1_ogpkrxaz2lg6nectum6dl66tn4
@@ -2019,8 +2019,8 @@ packages:
       eventsource: 2.0.2
     dev: false
 
-  /@sanity/groq-store/1.0.3:
-    resolution: {integrity: sha512-IUaMzaWYdYYcCAI4zrkWurm/n6AXsJP1hq7EPDmQcCg+n42aawp07lzWmOko9v9LUuUATJSDFhpmZktn9Zacew==}
+  /@sanity/groq-store/1.1.0:
+    resolution: {integrity: sha512-D63l/5CvKe4SXbLEWj3+eV7WvQMj1udQA7SjO8WWnrowegS1bPN2T2dcoIexCJYlVSbWEmfFNaBkM3bdFcyEbA==}
     engines: {node: '>=14'}
     dependencies:
       '@sanity/types': 2.35.0
@@ -6129,8 +6129,8 @@ packages:
       - supports-color
     dev: false
 
-  /next-sanity/1.0.9_next@13.0.3+react@18.2.0:
-    resolution: {integrity: sha512-Iga8oF8+/sIpk3MJ5DFSDWq5ItOmsOUz0ytNksfp9g1k6aEOtLvT2eQ/vZ1WIxsnZj1tRv8LhAwPewxfM41Krw==}
+  /next-sanity/1.1.0_next@13.0.3+react@18.2.0:
+    resolution: {integrity: sha512-E8N+aiNcbaPk2f0eRS8xscgy0huPUBiZJdAw5sCL/brtjSlrJl+1wOCcp+N5m4YwI5A2DRFvt5gpWdUgwjWCSw==}
     engines: {node: '>=14'}
     peerDependencies:
       next: ^12 || ^13
@@ -6144,7 +6144,7 @@ packages:
         optional: true
     dependencies:
       '@sanity/client': 3.4.1
-      '@sanity/groq-store': 1.0.3
+      '@sanity/groq-store': 1.1.0
       groq: 2.33.2
       next: 13.0.3_mqvh5p7ejg4taogoj6tpk3gd5a
       react: 18.2.0
