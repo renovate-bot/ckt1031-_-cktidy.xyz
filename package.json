@@ -31,7 +31,7 @@
             "path": "cz-conventional-changelog"
         }
     },
-    "packageManager": "pnpm@7.15.0",
+    "packageManager": "pnpm@7.16.0",
     "dependencies": {
         "@next/env": "13.0.3",
         "@next/font": "13.0.3",
