@@ -46,7 +46,7 @@ specifiers:
   react-dom: 18.2.0
   react-ga: 3.3.1
   react-icons: 4.6.0
-  react-photo-view: 1.2.2
+  react-photo-view: 1.2.3
   react-use: 17.4.0
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
@@ -86,7 +86,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-ga: 3.3.1_sh5qlbywuemxd2y3xkrw2y2kr4
   react-icons: 4.6.0_react@18.2.0
-  react-photo-view: 1.2.2_biqbaboplfbrettd7655fr4n2y
+  react-photo-view: 1.2.3_biqbaboplfbrettd7655fr4n2y
   react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
@@ -7171,8 +7171,8 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  /react-photo-view/1.2.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-/xsOiDuiR23hKxpmF73EDKPvsBvcWogolXvnBhMZV4CUhd9tnXF91amjKnuQe9BmLaR9CbNxXDOI9SNKeXT5ew==}
+  /react-photo-view/1.2.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-dtaFjU8nAB/rD8mxBaaJcvESlDOweAd1tmvXujS/d3oh1QyGew3xD4C02l46E6Dhn3Tshzl2+IM1h0MWV9nG7g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
