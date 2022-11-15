@@ -28,7 +28,7 @@ specifiers:
   eslint-plugin-simple-import-sort: 8.0.0
   eslint-plugin-tailwindcss: 3.6.2
   feed: 4.2.2
-  framer-motion: 7.6.6
+  framer-motion: 7.6.7
   husky: 8.0.2
   lint-staged: 13.0.3
   next: 13.0.3
@@ -73,7 +73,7 @@ dependencies:
   csstype: 3.1.1
   dayjs: 1.11.6
   feed: 4.2.2
-  framer-motion: 7.6.6_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   next: 13.0.3_mqvh5p7ejg4taogoj6tpk3gd5a
   next-mdx-remote: 4.2.0_biqbaboplfbrettd7655fr4n2y
   next-sanity: 1.1.0_next@13.0.3+react@18.2.0
@@ -4336,8 +4336,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion/7.6.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-7ti5mEzhTRBFCMlKs8Zxu9dWtVattpj2jPCNc4jaz4d7bDFekClALaBzmi1pGOKzsOWJsKMeV5ckIkD1DLI9lw==}
+  /framer-motion/7.6.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-vEGsjXygf4qSmgXXsCT1FC56DjiZau9tSQTCchwAP2mOHnYHUy5gbthc4RXFWJh4Z/gFtqE8bzEmjahwOrfT7w==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
