@@ -5,24 +5,35 @@
 // prettier-ignore
 declare module "nextjs-routes" {
   export type Route =
-    | { pathname: "/404"; query?: Query | undefined }
-    | { pathname: "/about"; query?: Query | undefined }
-    | { pathname: "/api/revalidate-blog"; query?: Query | undefined }
-    | { pathname: "/blog"; query?: Query | undefined }
-    | { pathname: "/blog/page/[number]"; query: Query<{ "number": string }> }
-    | { pathname: "/blog/[slug]"; query: Query<{ "slug": string }> }
-    | { pathname: "/"; query?: Query | undefined }
-    | { pathname: "/technology"; query?: Query | undefined };
+    | StaticRoute<"/404">
+    | StaticRoute<"/about">
+    | StaticRoute<"/api/revalidate-blog">
+    | StaticRoute<"/blog">
+    | DynamicRoute<"/blog/page/[number]", { "number": string }>
+    | DynamicRoute<"/blog/[slug]", { "slug": string }>
+    | StaticRoute<"/">
+    | StaticRoute<"/technology">;
 
-  type Query<Params = {}> = Params & {
+  interface StaticRoute<Pathname> {
+    pathname: Pathname;
+    query?: Query | undefined;
+    hash?: string | null | undefined;
+  }
+
+  interface DynamicRoute<Pathname, Parameters> {
+    pathname: Pathname;
+    query: Parameters & Query;
+    hash?: string | null | undefined;
+  }
+
+  interface Query {
     [key: string]: string | string[] | undefined;
   };
 
-  type QueryForPathname = {
-    [K in Route as K["pathname"]]: Exclude<K["query"], undefined>;
-  };
-
-  export type RoutedQuery<P extends Route["pathname"]> = QueryForPathname[P];
+  export type RoutedQuery<P extends Route["pathname"]> = Extract<
+    Route,
+    { pathname: P }
+  >["query"];
 
   export type Locale = undefined;
 
@@ -38,14 +49,20 @@ declare module "nextjs-routes" {
 declare module "next/link" {
   import type { Route } from "nextjs-routes";
   import type { LinkProps as NextLinkProps } from "next/dist/client/link";
-  import type { PropsWithChildren, MouseEventHandler } from "react";
+  import type {
+    AnchorHTMLAttributes,
+    DetailedReactHTMLElement,
+    PropsWithChildren,
+    MouseEventHandler,
+  } from "react";
   export * from "next/dist/client/link";
 
   type Query = { query?: { [key: string]: string | string[] | undefined } };
   type StaticRoute = Exclude<Route, { query: any }>["pathname"];
 
   export interface LinkProps<Href extends Route | Query = Route | Query>
-    extends Omit<NextLinkProps, "href" | "locale"> {
+    extends Omit<NextLinkProps, "href" | "locale">,
+      AnchorHTMLAttributes<HTMLAnchorElement> {
     href: Href;
     locale?: false;
   }
@@ -85,56 +102,55 @@ declare module "next/router" {
 
   interface TransitionOptions extends Omit<NextTransitionOptions, "locale"> {
     locale?: false;
-  };
-
-  export interface NextRouter<P extends Route["pathname"] = Route["pathname"]>
-    extends Omit<
-      Router,
-      | "push"
-      | "replace"
-      | "locale"
-      | "locales"
-      | "defaultLocale"
-      | "domainLocales"
-    > {
-    defaultLocale?: undefined;
-    domainLocales?: undefined;
-    locale?: Locale;
-    locales?: undefined;
-    pathname: P;
-    push(
-      url: Route,
-      as?: string,
-      options?: TransitionOptions
-    ): Promise<boolean>;
-    push(
-      url: StaticRoute,
-      as?: string,
-      options?: TransitionOptions
-    ): Promise<boolean>;
-    push(
-      url: { query: { [key: string]: string | string[] | undefined } },
-      as?: string,
-      options?: TransitionOptions
-    ): Promise<boolean>;
-    query: RoutedQuery<P>;
-    replace(
-      url: Route,
-      as?: string,
-      options?: TransitionOptions
-    ): Promise<boolean>;
-    replace(
-      url: StaticRoute,
-      as?: string,
-      options?: TransitionOptions
-    ): Promise<boolean>;
-    replace(
-      url: { query: { [key: string]: string | string[] | undefined } },
-      as?: string,
-      options?: TransitionOptions
-    ): Promise<boolean>;
-    route: P;
   }
+
+  export type NextRouter<P extends Route["pathname"] = Route["pathname"]> =
+    Extract<Route, { pathname: P }> &
+      Omit<
+        Router,
+        | "push"
+        | "replace"
+        | "locale"
+        | "locales"
+        | "defaultLocale"
+        | "domainLocales"
+      > & {
+        defaultLocale?: undefined;
+        domainLocales?: undefined;
+        locale?: Locale;
+        locales?: undefined;
+        push(
+          url: Route,
+          as?: string,
+          options?: TransitionOptions
+        ): Promise<boolean>;
+        push(
+          url: StaticRoute,
+          as?: string,
+          options?: TransitionOptions
+        ): Promise<boolean>;
+        push(
+          url: { query?: { [key: string]: string | string[] | undefined } },
+          as?: string,
+          options?: TransitionOptions
+        ): Promise<boolean>;
+        replace(
+          url: Route,
+          as?: string,
+          options?: TransitionOptions
+        ): Promise<boolean>;
+        replace(
+          url: StaticRoute,
+          as?: string,
+          options?: TransitionOptions
+        ): Promise<boolean>;
+        replace(
+          url: { query?: { [key: string]: string | string[] | undefined } },
+          as?: string,
+          options?: TransitionOptions
+        ): Promise<boolean>;
+        route: P;
+      };
 
   export function useRouter<P extends Route["pathname"]>(): NextRouter<P>;
 }

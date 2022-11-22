@@ -9,7 +9,7 @@ import { urlForImage } from '../lib/sanity/tools';
 
 interface BlogPropExtend {
     author: Author;
-    tags: Tag[];
+    tags?: Tag[];
 }
 
 export interface BlogProp {
@@ -75,7 +75,7 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
                         <p className="text-gray-700 dark:text-gray-300">Tags:</p>
                     </div>
                     <div className="mt-3 flex items-center space-x-2">
-                        {tags.map(tag => {
+                        {tags?.map(tag => {
                             return (
                                 <div key={tag.name.trim()}>
                                     <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">

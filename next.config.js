@@ -42,6 +42,10 @@ const nextConfig = {
         removeConsole: isProduction,
         reactRemoveProperties: isProduction,
     },
+    eslint: {
+        // Disable linting becase we have checked via Github Actions, no furrther check is needed
+        ignoreDuringBuilds: !!process.env.CI,
+    },
     async headers() {
         return [
             {

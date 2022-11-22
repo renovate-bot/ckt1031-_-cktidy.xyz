@@ -15,13 +15,11 @@ import { Author, Post } from '$lib/sanity/schema';
 import { urlForImage } from '$lib/sanity/tools';
 
 export async function getStaticPaths() {
-    const paths: string[] = await sanityClient.fetch(postSlugQuery);
+    const paths = await sanityClient.fetch<string[]>(postSlugQuery);
 
     return {
-        paths: paths.map((slug: string) => ({
-            params: {
-                slug,
-            },
+        paths: paths.map(slug => ({
+            params: { slug },
         })),
         fallback: false,
     };
