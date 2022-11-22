@@ -1,5 +1,5 @@
 import '../styles/default.css';
-import '../utils/analytics';
+import '../lib/analytics';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -9,7 +9,7 @@ import NextNProgress from 'nextjs-progressbar';
 
 import { THEME_KEY } from '../data/constants';
 import ApplicationLayout from '../layouts/application';
-import seoConfig from '../utils/seo-config';
+import seoConfig from '../lib/seo-config';
 
 export default function NextApplcation({ Component, pageProps }: AppProps) {
     return (

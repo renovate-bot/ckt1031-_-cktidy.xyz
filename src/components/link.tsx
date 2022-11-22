@@ -18,8 +18,8 @@ export default function Textlink({
     enableExternalIcon = false,
     ...rest
 }: TextLinkProp) {
-    const isInternalLink = href && href.startsWith('/');
-    const isAnchorLink = href && href.startsWith('#');
+    const isInternalLink = href?.startsWith('/');
+    const isAnchorLink = href?.startsWith('#');
 
     if (isInternalLink) {
         return (

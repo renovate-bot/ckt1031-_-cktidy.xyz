@@ -11,14 +11,17 @@
         "plugin:jsx-a11y/strict",
         "plugin:react/recommended",
         "plugin:tailwindcss/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/strict",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "plugins": ["simple-import-sort", "@typescript-eslint", "jsx-a11y"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "project": "./tsconfig.json"
     },
     "rules": {
         "semi": [2, "always"],

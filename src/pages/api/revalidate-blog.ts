@@ -2,9 +2,9 @@ import { isValidRequest } from '@sanity/webhook';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import config from '$data/config.json';
-import sanityClient from '$utils/sanity/client';
-import { allPostQuery, postUpdateQuery } from '$utils/sanity/query';
-import { Post } from '$utils/sanity/schema';
+import sanityClient from '$lib/sanity/client';
+import { allPostQuery, postUpdateQuery } from '$lib/sanity/query';
+import { Post } from '$lib/sanity/schema';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const validationSecret = process.env.SANITY_STUDIO_REVALIDATE_SECRET;
@@ -13,14 +13,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(401).json({ message: 'Invalid Request!' });
     }
 
-    const { _id } = req.body;
+    const { _id } = req.body as {
+        _id: string;
+    };
 
     if (typeof _id !== 'string' || !_id) {
         return res.status(400).json({ message: 'Invalid: _id' });
     }
 
     try {
-        const slug = await sanityClient.fetch(postUpdateQuery, {
+        const slug = await sanityClient.fetch<string>(postUpdateQuery, {
             id: _id,
         });
 

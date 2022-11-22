@@ -91,7 +91,7 @@ export interface Post extends SanityDocument {
      *
      *
      */
-    tags?: Array<SanityKeyedReference<Tag>>;
+    tags?: SanityKeyedReference<Tag>[];
 
     /**
      * Published at — `datetime`

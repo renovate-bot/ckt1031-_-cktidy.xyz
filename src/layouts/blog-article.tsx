@@ -4,8 +4,8 @@ import type { ReadTimeResults } from 'reading-time';
 import Image from '$components/image';
 import mdxComponents from '$components/mdx-components';
 
-import { Author, Post, Tag } from '../utils/sanity/schema';
-import { urlForImage } from '../utils/sanity/tools';
+import { Author, Post, Tag } from '../lib/sanity/schema';
+import { urlForImage } from '../lib/sanity/tools';
 
 interface BlogPropExtend {
     author: Author;
@@ -32,22 +32,19 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
                 <div className="mb-2">
                     <h1 className="text-4xl md:text-5xl">{post.title}</h1>
                     <div className="mt-2 flex flex-row items-center space-x-2 md:text-xl">
-                        {author && (
-                            <>
-                                <div className="flex flex-row items-center space-x-3 text-xl">
-                                    <Image
-                                        alt="Thumbnail"
-                                        className="rounded-full shadow-2xl"
-                                        src={urlForImage(author.avatar).url()}
-                                        blurEnabled={false}
-                                        width={35}
-                                        height={35}
-                                    />
-                                    <span>{author.name}</span>
-                                </div>
-                                <span className="text-gray-500">-</span>
-                            </>
-                        )}
+                        <div className="flex flex-row items-center space-x-3 text-xl">
+                            <Image
+                                alt="Thumbnail"
+                                className="rounded-full shadow-2xl"
+                                src={urlForImage(author.avatar).url()}
+                                blurEnabled={false}
+                                width={35}
+                                height={35}
+                            />
+                            <span>{author.name}</span>
+                        </div>
+                        <span className="text-gray-500">-</span>
+
                         <span className="italic text-gray-600 dark:text-gray-400">{dateName}</span>
                     </div>
                     <div>
@@ -72,26 +69,24 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
             <div className="blog-article-container">
                 <MDXRemote {...content} components={{ ...mdxComponents }} />
             </div>
-            {tags && (
-                <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
-                    <div className="py-4 text-xl">
-                        <div>
-                            <p className="text-gray-700 dark:text-gray-300">Tags:</p>
-                        </div>
-                        <div className="mt-3 flex items-center space-x-2">
-                            {tags.map(tag => {
-                                return (
-                                    <div key={tag.name.trim()}>
-                                        <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
-                                            #{tag.name}
-                                        </p>
-                                    </div>
-                                );
-                            })}
-                        </div>
+            <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
+                <div className="py-4 text-xl">
+                    <div>
+                        <p className="text-gray-700 dark:text-gray-300">Tags:</p>
+                    </div>
+                    <div className="mt-3 flex items-center space-x-2">
+                        {tags.map(tag => {
+                            return (
+                                <div key={tag.name.trim()}>
+                                    <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
+                                        #{tag.name}
+                                    </p>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
-            )}
+            </div>
         </article>
     );
 }

@@ -20,6 +20,6 @@
             "$*": ["src/*"]
         }
     },
-    "exclude": ["node_modules"],
-    "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"]
+    "exclude": ["node_modules", "tailwind.config.cjs"],
+    "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.cjs", "**/*.mjs"]
 }

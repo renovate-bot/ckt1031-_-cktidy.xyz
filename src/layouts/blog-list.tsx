@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
+import sAgo from 's-ago';
 
 import Image from '$components/image';
-import { getDaysDifference } from '$utils/date';
-import { Post } from '$utils/sanity/schema';
-import { urlForImage } from '$utils/sanity/tools';
+import { Post } from '$lib/sanity/schema';
+import { urlForImage } from '$lib/sanity/tools';
 
 export interface BlogListProp {
     posts: Post[];
@@ -133,7 +133,7 @@ function List({ postList }: { postList: Post[] }) {
                                     </p>
                                 </div>
                                 <p className="text-lg text-gray-500 dark:text-gray-400">
-                                    Published: {getDaysDifference(post.publishedAt)}
+                                    Published: {sAgo(new Date(post.publishedAt))}
                                 </p>
                             </div>
                             {post.thumbnail && (

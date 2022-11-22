@@ -6,7 +6,7 @@ import Header from '$components/header';
 
 const ScollUpButton = dynamic(() => import('$components/scroll-up-button'));
 
-export default function ApplicationLayout({ children }: PropsWithChildren<unknown>) {
+export default function ApplicationLayout({ children }: PropsWithChildren) {
     return (
         <div className="layout-default">
             <Header />
