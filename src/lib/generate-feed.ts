@@ -5,7 +5,7 @@ import { Feed } from 'feed';
 import config from '../data/config.json';
 import { Author, Post } from './sanity/schema';
 
-const generateRSS = (posts: Post[]) => {
+export default function generateRSS(posts: Post[]) {
     const feed = new Feed({
         title: config.sitename,
         description: config.description,
@@ -22,7 +22,7 @@ const generateRSS = (posts: Post[]) => {
     for (const post of posts) {
         const author = post.author as unknown as Author;
 
-        const postUrl = config.url + `/${post.slug.current}`;
+        const postUrl = config.url + '/blog' + `/${post.slug.current}`;
 
         feed.addItem({
             title: post.title,
@@ -40,6 +40,4 @@ const generateRSS = (posts: Post[]) => {
     }
 
     writeFileSync('./public/feed.xml', feed.rss2());
-};
-
-export default generateRSS;
+}

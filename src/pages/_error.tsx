@@ -14,7 +14,7 @@ const MyError = ({
     statusCode: number;
     err: Error;
 }) => {
-    if (!hasGetInitialPropsRun && err) {
+    if (!hasGetInitialPropsRun) {
         captureException(err);
     }
 
@@ -40,7 +40,10 @@ MyError.getInitialProps = async (context: NextPageContext) => {
         return errorInitialProps;
     }
 
-    captureException(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
+    if (asPath) {
+        captureException(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
+    }
+
     await flush(2000);
 
     return errorInitialProps;

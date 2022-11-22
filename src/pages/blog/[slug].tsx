@@ -8,11 +8,11 @@ import readingTimeModule from 'reading-time';
 import ScrollProgressBar from '$components/scroll-progress-bar';
 import config from '$data/config.json';
 import { BlogDisplayPage, BlogProp } from '$layouts/blog-article';
-import { parseMdx } from '$utils/mdx';
-import sanityClient from '$utils/sanity/client';
-import { postSingleQuery, postSlugQuery } from '$utils/sanity/query';
-import { Author, Post } from '$utils/sanity/schema';
-import { urlForImage } from '$utils/sanity/tools';
+import { parseMdx } from '$lib/mdx';
+import sanityClient from '$lib/sanity/client';
+import { postSingleQuery, postSlugQuery } from '$lib/sanity/query';
+import { Author, Post } from '$lib/sanity/schema';
+import { urlForImage } from '$lib/sanity/tools';
 
 export async function getStaticPaths() {
     const paths: string[] = await sanityClient.fetch(postSlugQuery);
@@ -32,13 +32,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         return { notFound: true };
     }
 
-    const post: Post = await sanityClient.fetch(postSingleQuery, {
+    const post = await sanityClient.fetch<Post>(postSingleQuery, {
         slug: params.slug,
     });
-
-    if (!post) {
-        return { notFound: true };
-    }
 
     const content = await parseMdx(post.body as unknown as string);
     const dateName = dayjs(post._createdAt).format('YYYY/MM/DD hh:mm');

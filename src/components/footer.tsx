@@ -5,22 +5,22 @@ import config from '$data/config.json';
 
 import Link from './link';
 
-function SocialMediaRow() {
-    const footerSocialLinks = [
-        {
-            href: config.author.social.instagram,
-            icon: <BsInstagram />,
-        },
-        {
-            href: config.author.social.github,
-            icon: <BsGithub />,
-        },
-        {
-            href: config.author.social.youtube,
-            icon: <BsYoutube />,
-        },
-    ];
+const footerSocialLinks = [
+    {
+        href: config.author.social.instagram,
+        icon: <BsInstagram />,
+    },
+    {
+        href: config.author.social.github,
+        icon: <BsGithub />,
+    },
+    {
+        href: config.author.social.youtube,
+        icon: <BsYoutube />,
+    },
+];
 
+function SocialMediaRow() {
     return (
         <div className="flex flex-row gap-3">
             {footerSocialLinks.map(({ href, icon }) => (

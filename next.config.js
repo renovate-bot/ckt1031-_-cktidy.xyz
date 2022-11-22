@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { withSentryConfig } from '@sentry/nextjs';
 import withRoutes from 'nextjs-routes/config';
 
@@ -52,16 +53,15 @@ const nextConfig = {
     sentry: {
         hideSourceMaps: true,
     },
-    rewrites: async () => {
+    async rewrites() {
+        // Disable source maps in production
         if (isProduction) {
-            return {
-                beforeFiles: [
-                    {
-                        source: '/:path*.map',
-                        destination: '/404',
-                    },
-                ],
-            };
+            return [
+                {
+                    source: '/:path*.map',
+                    destination: '/404',
+                },
+            ];
         }
 
         return [];

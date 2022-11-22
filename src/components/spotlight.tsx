@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import Fuse from 'fuse.js';
 import { useRouter } from 'next/router';
-import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 import { useKeyPressEvent } from 'react-use';
@@ -8,13 +9,22 @@ import { useKeyPressEvent } from 'react-use';
 import { pageList, PageListProp } from '../data/pages';
 
 export default function Spotlight() {
-    const { push } = useRouter();
+    const router = useRouter();
 
     const [display, setDisplay] = useState(false);
     const [searchList, setSearchList] = useState<PageListProp[]>(pageList);
 
-    // sort by alphabetical order.
+    // Sort by alphabetical order.
     const sortedList = searchList.sort((a, b) => a.name.localeCompare(b.name));
+
+    const fuse = useMemo(
+        () =>
+            new Fuse(pageList, {
+                threshold: 0.4,
+                keys: ['name'],
+            }),
+        [],
+    );
 
     useEffect(() => {
         document.body.style.overflow = display ? 'hidden' : 'auto';
@@ -30,11 +40,10 @@ export default function Spotlight() {
 
     const onType = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        if (!value) setSearchList(pageList);
+        if (!value || value.length < 1) setSearchList(pageList);
         else {
-            setSearchList(list =>
-                list.filter(page => page.name.toLowerCase().includes(value.toLowerCase())),
-            );
+            const result = fuse.search(value);
+            setSearchList(result.map(({ item }) => item));
         }
     };
 
@@ -82,7 +91,9 @@ export default function Spotlight() {
                                                             type="button"
                                                             className="w-full text-left"
                                                             onClick={() => {
-                                                                push(value.href as never);
+                                                                router
+                                                                    .push(value.href as never)
+                                                                    .catch(console.error);
                                                                 toggleSpotlightDisplay();
                                                             }}>
                                                             {value.name}

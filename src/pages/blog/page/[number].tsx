@@ -3,9 +3,9 @@ import { NextSeo } from 'next-seo';
 
 import config from '$data/config.json';
 import BlogList, { BlogListProp } from '$layouts/blog-list';
-import sanityClient from '$utils/sanity/client';
-import { allPostQuery } from '$utils/sanity/query';
-import { Post } from '$utils/sanity/schema';
+import sanityClient from '$lib/sanity/client';
+import { allPostQuery } from '$lib/sanity/query';
+import { Post } from '$lib/sanity/schema';
 
 export async function getStaticPaths() {
     const posts: Post[] = await sanityClient.fetch(allPostQuery);
