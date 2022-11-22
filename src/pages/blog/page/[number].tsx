@@ -8,7 +8,7 @@ import { allPostQuery } from '$lib/sanity/query';
 import { Post } from '$lib/sanity/schema';
 
 export async function getStaticPaths() {
-    const posts: Post[] = await sanityClient.fetch(allPostQuery);
+    const posts = await sanityClient.fetch<Post[]>(allPostQuery);
 
     const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
 

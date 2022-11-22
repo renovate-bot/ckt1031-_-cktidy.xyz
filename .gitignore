@@ -24,3 +24,6 @@ public/feed.xml
 .sentryclirc
 
 test-results
+
+public/robots.txt
+public/*.xml
