@@ -1,6 +1,7 @@
 import clsx from 'clsx';
+import Fuse from 'fuse.js';
 import Link from 'next/link';
-import { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 import sAgo from 's-ago';
@@ -159,27 +160,25 @@ function List({ postList }: { postList: Post[] }) {
 }
 
 export default function ListPage({ posts, displayPosts, pagination }: BlogListProp) {
-    const [searchKey, setSearchKey] = useState('');
+    const [queryPost, setQueryPost] = useState<Post[]>(posts);
 
-    const onSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const fuse = useMemo(
+        () =>
+            new Fuse(posts, {
+                threshold: 0.4,
+                keys: ['name'],
+            }),
+        [posts],
+    );
+
+    const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        setSearchKey(value);
-    }, []);
-
-    const filteredPosts = posts.filter(post => {
-        const searchContent = [post.title, post.breif, post.slug.current];
-        for (let i = 0, l = searchContent.length; i < l; i++) {
-            const content = searchContent[i];
-
-            const isMatched = content.toLowerCase().includes(searchKey.toLowerCase());
-
-            if (isMatched) return true;
-            else if (i === 2) return false;
-            else continue;
+        if (!value || value.length < 1) setQueryPost(displayPosts);
+        else {
+            const result = fuse.search(value);
+            setQueryPost(result.map(({ item }) => item));
         }
-    });
-
-    const localList = searchKey.length > 0 ? filteredPosts : displayPosts;
+    };
 
     return (
         <div className="max-w-[700px]">
@@ -200,8 +199,8 @@ export default function ListPage({ posts, displayPosts, pagination }: BlogListPr
                     </div>
                 </div>
             </div>
-            <List postList={localList} />
-            {searchKey.length === 0 &&
+            <List postList={queryPost} />
+            {queryPost.length === 0 &&
                 pagination.totalPages > 0 &&
                 pagination.totalPages - 1 !== 0 && <Pageination pagination={pagination} />}
         </div>
