@@ -3,9 +3,8 @@ import type { ReadTimeResults } from 'reading-time';
 
 import Image from '$components/image';
 import mdxComponents from '$components/mdx-components';
-
-import { Author, Post, Tag } from '../lib/sanity/schema';
-import { urlForImage } from '../lib/sanity/tools';
+import { Author, Post, Tag } from '$lib/sanity/schema';
+import { urlForImage } from '$lib/sanity/tools';
 
 interface BlogPropExtend {
     author: Author;

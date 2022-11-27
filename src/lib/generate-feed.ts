@@ -2,7 +2,8 @@ import { writeFileSync } from 'node:fs';
 
 import { Feed } from 'feed';
 
-import config from '../data/config.json';
+import { config } from '$data/constants';
+
 import { Author, Post } from './sanity/schema';
 
 export default function generateRSS(posts: Post[]) {

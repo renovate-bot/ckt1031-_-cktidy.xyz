@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
-import config from '$data/config.json';
+import { config } from '$data/constants';
 import BlogList from '$layouts/blog-list';
 import generateRSS from '$lib/generate-feed';
 import sanityClient from '$lib/sanity/client';

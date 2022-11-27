@@ -1,7 +1,7 @@
 import type { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
-import config from '$data/config.json';
+import { config } from '$data/constants';
 import BlogList, { BlogListProp } from '$layouts/blog-list';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
-import config from '$data/config.json';
+import { config } from '$data/constants';
 
 import Link from './link';
 

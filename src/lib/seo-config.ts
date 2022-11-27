@@ -1,7 +1,7 @@
 import type { DefaultSeoProps } from 'next-seo';
 
-import config from '../data/config.json';
-import { isDev } from '../data/constants';
+import { config } from '$data/constants';
+import { isDev } from '$data/constants';
 
 const seoConfig: DefaultSeoProps = {
     titleTemplate: '%s - cktidy',
