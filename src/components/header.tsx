@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { memo, useState } from 'react';
 import { useEvent } from 'react-use';
 
-import config from '$data/config.json';
+import { config } from '$data/constants';
 
 import Link from './link';
 

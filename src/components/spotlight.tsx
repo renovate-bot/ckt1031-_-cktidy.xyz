@@ -6,7 +6,7 @@ import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 import { useKeyPressEvent } from 'react-use';
 
-import { pageList, PageListProp } from '../data/pages';
+import { pageList, PageListProp } from '$data/pages';
 
 export default function Spotlight() {
     const router = useRouter();

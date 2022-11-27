@@ -1,7 +1,7 @@
 import { Fragment, memo } from 'react';
 import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
-import config from '$data/config.json';
+import { config } from '$data/constants';
 
 import Link from './link';
 
