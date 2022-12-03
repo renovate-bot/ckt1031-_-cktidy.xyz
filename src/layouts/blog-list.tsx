@@ -7,12 +7,16 @@ import { FiSearch } from 'react-icons/fi';
 import sAgo from 's-ago';
 
 import Image from '$components/image';
-import { Post } from '$lib/sanity/schema';
+import { Post, Tag } from '$lib/sanity/schema';
 import { urlForImage } from '$lib/sanity/tools';
 
 export interface BlogListProp {
-    posts: Post[];
-    displayPosts: Post[];
+    posts: (Omit<Post, 'tags'> & {
+        tags?: Tag[];
+    })[];
+    displayPosts: (Omit<Post, 'tags'> & {
+        tags?: Tag[];
+    })[];
     pagination: {
         currentPage: number;
         totalPages: number;
@@ -102,7 +106,13 @@ function Pageination({ pagination }: Omit<BlogListProp, 'posts' | 'displayPosts'
     );
 }
 
-function List({ postList }: { postList: Post[] }) {
+function List({
+    postList,
+}: {
+    postList: (Omit<Post, 'tags'> & {
+        tags?: Tag[];
+    })[];
+}) {
     return (
         <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
             {postList.length > 0 ? (
@@ -160,7 +170,11 @@ function List({ postList }: { postList: Post[] }) {
 }
 
 export default function ListPage({ posts, displayPosts, pagination }: BlogListProp) {
-    const [queryPost, setQueryPost] = useState<Post[]>(posts);
+    const [queryPost, setQueryPost] = useState<
+        (Omit<Post, 'tags'> & {
+            tags?: Tag[];
+        })[]
+    >(posts);
 
     const fuse = useMemo(
         () =>

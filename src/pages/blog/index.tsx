@@ -6,10 +6,12 @@ import BlogList from '$layouts/blog-list';
 import generateRSS from '$lib/generate-feed';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
-import { Post } from '$lib/sanity/schema';
+import { Post, Tag } from '$lib/sanity/schema';
 
 export async function getStaticProps() {
-    const posts: Post[] = await sanityClient.fetch(allPostQuery);
+    const posts: (Omit<Post, 'tags'> & {
+        tags?: Tag[];
+    })[] = await sanityClient.fetch(allPostQuery);
 
     // Genertae feed for RSS
     generateRSS(posts);

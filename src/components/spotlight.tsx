@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Fuse from 'fuse.js';
 import { useRouter } from 'next/router';
-import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 import { useKeyPressEvent } from 'react-use';
@@ -34,9 +34,9 @@ export default function Spotlight() {
         setDisplay(false);
     });
 
-    const toggleSpotlightDisplay = useCallback(() => {
+    const toggleSpotlightDisplay = () => {
         setDisplay(state => !state);
-    }, []);
+    };
 
     const onType = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;

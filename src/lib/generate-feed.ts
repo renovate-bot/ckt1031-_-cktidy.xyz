@@ -4,15 +4,19 @@ import { Feed } from 'feed';
 
 import { config } from '$data/constants';
 
-import { Author, Post } from './sanity/schema';
+import { Author, Post, Tag } from './sanity/schema';
 
-export default function generateRSS(posts: Post[]) {
+export default function generateRSS(
+    posts: (Omit<Post, 'tags'> & {
+        tags?: Tag[];
+    })[],
+) {
     const feed = new Feed({
-        title: config.sitename,
+        title: `ckt1031's personal site`,
         description: config.description,
         id: config.url,
         link: config.url,
-        copyright: `${new Date().getFullYear()} ${config.author.name}`,
+        copyright: `©${new Date().getFullYear()} ${config.author.name}`,
         generator: 'cktidy-rss',
         author: {
             name: config.author.name,
@@ -37,6 +41,12 @@ export default function generateRSS(posts: Post[]) {
                 },
             ],
             date: new Date(post._createdAt),
+            copyright: `©${new Date().getFullYear()} ${config.author.name}`,
+            ...(post.tags && {
+                category: post.tags.map(tag => ({
+                    name: tag.name,
+                })),
+            }),
         });
     }
 
