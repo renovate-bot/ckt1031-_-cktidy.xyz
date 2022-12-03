@@ -58,23 +58,6 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="mb-7">
-                        <h2 className="base-border mb-4 border-b text-2xl">🔋Equipments</h2>
-                        <div className="space-y-2 text-gray-600 dark:text-gray-400">
-                            <div className="flex flex-row justify-between space-x-10">
-                                <p>Mobile:</p>
-                                <p>Xiaomi 10T Pro 5G (8+256GB)</p>
-                            </div>
-                            <div className="flex flex-row justify-between space-x-10">
-                                <p>Tablet:</p>
-                                <p>Apple iPad 6 (Wi-Fi 128GB)</p>
-                            </div>
-                            <div className="flex flex-row justify-between space-x-10">
-                                <p>Desktop:</p>
-                                <p>IdeaCentre 3 07IAB7 + LC24F390FHCXXK 24&quot; CF39</p>
-                            </div>
-                        </div>
-                    </div>
                     <div>
                         <h2 className="base-border mb-4 border-b text-2xl">🦣Value of LIFE</h2>
                         <div className="space-y-2 text-xl text-gray-600 dark:text-gray-400">

@@ -5,7 +5,7 @@ import { config } from '$data/constants';
 import BlogList, { BlogListProp } from '$layouts/blog-list';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
-import { Post } from '$lib/sanity/schema';
+import { Post, Tag } from '$lib/sanity/schema';
 
 export async function getStaticPaths() {
     const posts = await sanityClient.fetch<Post[]>(allPostQuery);
@@ -29,7 +29,9 @@ export const getStaticProps: GetStaticProps<BlogListProp> = async ({ params }) =
 
     const pageNumber = Number(params.number);
 
-    const posts: Post[] = await sanityClient.fetch(allPostQuery);
+    const posts: (Omit<Post, 'tags'> & {
+        tags?: Tag[];
+    })[] = await sanityClient.fetch(allPostQuery);
 
     const displayPosts = posts.slice(
         config.blog.maxDisplayPerPage * (pageNumber - 1),

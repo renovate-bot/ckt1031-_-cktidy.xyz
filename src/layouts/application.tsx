@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
 import type { PropsWithChildren } from 'react';
 
-import Footer from '$components/footer';
-import Header from '$components/header';
+import Footer from '$components/global/footer';
+import Header from '$components/global/header';
 
 const ScollUpButton = dynamic(() => import('$components/scroll-up-button'));
 

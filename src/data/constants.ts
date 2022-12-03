@@ -6,7 +6,9 @@ export const config = {
     name: 'cktidy',
     sitename: 'ckt',
     url: 'https://cktidy.xyz',
-    description: 'A cool website by cktsun1031!',
+    description: `A cool website by cktsun1031!
+    I will be releasing cool stuff here! Stay tuned!
+    Started this website since June 2022, and I will be updating it frequently!`,
     author: {
         name: 'ckt1031',
         email: 'me@cktidy.xyz',
@@ -47,6 +49,10 @@ export const config = {
             {
                 name: 'Techs',
                 href: '/technology',
+            },
+            {
+                name: 'RSS Feeds',
+                href: '/feed.xml',
             },
         ],
     },

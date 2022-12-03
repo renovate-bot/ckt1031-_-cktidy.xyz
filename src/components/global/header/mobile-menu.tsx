@@ -5,7 +5,7 @@ import { MdClose, MdMenu } from 'react-icons/md';
 
 import { config } from '$data/constants';
 
-import Link from './link';
+import Link from '../../link';
 
 interface PagesProp {
     showMenu: boolean;

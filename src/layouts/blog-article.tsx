@@ -69,11 +69,11 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
                 <MDXRemote {...content} components={{ ...mdxComponents }} />
             </div>
             <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
-                <div className="py-4 text-xl">
+                <div className="py-4 text-base">
                     <div>
                         <p className="text-gray-700 dark:text-gray-300">Tags:</p>
                     </div>
-                    <div className="mt-3 flex items-center space-x-2">
+                    <div className="mt-3 flex items-center gap-2">
                         {tags?.map(tag => {
                             return (
                                 <div key={tag.name.trim()}>
