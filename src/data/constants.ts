@@ -16,7 +16,7 @@ export const config = {
             instagram: 'https://www.instagram.com/cktidy.1031',
             github: 'https://github.com/cktsun1031',
             youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-            twitter: 'https://github.com/cktsun1031',
+            twitter: 'https://twitter.com/@cktsun1031',
             discordServer: 'https://discord.gg/Y2ZnZc5Nnh',
         },
     },
