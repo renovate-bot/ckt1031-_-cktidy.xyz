@@ -18,6 +18,7 @@ export const config = {
             youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
             twitter: 'https://twitter.com/@cktsun1031',
             discordServer: 'https://discord.gg/Y2ZnZc5Nnh',
+            feed: '/feed.xml',
         },
     },
     twitter: '@cktsun1031',
@@ -49,10 +50,6 @@ export const config = {
             {
                 name: 'Techs',
                 href: '/technology',
-            },
-            {
-                name: 'RSS Feeds',
-                href: '/feed.xml',
             },
         ],
     },

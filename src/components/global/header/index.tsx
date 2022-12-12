@@ -6,7 +6,7 @@ import MobileMenu from '$components/global/header/mobile-menu';
 import Spotlight from '$components/spotlight';
 import ThemeSwitcher from '$components/theme-switch';
 
-import NavigationBarPages from './pages';
+import NavigationBarPages from './page-navigation';
 
 function Header() {
     const [showShadow, setShowShadow] = useState(false);
