@@ -10,6 +10,9 @@ const config = {
             colors: {
                 gray: neutral,
             },
+            fontFamily: {
+                sans: ['var(--spline-sans-mono)', 'var(--noto-hk)', 'var(--noto-sc)'],
+            },
             typography: theme => ({
                 DEFAULT: {
                     css: {
