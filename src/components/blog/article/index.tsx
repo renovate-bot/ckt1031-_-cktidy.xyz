@@ -68,24 +68,26 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
             <div className="blog-article-container">
                 <MDXRemote {...content} components={{ ...mdxComponents }} />
             </div>
-            <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
-                <div className="py-4 text-base">
-                    <div>
-                        <p className="text-gray-700 dark:text-gray-300">Tags:</p>
-                    </div>
-                    <div className="mt-3 flex items-center gap-2">
-                        {tags?.map(tag => {
-                            return (
-                                <div key={tag.name.trim()}>
-                                    <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
-                                        #{tag.name}
-                                    </p>
-                                </div>
-                            );
-                        })}
+            {tags && tags.length > 0 && (
+                <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
+                    <div className="py-4 text-base">
+                        <div>
+                            <p className="text-gray-700 dark:text-gray-300">Tags:</p>
+                        </div>
+                        <div className="mt-3 flex items-center gap-2">
+                            {tags.map(tag => {
+                                return (
+                                    <div key={tag.name.trim()}>
+                                        <p className="rounded-lg bg-teal-300 p-2 dark:bg-teal-700">
+                                            #{tag.name}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </article>
     );
 }

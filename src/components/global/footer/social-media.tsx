@@ -1,4 +1,4 @@
-import { BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
+import { BsFillRssFill,BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
 import { config } from '$data/constants';
 
@@ -16,6 +16,10 @@ const footerSocialLinks = [
     {
         href: config.author.social.youtube,
         icon: <BsYoutube />,
+    },
+    {
+        href: config.author.social.feed,
+        icon: <BsFillRssFill />,
     },
 ];
 
