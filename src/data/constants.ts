@@ -13,7 +13,7 @@ export const config = {
         name: 'ckt1031',
         email: 'me@cktidy.xyz',
         social: {
-            instagram: 'https://www.instagram.com/cktidy.1031',
+            instagram: 'https://www.instagram.com/ckt.1031/',
             github: 'https://github.com/cktsun1031',
             youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
             twitter: 'https://twitter.com/@cktsun1031',
