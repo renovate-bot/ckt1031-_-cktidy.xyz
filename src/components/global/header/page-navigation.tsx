@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 
 export default function NavigationBarPages() {
     const { route } = useRouter();

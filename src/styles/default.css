@@ -87,3 +87,7 @@ body {
 .base-border {
     @apply border-gray-300 dark:border-gray-600;
 }
+
+.base-input-box {
+    @apply base-border rounded border bg-gray-200 p-2 dark:bg-gray-800;
+}

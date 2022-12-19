@@ -4,6 +4,8 @@ export const THEME_KEY = 'THEME_NAME';
 
 export const COUNTDOWN_BANNER_2023_CLOSED_KEY = 'COUNTDOWN_BANNER_2023_CLOSED';
 
+export const DISABLE_SNOWFALL_EFFECT_KEY = 'DISABLE_SNOWFALL_EFFECT';
+
 export const config = {
     name: 'cktidy',
     sitename: 'ckt',
@@ -52,6 +54,10 @@ export const config = {
             {
                 name: 'Techs',
                 href: '/technology',
+            },
+            {
+                name: 'Settings',
+                href: '/settings',
             },
         ],
     },

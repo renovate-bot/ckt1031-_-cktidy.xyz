@@ -2,7 +2,7 @@ import type { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import BlogList, { BlogListProp } from '$components/blog/explorer';
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
 import { Post, Tag } from '$lib/sanity/schema';
