@@ -21,5 +21,14 @@
         }
     },
     "exclude": ["node_modules", "tailwind.config.cjs"],
-    "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.cjs", "**/*.mjs"]
+    "include": [
+        "**/*.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.cjs",
+        "**/*.mjs",
+        "*.ts"
+    ]
 }

@@ -29,6 +29,7 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    generateEtags: false,
     reactStrictMode: true,
     poweredByHeader: false,
     images: {
@@ -39,7 +40,6 @@ const nextConfig = {
         FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',
     },
     compiler: {
-        removeConsole: isProduction,
         reactRemoveProperties: isProduction,
     },
     eslint: {
@@ -56,6 +56,8 @@ const nextConfig = {
     },
     sentry: {
         hideSourceMaps: true,
+        // Wrap for apis
+        autoInstrumentServerFunctions: true,
     },
     async rewrites() {
         // Disable source maps in production
