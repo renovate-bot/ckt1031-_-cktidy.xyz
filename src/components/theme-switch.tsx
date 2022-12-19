@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useCallback, useEffect, useState } from 'react';
 import { MdComputer, MdDarkMode, MdLightMode } from 'react-icons/md';
@@ -22,17 +21,10 @@ export default function ThemeSwitcher() {
 
     return (
         <div className="flex items-center justify-center rounded-lg ring-gray-300 hover:bg-gray-200 hover:dark:bg-gray-800">
-            <motion.button
-                id="theme-switcher"
+            <button
                 type="button"
                 aria-label="Toggle Theme Mode"
-                className="p-2"
-                whileTap={{
-                    scale: 1.1,
-                    rotate: 90,
-                }}
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.2, ease: 'easeInOut' }}
+                className="base-button-animation p-2"
                 onClick={toggleThemes}>
                 {themeName === 'system' ? (
                     <MdComputer />
@@ -41,7 +33,7 @@ export default function ThemeSwitcher() {
                 ) : (
                     <MdLightMode />
                 )}
-            </motion.button>
+            </button>
         </div>
     );
 }

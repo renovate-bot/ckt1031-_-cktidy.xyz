@@ -8,11 +8,11 @@ export default function NotFoundPage() {
             <div className="flex flex-col items-center justify-center">
                 <div className="xs:mt-40 flex flex-col items-center justify-center md:flex-row">
                     <div className="flex flex-col text-center">
-                        <div className="mb-4 text-8xl">
+                        <div className="mb-4 text-6xl">
                             <p>404</p>
                         </div>
-                        <p className="text-3xl md:text-5xl">Did you get lost?</p>
-                        <div className="mt-4 text-2xl text-red-500">
+                        <p className="text-xl md:text-2xl">Did you get lost?</p>
+                        <div className="mt-4 text-red-500">
                             <p>URL requested cannot be found!</p>
                         </div>
                     </div>

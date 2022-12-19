@@ -10,8 +10,8 @@ import { BlogListProp } from '.';
 export default function ExplorerBlogList({ postList }: { postList: BlogListProp['posts'] }) {
     return (
         <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
-            {postList.length > 0 ? (
-                postList.map(post => {
+            {postList?.length !== 0 ? (
+                postList?.map(post => {
                     return (
                         <div
                             key={`BLOG-LIST-${post.slug.current.trim()}`}
@@ -24,21 +24,18 @@ export default function ExplorerBlogList({ postList }: { postList: BlogListProp[
                                 <div>
                                     <Link
                                         passHref
+                                        className="cursor-pointer text-2xl hover:underline"
                                         href={{
                                             pathname: '/blog/[slug]',
                                             query: {
                                                 slug: post.slug.current,
                                             },
                                         }}>
-                                        <span className="cursor-pointer text-2xl">
-                                            {post.title}
-                                        </span>
+                                        {post.title}
                                     </Link>
-                                    <p className="text-xl text-gray-600 dark:text-gray-300">
-                                        {post.breif}
-                                    </p>
+                                    <p className="text-gray-600 dark:text-gray-300">{post.breif}</p>
                                 </div>
-                                <p className="text-lg text-gray-500 dark:text-gray-400">
+                                <p className="text-gray-500 dark:text-gray-400">
                                     Published: {sAgo(new Date(post.publishedAt))}
                                 </p>
                             </div>
