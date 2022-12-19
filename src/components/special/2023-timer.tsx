@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 
-import { COUNTDOWN_BANNER_2023_CLOSED_KEY } from '$data/constants';
+import { COUNTDOWN_BANNER_2023_CLOSED_KEY } from '$lib/constants';
 
 export default function TimerTo2023() {
     const [timer, setTimer] = useState('N/A');

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Fragment } from 'react';
 
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 
 export default function FooterLinksAndCopyright() {
     return (

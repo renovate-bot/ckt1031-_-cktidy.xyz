@@ -12,6 +12,7 @@ declare module "nextjs-routes" {
     | DynamicRoute<"/blog/page/[number]", { "number": string }>
     | DynamicRoute<"/blog/[slug]", { "slug": string }>
     | StaticRoute<"/">
+    | StaticRoute<"/settings">
     | StaticRoute<"/technology">;
 
   interface StaticRoute<Pathname> {

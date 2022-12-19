@@ -1,6 +1,6 @@
 import { BsFillRssFill, BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
 
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 
 import Link from '../../link';
 

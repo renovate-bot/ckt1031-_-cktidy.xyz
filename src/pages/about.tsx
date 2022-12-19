@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import { BsDiscord, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 import Link from '$components/link';
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 
 export default function AboutPage() {
     const title = 'About Me';

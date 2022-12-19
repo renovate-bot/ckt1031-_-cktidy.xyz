@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 
 import LinksAndCopyright from './links-copyright';
 import SocialMediaRow from './social-media';

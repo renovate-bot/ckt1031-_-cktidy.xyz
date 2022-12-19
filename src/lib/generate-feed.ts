@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs';
 
 import { Feed } from 'feed';
 
-import { config } from '$data/constants';
+import { config } from '$lib/constants';
 
 import { Author, Post, Tag } from './sanity/schema';
 
