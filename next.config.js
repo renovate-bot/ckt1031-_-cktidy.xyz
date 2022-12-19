@@ -37,7 +37,6 @@ const nextConfig = {
     },
     env: {
         SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
-        FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID ?? '',
     },
     compiler: {
         reactRemoveProperties: isProduction,
