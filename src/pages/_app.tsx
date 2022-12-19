@@ -56,7 +56,13 @@ function NextApplcation({ Component, pageProps }: AppProps) {
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
             </Head>
             {/* Disable Snowfall after 2023/01/15 */}
-            {currentDate && currentDate < new Date('2023/01/15') && <Snowfall />}
+            {currentDate && currentDate < new Date('2023/01/15') && (
+                <Snowfall
+                    style={{
+                        position: 'fixed',
+                    }}
+                />
+            )}
             <ThemeProvider enableSystem attribute="class" storageKey={THEME_KEY}>
                 <SeoComponent />
                 <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />
