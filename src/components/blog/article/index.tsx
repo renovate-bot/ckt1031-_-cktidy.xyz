@@ -29,28 +29,13 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
         <article>
             <div className="mb-3 border-b border-gray-300 dark:border-gray-600">
                 <div className="mb-2">
-                    <h1 className="text-4xl md:text-5xl">{post.title}</h1>
-                    <div className="mt-2 flex flex-row items-center space-x-2 md:text-xl">
-                        <div className="flex flex-row items-center space-x-3 text-xl">
-                            <Image
-                                alt="Thumbnail"
-                                className="rounded-full shadow-2xl"
-                                src={urlForImage(author.avatar).url()}
-                                blurEnabled={false}
-                                width={35}
-                                height={35}
-                            />
-                            <span>{author.name}</span>
-                        </div>
-                        <span className="text-gray-500">-</span>
-
-                        <span className="italic text-gray-600 dark:text-gray-400">{dateName}</span>
-                    </div>
-                    <div>
-                        <p className="italic text-slate-600 dark:text-slate-400">
-                            {readingMinutes}
-                        </p>
-                    </div>
+                    <h1 className="text-2xl font-bold md:text-3xl">{post.title}</h1>
+                    <p className="mt-2 italic text-gray-600 dark:text-gray-400">
+                        Published at: {dateName}
+                    </p>
+                    <p className="mt-1 italic text-slate-600 dark:text-slate-400">
+                        {readingMinutes}
+                    </p>
                 </div>
             </div>
             {post.thumbnail && (
@@ -68,12 +53,25 @@ export function BlogDisplayPage({ post, readingTime, content, dateName }: BlogPr
             <div className="blog-article-container">
                 <MDXRemote {...content} components={{ ...mdxComponents }} />
             </div>
+            <div className="border-t border-gray-400 dark:border-gray-600">
+                <p className="mt-3 text-gray-700 dark:text-gray-300">Published By:</p>
+                <div className="mt-2 flex flex-row items-center gap-3">
+                    <Image
+                        alt=""
+                        className="rounded-full shadow-2xl"
+                        src={urlForImage(author.avatar).url()}
+                        blurEnabled={false}
+                        lightboxEnabled={true}
+                        width={35}
+                        height={35}
+                    />
+                    <span>{author.name}</span>
+                </div>
+            </div>
             {tags && tags.length > 0 && (
                 <div className="mt-5 border-t border-gray-400 dark:border-gray-600">
-                    <div className="py-4 text-base">
-                        <div>
-                            <p className="text-gray-700 dark:text-gray-300">Tags:</p>
-                        </div>
+                    <div className="mb-2 py-3 text-base">
+                        <p className="text-gray-700 dark:text-gray-300">Tags:</p>
                         <div className="mt-3 flex items-center gap-2">
                             {tags.map(tag => {
                                 return (

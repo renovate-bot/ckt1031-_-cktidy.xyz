@@ -14,9 +14,9 @@ export default function ApplicationLayout({
     className?: string;
 }>) {
     return (
-        <div className={clsx('layout-default', className)}>
+        <div className={clsx(className, 'flex h-screen flex-col justify-between')}>
             <Header />
-            <div className="page-container">{children}</div>
+            <main className="m-auto flex w-full grow flex-col items-center px-5">{children}</main>
             <Footer />
             <ScollUpButton />
         </div>

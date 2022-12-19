@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js';
-import { ChangeEvent, useMemo, useState } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
 import { Post, Tag } from '$lib/sanity/schema';
@@ -8,7 +8,7 @@ import ExplorerBlogList from './list';
 import Pageination from './pagination';
 
 export interface BlogListProp {
-    posts: (Omit<Post, 'tags'> & {
+    posts?: (Omit<Post, 'tags'> & {
         tags?: Tag[];
     })[];
     displayPosts: (Omit<Post, 'tags'> & {
@@ -21,16 +21,20 @@ export interface BlogListProp {
 }
 
 export default function ListPage({ posts, displayPosts, pagination }: BlogListProp) {
-    const [queryPost, setQueryPost] = useState<BlogListProp['posts']>(posts);
+    const [queryPost, setQueryPost] = useState<BlogListProp['posts']>();
 
     const fuse = useMemo(
         () =>
-            new Fuse(posts, {
+            new Fuse(posts ?? [], {
                 threshold: 0.4,
                 keys: ['name', 'body'],
             }),
         [posts],
     );
+
+    useEffect(() => {
+        setQueryPost(posts);
+    }, [posts]);
 
     const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
@@ -60,8 +64,8 @@ export default function ListPage({ posts, displayPosts, pagination }: BlogListPr
                     </div>
                 </div>
             </div>
-            <ExplorerBlogList postList={queryPost} />
-            {queryPost.length === 0 &&
+            {queryPost && <ExplorerBlogList postList={queryPost} />}
+            {queryPost?.length === 0 &&
                 pagination.totalPages > 0 &&
                 pagination.totalPages - 1 !== 0 && <Pageination pagination={pagination} />}
         </div>

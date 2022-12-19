@@ -11,7 +11,7 @@ import { config } from '$data/constants';
 import { parseMdx } from '$lib/mdx';
 import sanityClient from '$lib/sanity/client';
 import { postSingleQuery, postSlugQuery } from '$lib/sanity/query';
-import { Author, Post } from '$lib/sanity/schema';
+import { Post } from '$lib/sanity/schema';
 import { urlForImage } from '$lib/sanity/tools';
 
 export async function getStaticPaths() {
@@ -47,7 +47,8 @@ export default function Blog(props: BlogProp) {
     const router = useRouter();
 
     const post = props.post;
-    const author = post.author as unknown as Author;
+
+    const author = post.author;
     const thumbnail = props.post.thumbnail;
 
     const articleImages: string[] = [];

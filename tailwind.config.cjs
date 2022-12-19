@@ -20,21 +20,14 @@ const config = {
                         'h1,h2,h3,h4,h5,h6': {
                             color: theme('colors.gray.900'),
                         },
-                        h1: {
-                            fontSize: '36px',
-                        },
                         p: {
                             color: theme('colors.gray.700'),
-                            fontSize: '21px',
                         },
                         strong: {
                             color: theme('colors.gray.600'),
                         },
                         a: {
                             color: theme('colors.blue.600'),
-                        },
-                        li: {
-                            fontSize: '21px',
                         },
                         blockquote: {
                             borderLeftColor: theme('colors.gray.300'),

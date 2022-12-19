@@ -2,6 +2,8 @@ export const isDev = process.env.NODE_ENV === 'development';
 
 export const THEME_KEY = 'THEME_NAME';
 
+export const COUNTDOWN_BANNER_2023_CLOSED_KEY = 'COUNTDOWN_BANNER_2023_CLOSED';
+
 export const config = {
     name: 'cktidy',
     sitename: 'ckt',
