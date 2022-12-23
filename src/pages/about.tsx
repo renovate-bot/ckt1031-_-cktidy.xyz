@@ -6,8 +6,7 @@ import { config } from '$lib/constants';
 
 export default function AboutPage() {
     const title = 'About Me';
-    const description =
-        'Hello, I am Chan Ka Tsun who is a energetic boy living in Hong Kong, I love programming and reading!';
+    const description = 'Information about cktsun and messages which is going to tell you!';
 
     return (
         <>
@@ -26,7 +25,7 @@ export default function AboutPage() {
                                     <p>Instagram:</p>
                                 </div>
                                 <Link enableExternalIcon href={config.author.social.instagram}>
-                                    @cktidy.1031
+                                    @ckt.1031
                                 </Link>
                             </div>
                             <div className="flex flex-row items-center justify-between space-x-20">
