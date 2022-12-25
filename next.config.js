@@ -38,11 +38,8 @@ const nextConfig = {
     env: {
         SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
     },
-    compiler: {
-        reactRemoveProperties: isProduction,
-    },
     eslint: {
-        // Disable linting becase we have checked via Github Actions, no furrther check is needed
+        // Disable linting becase we have checked via Github Actions, no further check is needed
         ignoreDuringBuilds: !!process.env.CI,
     },
     async headers() {
@@ -77,6 +74,8 @@ const sentryOptions = {
     silent: true,
 };
 
-export default withRoutes()(
-    isProduction ? withSentryConfig(nextConfig, sentryOptions) : nextConfig,
-);
+// export default withRoutes()(
+//     isProduction ? withSentryConfig(nextConfig, sentryOptions) : nextConfig,
+// );
+
+export default withRoutes()(withSentryConfig(nextConfig, sentryOptions));
