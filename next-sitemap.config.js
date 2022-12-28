@@ -4,7 +4,7 @@ const config = {
     generateRobotsTxt: true,
     exclude: ['/api/*'],
     robotsTxtOptions: {
-        policies: [{ userAgent: '*', allow: '/', disallow: ['/404', '/500'] }],
+        policies: [{ userAgent: '*', allow: '/', disallow: ['/404', '/500', '/api/*'] }],
     },
 };
 

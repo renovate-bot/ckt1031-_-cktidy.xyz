@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 
 import { config } from '$lib/constants';
@@ -23,22 +23,18 @@ function MenuNavigationPages({ showMenu, toggleMenu }: PagesProp) {
             )}>
             <div className="overflow-auto">
                 <div className="grid space-y-2 divide-y divide-gray-300 p-3 dark:divide-gray-700">
-                    {config.headbar.routes.map(item => {
-                        const _className = clsx(
-                            item.href === route && 'text-orange-600 dark:text-orange-300',
-                            'cursor-pointer p-3 text-center',
-                        );
-
-                        return (
-                            <button
-                                type="button"
-                                key={`MOBILENAV-PAGES-${item.name.trim()}`}
-                                className={_className}
-                                onClick={toggleMenu}>
-                                <Link href={item.href}>{item.name}</Link>
-                            </button>
-                        );
-                    })}
+                    {config.headbar.routes.map(item => (
+                        <button
+                            type="button"
+                            key={item.name}
+                            className={clsx(
+                                item.href === route && 'text-orange-600 dark:text-orange-300',
+                                'cursor-pointer p-3 text-center',
+                            )}
+                            onClick={toggleMenu}>
+                            <Link href={item.href}>{item.name}</Link>
+                        </button>
+                    ))}
                 </div>
             </div>
         </div>
@@ -48,12 +44,12 @@ function MenuNavigationPages({ showMenu, toggleMenu }: PagesProp) {
 export default function NavigationBarMobileMenu() {
     const [showMenu, setShowMenu] = useState(false);
 
-    const toggleMenu = useCallback(() => {
+    const toggleMenu = () => {
         setShowMenu(state => {
             document.body.style.overflow = state ? 'auto' : 'hidden';
             return !state;
         });
-    }, []);
+    };
 
     return (
         <div className="md:hidden">

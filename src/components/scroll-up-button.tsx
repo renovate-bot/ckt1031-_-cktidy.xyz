@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 import { useEvent } from 'react-use';
 
-export default function ScollUpButton() {
+export default function ScrollUpButton() {
     const [showScrollUpBtn, setShowScrollUpBtn] = useState(false);
 
     useEvent('scroll', () => {
@@ -17,8 +17,8 @@ export default function ScollUpButton() {
     return (
         <div className="fixed right-6 bottom-6 flex flex-row">
             <button
-                aria-label="Scroll To Top"
                 type="button"
+                aria-label="Scroll To Top"
                 style={{
                     opacity: showScrollUpBtn ? 1 : 0,
                     visibility: showScrollUpBtn ? 'visible' : 'hidden',

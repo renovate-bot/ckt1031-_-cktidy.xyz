@@ -3,16 +3,10 @@ import { NextSeo } from 'next-seo';
 import TextLink from '$components/link';
 import { config } from '$lib/constants';
 
-import packageJson from '../../package.json';
-
 function DetailBlock() {
     return (
         <div className="flex flex-col items-center">
-            <h1 className="mb-2 text-3xl font-bold">Technology</h1>
-            <p className="italic">
-                v{packageJson.version}-
-                {process.env.NODE_ENV === 'development' ? 'dev' : 'production'}
-            </p>
+            <h1 className="text-3xl font-bold">Technology</h1>
             <div className="mb-10 max-w-2xl space-y-8">
                 <div>
                     <div className="base-border mb-3 border-b">

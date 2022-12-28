@@ -5,7 +5,7 @@ import type { PropsWithChildren } from 'react';
 import Footer from '$components/global/footer';
 import Header from '$components/global/header';
 
-const ScollUpButton = dynamic(() => import('$components/scroll-up-button'));
+const ScrollUpButton = dynamic(() => import('$components/scroll-up-button'));
 
 export default function ApplicationLayout({
     children,
@@ -18,7 +18,7 @@ export default function ApplicationLayout({
             <Header />
             <main className="m-auto flex w-full grow flex-col items-center px-5">{children}</main>
             <Footer />
-            <ScollUpButton />
+            <ScrollUpButton />
         </div>
     );
 }
