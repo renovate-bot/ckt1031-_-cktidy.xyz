@@ -11,7 +11,7 @@ function DefaultFooter() {
             <SocialMediaRow />
             <FooterLinks />
             <p>
-                &copy; {new Date().getFullYear()} &#x2022; {config.author.name}
+                &copy; {new Date().getFullYear()} {config.author.name}
             </p>
         </footer>
     );

@@ -8,18 +8,17 @@ export default function NotFoundPage() {
             <div className="flex flex-col items-center justify-center">
                 <div className="xs:mt-40 flex flex-col items-center justify-center md:flex-row">
                     <div className="flex flex-col text-center">
-                        <div className="mb-4 text-6xl">
+                        <div className="mb-4 text-6xl font-bold">
                             <p>404</p>
                         </div>
-                        <p className="text-xl md:text-2xl">Did you get lost?</p>
-                        <div className="mt-4 text-red-500">
-                            <p>URL requested cannot be found!</p>
-                        </div>
+                        <p className="text-xl md:text-2xl">
+                            The page you are looking for does not exist.
+                        </p>
                     </div>
                 </div>
                 <Link passHref href="/">
                     <button className="button-normal mt-6" type="button">
-                        Return to home
+                        Back to home
                     </button>
                 </Link>
             </div>

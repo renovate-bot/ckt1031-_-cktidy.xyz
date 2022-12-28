@@ -14,7 +14,7 @@ export const config = {
     I will be releasing cool stuff here! Stay tuned!
     Started this website since June 2022, and I will be updating it frequently!`,
     author: {
-        name: 'ckt1031',
+        name: 'cktsun',
         email: 'me@cktidy.xyz',
         social: {
             instagram: 'https://www.instagram.com/ckt.1031/',

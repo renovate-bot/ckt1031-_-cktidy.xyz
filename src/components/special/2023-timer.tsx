@@ -41,12 +41,11 @@ export default function TimerTo2023() {
             {typeof closed === 'boolean' && !closed && (
                 <div className="flex h-[50px] w-full flex-row bg-green-400 px-6 shadow dark:bg-green-800">
                     <Image
-                        src="/media/christmas-tree.png"
-                        alt="ornaments"
-                        // Disable image to be sketcherized and ignore the upper h-[50px] limit of the parent and let it cross the parent's border
-                        className="z-10 mt-2 h-[50px] object-contain md:h-[70px]"
                         width={70}
                         height={128}
+                        alt="ornaments"
+                        src="/media/christmas-tree.png"
+                        className="z-10 mt-2 h-[50px] object-contain md:h-[70px]"
                     />
                     <div className="flex w-full flex-row items-center justify-between md:py-2">
                         <div className="flex flex-row items-center">

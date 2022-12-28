@@ -4,6 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import clsx from 'clsx';
 import NextImage, { type ImageProps } from 'next/image';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+
 interface ImageProp {
     src: string;
     alt: string;
