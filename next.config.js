@@ -29,9 +29,7 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    generateEtags: false,
     reactStrictMode: true,
-    poweredByHeader: false,
     images: {
         domains: ['cdn.sanity.io'],
     },
@@ -39,7 +37,7 @@ const nextConfig = {
         SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
     },
     eslint: {
-        // Disable linting becase we have checked via Github Actions, no further check is needed
+        // Disable linting because we have checked via GitHub Actions, no further check is needed
         ignoreDuringBuilds: !!process.env.CI,
     },
     async headers() {
@@ -73,9 +71,5 @@ const nextConfig = {
 const sentryOptions = {
     silent: true,
 };
-
-// export default withRoutes()(
-//     isProduction ? withSentryConfig(nextConfig, sentryOptions) : nextConfig,
-// );
 
 export default withRoutes()(withSentryConfig(nextConfig, sentryOptions));
