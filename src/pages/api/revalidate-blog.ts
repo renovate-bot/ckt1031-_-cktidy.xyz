@@ -9,7 +9,7 @@ import { Post } from '$lib/sanity/schema';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const validationSecret = process.env.SANITY_STUDIO_REVALIDATE_SECRET;
 
-    if (req.method !== 'post') {
+    if (req.method !== 'POST') {
         res.status(405).end();
         return;
     }
