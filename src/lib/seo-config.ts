@@ -7,7 +7,7 @@ const seoConfig: DefaultSeoProps = {
     titleTemplate: '%s - cktidy',
     openGraph: {
         type: 'website',
-        site_name: config.sitename,
+        siteName: config.sitename,
     },
     twitter: {
         site: config.twitter,
