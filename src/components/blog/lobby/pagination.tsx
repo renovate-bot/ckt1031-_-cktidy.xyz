@@ -2,9 +2,11 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 
-import { BlogListProp } from '.';
+import type { BlogPostLobbyProps } from '$lib/types';
 
-export default function Pageination({ pagination }: Omit<BlogListProp, 'posts' | 'displayPosts'>) {
+export default function Pagination({
+    pagination,
+}: Omit<BlogPostLobbyProps, 'allPosts' | 'displayPosts'>) {
     const isTopPage = pagination.currentPage - 1 === 1;
     const toPagePath = '/blog/page/[number]';
 

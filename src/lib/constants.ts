@@ -1,14 +1,12 @@
-export const isDev = process.env.NODE_ENV === 'development';
+export const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const THEME_KEY = 'THEME_NAME';
-
-export const COUNTDOWN_BANNER_2023_CLOSED_KEY = 'COUNTDOWN_BANNER_2023_CLOSED';
 
 export const DISABLE_SNOWFALL_EFFECT_KEY = 'DISABLE_SNOWFALL_EFFECT';
 
 export const config = {
     name: 'cktidy',
-    sitename: 'ckt',
+    siteName: 'ckt',
     url: 'https://cktidy.xyz',
     description: `A cool website by cktsun1031!
     I will be releasing cool stuff here! Stay tuned!

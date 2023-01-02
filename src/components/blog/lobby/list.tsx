@@ -4,21 +4,24 @@ import sAgo from 's-ago';
 
 import Image from '$components/image';
 import { urlForImage } from '$lib/sanity/tools';
+import { BlogPostLobbyProps } from '$lib/types';
 
-import { BlogListProp } from '.';
-
-export default function ExplorerBlogList({ postList }: { postList: BlogListProp['posts'] }) {
+export default function ExplorerBlogList({
+    postList,
+}: {
+    postList: BlogPostLobbyProps['allPosts'];
+}) {
     return (
         <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
-            {postList?.length !== 0 ? (
-                postList?.map(post => {
+            {postList.length !== 0 ? (
+                postList.map(({ breif, publishedAt, slug, thumbnail, title }) => {
                     return (
                         <div
-                            key={`BLOG-LIST-${post.slug.current.trim()}`}
+                            key={slug.current}
                             className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
                             <div
                                 className={clsx(
-                                    post.thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
+                                    thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
                                     'flex max-h-fit flex-col justify-between break-words',
                                 )}>
                                 <div>
@@ -28,23 +31,23 @@ export default function ExplorerBlogList({ postList }: { postList: BlogListProp[
                                         href={{
                                             pathname: '/blog/[slug]',
                                             query: {
-                                                slug: post.slug.current,
+                                                slug: slug.current,
                                             },
                                         }}>
-                                        {post.title}
+                                        {title}
                                     </Link>
-                                    <p className="text-gray-600 dark:text-gray-300">{post.breif}</p>
+                                    <p className="text-gray-600 dark:text-gray-300">{breif}</p>
                                 </div>
                                 <p className="text-gray-500 dark:text-gray-400">
-                                    Published: {sAgo(new Date(post.publishedAt))}
+                                    Published: {sAgo(new Date(publishedAt))}
                                 </p>
                             </div>
-                            {post.thumbnail && (
+                            {thumbnail && (
                                 <Image
                                     alt="Thumbnail"
                                     className="rounded md:mt-0"
                                     lightboxEnabled
-                                    src={urlForImage(post.thumbnail).url()}
+                                    src={urlForImage(thumbnail).url()}
                                     width={1600 * 0.15}
                                     height={900 * 0.15}
                                 />

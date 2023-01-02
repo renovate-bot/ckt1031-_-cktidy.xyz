@@ -5,12 +5,10 @@ export default function NotFoundPage() {
     return (
         <>
             <NextSeo nofollow noindex title="404" />
-            <div className="flex flex-col items-center justify-center">
-                <div className="xs:mt-40 flex flex-col items-center justify-center md:flex-row">
+            <div className="mt-5 flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center md:flex-row">
                     <div className="flex flex-col text-center">
-                        <div className="mb-4 text-6xl font-bold">
-                            <p>404</p>
-                        </div>
+                        <p className="mb-4 text-6xl font-bold">404</p>
                         <p className="text-xl md:text-2xl">
                             The page you are looking for does not exist.
                         </p>

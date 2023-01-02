@@ -11,7 +11,7 @@ export default function AboutPage() {
     return (
         <>
             <NextSeo title={title} description={description} openGraph={{ title, description }} />
-            <div className="flex flex-col items-center">
+            <div className="mt-5 flex flex-col items-center">
                 <h1 className="mb-5 text-3xl font-bold">About Me</h1>
                 <div className="mb-10 max-w-2xl space-y-10 text-left">
                     <div className="mb-7">

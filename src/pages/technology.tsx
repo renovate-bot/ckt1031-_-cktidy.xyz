@@ -5,7 +5,7 @@ import { config } from '$lib/constants';
 
 function DetailBlock() {
     return (
-        <div className="flex flex-col items-center">
+        <div className="mt-5 flex flex-col items-center">
             <h1 className="text-3xl font-bold">Technology</h1>
             <div className="mb-10 max-w-2xl space-y-8">
                 <div>
