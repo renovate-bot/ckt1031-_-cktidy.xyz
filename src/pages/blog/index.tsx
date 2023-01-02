@@ -1,35 +1,41 @@
 import type { InferGetStaticPropsType } from 'next';
+import type { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
-import BlogList from '$components/blog/explorer';
+import BlogList from '$components/blog/lobby';
 import { config } from '$lib/constants';
 import generateRSS from '$lib/generate-feed';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
-import { Post, Tag } from '$lib/sanity/schema';
+import type { BlogPostLobbyProps } from '$lib/types';
 
-export async function getStaticProps() {
-    const posts: (Omit<Post, 'tags'> & {
-        tags?: Tag[];
-    })[] = await sanityClient.fetch(allPostQuery);
+export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = async () => {
+    const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
 
-    // Genertae feed for RSS
-    generateRSS(posts);
+    // Generate feed for RSS
+    generateRSS(allPosts);
 
-    const displayPosts = posts.slice(0, config.blog.maxDisplayPerPage);
+    const displayPosts = allPosts.slice(0, config.blog.maxDisplayPerPage);
 
     const pagination = {
         currentPage: 1,
-        totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
+        totalPages: Math.ceil(allPosts.length / config.blog.maxDisplayPerPage),
     };
 
-    return { props: { posts, displayPosts, pagination } };
-}
+    return {
+        props: {
+            allPosts,
+            displayPosts,
+            pagination,
+        },
+        revalidate: 60 * 60 * 3, // 3 hours
+    };
+};
 
-export default function BlogHome(prop: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Page(prop: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <>
-            <NextSeo title="Blog" description="A cool website by cktsun1031!" />
+            <NextSeo title="Blog" description="Latest post published from cktsun!" />
             <BlogList {...prop} />
         </>
     );

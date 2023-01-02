@@ -16,8 +16,6 @@ export const postSingleQuery = groq`
 }
 `;
 
-export const authorQueryByRef = groq`*[_type == "author" && _id == $ref][0]`;
-
 export const allPostQuery = groq`*[_type == "post"] | order(date desc, _updatedAt desc) {
   ...,
   tags[] {

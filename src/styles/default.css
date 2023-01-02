@@ -81,7 +81,7 @@ body {
 }
 
 .blog-article-container {
-    @apply prose max-w-none dark:prose-dark;
+    @apply prose w-full max-w-[1000px] dark:prose-dark;
 }
 
 .base-border {

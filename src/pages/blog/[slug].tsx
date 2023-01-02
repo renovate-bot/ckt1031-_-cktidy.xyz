@@ -1,82 +1,89 @@
 import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
+import { InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
-import type { OpenGraphMedia } from 'next-seo/lib/types';
 import readingTimeModule from 'reading-time';
 
-import { BlogDisplayPage, BlogProp } from '$components/blog/article';
+import { BlogDisplayPage } from '$components/blog/post';
 import ScrollProgressBar from '$components/scroll-progress-bar';
 import { config } from '$lib/constants';
 import { parseMdx } from '$lib/mdx';
 import sanityClient from '$lib/sanity/client';
 import { postSingleQuery, postSlugQuery } from '$lib/sanity/query';
-import { Post } from '$lib/sanity/schema';
 import { urlForImage } from '$lib/sanity/tools';
+import { BlogSinglePostProps } from '$lib/types';
 
 export async function getStaticPaths() {
-    const paths = await sanityClient.fetch<string[]>(postSlugQuery);
+    const paths = await sanityClient.fetch<string[] | undefined>(postSlugQuery);
 
     return {
-        paths: paths.map(slug => ({
-            params: { slug },
-        })),
+        paths:
+            paths?.map(slug => ({
+                params: { slug },
+            })) ?? [],
         fallback: false,
     };
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogSinglePostProps> = async ({ params }) => {
     if (!params || typeof params.slug !== 'string') {
         return { notFound: true };
     }
 
-    const post = await sanityClient.fetch<Post>(postSingleQuery, {
+    const data = await sanityClient.fetch<BlogSinglePostProps['data']>(postSingleQuery, {
         slug: params.slug,
     });
 
-    const content = await parseMdx(post.body as unknown as string);
-    const dateName = dayjs(post._createdAt).format('YYYY/MM/DD hh:mm');
-    const readingTime = readingTimeModule(post.body as unknown as string);
+    const content = await parseMdx(data.body as unknown as string);
+    const dateName = dayjs(data._createdAt).format('YYYY/MM/DD hh:mm');
+    const readingTime = readingTimeModule(data.body as unknown as string);
 
-    return {
-        props: { readingTime, post, content, dateName },
-    };
-};
+    const ogImage = [];
+    const articleImages = [];
 
-export default function Blog(props: BlogProp) {
-    const router = useRouter();
+    if (data.thumbnail) {
+        const thumbUrl = urlForImage(data.thumbnail).url();
 
-    const post = props.post;
-
-    const author = post.author;
-    const thumbnail = props.post.thumbnail;
-
-    const articleImages: string[] = [];
-    const ogImage: OpenGraphMedia[] = [];
-
-    if (thumbnail) {
-        const thumbUrl = urlForImage(thumbnail).url();
-
-        ogImage.push({
-            url: thumbUrl,
-            width: thumbnail.hotspot?.width,
-            height: thumbnail.hotspot?.height,
-            alt: props.post.title,
-        });
+        if (data.thumbnail.hotspot) {
+            ogImage.push({
+                url: thumbUrl,
+                width: data.thumbnail.hotspot.width,
+                height: data.thumbnail.hotspot.height,
+                alt: data.title,
+            });
+        }
 
         articleImages.push(thumbUrl);
     }
 
+    return {
+        props: {
+            readingTime,
+            data,
+            content,
+            dateName,
+            ogImage,
+            articleImages,
+        },
+        revalidate: 60 * 60 * 3, // 3 hours
+    };
+};
+
+export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
+    const router = useRouter();
+    const { data, articleImages, ogImage } = props;
+
     return (
         <>
             <NextSeo
-                title={post.title}
-                description={post.breif}
+                title={data.title}
+                description={data.breif}
                 openGraph={{
                     type: 'website',
                     url: config.url + router.asPath,
-                    title: post.title,
-                    description: post.breif,
+                    title: data.title,
+                    description: data.breif,
                     images: ogImage,
                 }}
                 titleTemplate="%s"
@@ -84,17 +91,17 @@ export default function Blog(props: BlogProp) {
             <ArticleJsonLd
                 url={config.url + router.asPath}
                 images={articleImages}
-                title={post.title}
-                description={post.breif}
+                title={data.title}
+                description={data.breif}
                 authorName={[
                     {
-                        name: author.name,
+                        name: data.author.name,
                     },
                 ]}
-                dateModified={post._updatedAt}
-                datePublished={post._createdAt}
-                publisherName={author.name}
-                publisherLogo={urlForImage(author.avatar).url()}
+                dateModified={data._updatedAt}
+                datePublished={data._createdAt}
+                publisherName={data.author.name}
+                publisherLogo={urlForImage(data.author.avatar).url()}
             />
             <ScrollProgressBar />
             <BlogDisplayPage {...props} />

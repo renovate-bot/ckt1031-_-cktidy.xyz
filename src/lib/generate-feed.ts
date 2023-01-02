@@ -3,14 +3,11 @@ import { writeFileSync } from 'node:fs';
 import { Feed } from 'feed';
 
 import { config } from '$lib/constants';
+import { BlogPostLobbyProps } from '$lib/types';
 
-import { Author, Post, Tag } from './sanity/schema';
+import { Author } from './sanity/schema';
 
-export default function generateRSS(
-    posts: (Omit<Post, 'tags'> & {
-        tags?: Tag[];
-    })[],
-) {
+export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
     const feed = new Feed({
         title: `ckt1031's personal site`,
         description: config.description,

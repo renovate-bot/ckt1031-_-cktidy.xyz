@@ -7,26 +7,38 @@ import { allPostQuery, postUpdateQuery } from '$lib/sanity/query';
 import { Post } from '$lib/sanity/schema';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const body = await readBody(req); // Read the body into a string
-    const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
     const validationSecret = process.env.SANITY_STUDIO_REVALIDATE_SECRET;
 
-    if (
-        req.method !== 'post' ||
-        !validationSecret ||
-        !isValidSignature(body, signature, validationSecret)
-    ) {
-        return res.status(401).json({
+    if (req.method !== 'post') {
+        res.status(405).end();
+        return;
+    }
+
+    if (!validationSecret) {
+        throw new Error('Missing secret');
+    }
+
+    const body = await readBody(req); // Read the body into a string
+    const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
+
+    if (!isValidSignature(body, signature, validationSecret)) {
+        console.error('Invalid signature!');
+        res.status(401).json({
             success: false,
             message: 'Invalid Request!',
         });
+        return;
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { _id: id } = JSON.parse(body);
 
     if (typeof id !== 'string' || !id) {
-        return res.status(400).json({ message: 'Invalid: _id' });
+        console.error('Invalid body!');
+        res.status(400).json({
+            message: 'Invalid: _id',
+        });
+        return;
     }
 
     try {

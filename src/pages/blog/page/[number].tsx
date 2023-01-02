@@ -1,14 +1,20 @@
 import type { GetStaticProps } from 'next';
+import { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
-import BlogList, { BlogListProp } from '$components/blog/explorer';
+import BlogList from '$components/blog/lobby';
 import { config } from '$lib/constants';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
-import { Post, Tag } from '$lib/sanity/schema';
+import { Post } from '$lib/sanity/schema';
+import { BlogPostLobbyProps } from '$lib/types';
 
 export async function getStaticPaths() {
-    const posts = await sanityClient.fetch<Post[]>(allPostQuery);
+    const posts = await sanityClient.fetch<Post[] | undefined>(allPostQuery);
+
+    if (!posts) {
+        return { notFound: true };
+    }
 
     const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
 
@@ -22,31 +28,36 @@ export async function getStaticPaths() {
     };
 }
 
-export const getStaticProps: GetStaticProps<BlogListProp> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = async ({ params }) => {
     if (!params || typeof params.number !== 'string') {
         return { notFound: true };
     }
 
     const pageNumber = Number(params.number);
 
-    const posts: (Omit<Post, 'tags'> & {
-        tags?: Tag[];
-    })[] = await sanityClient.fetch(allPostQuery);
+    const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
 
-    const displayPosts = posts.slice(
+    const displayPosts = allPosts.slice(
         config.blog.maxDisplayPerPage * (pageNumber - 1),
         config.blog.maxDisplayPerPage * pageNumber,
     );
 
     const pagination = {
         currentPage: pageNumber,
-        totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
+        totalPages: Math.ceil(allPosts.length / config.blog.maxDisplayPerPage),
     };
 
-    return { props: { posts, displayPosts, pagination } };
+    return {
+        props: {
+            allPosts,
+            displayPosts,
+            pagination,
+        },
+        revalidate: 60 * 60 * 3, // 3 hours
+    };
 };
 
-export default function BlogHome(prop: BlogListProp) {
+export default function Page(prop: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <>
             <NextSeo title={`Blog Page: ${prop.pagination.currentPage}`} />
