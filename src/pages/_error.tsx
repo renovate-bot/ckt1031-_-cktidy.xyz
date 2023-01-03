@@ -1,6 +1,7 @@
 import { captureException, flush } from '@sentry/nextjs';
-import { NextPageContext } from 'next';
-import NextErrorComponent, { ErrorProps } from 'next/error';
+import type { NextPageContext } from 'next';
+import type { ErrorProps } from 'next/error';
+import NextErrorComponent from 'next/error';
 
 interface ErrorExtraProps {
     hasGetInitialPropsRun?: boolean;

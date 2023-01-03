@@ -4,7 +4,7 @@ import sAgo from 's-ago';
 
 import Image from '$components/image';
 import { urlForImage } from '$lib/sanity/tools';
-import { BlogPostLobbyProps } from '$lib/types';
+import type { BlogPostLobbyProps } from '$lib/types';
 
 export default function ExplorerBlogList({
     postList,

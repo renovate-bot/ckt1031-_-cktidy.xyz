@@ -1,7 +1,6 @@
 import '$styles/default.css';
 
 import { Noto_Sans_HK, Noto_Sans_SC, Spline_Sans_Mono } from '@next/font/google';
-import clsx from 'clsx';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
@@ -69,12 +68,12 @@ function NextApplcation({ Component, pageProps }: AppProps) {
             <ThemeProvider enableSystem attribute="class" storageKey={THEME_KEY}>
                 <SeoComponent />
                 <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />
-                <ApplicationLayout
-                    className={clsx(
-                        `${splineSansMono.variable} ${notoHK.variable} ${notoSC.variable} font-sans`,
-                    )}>
-                    <Component {...pageProps} />
-                </ApplicationLayout>
+                <div
+                    className={`${splineSansMono.variable} ${notoHK.variable} ${notoSC.variable} font-sans`}>
+                    <ApplicationLayout>
+                        <Component {...pageProps} />
+                    </ApplicationLayout>
+                </div>
             </ThemeProvider>
         </>
     );

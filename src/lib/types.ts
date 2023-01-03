@@ -1,5 +1,5 @@
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { OpenGraphMedia } from 'next-seo/lib/types';
+import type { OpenGraphMedia } from 'next-seo/lib/types';
 import type { ReadTimeResults } from 'reading-time';
 
 import type { Post } from '$lib/sanity/schema';

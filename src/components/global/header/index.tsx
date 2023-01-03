@@ -16,10 +16,7 @@ function Header() {
 
     return (
         <header
-            className={clsx(
-                showShadow && 'shadow-md',
-                'headbar-default w-screen bg-gray-100 dark:bg-gray-900',
-            )}>
+            className={clsx(showShadow && 'shadow-md', 'w-screen bg-gray-100 dark:bg-gray-900')}>
             <div className="flex flex-row items-center justify-between py-1 px-6 text-lg md:py-2 md:px-16">
                 <div className="flex flex-row items-center">
                     <MobileMenu />

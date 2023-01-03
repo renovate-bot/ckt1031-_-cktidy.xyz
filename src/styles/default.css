@@ -9,39 +9,13 @@
     background: #6a9fe4;
 }
 
-@font-face {
-    font-family: 'Apercu';
-    src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Medium.otf')
-        format('opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apercu';
-    src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu_Regular.otf')
-        format('opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Apercu';
-    src: url('https://cdn.jsdelivr.net/gh/WlFranzi/test_app/public/fonts/Apercu%20Bold.otf')
-        format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+::-moz-selection {
+    color: white;
+    background: #6a9fe4;
 }
 
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Apercu', 'Noto Sans TC', sans-serif;
 }
 
 .base-button-animation {
@@ -62,14 +36,6 @@ body {
     dark:bg-neutral-700;
 }
 
-.headbar-default {
-    @apply z-50;
-}
-
-.page-container {
-    @apply w-full;
-}
-
 .footer-default {
     @apply flex flex-col items-center gap-1.5 border-t border-gray-200
     py-3 text-center
@@ -78,10 +44,6 @@ body {
 
 .footer-text-interaction {
     @apply cursor-pointer text-sm text-sky-500 hover:text-sky-600 hover:underline dark:text-sky-400 hover:dark:text-sky-200;
-}
-
-.blog-article-container {
-    @apply prose w-full max-w-[1000px] dark:prose-dark;
 }
 
 .base-border {

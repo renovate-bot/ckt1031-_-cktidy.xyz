@@ -1,18 +1,16 @@
 import dayjs from 'dayjs';
-import type { GetStaticProps } from 'next';
-import { InferGetStaticPropsType } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import readingTimeModule from 'reading-time';
 
 import { BlogDisplayPage } from '$components/blog/post';
-import ScrollProgressBar from '$components/scroll-progress-bar';
 import { config } from '$lib/constants';
 import { parseMdx } from '$lib/mdx';
 import sanityClient from '$lib/sanity/client';
 import { postSingleQuery, postSlugQuery } from '$lib/sanity/query';
 import { urlForImage } from '$lib/sanity/tools';
-import { BlogSinglePostProps } from '$lib/types';
+import type { BlogSinglePostProps } from '$lib/types';
 
 export async function getStaticPaths() {
     const paths = await sanityClient.fetch<string[] | undefined>(postSlugQuery);
@@ -42,14 +40,16 @@ export const getStaticProps: GetStaticProps<BlogSinglePostProps> = async ({ para
     const ogImage = [];
     const articleImages = [];
 
-    if (data.thumbnail) {
-        const thumbUrl = urlForImage(data.thumbnail).url();
+    const thumbnail = data.thumbnail;
 
-        if (data.thumbnail.hotspot) {
+    if (thumbnail) {
+        const thumbUrl = urlForImage(thumbnail).url();
+
+        if (thumbnail.hotspot) {
             ogImage.push({
                 url: thumbUrl,
-                width: data.thumbnail.hotspot.width,
-                height: data.thumbnail.hotspot.height,
+                width: thumbnail.hotspot.width,
+                height: thumbnail.hotspot.height,
                 alt: data.title,
             });
         }
@@ -103,7 +103,6 @@ export default function Page(props: InferGetStaticPropsType<typeof getStaticProp
                 publisherName={data.author.name}
                 publisherLogo={urlForImage(data.author.avatar).url()}
             />
-            <ScrollProgressBar />
             <BlogDisplayPage {...props} />
         </>
     );

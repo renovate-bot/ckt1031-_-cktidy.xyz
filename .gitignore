@@ -27,7 +27,6 @@ ui-debug.log
 
 test-results
 
-public/robots.txt
 public/*.xml
 
 # Repl.it

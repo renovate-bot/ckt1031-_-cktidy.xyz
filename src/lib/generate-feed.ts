@@ -1,11 +1,9 @@
-import { writeFileSync } from 'node:fs';
-
 import { Feed } from 'feed';
 
 import { config } from '$lib/constants';
-import { BlogPostLobbyProps } from '$lib/types';
+import type { BlogPostLobbyProps } from '$lib/types';
 
-import { Author } from './sanity/schema';
+import type { Author } from './sanity/schema';
 
 export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
     const feed = new Feed({
@@ -47,5 +45,5 @@ export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
         });
     }
 
-    writeFileSync('./public/feed.xml', feed.rss2());
+    return feed.rss2();
 }

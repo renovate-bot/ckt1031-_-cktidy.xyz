@@ -174,12 +174,9 @@ export type Documents = Author | Post | Tag;
 type Markdown = MDXRemoteSerializeResult;
 
 export {
-    type SanityAsset,
     type SanityBlock,
     type SanityDocument,
-    type SanityFile,
     type SanityGeoPoint,
-    type SanityImage,
     type SanityImageAsset,
     type SanityImageCrop,
     type SanityImageDimensions,
