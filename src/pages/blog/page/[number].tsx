@@ -1,13 +1,13 @@
 import type { GetStaticProps } from 'next';
-import { InferGetStaticPropsType } from 'next';
+import type { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
 import BlogList from '$components/blog/lobby';
 import { config } from '$lib/constants';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
-import { Post } from '$lib/sanity/schema';
-import { BlogPostLobbyProps } from '$lib/types';
+import type { Post } from '$lib/sanity/schema';
+import type { BlogPostLobbyProps } from '$lib/types';
 
 export async function getStaticPaths() {
     const posts = await sanityClient.fetch<Post[] | undefined>(allPostQuery);

@@ -1,8 +1,9 @@
 import Fuse from 'fuse.js';
-import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
-import { BlogPostLobbyProps } from '$lib/types';
+import type { BlogPostLobbyProps } from '$lib/types';
 
 import ExplorerBlogList from './list';
 import Pagination from './pagination';

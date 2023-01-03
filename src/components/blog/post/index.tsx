@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Image from '$components/image';
 import mdxComponents from '$components/mdx-components';
 import { urlForImage } from '$lib/sanity/tools';
-import { BlogSinglePostProps } from '$lib/types';
+import type { BlogSinglePostProps } from '$lib/types';
 
 export function BlogDisplayPage({ data, readingTime, content, dateName }: BlogSinglePostProps) {
     const tags = data.tags;

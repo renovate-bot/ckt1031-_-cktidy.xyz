@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
-import { InferGetStaticPropsType } from 'next';
+import type { InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import readingTimeModule from 'reading-time';
@@ -12,7 +12,7 @@ import { parseMdx } from '$lib/mdx';
 import sanityClient from '$lib/sanity/client';
 import { postSingleQuery, postSlugQuery } from '$lib/sanity/query';
 import { urlForImage } from '$lib/sanity/tools';
-import { BlogSinglePostProps } from '$lib/types';
+import type { BlogSinglePostProps } from '$lib/types';
 
 export async function getStaticPaths() {
     const paths = await sanityClient.fetch<string[] | undefined>(postSlugQuery);

@@ -1,4 +1,4 @@
-import { ClassAttributes, ImgHTMLAttributes } from 'react';
+import type { ClassAttributes, ImgHTMLAttributes } from 'react';
 
 import Image from './image';
 

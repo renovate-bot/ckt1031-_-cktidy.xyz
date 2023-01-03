@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { config as projectConfig } from '$lib/constants';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery, postUpdateQuery } from '$lib/sanity/query';
-import { Post } from '$lib/sanity/schema';
+import type { Post } from '$lib/sanity/schema';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const validationSecret = process.env.SANITY_STUDIO_REVALIDATE_SECRET;
