@@ -1,5 +1,3 @@
-import { writeFileSync } from 'node:fs';
-
 import { Feed } from 'feed';
 
 import { config } from '$lib/constants';
@@ -47,5 +45,5 @@ export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
         });
     }
 
-    writeFileSync('./public/feed.xml', feed.rss2());
+    return feed.rss2();
 }

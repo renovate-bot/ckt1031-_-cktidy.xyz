@@ -1,19 +1,14 @@
-import type { InferGetStaticPropsType } from 'next';
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
 import BlogList from '$components/blog/lobby';
 import { config } from '$lib/constants';
-import generateRSS from '$lib/generate-feed';
 import sanityClient from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
 import type { BlogPostLobbyProps } from '$lib/types';
 
 export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = async () => {
     const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
-
-    // Generate feed for RSS
-    generateRSS(allPosts);
 
     const displayPosts = allPosts.slice(0, config.blog.maxDisplayPerPage);
 
