@@ -3,7 +3,7 @@ import { memo, useState } from 'react';
 import { useEvent } from 'react-use';
 
 import MobileMenu from '$components/global/header/mobile-menu';
-import ThemeSwitcher from '$components/theme-switch';
+import ThemeSwitcher from '$components/theme-switcher';
 
 import NavigationBarPages from './page-navigation';
 

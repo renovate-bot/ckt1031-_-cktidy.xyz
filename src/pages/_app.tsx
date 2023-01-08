@@ -7,7 +7,7 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider, useTheme } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 
-import ApplicationLayout from '$layouts/application';
+import ApplicationLayout from '$components/layouts/default';
 import { THEME_KEY } from '$lib/constants';
 import seoConfig from '$lib/seo-config';
 
