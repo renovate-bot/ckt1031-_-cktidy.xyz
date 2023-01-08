@@ -10,11 +10,11 @@ const components = {
     ) => (
         <Image
             src={props.src ?? ''}
-            className="rounded-lg"
             alt={props.alt ?? 'cktidy'}
             blurEnabled
             lightboxEnabled
             layout="responsive"
+            className="w-full"
             {...props}
         />
     ),

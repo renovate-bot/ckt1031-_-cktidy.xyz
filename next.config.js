@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/require-await */
-import { withSentryConfig } from '@sentry/nextjs';
-import withRoutes from 'nextjs-routes/config';
+const { withSentryConfig } = require('@sentry/nextjs');
+const withRoutes = require('nextjs-routes/config')({
+    outDir: 'types',
+});
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -68,4 +69,4 @@ const sentryOptions = {
     silent: true,
 };
 
-export default withRoutes()(withSentryConfig(nextConfig, sentryOptions));
+module.exports = withRoutes(withSentryConfig(nextConfig, sentryOptions));

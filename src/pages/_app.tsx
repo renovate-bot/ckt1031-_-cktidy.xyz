@@ -6,12 +6,9 @@ import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider, useTheme } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
-import { useEffect, useState } from 'react';
-import Snowfall from 'react-snowfall';
-import { useLocalStorage } from 'react-use';
 
 import ApplicationLayout from '$layouts/application';
-import { DISABLE_SNOWFALL_EFFECT_KEY, THEME_KEY } from '$lib/constants';
+import { THEME_KEY } from '$lib/constants';
 import seoConfig from '$lib/seo-config';
 
 // Google Fonts
@@ -44,27 +41,11 @@ function SeoComponent() {
 }
 
 function NextApplcation({ Component, pageProps }: AppProps) {
-    const [currentDate, setCurrentDate] = useState<Date>();
-
-    const [disableSnowfall] = useLocalStorage(DISABLE_SNOWFALL_EFFECT_KEY, false);
-
-    useEffect(() => {
-        setCurrentDate(new Date());
-    }, []);
-
     return (
         <>
             <Head>
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
             </Head>
-            {/* Disable Snowfall after 2023/01/15 */}
-            {!disableSnowfall && currentDate && currentDate < new Date('2023/01/15') && (
-                <Snowfall
-                    style={{
-                        position: 'fixed',
-                    }}
-                />
-            )}
             <ThemeProvider enableSystem attribute="class" storageKey={THEME_KEY}>
                 <SeoComponent />
                 <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />

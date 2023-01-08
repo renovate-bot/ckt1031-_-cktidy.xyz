@@ -53,10 +53,6 @@ export const config = {
                 name: 'Techs',
                 href: '/technology',
             },
-            {
-                name: 'Settings',
-                href: '/settings',
-            },
         ],
     },
     github_project_url: 'https://github.com/cktsun1031/cktidy.xyz',
