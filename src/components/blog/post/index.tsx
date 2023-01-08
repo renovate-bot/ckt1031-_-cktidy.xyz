@@ -12,7 +12,7 @@ export function BlogDisplayPage({ data, readingTime, content, dateName }: BlogSi
         readingTime.minutes >= 1 ? Math.round(readingTime.minutes) : 'Less than 1 ' + 'minutes';
 
     return (
-        <article className="mt-5 w-full max-w-[750px]">
+        <article className="mt-5 w-full">
             <div className="mb-3 border-b border-gray-300 dark:border-gray-600">
                 <div className="mb-2">
                     <h1 className="text-2xl font-bold md:text-3xl">{data.title}</h1>
@@ -22,19 +22,18 @@ export function BlogDisplayPage({ data, readingTime, content, dateName }: BlogSi
                     </p>
                 </div>
                 {data.thumbnail && (
-                    <div className="mb-3 flex justify-center">
+                    <div className="mb-3">
                         <Image
                             alt="Thumbnail"
                             lightboxEnabled
                             src={urlForImage(data.thumbnail).url()}
-                            width={1600 * 0.3}
-                            height={900 * 0.3}
+                            layout="responsive"
                         />
                     </div>
                 )}
             </div>
             {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-            <div className="prose dark:prose-dark">
+            <div className="prose max-w-full dark:prose-dark">
                 <MDXRemote {...content} components={{ ...mdxComponents }} />
             </div>
             {tags && tags.length > 0 && (

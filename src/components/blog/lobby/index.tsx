@@ -39,7 +39,7 @@ export default function ListPage({ allPosts, displayPosts, pagination }: BlogPos
                     I have started this website since July 2022, I am writing blog to share
                     meaningful things to the world
                 </p>
-                <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border-2 bg-gray-100 py-1 px-3 dark:bg-gray-800">
+                <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border bg-gray-100 py-1 px-3 dark:bg-gray-800">
                     <FiSearch />
                     <input
                         placeholder="Search"
