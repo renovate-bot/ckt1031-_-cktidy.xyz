@@ -39,7 +39,7 @@
         "@next/font": "13.1.1",
         "@sanity/image-url": "1.0.1",
         "@sanity/webhook": "2.0.0",
-        "@sentry/nextjs": "7.29.0",
+        "@sentry/nextjs": "7.30.0",
         "clsx": "1.2.1",
         "cssnano": "5.1.14",
         "csstype": "3.1.1",
