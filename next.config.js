@@ -30,9 +30,6 @@ const nextConfig = {
     images: {
         domains: ['cdn.sanity.io'],
     },
-    env: {
-        SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID ?? '',
-    },
     eslint: {
         // Disable linting because we have checked via GitHub Actions, no further check is needed
         ignoreDuringBuilds: !!process.env.CI,

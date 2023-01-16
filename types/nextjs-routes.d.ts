@@ -9,9 +9,9 @@ declare module "nextjs-routes" {
     | StaticRoute<"/404">
     | StaticRoute<"/about">
     | StaticRoute<"/api/revalidate-blog">
+    | DynamicRoute<"/blog/[slug]", { "slug": string }>
     | StaticRoute<"/blog">
     | DynamicRoute<"/blog/page/[number]", { "number": string }>
-    | DynamicRoute<"/blog/[slug]", { "slug": string }>
     | StaticRoute<"/feed">
     | StaticRoute<"/">
     | StaticRoute<"/sitemap">
