@@ -11,7 +11,7 @@ const config = {
                 gray: neutral,
             },
             fontFamily: {
-                sans: ['var(--spline-sans-mono)', 'var(--noto-hk)', 'var(--noto-sc)'],
+                sans: ['var(--inter)', 'var(--noto-hk)', 'var(--noto-sc)'],
             },
             typography: theme => ({
                 DEFAULT: {

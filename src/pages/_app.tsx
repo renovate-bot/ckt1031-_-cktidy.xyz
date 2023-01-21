@@ -1,6 +1,6 @@
 import '$styles/default.css';
 
-import { Noto_Sans_HK, Noto_Sans_SC, Spline_Sans_Mono } from '@next/font/google';
+import { Inter, Noto_Sans_HK, Noto_Sans_SC } from '@next/font/google';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
@@ -12,9 +12,9 @@ import { THEME_KEY } from '$lib/constants';
 import seoConfig from '$lib/seo-config';
 
 // Google Fonts
-const splineSansMono = Spline_Sans_Mono({
+const interMono = Inter({
     subsets: ['latin'],
-    variable: '--spline-sans-mono',
+    variable: '--inter',
 });
 const notoHK = Noto_Sans_HK({
     variable: '--noto-hk',
@@ -50,7 +50,7 @@ function NextApplcation({ Component, pageProps }: AppProps) {
                 <SeoComponent />
                 <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />
                 <div
-                    className={`${splineSansMono.variable} ${notoHK.variable} ${notoSC.variable} font-sans`}>
+                    className={`${interMono.variable} ${notoHK.variable} ${notoSC.variable} font-sans`}>
                     <ApplicationLayout>
                         <Component {...pageProps} />
                     </ApplicationLayout>
