@@ -46,7 +46,6 @@ export default function ExplorerBlogList({
                                 <Image
                                     alt="Thumbnail"
                                     className="rounded md:mt-0"
-                                    lightboxEnabled
                                     src={urlForImage(thumbnail).url()}
                                     width={1600 * 0.15}
                                     height={900 * 0.15}

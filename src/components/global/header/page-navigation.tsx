@@ -13,7 +13,10 @@ export default function NavigationBarPages() {
                 <Link href={item.href as never} key={item.name}>
                     <p
                         className={clsx(
-                            item.href === router.pathname && 'text-orange-500',
+                            (router.asPath === '/'
+                                ? router.asPath === item.href
+                                : router.asPath.startsWith(item.href) && item.href !== '/') &&
+                                'text-orange-500',
                             ' rounded hover:bg-gray-200 dark:hover:bg-gray-600',
                             'block px-3 text-center',
                         )}>

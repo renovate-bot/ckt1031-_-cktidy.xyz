@@ -10,25 +10,24 @@ export default function HomePage() {
         <>
             <NextSeo title={title} description={description} openGraph={{ title, description }} />
             <div className="mt-5 mb-10 flex flex-col items-start justify-start">
-                <h1 className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-center text-4xl font-extrabold text-transparent">
-                    cktsun
-                </h1>
                 <div className="flex h-full flex-row justify-between space-x-10">
                     <div className="mt-2 max-w-xl text-gray-700 dark:text-gray-400">
-                        <p className="text-black dark:text-white">
+                        <h1 className="bg-gradient-to-r from-gray-400 to-gray-800 bg-clip-text text-4xl font-bold text-transparent dark:from-gray-200 dark:to-gray-500">
+                            cktsun
+                        </h1>
+                        <p className="mt-3 text-black dark:text-white">
                             A secondary school (Form 5) student in Hong Kong.
                         </p>
                         <div className="mt-3 space-y-1">
-                            <p>I started programming since 2022.</p>
-                            <p>Also love reading especially philosophy.</p>
+                            <p>I love programming and reading.</p>
                             <p>Written this website for sharing what I have found in my life.</p>
                         </div>
                     </div>
                     <Image
-                        lightboxEnabled
                         alt="ckt"
                         src="/media/avatar.png"
-                        className="rounded-full"
+                        // Disable image shrinking when screen width is less than 150px
+                        className="h-32 w-32 rounded-full"
                         height={150}
                         width={150}
                     />

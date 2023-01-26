@@ -22,18 +22,18 @@ export function BlogDisplayPage({ data, readingTime, content, dateName }: BlogSi
                     </p>
                 </div>
                 {data.thumbnail && (
-                    <div className="mb-3">
+                    <div className="relative mb-3 h-[250px] w-full md:h-[450px]">
                         <Image
+                            fill
+                            objectFit="contain"
                             alt="Thumbnail"
-                            lightboxEnabled
                             src={urlForImage(data.thumbnail).url()}
-                            layout="responsive"
                         />
                     </div>
                 )}
             </div>
             {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-            <div className="prose max-w-full dark:prose-dark">
+            <div className="prose mb-10 max-w-full dark:prose-dark">
                 <MDXRemote {...content} components={{ ...mdxComponents }} />
             </div>
             {tags && tags.length > 0 && (
@@ -56,7 +56,6 @@ export function BlogDisplayPage({ data, readingTime, content, dateName }: BlogSi
                 <div className="mt-4 flex flex-row items-center gap-3">
                     <Image
                         alt=""
-                        lightboxEnabled
                         className="rounded-full shadow-2xl"
                         src={urlForImage(data.author.avatar).url()}
                         width={35}

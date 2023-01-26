@@ -12,7 +12,6 @@ const components = {
             src={props.src ?? ''}
             alt={props.alt ?? 'cktidy'}
             blurEnabled
-            lightboxEnabled
             layout="responsive"
             className="w-full"
             {...props}
