@@ -7,7 +7,7 @@ function DetailBlock() {
     return (
         <div className="mt-5 flex flex-col items-center">
             <h1 className="text-3xl font-bold">Technology</h1>
-            <div className="mb-10 max-w-2xl space-y-8">
+            <div className="my-5 max-w-2xl space-y-8">
                 <div>
                     <div className="base-border mb-3 border-b">
                         <h2 className="mb-1 text-2xl">Quick Look</h2>
