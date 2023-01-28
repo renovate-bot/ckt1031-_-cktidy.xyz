@@ -1,11 +1,11 @@
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import type {
-    SanityDocument,
-    SanityImageAsset,
-    SanityImageCrop,
-    SanityImageHotspot,
-    SanityKeyedReference,
-    SanityReference,
+  SanityDocument,
+  SanityImageAsset,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityKeyedReference,
+  SanityReference,
 } from 'sanity-codegen';
 
 /**
@@ -14,47 +14,47 @@ import type {
  *
  */
 export interface Author extends SanityDocument {
-    _type: 'author';
+  _type: 'author';
 
-    /**
-     * Name — `string`
-     *
-     *
-     */
-    name: string;
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name: string;
 
-    /**
-     * Slug — `slug`
-     *
-     *
-     */
-    slug: { _type: 'slug'; current: string };
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug: { _type: 'slug'; current: string };
 
-    /**
-     * Email — `string`
-     *
-     *
-     */
-    email: string;
+  /**
+   * Email — `string`
+   *
+   *
+   */
+  email: string;
 
-    /**
-     * Avatar — `image`
-     *
-     *
-     */
-    avatar: {
-        _type: 'image';
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        hotspot?: SanityImageHotspot;
-    };
+  /**
+   * Avatar — `image`
+   *
+   *
+   */
+  avatar: {
+    _type: 'image';
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
-    /**
-     * Description — `string`
-     *
-     *
-     */
-    description?: string;
+  /**
+   * Description — `string`
+   *
+   *
+   */
+  description?: string;
 }
 
 /**
@@ -63,75 +63,75 @@ export interface Author extends SanityDocument {
  *
  */
 export interface Post extends SanityDocument {
-    _type: 'post';
+  _type: 'post';
 
-    /**
-     * Title — `string`
-     *
-     *
-     */
-    title: string;
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title: string;
 
-    /**
-     * Slug — `slug`
-     *
-     *
-     */
-    slug: { _type: 'slug'; current: string };
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug: { _type: 'slug'; current: string };
 
-    /**
-     * Author — `reference`
-     *
-     *
-     */
-    author: SanityReference<Author>;
+  /**
+   * Author — `reference`
+   *
+   *
+   */
+  author: SanityReference<Author>;
 
-    /**
-     * Tags — `array`
-     *
-     *
-     */
-    tags?: SanityKeyedReference<Tag>[];
+  /**
+   * Tags — `array`
+   *
+   *
+   */
+  tags?: SanityKeyedReference<Tag>[];
 
-    /**
-     * Published at — `datetime`
-     *
-     *
-     */
-    publishedAt: string;
+  /**
+   * Published at — `datetime`
+   *
+   *
+   */
+  publishedAt: string;
 
-    /**
-     * Thumbnail — `image`
-     *
-     *
-     */
-    thumbnail?: {
-        _type: 'image';
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        hotspot?: SanityImageHotspot;
-    };
+  /**
+   * Thumbnail — `image`
+   *
+   *
+   */
+  thumbnail?: {
+    _type: 'image';
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 
-    /**
-     * Enable Comment — `boolean`
-     *
-     *
-     */
-    enable_comment: boolean;
+  /**
+   * Enable Comment — `boolean`
+   *
+   *
+   */
+  enable_comment: boolean;
 
-    /**
-     * Breif — `text`
-     *
-     *
-     */
-    breif: string;
+  /**
+   * Breif — `text`
+   *
+   *
+   */
+  breif: string;
 
-    /**
-     * Body — `markdown`
-     *
-     *
-     */
-    body: Markdown;
+  /**
+   * Body — `markdown`
+   *
+   *
+   */
+  body: Markdown;
 }
 
 /**
@@ -140,28 +140,28 @@ export interface Post extends SanityDocument {
  *
  */
 export interface Tag extends SanityDocument {
-    _type: 'tag';
+  _type: 'tag';
 
-    /**
-     * Name — `string`
-     *
-     *
-     */
-    name: string;
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name: string;
 
-    /**
-     * Slug — `slug`
-     *
-     *
-     */
-    slug: { _type: 'slug'; current: string };
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug: { _type: 'slug'; current: string };
 
-    /**
-     * Description — `text`
-     *
-     *
-     */
-    description?: string;
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
 }
 
 export type Documents = Author | Post | Tag;
@@ -174,17 +174,17 @@ export type Documents = Author | Post | Tag;
 type Markdown = MDXRemoteSerializeResult;
 
 export {
-    type SanityBlock,
-    type SanityDocument,
-    type SanityGeoPoint,
-    type SanityImageAsset,
-    type SanityImageCrop,
-    type SanityImageDimensions,
-    type SanityImageHotspot,
-    type SanityImageMetadata,
-    type SanityImagePalette,
-    type SanityImagePaletteSwatch,
-    type SanityKeyed,
-    type SanityKeyedReference,
-    type SanityReference,
+  type SanityBlock,
+  type SanityDocument,
+  type SanityGeoPoint,
+  type SanityImageAsset,
+  type SanityImageCrop,
+  type SanityImageDimensions,
+  type SanityImageHotspot,
+  type SanityImageMetadata,
+  type SanityImagePalette,
+  type SanityImagePaletteSwatch,
+  type SanityKeyed,
+  type SanityKeyedReference,
+  type SanityReference,
 } from 'sanity-codegen';

@@ -5,51 +5,51 @@
 @tailwind screens;
 
 ::selection {
-    color: white;
-    background: #6a9fe4;
+  color: white;
+  background: #6a9fe4;
 }
 
 ::-moz-selection {
-    color: white;
-    background: #6a9fe4;
+  color: white;
+  background: #6a9fe4;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .base-button-animation {
-    @apply transition duration-150 ease-out hover:bg-opacity-95 active:scale-95 md:active:scale-90;
+  @apply transition duration-150 ease-out hover:bg-opacity-95 active:scale-95 md:active:scale-90;
 }
 
 .root {
-    @apply bg-neutral-100 text-slate-900 antialiased dark:bg-neutral-900 dark:text-slate-200;
+  @apply bg-neutral-100 text-slate-900 antialiased dark:bg-neutral-900 dark:text-slate-200;
 }
 
 .error-page {
-    @apply h-screen w-screen bg-gray-200 text-black;
+  @apply h-screen w-screen bg-gray-200 text-black;
 }
 
 .button-normal {
-    @apply rounded-lg bg-neutral-900 px-3 py-2
+  @apply rounded-lg bg-neutral-900 px-3 py-2
     text-white duration-150 hover:bg-neutral-800 hover:ring-2 hover:ring-blue-400
     dark:bg-neutral-700;
 }
 
 .footer-default {
-    @apply flex flex-col items-center gap-1.5 border-t border-gray-200
+  @apply flex flex-col items-center gap-1.5 border-t border-gray-200
     py-3 text-center
     text-gray-700 dark:border-gray-700 dark:text-gray-400;
 }
 
 .footer-text-interaction {
-    @apply cursor-pointer text-sm text-sky-500 hover:text-sky-600 hover:underline dark:text-sky-400 hover:dark:text-sky-200;
+  @apply cursor-pointer text-sm text-sky-500 hover:text-sky-600 hover:underline dark:text-sky-400 hover:dark:text-sky-200;
 }
 
 .base-border {
-    @apply border-gray-300 dark:border-gray-600;
+  @apply border-gray-300 dark:border-gray-600;
 }
 
 .base-input-box {
-    @apply base-border rounded border bg-gray-200 p-2 dark:bg-gray-800;
+  @apply base-border rounded border bg-gray-200 p-2 dark:bg-gray-800;
 }

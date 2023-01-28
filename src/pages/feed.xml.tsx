@@ -6,18 +6,18 @@ import { allPostQuery } from '$lib/sanity/query';
 import type { BlogPostLobbyProps } from '$lib/types';
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-    const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
+  const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
 
-    const feedFile = generateRSSFeed(allPosts);
+  const feedFile = generateRSSFeed(allPosts);
 
-    res.write(feedFile);
-    res.end();
+  res.write(feedFile);
+  res.end();
 
-    return {
-        props: {},
-    };
+  return {
+    props: {},
+  };
 };
 
 export default function RSSFeed() {
-    return null;
+  return null;
 }

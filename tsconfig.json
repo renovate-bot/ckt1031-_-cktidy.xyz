@@ -1,25 +1,15 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "checkJs": true,
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "incremental": true,
-        "baseUrl": ".",
-        "paths": {
-            "$*": ["src/*"]
-        }
-    },
-    "exclude": ["node_modules", "next.config.js", "tailwind.config.js", "types/nextjs-routes.d.ts"],
-    "include": ["**/*.tsx", "**/*.ts", "**/*.js"]
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@ckt1031/tsconfig/web.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "$*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "next.config.js", "tailwind.config.js", "types/nextjs-routes.d.ts"],
+  "include": ["**/*.tsx", "**/*.ts", "**/*.js"]
 }

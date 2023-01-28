@@ -10,29 +10,29 @@ import remarkParse from 'remark-parse';
 import remarkUnwrapImages from 'remark-unwrap-images';
 
 export async function parseMdx(body: string) {
-    return await serialize(body, {
-        mdxOptions: {
-            remarkPlugins: [remarkParse, remarkGfm, remarkNormalizeHeadings, remarkUnwrapImages],
-            rehypePlugins: [
-                rehypeSlug,
-                rehypeCodeTitles,
-                [
-                    rehypeExternalLinks,
-                    {
-                        rel: ['nofollow'],
-                    },
-                ],
-                imageSize,
-                [
-                    rehypeAutolinkHeadings,
-                    {
-                        properties: {
-                            className: ['anchor'],
-                        },
-                    },
-                ],
-            ],
-            format: 'mdx',
-        },
-    });
+  return await serialize(body, {
+    mdxOptions: {
+      format: 'mdx',
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeCodeTitles,
+        [
+          rehypeExternalLinks,
+          {
+            rel: ['nofollow'],
+          },
+        ],
+        imageSize,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor'],
+            },
+          },
+        ],
+      ],
+      remarkPlugins: [remarkParse, remarkGfm, remarkNormalizeHeadings, remarkUnwrapImages],
+    },
+  });
 }

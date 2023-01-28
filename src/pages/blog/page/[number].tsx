@@ -10,58 +10,58 @@ import type { Post } from '$lib/sanity/schema';
 import type { BlogPostLobbyProps } from '$lib/types';
 
 export async function getStaticPaths() {
-    const posts = await sanityClient.fetch<Post[] | undefined>(allPostQuery);
+  const posts = await sanityClient.fetch<Post[] | undefined>(allPostQuery);
 
-    if (!posts) {
-        return { notFound: true };
-    }
+  if (!posts) {
+    return { notFound: true };
+  }
 
-    const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
+  const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
 
-    return {
-        paths: Array.from({ length: totalPagesNumber }, (_, i) => ({
-            params: {
-                number: (i + 1).toString(),
-            },
-        })),
-        fallback: false,
-    };
+  return {
+    fallback: false,
+    paths: Array.from({ length: totalPagesNumber }, (_, i) => ({
+      params: {
+        number: (i + 1).toString(),
+      },
+    })),
+  };
 }
 
 export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = async ({ params }) => {
-    if (!params || typeof params.number !== 'string') {
-        return { notFound: true };
-    }
+  if (!params || typeof params.number !== 'string') {
+    return { notFound: true };
+  }
 
-    const pageNumber = Number(params.number);
+  const pageNumber = Number(params.number);
 
-    const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
+  const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
 
-    const displayPosts = allPosts.slice(
-        config.blog.maxDisplayPerPage * (pageNumber - 1),
-        config.blog.maxDisplayPerPage * pageNumber,
-    );
+  const displayPosts = allPosts.slice(
+    config.blog.maxDisplayPerPage * (pageNumber - 1),
+    config.blog.maxDisplayPerPage * pageNumber,
+  );
 
-    const pagination = {
-        currentPage: pageNumber,
-        totalPages: Math.ceil(allPosts.length / config.blog.maxDisplayPerPage),
-    };
+  const pagination = {
+    currentPage: pageNumber,
+    totalPages: Math.ceil(allPosts.length / config.blog.maxDisplayPerPage),
+  };
 
-    return {
-        props: {
-            allPosts,
-            displayPosts,
-            pagination,
-        },
-        revalidate: 60 * 60 * 3, // 3 hours
-    };
+  return {
+    props: {
+      allPosts,
+      displayPosts,
+      pagination,
+    },
+    revalidate: 60 * 60 * 3, // 3 hours
+  };
 };
 
 export default function Page(prop: InferGetStaticPropsType<typeof getStaticProps>) {
-    return (
-        <>
-            <NextSeo title={`Blog Page: ${prop.pagination.currentPage}`} />
-            <BlogList {...prop} />
-        </>
-    );
+  return (
+    <>
+      <NextSeo title={`Blog Page: ${prop.pagination.currentPage}`} />
+      <BlogList {...prop} />
+    </>
+  );
 }
