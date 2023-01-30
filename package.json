@@ -26,9 +26,10 @@
   },
   "packageManager": "pnpm@7.26.1",
   "dependencies": {
+    "@fontsource/inter": "4.5.15",
+    "@fontsource/noto-sans-tc": "4.5.12",
     "@headlessui/react": "1.7.8",
     "@next/env": "13.1.6",
-    "@next/font": "13.1.6",
     "@sanity/image-url": "1.0.2",
     "@sanity/webhook": "2.0.0",
     "@sentry/nextjs": "7.34.0",

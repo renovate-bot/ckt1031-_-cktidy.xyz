@@ -22,7 +22,7 @@ export default function MenuNavigationList({ showMenu, toggleMenu }: PagesProp) 
       <div className="overflow-auto">
         <div className="grid space-y-2 divide-y divide-gray-300 p-3 dark:divide-gray-700">
           {config.headbar.routes.map(item => (
-            <Link href={item.href as never} key={item.name} onClick={toggleMenu}>
+            <Link href={item.href} key={item.name} onClick={toggleMenu}>
               <p
                 className={clsx(
                   (router.asPath === '/'
@@ -31,7 +31,7 @@ export default function MenuNavigationList({ showMenu, toggleMenu }: PagesProp) 
                     'text-orange-600',
                   'cursor-pointer p-3 text-center',
                 )}>
-                <Link href={item.href}>{item.name}</Link>
+                {item.name}
               </p>
             </Link>
           ))}

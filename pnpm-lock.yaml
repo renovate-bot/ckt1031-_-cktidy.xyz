@@ -5,9 +5,10 @@ specifiers:
   '@ckt1031/tsconfig': 0.0.12
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
+  '@fontsource/inter': 4.5.15
+  '@fontsource/noto-sans-tc': 4.5.12
   '@headlessui/react': 1.7.8
   '@next/env': 13.1.6
-  '@next/font': 13.1.6
   '@sanity/image-url': 1.0.2
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.34.0
@@ -61,9 +62,10 @@ specifiers:
   zustand: 4.3.2
 
 dependencies:
+  '@fontsource/inter': 4.5.15
+  '@fontsource/noto-sans-tc': 4.5.12
   '@headlessui/react': 1.7.8_biqbaboplfbrettd7655fr4n2y
   '@next/env': 13.1.6
-  '@next/font': 13.1.6
   '@sanity/image-url': 1.0.2
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.34.0_next@13.1.6+react@18.2.0
@@ -2177,6 +2179,14 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
+  /@fontsource/inter/4.5.15:
+    resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
+    dev: false
+
+  /@fontsource/noto-sans-tc/4.5.12:
+    resolution: {integrity: sha512-c4OUY5Wq03ZLI4Ds9IEHEiPqpjmEXvDpANXufCTlk+bMb8MnweXPVWJSrSHydXnz7r+qstZl3HvWDl2RI5o/1A==}
+    dev: false
+
   /@headlessui/react/1.7.8_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-zcwb0kd7L05hxmoAMIioEaOn235Dg0fUO+iGbLPgLVSjzl/l39V6DTpC2Df49PE5aG5/f5q0PZ9ZHZ78ENNV+A==}
     engines: {node: '>=10'}
@@ -2353,10 +2363,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.1.6:
-    resolution: {integrity: sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.1.6:
     resolution: {integrity: sha512-F3/6Z8LH/pGlPzR1AcjPFxx35mPqjE5xZcf+IL+KgbW9tMkp7CYi1y7qKrEWU7W4AumxX/8OINnDQWLiwLasLQ==}
