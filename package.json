@@ -71,8 +71,8 @@
     "s-ago": "2.2.0"
   },
   "devDependencies": {
-    "@ckt1031/eslint-config": "0.0.11",
-    "@ckt1031/tsconfig": "0.0.11",
+    "@ckt1031/eslint-config": "0.0.12",
+    "@ckt1031/tsconfig": "0.0.12",
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
     "@tailwindcss/typography": "0.5.9",
@@ -83,7 +83,7 @@
     "commitizen": "4.3.0",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.32.0",
+    "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
