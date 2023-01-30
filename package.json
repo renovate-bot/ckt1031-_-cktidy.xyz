@@ -4,15 +4,7 @@
   "version": "0.1.2",
   "description": "Cktsun's Personal Website",
   "license": "MIT",
-  "author": "cktsun1031",
-  "homepage": "https://github.com/cktsun1031/cktidy#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cktsun1031/cktidy.git"
-  },
-  "bugs": {
-    "url": "https://github.com/cktsun1031/cktidy/issues"
-  },
+  "author": "ckt1031",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "next build",

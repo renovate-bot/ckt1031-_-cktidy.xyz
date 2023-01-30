@@ -4,7 +4,7 @@ import Image from '$components/image';
 
 export default function HomePage() {
   const title = 'Home';
-  const description = 'A cool website by cktsun1031!';
+  const description = 'A cool website by ckt1031!';
 
   return (
     <>

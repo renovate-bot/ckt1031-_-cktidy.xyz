@@ -52,7 +52,7 @@ export default function AboutPage() {
                   <p>Github:</p>
                 </div>
                 <Link enableExternalIcon href={config.author.social.github}>
-                  @cktsun1031
+                  @ckt1031
                 </Link>
               </div>
             </div>

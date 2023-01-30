@@ -11,7 +11,7 @@ export const config = {
     social: {
       discordServer: 'https://discord.gg/Y2ZnZc5Nnh',
       feed: '/feed.xml',
-      github: 'https://github.com/cktsun1031',
+      github: 'https://github.com/ckt1031',
       instagram: 'https://www.instagram.com/ckt.1031/',
       twitter: 'https://twitter.com/@cktsun1031',
       youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
@@ -35,7 +35,7 @@ export const config = {
       },
     ],
   },
-  github_project_url: 'https://github.com/cktsun1031/cktidy.xyz',
+  github_project_url: 'https://github.com/ckt1031/cktidy.xyz',
   headbar: {
     routes: [
       {
