@@ -10,6 +10,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 
   const feedFile = generateRSSFeed(allPosts);
 
+  // Cache the feed for 5 minutes
+  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=1200');
+  // encode the response as UTF-8
+  res.setHeader('Content-Type', 'text/xml; charset=utf-8');
+
   res.write(feedFile);
   res.end();
 

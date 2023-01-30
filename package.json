@@ -60,7 +60,8 @@
     "remark-normalize-headings": "3.0.1",
     "remark-parse": "10.0.1",
     "remark-unwrap-images": "3.0.1",
-    "s-ago": "2.2.0"
+    "s-ago": "2.2.0",
+    "zustand": "4.3.2"
   },
   "devDependencies": {
     "@ckt1031/eslint-config": "0.0.12",

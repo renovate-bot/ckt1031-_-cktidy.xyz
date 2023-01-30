@@ -58,6 +58,7 @@ specifiers:
   sanity-codegen: 0.9.8
   tailwindcss: 3.2.4
   typescript: 4.9.4
+  zustand: 4.3.2
 
 dependencies:
   '@headlessui/react': 1.7.8_biqbaboplfbrettd7655fr4n2y
@@ -95,6 +96,7 @@ dependencies:
   remark-parse: 10.0.1
   remark-unwrap-images: 3.0.1
   s-ago: 2.2.0
+  zustand: 4.3.2_react@18.2.0
 
 devDependencies:
   '@ckt1031/eslint-config': 0.0.12_u2yffxhyzysqk6kwepu325x34a
@@ -11747,6 +11749,22 @@ packages:
       archiver-utils: 2.1.0
       compress-commons: 4.1.1
       readable-stream: 3.6.0
+    dev: false
+
+  /zustand/4.3.2_react@18.2.0:
+    resolution: {integrity: sha512-rd4haDmlwMTVWVqwvgy00ny8rtti/klRoZjFbL/MAcDnmD5qSw/RZc+Vddstdv90M5Lv6RPgWvm1Hivyn0QgJw==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /zwitch/2.0.2:

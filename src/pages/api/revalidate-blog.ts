@@ -19,7 +19,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const body = await readBody(req); // Read the body into a string
-  const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
+  const signature = req.headers[String(SIGNATURE_HEADER_NAME)];
+
+  if (!signature || typeof signature !== 'string') {
+    console.error('Missing signature!');
+    res.status(401).json({
+      message: 'Missing signature!',
+      success: false,
+    });
+    return;
+  }
 
   if (!isValidSignature(body, signature, validationSecret)) {
     console.error('Invalid signature!');

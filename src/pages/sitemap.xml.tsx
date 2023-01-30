@@ -44,7 +44,9 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     return field;
   });
 
-  ctx.res.setHeader('Content-Type', 'text/xml');
+  // Set the headers
+  ctx.res.setHeader('Content-Type', 'text/xml; charset=utf-8');
+  // Cache the feed for 20 minutes
   ctx.res.setHeader('Cache-Control', 'public, s-maxage=1200, stale-while-revalidate=600');
 
   return getServerSideSitemap(ctx, fields);

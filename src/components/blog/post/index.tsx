@@ -30,7 +30,6 @@ export function BlogDisplayPage({ data, readingTime, content, dateName }: BlogSi
           </div>
         )}
       </div>
-      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
       <div className="prose mb-10 max-w-full dark:prose-dark">
         <MDXRemote {...content} components={{ ...mdxComponents }} />
       </div>
