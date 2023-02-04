@@ -23,10 +23,12 @@ export default function Pagination({
                 query: {
                   number: (pagination.currentPage - 1).toString(),
                 },
-              }}>
+              }}
+            >
               <button
                 type="button"
-                className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700">
+                className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700"
+              >
                 <FaRegArrowAltCircleLeft />
                 <p className="hidden md:block">Previous</p>
               </button>
@@ -49,7 +51,8 @@ export default function Pagination({
                     'rounded-lg px-2 py-1',
                   )}
                   // eslint-disable-next-line react/no-array-index-key
-                  key={index}>
+                  key={index}
+                >
                   <Link
                     passHref
                     href={{
@@ -57,7 +60,8 @@ export default function Pagination({
                       query: {
                         number: pageNumber.toString(),
                       },
-                    }}>
+                    }}
+                  >
                     {pageNumber}
                   </Link>
                 </div>
@@ -77,10 +81,12 @@ export default function Pagination({
                 query: {
                   number: (pagination.currentPage + 1).toString(),
                 },
-              }}>
+              }}
+            >
               <button
                 type="button"
-                className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700">
+                className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700"
+              >
                 <p className="hidden md:block">Next</p>
                 <FaRegArrowAltCircleRight />
               </button>

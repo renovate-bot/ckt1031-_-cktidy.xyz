@@ -19,7 +19,8 @@ export default function NavigationBarPages() {
                 : router.asPath.startsWith(item.href) && item.href !== '/') && 'text-orange-500',
               ' rounded hover:bg-gray-200 dark:hover:bg-gray-600',
               'block px-3 text-center',
-            )}>
+            )}
+          >
             {item.name}
           </p>
         </Link>

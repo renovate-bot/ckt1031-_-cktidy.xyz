@@ -26,7 +26,8 @@ export default function ThemeSwitcher() {
         type="button"
         aria-label="Toggle Theme Mode"
         className="base-button-animation p-2"
-        onClick={toggleThemes}>
+        onClick={toggleThemes}
+      >
         {themeName === 'system' && <MdComputer />}
         {themeName === 'dark' && <MdDarkMode />}
         {themeName === 'light' && <MdLightMode />}

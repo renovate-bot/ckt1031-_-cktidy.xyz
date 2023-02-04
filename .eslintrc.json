@@ -1,4 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "@ckt1031/eslint-config/default"],
-  "ignorePatterns": ["types/nextjs-routes.d.ts", "next-env.d.ts", "src/lib/sanity/schema.ts"]
+  "extends": ["next/core-web-vitals", "@ckt1031/eslint-config/typescript-strict"],
+  "ignorePatterns": ["types/nextjs-routes.d.ts", "next-env.d.ts", "src/lib/sanity/schema.ts"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json"
+  }
 }

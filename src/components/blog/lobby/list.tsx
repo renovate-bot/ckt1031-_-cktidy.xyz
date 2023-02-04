@@ -19,12 +19,14 @@ export default function ExplorerBlogList({
           return (
             <div
               key={slug.current}
-              className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5">
+              className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5"
+            >
               <div
                 className={clsx(
                   thumbnail && 'mb-3 md:mb-0 md:max-w-[400px]',
                   'flex max-h-fit flex-col justify-between break-words',
-                )}>
+                )}
+              >
                 <div>
                   <Link
                     passHref
@@ -34,7 +36,8 @@ export default function ExplorerBlogList({
                       query: {
                         slug: slug.current,
                       },
-                    }}>
+                    }}
+                  >
                     {title}
                   </Link>
                   <p className="text-gray-600 dark:text-gray-300">{breif}</p>

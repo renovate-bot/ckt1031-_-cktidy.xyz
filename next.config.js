@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/require-await */
 const { withSentryConfig } = require('@sentry/nextjs');
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 const withRoutes = require('nextjs-routes/config')({
   outDir: 'types',
 });

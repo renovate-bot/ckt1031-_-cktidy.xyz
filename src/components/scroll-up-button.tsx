@@ -28,7 +28,8 @@ export default function ScrollUpButton() {
         className={clsx(
           'text-white shadow-lg transition-all ease-linear',
           'rounded-lg bg-blue-500 p-2 hover:bg-blue-700 dark:bg-blue-900 hover:dark:bg-blue-700',
-        )}>
+        )}
+      >
         <FaArrowUp />
       </button>
     </div>

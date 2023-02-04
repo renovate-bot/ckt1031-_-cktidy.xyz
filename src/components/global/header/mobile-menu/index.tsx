@@ -19,7 +19,8 @@ export default function NavigationBarMobileMenu() {
         aria-label="Mobile Menu"
         type="button"
         className="flex items-center"
-        onClick={toggleMenu}>
+        onClick={toggleMenu}
+      >
         {isNavigationMenuOpen ? <MdClose /> : <MdMenu />}
       </button>
       <MenuNavigationList showMenu={isNavigationMenuOpen} toggleMenu={toggleMenu} />

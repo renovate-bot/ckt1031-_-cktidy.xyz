@@ -1,15 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@ckt1031/tsconfig/web.json",
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "preserve",
-    "incremental": true,
     "baseUrl": ".",
+    "incremental": true,
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
       "$*": ["src/*"]
     }
   },
-  "exclude": ["node_modules", "next.config.js", "tailwind.config.js", "types/nextjs-routes.d.ts"],
-  "include": ["**/*.tsx", "**/*.ts", "**/*.js"]
+  "exclude": ["node_modules", "types/nextjs-routes.d.ts"],
+  "extends": "@ckt1031/tsconfig/web.json",
+  "include": ["**/*.tsx", "**/*.ts", "**/*.js", "*.js"]
 }
