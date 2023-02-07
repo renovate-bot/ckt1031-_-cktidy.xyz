@@ -8,14 +8,13 @@ export default function NavigationBarMobileMenu() {
   const { isNavigationMenuOpen, setIsNavigationMenuOpen } = useMenusStore();
 
   const toggleMenu = () => {
-    document.body.style.overflow = isNavigationMenuOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = isNavigationMenuOpen ? 'auto' : 'hidden';
     setIsNavigationMenuOpen(!isNavigationMenuOpen);
   };
 
   return (
     <div className="md:hidden">
       <button
-        id="mobile-nav-menu"
         aria-label="Mobile Menu"
         type="button"
         className="flex items-center"

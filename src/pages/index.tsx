@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className="mt-5 mb-10 flex flex-col items-start justify-start">
         <div className="flex h-full flex-row justify-between space-x-10">
           <div className="mt-2 max-w-xl text-gray-700 dark:text-gray-400">
-            <h1 className="bg-gradient-to-r from-gray-400 to-gray-800 bg-clip-text text-4xl font-bold text-transparent dark:from-gray-200 dark:to-gray-500">
+            <h1 className="bg-gradient-to-r from-gray-500 to-gray-900 bg-clip-text text-4xl font-bold text-transparent dark:from-gray-200 dark:to-gray-500">
               cktsun
             </h1>
             <p className="mt-3 text-black dark:text-white">

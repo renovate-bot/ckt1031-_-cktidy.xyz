@@ -16,9 +16,11 @@ export default function NavigationBarPages() {
             className={clsx(
               (router.asPath === '/'
                 ? router.asPath === item.href
-                : router.asPath.startsWith(item.href) && item.href !== '/') && 'text-orange-500',
-              ' rounded hover:bg-gray-200 dark:hover:bg-gray-600',
-              'block px-3 text-center',
+                : router.asPath.startsWith(item.href) && item.href !== '/') &&
+                'bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-100',
+              'text-gray-500 dark:text-gray-400',
+              'rounded hover:text-gray-700 dark:hover:text-gray-200',
+              'block px-2 py-0.5 text-center',
             )}
           >
             {item.name}

@@ -7,8 +7,8 @@ import NavigationBarPages from './page-navigation';
 
 function Header() {
   return (
-    <header className="w-screen bg-gray-100 dark:bg-gray-900">
-      <div className="flex flex-row items-center justify-between py-1 px-6 text-lg md:py-2 md:px-16">
+    <header className="flex w-screen justify-center bg-gray-100 dark:bg-gray-900">
+      <div className="flex w-full max-w-[800px] flex-row items-center justify-between py-1 px-5 text-lg md:py-2">
         <div className="flex flex-row items-center">
           <MobileMenu />
           <NavigationBarPages />
