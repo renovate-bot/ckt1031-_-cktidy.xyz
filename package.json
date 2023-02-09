@@ -37,7 +37,7 @@
     "next-mdx-remote": "4.3.0",
     "next-sanity": "4.1.2",
     "next-seo": "5.15.0",
-    "next-sitemap": "3.1.51",
+    "next-sitemap": "3.1.52",
     "next-themes": "0.2.1",
     "nextjs-progressbar": "0.0.16",
     "nextjs-routes": "1.0.8",
@@ -59,9 +59,9 @@
     "zustand": "4.3.2"
   },
   "devDependencies": {
-    "@ckt1031/eslint-config": "0.0.16",
-    "@ckt1031/prettier-config": "0.0.15",
-    "@ckt1031/tsconfig": "0.0.16",
+    "@ckt1031/eslint-config": "0.1.1",
+    "@ckt1031/prettier-config": "0.1.1",
+    "@ckt1031/tsconfig": "0.1.1",
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
     "@tailwindcss/typography": "0.5.9",
@@ -89,7 +89,7 @@
   "eslintConfig": {
     "extends": [
       "next/core-web-vitals",
-      "@ckt1031/eslint-config/typescript-strict"
+      "@ckt1031/eslint-config/ultimate"
     ],
     "ignorePatterns": [
       "types/nextjs-routes.d.ts",
