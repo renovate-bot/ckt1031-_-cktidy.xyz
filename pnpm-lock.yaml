@@ -39,7 +39,7 @@ specifiers:
   nextjs-progressbar: 0.0.16
   nextjs-routes: 1.0.8
   postcss: 8.4.21
-  prettier: 2.8.3
+  prettier: 2.8.4
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: 4.7.1
@@ -100,7 +100,7 @@ dependencies:
 
 devDependencies:
   '@ckt1031/eslint-config': 0.0.16_7o3zyhmhae64kv7yymmwkxsgky
-  '@ckt1031/prettier-config': 0.0.15_6xprzernlpxwjedpj2snzq4bpq
+  '@ckt1031/prettier-config': 0.0.15_kcm2pbg4372aakdkvxabn7z2ri
   '@ckt1031/tsconfig': 0.0.16_typescript@4.9.5
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
@@ -117,8 +117,8 @@ devDependencies:
   husky: 8.0.3
   lint-staged: 13.1.1
   postcss: 8.4.21
-  prettier: 2.8.3
-  sanity-codegen: 0.9.8_tppqhxr7sgatyny3krk2kpj4hy
+  prettier: 2.8.4
+  sanity-codegen: 0.9.8_j7jxyddbelk2ddmuq4j7x44alm
   tailwindcss: 3.2.6_aesdjsunmf4wiehhujt67my7tu
   typescript: 4.9.5
 
@@ -1644,16 +1644,16 @@ packages:
       - tailwindcss
     dev: true
 
-  /@ckt1031/prettier-config/0.0.15_6xprzernlpxwjedpj2snzq4bpq:
+  /@ckt1031/prettier-config/0.0.15_kcm2pbg4372aakdkvxabn7z2ri:
     resolution: {integrity: sha512-3Cl7rfdToWj0VB+1ugimgsVoHvIGtNrM4Ra2lU2l/BKKnW6802aXVgn72yAB/FWwWhej5UGoj73jdblzGWoRHQ==}
     peerDependencies:
       prettier: 2.x
     dependencies:
-      prettier: 2.8.3
+      prettier: 2.8.4
       prettier-plugin-package-perfection: 1.1.0_eslint@8.33.0
-      prettier-plugin-prisma: 4.9.0_prettier@2.8.3
-      prettier-plugin-sort-json: 1.0.0_prettier@2.8.3
-      prettier-plugin-tailwindcss: 0.2.2_prettier@2.8.3
+      prettier-plugin-prisma: 4.9.0_prettier@2.8.4
+      prettier-plugin-sort-json: 1.0.0_prettier@2.8.4
+      prettier-plugin-tailwindcss: 0.2.2_prettier@2.8.4
     transitivePeerDependencies:
       - '@prettier/plugin-php'
       - '@prettier/plugin-pug'
@@ -9613,32 +9613,32 @@ packages:
         optional: true
     dependencies:
       eslint: 8.33.0
-      prettier: 2.8.3
+      prettier: 2.8.4
       prettier-package-json: 2.6.0
       tslib: 2.5.0
     dev: true
 
-  /prettier-plugin-prisma/4.9.0_prettier@2.8.3:
+  /prettier-plugin-prisma/4.9.0_prettier@2.8.4:
     resolution: {integrity: sha512-qR6/FyViOXi3KZZ8q/WsdjwPoVnjMl9YFj0DAa81t38qP3ySBrOcg23AxvFX5QCTjMslY/+HLuwgRuQqlDDBrw==}
     engines: {node: '>=14'}
     peerDependencies:
       prettier: '>=2'
     dependencies:
       '@prisma/prisma-fmt-wasm': 4.9.0-44.b29121153404aa8eda60ec38e41e477cc1c0ee66
-      prettier: 2.8.3
+      prettier: 2.8.4
     dev: true
 
-  /prettier-plugin-sort-json/1.0.0_prettier@2.8.3:
+  /prettier-plugin-sort-json/1.0.0_prettier@2.8.4:
     resolution: {integrity: sha512-XgcaF/Sojax1vD6j53wNIByx0rp7ecang+A8W0eM+Ks3yBFu/qXjJNvUtC1lEWeYbNfmRs/d8FyYJCYozAVENw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       prettier: ^2.3.2
     dependencies:
       '@types/prettier': 2.7.2
-      prettier: 2.8.3
+      prettier: 2.8.4
     dev: true
 
-  /prettier-plugin-tailwindcss/0.2.2_prettier@2.8.3:
+  /prettier-plugin-tailwindcss/0.2.2_prettier@2.8.4:
     resolution: {integrity: sha512-5RjUbWRe305pUpc48MosoIp6uxZvZxrM6GyOgsbGLTce+ehePKNm7ziW2dLG2air9aXbGuXlHVSQQw4Lbosq3w==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -9687,11 +9687,11 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      prettier: 2.8.3
+      prettier: 2.8.4
     dev: true
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -10414,7 +10414,7 @@ packages:
     resolution: {integrity: sha512-effkSW9cap879l6CVNdwL5iubVz8tkspqgfiqwgBgFQspV7152WHaLzr5590yR8oFgt7E1d4lO09uUhtAgUPoA==}
     dev: false
 
-  /sanity-codegen/0.9.8_tppqhxr7sgatyny3krk2kpj4hy:
+  /sanity-codegen/0.9.8_j7jxyddbelk2ddmuq4j7x44alm:
     resolution: {integrity: sha512-kwyBQioWD4UJBgi1RJx8J/HQ4i753yLgnL5MUwbuAyJZrO9W33anNNawbtcePw9PK+5+IovbSLOs+xicULb2hA==}
     hasBin: true
     peerDependencies:
@@ -10438,7 +10438,7 @@ packages:
       babel-plugin-css-modules-transform: 1.6.2
       babel-plugin-module-resolver: 4.1.0
       jsdom-global: 3.0.2_jsdom@20.0.2
-      prettier: 2.8.3
+      prettier: 2.8.4
       regenerator-runtime: 0.13.9
     transitivePeerDependencies:
       - jsdom
