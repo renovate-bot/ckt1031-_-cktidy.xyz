@@ -58,7 +58,7 @@ specifiers:
   sanity-codegen: 0.9.8
   tailwindcss: 3.2.6
   typescript: 4.9.5
-  zustand: 4.3.2
+  zustand: 4.3.3
 
 dependencies:
   '@fontsource/inter': 4.5.15
@@ -96,7 +96,7 @@ dependencies:
   remark-parse: 10.0.1
   remark-unwrap-images: 3.0.1
   s-ago: 2.2.0
-  zustand: 4.3.2_react@18.2.0
+  zustand: 4.3.3_react@18.2.0
 
 devDependencies:
   '@ckt1031/eslint-config': 0.1.1_lfcrbcznvdqrjzinjrdb75ptr4
@@ -12045,8 +12045,8 @@ packages:
       readable-stream: 3.6.0
     dev: false
 
-  /zustand/4.3.2_react@18.2.0:
-    resolution: {integrity: sha512-rd4haDmlwMTVWVqwvgy00ny8rtti/klRoZjFbL/MAcDnmD5qSw/RZc+Vddstdv90M5Lv6RPgWvm1Hivyn0QgJw==}
+  /zustand/4.3.3_react@18.2.0:
+    resolution: {integrity: sha512-x2jXq8S0kfLGNwGh87nhRfEc2eZy37tSatpSoSIN+O6HIaBhgQHSONV/F9VNrNcBcKQu/E80K1DeHDYQC/zCrQ==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       immer: '>=9.0'
