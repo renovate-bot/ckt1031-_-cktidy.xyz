@@ -12,6 +12,7 @@ specifiers:
   '@sanity/image-url': 1.0.2
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.37.1
+  '@tabler/icons-react': 2.3.0
   '@tailwindcss/typography': 0.5.9
   '@types/is-ci': 3.0.0
   '@types/node': 18.13.0
@@ -44,7 +45,6 @@ specifiers:
   prettier: 2.8.4
   react: 18.2.0
   react-dom: 18.2.0
-  react-icons: 4.7.1
   react-use: 17.4.0
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
@@ -69,6 +69,7 @@ dependencies:
   '@sanity/image-url': 1.0.2
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.37.1_next@13.1.6+react@18.2.0
+  '@tabler/icons-react': 2.3.0_react@18.2.0
   clsx: 1.2.1
   cssnano: 5.1.14_postcss@8.4.21
   csstype: 3.1.1
@@ -86,7 +87,6 @@ dependencies:
   nextjs-routes: 1.0.8_next@13.1.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-icons: 4.7.1_react@18.2.0
   react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
   reading-time: 1.5.0
   rehype-autolink-headings: 6.1.1
@@ -3066,6 +3066,20 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@tabler/icons-react/2.3.0_react@18.2.0:
+    resolution: {integrity: sha512-///OAT9U9bEfPx81nrVxZGfXM0qyIxZNyicvbF42Dqo5AxX5URrSW4ZWSN4LONYbWBewhjHhIOxWPs+dfa4Eyw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@tabler/icons': 2.3.0
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
+  /@tabler/icons/2.3.0:
+    resolution: {integrity: sha512-zYSgqYodvuuJPNl+Z5UaAP1adzONtCS923aKp7k6SuchrNOc8HE45epzI3ED0X2glYmFkd0Y/YXqPDhYi2p3Fw==}
     dev: false
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.2.6:
@@ -9922,14 +9936,6 @@ packages:
       react-clientside-effect: 1.2.6_react@18.2.0
       use-callback-ref: 1.3.0_pmekkgnqduwlme35zpnqhenc34
       use-sidecar: 1.1.2_pmekkgnqduwlme35zpnqhenc34
-    dev: false
-
-  /react-icons/4.7.1_react@18.2.0:
-    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
+import { IconArrowBigUpLine } from '@tabler/icons-react';
 import clsx from 'clsx';
-import { FaArrowUp } from 'react-icons/fa';
 import { useEvent } from 'react-use';
 
 const scrollToTop = () => {
@@ -30,7 +30,7 @@ export default function ScrollUpButton() {
           'rounded-lg bg-blue-500 p-2 hover:bg-blue-700 dark:bg-blue-900 hover:dark:bg-blue-700',
         )}
       >
-        <FaArrowUp />
+        <IconArrowBigUpLine />
       </button>
     </div>
   );

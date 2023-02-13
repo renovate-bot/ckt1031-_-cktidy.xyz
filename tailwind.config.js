@@ -4,7 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: ['src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {

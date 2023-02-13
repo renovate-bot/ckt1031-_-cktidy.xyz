@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
+import { IconExternalLink } from '@tabler/icons-react';
 import clsx from 'clsx';
 import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
-import { HiExternalLink } from 'react-icons/hi';
 
 type TextLinkProp = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -45,7 +45,7 @@ export default function Textlink({
       </span>
       {enableExternalIcon && (
         <span className="relative inline-block align-middle">
-          <HiExternalLink />
+          <IconExternalLink />
         </span>
       )}
     </a>

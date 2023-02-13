@@ -1,4 +1,4 @@
-import { MdClose, MdMenu } from 'react-icons/md';
+import { IconMenu2, IconX } from '@tabler/icons-react';
 
 import { useMenusStore } from '$stores/menus';
 
@@ -20,7 +20,7 @@ export default function NavigationBarMobileMenu() {
         className="flex items-center"
         onClick={toggleMenu}
       >
-        {isNavigationMenuOpen ? <MdClose /> : <MdMenu />}
+        {isNavigationMenuOpen ? <IconX /> : <IconMenu2 />}
       </button>
       <MenuNavigationList showMenu={isNavigationMenuOpen} toggleMenu={toggleMenu} />
     </div>

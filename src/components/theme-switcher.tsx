@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { IconDeviceLaptop, IconMoon, IconSunHigh } from '@tabler/icons-react';
 import { useTheme } from 'next-themes';
-import { MdComputer, MdDarkMode, MdLightMode } from 'react-icons/md';
 
 type ThemeNames = 'system' | 'light' | 'dark';
 
@@ -28,9 +28,9 @@ export default function ThemeSwitcher() {
         className="base-button-animation p-2"
         onClick={toggleThemes}
       >
-        {themeName === 'system' && <MdComputer />}
-        {themeName === 'dark' && <MdDarkMode />}
-        {themeName === 'light' && <MdLightMode />}
+        {themeName === 'system' && <IconDeviceLaptop />}
+        {themeName === 'dark' && <IconMoon />}
+        {themeName === 'light' && <IconSunHigh />}
       </button>
     </div>
   );

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
+import { IconArrowBigLeft, IconArrowBigRight } from '@tabler/icons-react';
 import clsx from 'clsx';
-import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 
 import type { BlogPostLobbyProps } from '$lib/types';
 
@@ -29,7 +29,7 @@ export default function Pagination({
                 type="button"
                 className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700"
               >
-                <FaRegArrowAltCircleLeft />
+                <IconArrowBigLeft />
                 <p className="hidden md:block">Previous</p>
               </button>
             </Link>
@@ -88,7 +88,7 @@ export default function Pagination({
                 className="flex flex-row items-center space-x-2 rounded-lg p-1 hover:bg-gray-200 hover:dark:bg-gray-700"
               >
                 <p className="hidden md:block">Next</p>
-                <FaRegArrowAltCircleRight />
+                <IconArrowBigRight />
               </button>
             </Link>
           )}

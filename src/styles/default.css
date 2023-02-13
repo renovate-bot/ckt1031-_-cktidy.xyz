@@ -4,14 +4,12 @@
 @tailwind variants;
 @tailwind screens;
 
+/* If tailwindcss dark mode */
 ::selection {
-  color: white;
-  background: #6a9fe4;
+  background-color: #a9d4ec;
 }
-
-::-moz-selection {
-  color: white;
-  background: #6a9fe4;
+[data-theme='dark'] ::selection {
+  background-color: #00416d;
 }
 
 html {

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { IconSearch } from '@tabler/icons-react';
 import Fuse from 'fuse.js';
 import type { ChangeEvent } from 'react';
-import { FiSearch } from 'react-icons/fi';
 
+import PageTitle from '$components/page-title';
 import type { BlogPostLobbyProps } from '$lib/types';
 
 import ExplorerBlogList from './list';
@@ -35,13 +36,12 @@ export default function ListPage({ allPosts, displayPosts, pagination }: BlogPos
   return (
     <div className="mt-5 w-full max-w-[1000px]">
       <div className="mb-2">
-        <h1 className="text-3xl font-bold">Blog</h1>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">
-          I have started this website since July 2022, I am writing blog to share meaningful things
-          to the world
-        </p>
+        <PageTitle
+          title="Blog"
+          description="Welcome to my blog, where I embark on a journey of sharing knowledge and meaningful insights with the world."
+        />
         <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border bg-gray-100 py-1 px-3 dark:bg-gray-800">
-          <FiSearch />
+          <IconSearch />
           <input
             placeholder="Search"
             onChange={onSearch}

@@ -28,7 +28,7 @@ function NextApplcation({ Component, pageProps }: AppProps) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <ThemeProvider enableSystem attribute="class" storageKey={THEME_KEY}>
+      <ThemeProvider enableSystem attribute="data-theme" storageKey={THEME_KEY}>
         <SeoComponent />
         <NextNProgress color="#eb7236" height={2} options={{ showSpinner: false }} />
         <ApplicationLayout>

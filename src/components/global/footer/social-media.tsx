@@ -1,4 +1,9 @@
-import { BsFillRssFill, BsGithub, BsInstagram, BsYoutube } from 'react-icons/bs';
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandYoutube,
+  IconRss,
+} from '@tabler/icons-react';
 
 import { config } from '$lib/constants';
 
@@ -7,19 +12,19 @@ import Link from '../../link';
 const footerSocialLinks = [
   {
     href: config.author.social.instagram,
-    icon: <BsInstagram />,
+    icon: <IconBrandInstagram />,
   },
   {
     href: config.author.social.github,
-    icon: <BsGithub />,
+    icon: <IconBrandGithub />,
   },
   {
     href: config.author.social.youtube,
-    icon: <BsYoutube />,
+    icon: <IconBrandYoutube />,
   },
   {
     href: config.author.social.feed,
-    icon: <BsFillRssFill />,
+    icon: <IconRss />,
   },
 ];
 
