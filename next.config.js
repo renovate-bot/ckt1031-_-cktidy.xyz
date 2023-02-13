@@ -5,6 +5,7 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const withRoutes = require('nextjs-routes/config')({
   outDir: 'types',
 });
+const isCI = require('is-ci');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -31,7 +32,7 @@ const securityHeaders = [
 const nextConfig = {
   eslint: {
     // Disable linting because we have checked via GitHub Actions, no further check needed
-    ignoreDuringBuilds: !!process.env.CI,
+    ignoreDuringBuilds: !isCI,
   },
   async headers() {
     return [

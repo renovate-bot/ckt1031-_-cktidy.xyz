@@ -4,8 +4,8 @@ specifiers:
   '@ckt1031/eslint-config': 0.1.1
   '@ckt1031/prettier-config': 0.1.1
   '@ckt1031/tsconfig': 0.1.1
-  '@commitlint/cli': 17.4.2
-  '@commitlint/config-conventional': 17.4.2
+  '@commitlint/cli': 17.4.3
+  '@commitlint/config-conventional': 17.4.3
   '@fontsource/inter': 4.5.15
   '@fontsource/noto-sans-tc': 4.5.12
   '@next/env': 13.1.6
@@ -13,6 +13,7 @@ specifiers:
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.37.1
   '@tailwindcss/typography': 0.5.9
+  '@types/is-ci': 3.0.0
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
@@ -29,6 +30,7 @@ specifiers:
   feed: 4.2.2
   fuse.js: 6.6.2
   husky: 8.0.3
+  is-ci: 3.0.1
   lint-staged: 13.1.1
   next: 13.1.6
   next-mdx-remote: 4.3.0
@@ -73,6 +75,7 @@ dependencies:
   dayjs: 1.11.7
   feed: 4.2.2
   fuse.js: 6.6.2
+  is-ci: 3.0.1
   next: 13.1.6_pjwopsidmaokadturxaafygjp4
   next-mdx-remote: 4.3.0_biqbaboplfbrettd7655fr4n2y
   next-sanity: 4.1.2_4xqxorkfzauqzoayw6puylzk4m
@@ -102,9 +105,10 @@ devDependencies:
   '@ckt1031/eslint-config': 0.1.1_l4fat56qtukjq5h47czdsmhy3m
   '@ckt1031/prettier-config': 0.1.1_yrlhudqyxg2l7qvwle5bdpmrli
   '@ckt1031/tsconfig': 0.1.1_typescript@4.9.5
-  '@commitlint/cli': 17.4.2
-  '@commitlint/config-conventional': 17.4.2
+  '@commitlint/cli': 17.4.3
+  '@commitlint/config-conventional': 17.4.3
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.6
+  '@types/is-ci': 3.0.0
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
@@ -1683,13 +1687,13 @@ packages:
       typescript: 4.9.5
     dev: true
 
-  /@commitlint/cli/17.4.2:
-    resolution: {integrity: sha512-0rPGJ2O1owhpxMIXL9YJ2CgPkdrFLKZElIZHXDN8L8+qWK1DGH7Q7IelBT1pchXTYTuDlqkOTdh//aTvT3bSUA==}
+  /@commitlint/cli/17.4.3:
+    resolution: {integrity: sha512-IPTS7AZuBHgD0gl24El8HwuDM9zJN9JLa5KmZUQoFD1BQeGGdzAYJOnAr85CeJWpTDok0BGHDL0+4odnH0iTyA==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.0
-      '@commitlint/lint': 17.4.2
+      '@commitlint/lint': 17.4.3
       '@commitlint/load': 17.4.2
       '@commitlint/read': 17.4.2
       '@commitlint/types': 17.4.0
@@ -1703,8 +1707,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional/17.4.2:
-    resolution: {integrity: sha512-JVo1moSj5eDMoql159q8zKCU8lkOhQ+b23Vl3LVVrS6PXDLQIELnJ34ChQmFVbBdSSRNAbbXnRDhosFU+wnuHw==}
+  /@commitlint/config-conventional/17.4.3:
+    resolution: {integrity: sha512-8EsY2iDw74hCk3hIQSg7/E0R8/KtPjnFPZVwmmHxcjhZjkSykmxysefICPDnbI3xgxfov0zwL1WKDHM8zglJdw==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
@@ -1751,13 +1755,13 @@ packages:
       semver: 7.3.8
     dev: true
 
-  /@commitlint/lint/17.4.2:
-    resolution: {integrity: sha512-HcymabrdBhsDMNzIv146+ZPNBPBK5gMNsVH+el2lCagnYgCi/4ixrHooeVyS64Fgce2K26+MC7OQ4vVH8wQWVw==}
+  /@commitlint/lint/17.4.3:
+    resolution: {integrity: sha512-GnPsqEYmXIB/MaBhRMzkiDJWyjuLrKad4xoxKO4N6Kc19iqjR4DPc/bl2dxeW9kUmtrAtefOzIEzJAevpA5y2w==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/is-ignored': 17.4.2
       '@commitlint/parse': 17.4.2
-      '@commitlint/rules': 17.4.2
+      '@commitlint/rules': 17.4.3
       '@commitlint/types': 17.4.0
     dev: true
 
@@ -1822,8 +1826,8 @@ packages:
       resolve-global: 1.0.0
     dev: true
 
-  /@commitlint/rules/17.4.2:
-    resolution: {integrity: sha512-OGrPsMb9Fx3/bZ64/EzJehY9YDSGWzp81Pj+zJiY+r/NSgJI3nUYdlS37jykNIugzazdEXfMtQ10kmA+Kx2pZQ==}
+  /@commitlint/rules/17.4.3:
+    resolution: {integrity: sha512-xHReDfE3Z+O9p1sXeEhPRSk4FifBsC4EbXzvQ4aa0ykQe+n/iZDd4CrFC/Oiv2K9BU4ZnFHak30IbMLa4ks1Rw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/ensure': 17.4.0
@@ -3157,6 +3161,12 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
+  /@types/is-ci/3.0.0:
+    resolution: {integrity: sha512-Q0Op0hdWbYd1iahB+IFNQcWXFq4O0Q5MwQP7uN0souuQ4rPg1vEYcnIOfr1gY+M+6rc8FGoRaBO1mOOvL29sEQ==}
+    dependencies:
+      ci-info: 3.7.1
+    dev: true
+
   /@types/is-hotkey/0.1.7:
     resolution: {integrity: sha512-yB5C7zcOM7idwYZZ1wKQ3pTfjA9BbvFqRWvKB46GFddxnJtHwi/b9y84ykQtxQPg5qhdpg4Q/kWU3EGoCTmLzQ==}
     dev: false
@@ -4216,7 +4226,6 @@ packages:
   /ci-info/3.7.1:
     resolution: {integrity: sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w==}
     engines: {node: '>=8'}
-    dev: true
 
   /classnames/2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
@@ -7055,6 +7064,13 @@ packages:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /is-ci/3.0.1:
+    resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
+    hasBin: true
+    dependencies:
+      ci-info: 3.7.1
+    dev: false
 
   /is-core-module/2.11.0:
     resolution: {integrity: sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==}

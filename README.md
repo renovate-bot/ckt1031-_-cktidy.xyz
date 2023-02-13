@@ -13,7 +13,7 @@ Currently hosted on [Vercel](https://vercel.com) and which uses [Sanity.io](http
 
 Visit the official website [here](https://cktidy.xyz).
 
-## Host Locally
+## Get Started
 
 Node.js 16 or latest LTS is required.
 
@@ -24,7 +24,7 @@ corepack enable # if you haven't enabled corepack
 corepack prepare # if you haven't prepared corepack
 ```
 
-And add the following environment variables:
+And add the following environment variables (`.env`):
 
 ```bash
 NEXT_PUBLIC_SANITY_PROJECT_ID=
@@ -35,13 +35,13 @@ Then run the following commands:
 
 ```bash
 pnpm install
-pnpm run dev
+pnpm dev
 ```
 
-## Build
+Build the project:
 
 ```bash
-pnpm run build
+pnpm build
 ```
 
 ## License
