@@ -12,7 +12,7 @@ specifiers:
   '@sanity/image-url': 1.0.2
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.37.2
-  '@tabler/icons-react': 2.3.0
+  '@tabler/icons-react': 2.4.0
   '@tailwindcss/typography': 0.5.9
   '@types/is-ci': 3.0.0
   '@types/node': 18.13.0
@@ -69,7 +69,7 @@ dependencies:
   '@sanity/image-url': 1.0.2
   '@sanity/webhook': 2.0.0
   '@sentry/nextjs': 7.37.2_next@13.1.6+react@18.2.0
-  '@tabler/icons-react': 2.3.0_react@18.2.0
+  '@tabler/icons-react': 2.4.0_react@18.2.0
   clsx: 1.2.1
   cssnano: 5.1.14_postcss@8.4.21
   csstype: 3.1.1
@@ -3068,18 +3068,18 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@tabler/icons-react/2.3.0_react@18.2.0:
-    resolution: {integrity: sha512-///OAT9U9bEfPx81nrVxZGfXM0qyIxZNyicvbF42Dqo5AxX5URrSW4ZWSN4LONYbWBewhjHhIOxWPs+dfa4Eyw==}
+  /@tabler/icons-react/2.4.0_react@18.2.0:
+    resolution: {integrity: sha512-U04bSknpXPdZP8soAnMPiz4g6PXPfWHfMoe2qhDoRlnS8UJ8JHHE/k4Lx4rw2Tfy9a2QJeoPV5HQIeKXrNPHGA==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@tabler/icons': 2.3.0
+      '@tabler/icons': 2.4.0
       prop-types: 15.8.1
       react: 18.2.0
     dev: false
 
-  /@tabler/icons/2.3.0:
-    resolution: {integrity: sha512-zYSgqYodvuuJPNl+Z5UaAP1adzONtCS923aKp7k6SuchrNOc8HE45epzI3ED0X2glYmFkd0Y/YXqPDhYi2p3Fw==}
+  /@tabler/icons/2.4.0:
+    resolution: {integrity: sha512-JZY9Kk3UsQoqp7Rw/BuWw1PrkRwv5h0psjJBbj+Cn9UVyhdzr5vztg2mywXBAJ+jFBUL/pjnVcIvOzKFw4CXng==}
     dev: false
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.2.6:
