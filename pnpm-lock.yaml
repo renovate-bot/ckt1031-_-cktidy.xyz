@@ -35,7 +35,7 @@ specifiers:
   lint-staged: 13.1.2
   next: 13.1.6
   next-mdx-remote: 4.3.0
-  next-sanity: 4.1.2
+  next-sanity: 4.1.5
   next-seo: 5.15.0
   next-sitemap: 3.1.52
   next-themes: 0.2.1
@@ -79,7 +79,7 @@ dependencies:
   is-ci: 3.0.1
   next: 13.1.6_pjwopsidmaokadturxaafygjp4
   next-mdx-remote: 4.3.0_biqbaboplfbrettd7655fr4n2y
-  next-sanity: 4.1.2_4xqxorkfzauqzoayw6puylzk4m
+  next-sanity: 4.1.5_4xqxorkfzauqzoayw6puylzk4m
   next-seo: 5.15.0_3vryta7zmbcsw4rrqf4axjqggm
   next-sitemap: 3.1.52_dlcnecpznf2wc36zwuq5m2ie5q
   next-themes: 0.2.1_3vryta7zmbcsw4rrqf4axjqggm
@@ -2638,6 +2638,17 @@ packages:
       - supports-color
     dev: false
 
+  /@sanity/client/5.2.1:
+    resolution: {integrity: sha512-fkpVdywu23gPWjNGC+Z2uAM+CFlQuEoDQMc9aVWJQqQwPthD6jCkmTgbwZDscFjTjn6eu6+6s5PHdNM6fPPoDA==}
+    engines: {node: '>=14.18'}
+    dependencies:
+      '@sanity/eventsource': 4.0.0
+      get-it: 8.0.9
+      rxjs: 7.8.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@sanity/color/2.2.2:
     resolution: {integrity: sha512-ksIqx1pCH5HTfLTykj1HT1P2wfgYxwyoOnBRssJYLV0YZe3YP+WWe483JKTDPfOVM4qyz/lUZ3If3L7x/BNyew==}
     dev: false
@@ -4946,6 +4957,13 @@ packages:
       mimic-response: 3.1.0
     dev: false
 
+  /decompress-response/7.0.0:
+    resolution: {integrity: sha512-6IvPrADQyyPGLpMnUh6kfKiqy7SrbXbjoUuZ90WMBJKErzv2pCiwlGEXjRX9/54OnTq+XFVnkOnOMzclLI5aEA==}
+    engines: {node: '>=10'}
+    dependencies:
+      mimic-response: 3.1.0
+    dev: false
+
   /dedent/0.7.0:
     resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
     dev: true
@@ -6418,6 +6436,24 @@ packages:
       - supports-color
     dev: false
 
+  /get-it/8.0.9:
+    resolution: {integrity: sha512-Nm54soj8MEXTmkzAR0iWGP/TCAfsueOOWzBTvTB9ch0ubUE/5FbV7tAptbmsYzpk9QzA6zhcadqTCwP3prRfHw==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      debug: 4.3.4
+      decompress-response: 7.0.0
+      follow-redirects: 1.15.2_debug@4.3.4
+      into-stream: 6.0.0
+      is-plain-object: 5.0.0
+      is-retry-allowed: 2.2.0
+      is-stream: 2.0.1
+      parse-headers: 2.0.5
+      progress-stream: 2.0.0
+      tunnel-agent: 0.6.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /get-random-values-esm/1.0.0:
     resolution: {integrity: sha512-BVgZ1PZwR5NKDpHpUcPmWcAQpoIOPXaFy6Vni3UdPbOlxO7eknhxsfytxwss16f75EABfnAC+XZjzTurNlPY/g==}
     dependencies:
@@ -7001,6 +7037,14 @@ packages:
       p-is-promise: 1.1.0
     dev: false
 
+  /into-stream/6.0.0:
+    resolution: {integrity: sha512-XHbaOAvP+uFKUFsOgoNPRjLkwB+I22JFPFe5OjTkQ0nwgj6+pSjb4NmB6VMxaPshLiOf+zcpOCBQuLwC1KHhZA==}
+    engines: {node: '>=10'}
+    dependencies:
+      from2: 2.3.0
+      p-is-promise: 3.0.0
+    dev: false
+
   /is-absolute-url/4.0.1:
     resolution: {integrity: sha512-/51/TKE88Lmm7Gc4/8btclNXWS+g50wXhYJq8HWIBAGUBnoAdRu1aXeh364t/O7wXDAcTJDP8PNuNKWUDWie+A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -7244,6 +7288,11 @@ packages:
   /is-retry-allowed/1.2.0:
     resolution: {integrity: sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /is-retry-allowed/2.2.0:
+    resolution: {integrity: sha512-XVm7LOeLpTW4jV19QSH38vkswxoLud8sQ57YwJVTPWdiaI9I8keEhGFpBlslyVsgdQy4Opg8QOLb8YRgsyZiQg==}
+    engines: {node: '>=10'}
     dev: false
 
   /is-set/2.0.2:
@@ -8572,8 +8621,8 @@ packages:
       - supports-color
     dev: false
 
-  /next-sanity/4.1.2_4xqxorkfzauqzoayw6puylzk4m:
-    resolution: {integrity: sha512-Em7AB7Ghjf1kiGBUXN0MuNHPZkaG/jM+u/LGURU71lamML5CjckGlHnuIztV65P52PoJRcgTEYWBwh3YlTNQPw==}
+  /next-sanity/4.1.5_4xqxorkfzauqzoayw6puylzk4m:
+    resolution: {integrity: sha512-zas+jhDbnSY5V+tG0PLGGgUCzQFmKMInRALiXykfYzDHPjm6xAFO49WTy1ZGkGc7AzKbNdwp8LEXOKEnDbp15w==}
     engines: {node: '>=16'}
     peerDependencies:
       '@sanity/icons': ^2
@@ -8584,7 +8633,7 @@ packages:
       sanity: ^3
       styled-components: ^5.2
     dependencies:
-      '@sanity/client': 4.0.1
+      '@sanity/client': 5.2.1
       '@sanity/icons': 2.2.2_react@18.2.0
       '@sanity/preview-kit': 1.3.1_react@18.2.0
       '@sanity/types': 3.2.4
@@ -8976,6 +9025,11 @@ packages:
   /p-is-promise/1.1.0:
     resolution: {integrity: sha512-zL7VE4JVS2IFSkR2GQKDSPEVxkoH43/p7oEnwpdCndKYJO0HVeRB7fA8TJwuLOTBREtK0ea8eHaxdwcpob5dmg==}
     engines: {node: '>=4'}
+    dev: false
+
+  /p-is-promise/3.0.0:
+    resolution: {integrity: sha512-Wo8VsW4IRQSKVXsJCn7TomUaVtyfjVDn3nUP7kE967BQk0CwFpdbZs0X0uk5sW9mkBa9eNM7hCMaG93WUAwxYQ==}
+    engines: {node: '>=8'}
     dev: false
 
   /p-limit/2.3.0:
