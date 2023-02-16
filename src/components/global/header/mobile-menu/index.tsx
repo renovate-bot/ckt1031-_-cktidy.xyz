@@ -1,11 +1,11 @@
-import { IconMenu2, IconX } from '@tabler/icons-react';
+import { useState } from 'react';
 
-import { useMenusStore } from '$stores/menus';
+import { IconMenu2, IconX } from '@tabler/icons-react';
 
 import MenuNavigationList from './list';
 
 export default function NavigationBarMobileMenu() {
-  const { isNavigationMenuOpen, setIsNavigationMenuOpen } = useMenusStore();
+  const [isNavigationMenuOpen, setIsNavigationMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     document.body.style.overflow = isNavigationMenuOpen ? 'auto' : 'hidden';

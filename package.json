@@ -37,7 +37,6 @@
     "is-ci": "3.0.1",
     "next": "13.1.6",
     "next-contentlayer": "0.3.0",
-    "next-mdx-remote": "4.3.0",
     "next-seo": "5.15.0",
     "next-sitemap": "3.1.52",
     "next-themes": "0.2.1",
@@ -56,8 +55,7 @@
     "remark-normalize-headings": "3.0.1",
     "remark-parse": "10.0.1",
     "remark-unwrap-images": "3.0.1",
-    "s-ago": "2.2.0",
-    "zustand": "4.3.3"
+    "s-ago": "2.2.0"
   },
   "devDependencies": {
     "@ckt1031/eslint-config": "0.1.1",
