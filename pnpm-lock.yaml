@@ -56,7 +56,7 @@ specifiers:
   remark-parse: 10.0.1
   remark-unwrap-images: 3.0.1
   s-ago: 2.2.0
-  tailwindcss: 3.2.6
+  tailwindcss: 3.2.7
   typescript: 4.9.5
 
 dependencies:
@@ -97,12 +97,12 @@ dependencies:
   s-ago: 2.2.0
 
 devDependencies:
-  '@ckt1031/eslint-config': 0.1.1_l4fat56qtukjq5h47czdsmhy3m
+  '@ckt1031/eslint-config': 0.1.1_6rrdu7uodgqp6gikvajs3iigjm
   '@ckt1031/prettier-config': 0.1.1_yrlhudqyxg2l7qvwle5bdpmrli
   '@ckt1031/tsconfig': 0.1.1_typescript@4.9.5
   '@commitlint/cli': 17.4.3
   '@commitlint/config-conventional': 17.4.3
-  '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.6
+  '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
   '@types/is-ci': 3.0.0
   '@types/node': 18.13.0
   '@types/react': 18.0.28
@@ -117,7 +117,7 @@ devDependencies:
   lint-staged: 13.1.2
   postcss: 8.4.21
   prettier: 2.8.4
-  tailwindcss: 3.2.6_aesdjsunmf4wiehhujt67my7tu
+  tailwindcss: 3.2.7_aesdjsunmf4wiehhujt67my7tu
   typescript: 4.9.5
 
 packages:
@@ -149,7 +149,7 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
 
-  /@ckt1031/eslint-config/0.1.1_l4fat56qtukjq5h47czdsmhy3m:
+  /@ckt1031/eslint-config/0.1.1_6rrdu7uodgqp6gikvajs3iigjm:
     resolution: {integrity: sha512-dkLmL90oLO+64ztwHD50x6kTVDbQwpLgx8YZsoakgaLZc/nud9ioj9K8ik+8NrxBUPk7Cbt3/bqZ0JT+sE4ISA==}
     peerDependencies:
       eslint: 8.x
@@ -170,7 +170,7 @@ packages:
       eslint-plugin-security: 1.7.1
       eslint-plugin-simple-import-sort: 10.0.0_eslint@8.34.0
       eslint-plugin-sonarjs: 0.18.0_eslint@8.34.0
-      eslint-plugin-tailwindcss: 3.8.3_tailwindcss@3.2.6
+      eslint-plugin-tailwindcss: 3.8.3_tailwindcss@3.2.7
       eslint-plugin-unicorn: 45.0.2_eslint@8.34.0
       eslint-plugin-write-good-comments: 0.1.4_cph42fnkvir46mcisklcbjjvgu
       typescript: 4.9.5
@@ -1512,7 +1512,7 @@ packages:
     resolution: {integrity: sha512-JZY9Kk3UsQoqp7Rw/BuWw1PrkRwv5h0psjJBbj+Cn9UVyhdzr5vztg2mywXBAJ+jFBUL/pjnVcIvOzKFw4CXng==}
     dev: false
 
-  /@tailwindcss/typography/0.5.9_tailwindcss@3.2.6:
+  /@tailwindcss/typography/0.5.9_tailwindcss@3.2.7:
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -1521,7 +1521,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.2.6_aesdjsunmf4wiehhujt67my7tu
+      tailwindcss: 3.2.7_aesdjsunmf4wiehhujt67my7tu
     dev: true
 
   /@trysound/sax/0.2.0:
@@ -3626,7 +3626,7 @@ packages:
       eslint: 8.34.0
     dev: true
 
-  /eslint-plugin-tailwindcss/3.8.3_tailwindcss@3.2.6:
+  /eslint-plugin-tailwindcss/3.8.3_tailwindcss@3.2.7:
     resolution: {integrity: sha512-wfzfCmc9yONNW+TqfR+QWZ+syFPQ8zMOrIGx500lS4XITEm0HJYGyKh1sC1tQ9+Wmt58bnHzW3Yc31vy5RlJww==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -3634,7 +3634,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
-      tailwindcss: 3.2.6_aesdjsunmf4wiehhujt67my7tu
+      tailwindcss: 3.2.7_aesdjsunmf4wiehhujt67my7tu
     dev: true
 
   /eslint-plugin-unicorn/45.0.2_eslint@8.34.0:
@@ -8053,8 +8053,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /tailwindcss/3.2.6_aesdjsunmf4wiehhujt67my7tu:
-    resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
+  /tailwindcss/3.2.7_aesdjsunmf4wiehhujt67my7tu:
+    resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
