@@ -1,9 +1,5 @@
 export const isDevelopment = process.env.NODE_ENV === 'development';
 
-export const THEME_KEY = 'THEME_NAME';
-
-export const DISABLE_SNOWFALL_EFFECT_KEY = 'DISABLE_SNOWFALL_EFFECT';
-
 export const config = {
   author: {
     email: 'me@cktidy.xyz',
@@ -20,9 +16,8 @@ export const config = {
   blog: {
     maxDisplayPerPage: 10,
   },
-  description: `A cool website by cktsun1031!
-    I will be releasing cool stuff here! Stay tuned!
-    Started this website since June 2022, and I will be updating it frequently!`,
+  description: `Welcome to CKT1031's cool website! Expect regular updates as I release exciting new content.
+  I started this site in June 2022, so stay tuned for all the latest updates!`,
   footer: {
     routes: [
       {
@@ -43,8 +38,8 @@ export const config = {
         name: 'Home',
       },
       {
-        href: '/blog',
-        name: 'Blog',
+        href: '/posts',
+        name: 'Posts',
       },
       {
         href: '/about',

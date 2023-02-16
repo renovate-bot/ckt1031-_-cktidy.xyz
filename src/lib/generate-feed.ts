@@ -1,11 +1,9 @@
+import type { Post } from 'contentlayer/generated';
 import { Feed } from 'feed';
 
 import { config } from '$lib/constants';
-import type { BlogPostLobbyProps } from '$lib/types';
 
-import type { Author } from './sanity/schema';
-
-export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
+export default function generateRSS(posts: Post[]) {
   const feed = new Feed({
     author: {
       email: config.author.email,
@@ -13,16 +11,16 @@ export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
     },
     copyright: `©${new Date().getFullYear()} ${config.author.name}`,
     description: config.description,
-    generator: 'cktidy-rss',
+    generator: 'Cktidy RSS Generator',
     id: config.url,
     link: config.url,
     title: "ckt1031's personal site",
   });
 
   for (const post of posts) {
-    const author = post.author as unknown as Author;
+    const author = config.author;
 
-    const postUrl = config.url + '/blog' + `/${post.slug.current}`;
+    const postUrl = config.url + post.url;
 
     feed.addItem({
       author: [
@@ -32,16 +30,11 @@ export default function generateRSS(posts: BlogPostLobbyProps['allPosts']) {
         },
       ],
       copyright: `©${new Date().getFullYear()} ${config.author.name}`,
-      date: new Date(post._createdAt),
-      description: post.breif,
+      date: new Date(post.date),
+      description: post.summary,
       id: postUrl,
       link: postUrl,
       title: post.title,
-      ...(post.tags && {
-        category: post.tags.map(tag => ({
-          name: tag.name,
-        })),
-      }),
     });
   }
 

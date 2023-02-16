@@ -32,3 +32,5 @@ public/*.xml
 # Repl.it
 replit.nix
 .replit
+
+/.contentlayer/

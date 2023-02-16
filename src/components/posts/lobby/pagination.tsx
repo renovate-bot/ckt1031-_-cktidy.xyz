@@ -7,7 +7,7 @@ import type { BlogPostLobbyProps } from '$lib/types';
 
 export default function Pagination({
   pagination,
-}: Omit<BlogPostLobbyProps, 'allPosts' | 'displayPosts'>) {
+}: Omit<BlogPostLobbyProps, 'posts' | 'displayPosts'>) {
   const isTopPage = pagination.currentPage - 1 === 1;
   const toPagePath = '/blog/page/[number]';
 

@@ -1,20 +1,18 @@
+import { allPosts } from 'contentlayer/generated';
+import dayjs from 'dayjs';
 import type { GetStaticProps } from 'next';
 import type { InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
-import BlogList from '$components/blog/lobby';
+import BlogList from '$components/posts/lobby';
 import { config } from '$lib/constants';
-import sanityClient from '$lib/sanity/client';
-import { allPostQuery } from '$lib/sanity/query';
-import type { Post } from '$lib/sanity/schema';
 import type { BlogPostLobbyProps } from '$lib/types';
 
-export async function getStaticPaths() {
-  const posts = await sanityClient.fetch<Post[] | undefined>(allPostQuery);
-
-  if (!posts) {
-    return { notFound: true };
-  }
+export function getStaticPaths() {
+  const posts = allPosts.sort((a, b) => {
+    const dateA = dayjs(new Date(a.date));
+    return dateA.isAfter(new Date(b.date)) ? -1 : 1;
+  });
 
   const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
 
@@ -28,32 +26,34 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = ({ params }) => {
   if (!params || typeof params.number !== 'string') {
     return { notFound: true };
   }
 
   const pageNumber = Number(params.number);
 
-  const allPosts = await sanityClient.fetch<BlogPostLobbyProps['allPosts']>(allPostQuery);
+  const posts = allPosts.sort((a, b) => {
+    const dateA = dayjs(new Date(a.date));
+    return dateA.isAfter(new Date(b.date)) ? -1 : 1;
+  });
 
-  const displayPosts = allPosts.slice(
+  const displayPosts = posts.slice(
     config.blog.maxDisplayPerPage * (pageNumber - 1),
     config.blog.maxDisplayPerPage * pageNumber,
   );
 
   const pagination = {
     currentPage: pageNumber,
-    totalPages: Math.ceil(allPosts.length / config.blog.maxDisplayPerPage),
+    totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
   };
 
   return {
     props: {
-      allPosts,
+      posts,
       displayPosts,
       pagination,
     },
-    revalidate: 60 * 60 * 3, // 3 hours
   };
 };
 

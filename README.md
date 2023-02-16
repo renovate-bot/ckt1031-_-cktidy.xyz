@@ -7,7 +7,7 @@
 
 A personal website showcasing information about me and my articles!
 
-Currently hosted on [Vercel](https://vercel.com) and which uses [Sanity.io](https://sanity.io) as a CMS.
+Currently hosted on [Vercel](https://vercel.com).
 
 ## Official Website
 
@@ -22,13 +22,6 @@ Please install [PNPM](https://pnpm.io) first.
 ```bash
 corepack enable # if you haven't enabled corepack
 corepack prepare # if you haven't prepared corepack
-```
-
-And add the following environment variables (`.env`):
-
-```bash
-NEXT_PUBLIC_SANITY_PROJECT_ID=
-SANITY_STUDIO_REVALIDATE_SECRET=
 ```
 
 Then run the following commands:

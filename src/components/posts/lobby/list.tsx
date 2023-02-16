@@ -1,24 +1,19 @@
 import Link from 'next/link';
 
 import clsx from 'clsx';
+import type { Post } from 'contentlayer/generated';
 import sAgo from 's-ago';
 
 import Image from '$components/image';
-import { urlForImage } from '$lib/sanity/tools';
-import type { BlogPostLobbyProps } from '$lib/types';
 
-export default function ExplorerBlogList({
-  postList,
-}: {
-  postList: BlogPostLobbyProps['allPosts'];
-}) {
+export default function ExplorerBlogList({ postList }: { postList: Post[] }) {
   return (
     <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
       {postList.length > 0 ? (
-        postList.map(({ breif, publishedAt, slug, thumbnail, title }) => {
+        postList.map(({ title, date, summary, thumbnail, url }) => {
           return (
             <div
-              key={slug.current}
+              key={url}
               className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5"
             >
               <div
@@ -28,29 +23,20 @@ export default function ExplorerBlogList({
                 )}
               >
                 <div>
-                  <Link
-                    passHref
-                    className="cursor-pointer text-2xl hover:underline"
-                    href={{
-                      pathname: '/blog/[slug]',
-                      query: {
-                        slug: slug.current,
-                      },
-                    }}
-                  >
+                  <Link passHref className="cursor-pointer text-2xl hover:underline" href={url}>
                     {title}
                   </Link>
-                  <p className="text-gray-600 dark:text-gray-300">{breif}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{summary}</p>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Published: {sAgo(new Date(publishedAt))}
+                <p className="mt-3 text-gray-500 dark:text-gray-400">
+                  Published: {sAgo(new Date(date))}
                 </p>
               </div>
               {thumbnail && (
                 <Image
                   alt="Thumbnail"
                   className="rounded md:mt-0"
-                  src={urlForImage(thumbnail).url()}
+                  src={thumbnail}
                   width={1600 * 0.15}
                   height={900 * 0.15}
                 />

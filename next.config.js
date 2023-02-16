@@ -5,6 +5,7 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const withRoutes = require('nextjs-routes/config')({
   outDir: 'types',
 });
+const { withContentlayer } = require('next-contentlayer');
 const isCI = require('is-ci');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -43,7 +44,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ['res.cloudinary.com'],
   },
   reactStrictMode: true,
   async rewrites() {
@@ -71,4 +72,5 @@ const sentryOptions = {
   silent: true,
 };
 
-module.exports = withRoutes(withSentryConfig(nextConfig, sentryOptions));
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+module.exports = withContentlayer(withRoutes(withSentryConfig(nextConfig, sentryOptions)));

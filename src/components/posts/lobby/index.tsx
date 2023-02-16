@@ -10,19 +10,19 @@ import type { BlogPostLobbyProps } from '$lib/types';
 import ExplorerBlogList from './list';
 import Pagination from './pagination';
 
-export default function ListPage({ allPosts, displayPosts, pagination }: BlogPostLobbyProps) {
-  const [queryPost, setQueryPost] = useState<BlogPostLobbyProps['allPosts']>();
+export default function ListPage({ posts, displayPosts, pagination }: BlogPostLobbyProps) {
+  const [queryPost, setQueryPost] = useState<BlogPostLobbyProps['posts']>();
 
   const fuse = useMemo(() => {
-    return new Fuse(allPosts, {
+    return new Fuse(posts, {
       keys: ['name', 'body'],
       threshold: 0.4,
     });
-  }, [allPosts]);
+  }, [posts]);
 
   useEffect(() => {
-    setQueryPost(allPosts);
-  }, [allPosts]);
+    setQueryPost(posts);
+  }, [posts]);
 
   const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
