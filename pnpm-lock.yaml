@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ckt1031/eslint-config': 0.1.2
   '@ckt1031/prettier-config': 0.1.2
-  '@ckt1031/tsconfig': 0.1.1
+  '@ckt1031/tsconfig': 0.1.2
   '@commitlint/cli': 17.4.4
   '@commitlint/config-conventional': 17.4.4
   '@fontsource/inter': 4.5.15
@@ -99,7 +99,7 @@ dependencies:
 devDependencies:
   '@ckt1031/eslint-config': 0.1.2_6rrdu7uodgqp6gikvajs3iigjm
   '@ckt1031/prettier-config': 0.1.2_yrlhudqyxg2l7qvwle5bdpmrli
-  '@ckt1031/tsconfig': 0.1.1_typescript@4.9.5
+  '@ckt1031/tsconfig': 0.1.2_typescript@4.9.5
   '@commitlint/cli': 17.4.4
   '@commitlint/config-conventional': 17.4.4
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
@@ -223,8 +223,8 @@ packages:
       - terser
     dev: true
 
-  /@ckt1031/tsconfig/0.1.1_typescript@4.9.5:
-    resolution: {integrity: sha512-Kbp1Cf/0SaaCqgg3+n3ev4UZxKdpjKcwf5OinDlyCzxz6/InhS7PXJ68kgaGpejqz2KQ/0fNOXLj9MgE3DixmA==}
+  /@ckt1031/tsconfig/0.1.2_typescript@4.9.5:
+    resolution: {integrity: sha512-Me4EHa2Py/2XQXIgCmSDEI+D3xuHUCEOhOZle96ML5Yq9PCxPTiQSGGF3R5X2KPQdB/lqBFnou+RhVNH7hFPkA==}
     peerDependencies:
       typescript: 4.x
     dependencies:
