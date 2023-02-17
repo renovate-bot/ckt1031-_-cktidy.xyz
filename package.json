@@ -24,7 +24,7 @@
     "@fontsource/inter": "4.5.15",
     "@fontsource/noto-sans-tc": "4.5.12",
     "@next/env": "13.1.6",
-    "@sentry/nextjs": "7.37.2",
+    "@sentry/nextjs": "7.38.0",
     "@tabler/icons-react": "2.4.0",
     "clsx": "1.2.1",
     "contentlayer": "0.3.0",
