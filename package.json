@@ -108,6 +108,6 @@
       "prettier -c"
     ]
   },
-  "packageManager": "pnpm@7.27.0",
+  "packageManager": "pnpm@7.27.1",
   "prettier": "@ckt1031/prettier-config"
 }
