@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { IconDeviceLaptop, IconMoon, IconSunHigh } from '@tabler/icons-react';
-import { useTheme } from 'next-themes';
+import { useTheme } from '@wits/next-themes';
 
 type ThemeNames = 'system' | 'light' | 'dark';
 

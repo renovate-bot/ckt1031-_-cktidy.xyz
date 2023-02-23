@@ -21,26 +21,23 @@
     }
   },
   "dependencies": {
-    "@fontsource/inter": "4.5.15",
-    "@fontsource/noto-sans-tc": "4.5.12",
     "@next/env": "13.1.6",
+    "@next/font": "13.1.6",
     "@sentry/nextjs": "7.38.0",
     "@tabler/icons-react": "2.5.0",
+    "@wits/next-themes": "0.2.16",
     "clsx": "1.2.1",
     "contentlayer": "0.3.0",
     "cssnano": "5.1.15",
     "csstype": "3.1.1",
     "dayjs": "1.11.7",
-    "esbuild": "~0.17.8",
+    "esbuild": "0.17.10",
     "feed": "4.2.2",
     "fuse.js": "6.6.2",
     "is-ci": "3.0.1",
-    "next": "13.1.6",
+    "next": "13.1.7-canary.28",
     "next-contentlayer": "0.3.0",
-    "next-seo": "5.15.0",
     "next-sitemap": "3.1.52",
-    "next-themes": "0.2.1",
-    "nextjs-progressbar": "0.0.16",
     "nextjs-routes": "1.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -88,7 +85,7 @@
   "eslintConfig": {
     "extends": [
       "next/core-web-vitals",
-      "@ckt1031/eslint-config/ultimate"
+      "@ckt1031/eslint-config/typescript-strict"
     ],
     "ignorePatterns": [
       "types/nextjs-routes.d.ts",

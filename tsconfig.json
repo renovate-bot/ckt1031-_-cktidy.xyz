@@ -8,9 +8,23 @@
     "paths": {
       "$*": ["src/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
   "exclude": ["node_modules", "types/nextjs-routes.d.ts"],
   "extends": "@ckt1031/tsconfig/web.json",
-  "include": ["**/*.tsx", "**/*.ts", "**/*.js", "*.js", ".contentlayer/generated"]
+  "include": [
+    "**/*.tsx",
+    "**/*.ts",
+    "**/*.js",
+    "*.js",
+    ".contentlayer/generated",
+    ".next/types/**/*.ts",
+    "src/app/providers.jsx"
+  ]
 }

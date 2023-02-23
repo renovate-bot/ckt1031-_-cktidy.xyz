@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 const { withSentryConfig } = require('@sentry/nextjs');
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-const withRoutes = require('nextjs-routes/config')({
-  outDir: 'types',
-});
 const { withContentlayer } = require('next-contentlayer');
 const isCI = require('is-ci');
 
@@ -46,6 +41,10 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'],
   },
+  experimental: {
+    appDir: true,
+  },
+  transpilePackages: ['@tabler/icons-react'],
   reactStrictMode: true,
   async rewrites() {
     // Disable source maps in production
@@ -63,8 +62,12 @@ const nextConfig = {
   sentry: {
     // Wrap for apis
     autoInstrumentServerFunctions: true,
-
     hideSourceMaps: true,
+  },
+  modularizeImports: {
+    '@tabler/icons-react': {
+      transform: '@tabler/icons-react/dist/esm/icons/{{member}}',
+    },
   },
 };
 
@@ -73,4 +76,4 @@ const sentryOptions = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-module.exports = withContentlayer(withRoutes(withSentryConfig(nextConfig, sentryOptions)));
+module.exports = withContentlayer(withSentryConfig(nextConfig, sentryOptions));

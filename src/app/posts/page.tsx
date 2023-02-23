@@ -2,15 +2,12 @@ import fs from 'node:fs';
 
 import { allPosts } from 'contentlayer/generated';
 import dayjs from 'dayjs';
-import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { NextSeo } from 'next-seo';
 
 import BlogList from '$components/posts/lobby';
 import { config } from '$lib/constants';
 import generateRSS from '$lib/generate-feed';
-import type { BlogPostLobbyProps } from '$lib/types';
 
-export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = () => {
+const getPosts = () => {
   const posts = allPosts.sort((a, b) => {
     const dateA = dayjs(new Date(a.date));
     return dateA.isAfter(new Date(b.date)) ? -1 : 1;
@@ -30,18 +27,24 @@ export const getStaticProps: GetStaticProps<BlogPostLobbyProps> = () => {
   fs.writeFileSync('./public/feed.xml', feed);
 
   return {
-    props: {
-      posts,
-      displayPosts,
-      pagination,
-    },
+    posts,
+    displayPosts,
+    pagination,
   };
 };
 
-export default function Page(prop: InferGetStaticPropsType<typeof getStaticProps>) {
+export function generateMetadata() {
+  return {
+    title: 'Blog',
+    description: 'Latest post published from cktsun!',
+  };
+}
+
+export default function PostsPage() {
+  const prop = getPosts();
+
   return (
     <>
-      <NextSeo title="Blog" description="Latest post published from cktsun!" />
       <BlogList {...prop} />
     </>
   );

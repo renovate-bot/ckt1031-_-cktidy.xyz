@@ -1,5 +1,4 @@
 const { neutral } = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -12,7 +11,7 @@ const config = {
         gray: neutral,
       },
       fontFamily: {
-        sans: ['InterVariable', 'Noto Sans TC', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-inter)', 'var(--font-noto-sans-tc)'],
       },
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error

@@ -24,7 +24,7 @@ export default function Textlink({
 
   if (isInternalLink) {
     return (
-      <Link passHref href={href as never}>
+      <Link href={href as never}>
         <span {...rest}>{children}</span>
       </Link>
     );

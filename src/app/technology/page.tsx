@@ -1,10 +1,16 @@
-import { NextSeo } from 'next-seo';
-
 import TextLink from '$components/link';
 import PageTitle from '$components/page-title';
 import { config } from '$lib/constants';
 
-function DetailBlock() {
+export function generateMetadata() {
+  return {
+    title: 'Technology',
+    description:
+      'You can have a quick look of what technologies I have been using when building this website.',
+  };
+}
+
+export default function TechnologyPage() {
   return (
     <div className="mt-5 flex flex-col items-center text-left">
       <PageTitle
@@ -25,18 +31,5 @@ function DetailBlock() {
         </p>
       </div>
     </div>
-  );
-}
-
-export default function TechnologyPage() {
-  const title = 'Technology';
-  const description =
-    'You can have a quick look of what technologies I have been using when building this website.';
-
-  return (
-    <>
-      <NextSeo title={title} description={description} openGraph={{ description, title }} />
-      <DetailBlock />
-    </>
   );
 }

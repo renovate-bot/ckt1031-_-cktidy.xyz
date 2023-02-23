@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import clsx from 'clsx';
 
@@ -11,7 +11,7 @@ interface PagesProp {
 }
 
 export default function MenuNavigationList({ showMenu, toggleMenu }: PagesProp) {
-  const router = useRouter();
+  const pathname = usePathname() ?? '/';
 
   return (
     <div
@@ -26,10 +26,9 @@ export default function MenuNavigationList({ showMenu, toggleMenu }: PagesProp) 
             <Link href={item.href} key={item.name} onClick={toggleMenu}>
               <p
                 className={clsx(
-                  (router.asPath === '/'
-                    ? router.asPath === item.href
-                    : router.asPath.startsWith(item.href) && item.href !== '/') &&
-                    'text-orange-600',
+                  (pathname === '/'
+                    ? pathname === item.href
+                    : pathname.startsWith(item.href) && item.href !== '/') && 'text-orange-600',
                   'cursor-pointer p-3 text-center',
                 )}
               >

@@ -1,14 +1,15 @@
-import { NextSeo } from 'next-seo';
-
 import Image from '$components/image';
 
-export default function HomePage() {
-  const title = 'Home';
-  const description = 'A cool website by ckt1031!';
+export function generateMetadata() {
+  return {
+    title: 'Home',
+    description: 'A cool website by ckt1031!',
+  };
+}
 
+export default function HomePage() {
   return (
-    <>
-      <NextSeo title={title} description={description} openGraph={{ description, title }} />
+    <section>
       <div className="my-10 flex flex-col items-center justify-center">
         <Image
           alt="ckt"
@@ -22,6 +23,6 @@ export default function HomePage() {
           A secondary school (Form 5) student in Hong Kong.
         </p>
       </div>
-    </>
+    </section>
   );
 }
