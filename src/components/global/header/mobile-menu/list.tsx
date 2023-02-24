@@ -27,8 +27,9 @@ export default function MenuNavigationList({ showMenu, toggleMenu }: PagesProp) 
               <p
                 className={clsx(
                   (pathname === '/'
-                    ? pathname === item.href
-                    : pathname.startsWith(item.href) && item.href !== '/') && 'text-orange-600',
+                    ? pathname === item.href.pathname
+                    : pathname.startsWith(item.href.pathname ?? '') &&
+                      item.href.pathname !== '/') && 'text-orange-600',
                   'cursor-pointer p-3 text-center',
                 )}
               >

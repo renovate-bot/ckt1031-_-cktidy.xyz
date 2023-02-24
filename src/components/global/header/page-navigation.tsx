@@ -11,12 +11,12 @@ export default function NavigationBarPages() {
   return (
     <nav className="hidden flex-row gap-1 md:flex">
       {config.headbar.routes.map(item => (
-        <Link href={item.href as never} key={item.name}>
+        <Link href={item.href} key={item.name}>
           <p
             className={clsx(
               (pathname === '/'
-                ? pathname === item.href
-                : pathname.startsWith(item.href) && item.href !== '/') &&
+                ? pathname === item.href.pathname
+                : pathname.startsWith(item.href.pathname ?? '') && item.href.pathname !== '/') &&
                 'bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-100',
               'text-gray-500 dark:text-gray-400',
               'rounded hover:text-gray-700 dark:hover:text-gray-200',

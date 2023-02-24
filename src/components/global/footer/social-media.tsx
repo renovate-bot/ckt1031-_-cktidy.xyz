@@ -7,8 +7,6 @@ import {
 
 import { config } from '$lib/constants';
 
-import Link from '../../link';
-
 const footerSocialLinks = [
   {
     href: config.author.social.instagram,
@@ -32,9 +30,9 @@ export default function SocialMediaRow() {
   return (
     <div className="flex flex-row gap-3">
       {footerSocialLinks.map(({ href, icon }) => (
-        <Link noDefaultColours href={href} key={href}>
+        <a href={href} key={href}>
           {icon}
-        </Link>
+        </a>
       ))}
     </div>
   );

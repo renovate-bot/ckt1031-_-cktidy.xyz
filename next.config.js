@@ -24,7 +24,7 @@ const securityHeaders = [
   },
 ];
 
-/** @type {import('next').NextConfig} */
+/** @type {import('next/types').NextConfig} */
 const nextConfig = {
   eslint: {
     // Disable linting because we have checked via GitHub Actions, no further check needed
@@ -43,6 +43,7 @@ const nextConfig = {
   },
   experimental: {
     appDir: true,
+    typedRoutes: true,
   },
   transpilePackages: ['@tabler/icons-react'],
   reactStrictMode: true,

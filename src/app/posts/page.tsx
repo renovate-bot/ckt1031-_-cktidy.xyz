@@ -1,6 +1,7 @@
+import type { Metadata } from 'next/types';
+
 import { allPosts } from 'contentlayer/generated';
 import dayjs from 'dayjs';
-import type { Metadata } from 'next';
 
 import BlogList from '$components/posts/lobby';
 import { config } from '$lib/constants';

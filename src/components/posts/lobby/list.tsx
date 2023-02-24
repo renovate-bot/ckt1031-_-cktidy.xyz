@@ -23,7 +23,12 @@ export default function ExplorerBlogList({ postList }: { postList: Post[] }) {
                 )}
               >
                 <div>
-                  <Link passHref className="cursor-pointer text-2xl hover:underline" href={url}>
+                  <Link
+                    className="cursor-pointer text-2xl hover:underline"
+                    href={{
+                      pathname: url,
+                    }}
+                  >
                     {title}
                   </Link>
                   <p className="text-gray-600 dark:text-gray-300">{summary}</p>

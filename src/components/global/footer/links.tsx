@@ -9,8 +9,10 @@ export default function FooterLinks() {
       {config.footer.routes.map(item => {
         return (
           <Fragment key={item.name.trim()}>
-            <span className="footer-text-interaction">
-              <Link href={item.href as never}>{item.name}</Link>
+            <span>
+              <Link href={item.href} className="text-sm text-blue-600 dark:text-blue-400">
+                {item.name}
+              </Link>
             </span>
           </Fragment>
         );

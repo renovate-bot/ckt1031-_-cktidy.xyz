@@ -1,6 +1,5 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next/types';
 
-import TextLink from '$components/link';
 import PageTitle from '$components/page-title';
 import { config } from '$lib/constants';
 
@@ -11,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function TechnologyPage() {
+  const blueText = 'text-blue-500 dark:text-blue-300';
+
   return (
     <div className="mt-5 flex flex-col items-center text-left">
       <PageTitle
@@ -20,14 +21,25 @@ export default function TechnologyPage() {
       <div className="mb-10 mt-3 w-full space-y-6 text-left">
         <p>
           This website is made with{' '}
-          <TextLink href="https://www.typescriptlang.org/">TypeScript</TextLink>,{' '}
-          <TextLink href="https://tailwindcss.com/">TailwindCSS</TextLink>,{' '}
-          <TextLink href="https://nextjs.org/">Next.js</TextLink> and{' '}
-          <TextLink href="https://reactjs.org/">React</TextLink>.
+          <a href="https://www.typescriptlang.org/" className={blueText}>
+            TypeScript
+          </a>
+          ,{' '}
+          <a href="https://tailwindcss.com/" className={blueText}>
+            TailwindCSS
+          </a>
+          ,{' '}
+          <a href="https://nextjs.org/" className={blueText}>
+            Next.js
+          </a>{' '}
+          and <a href="https://reactjs.org/">React</a>.
         </p>
         <p>
           The source code is hosted on{' '}
-          <TextLink href={config.github_project_url}>Github Repository</TextLink>.
+          <a href={config.github_project_url} className={blueText}>
+            Github Repository
+          </a>
+          .
         </p>
       </div>
     </div>

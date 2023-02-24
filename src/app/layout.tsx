@@ -1,8 +1,8 @@
 import { Inter, Noto_Sans_TC } from 'next/font/google';
+import type { Metadata } from 'next/types';
 
 import { ServerThemeProvider } from '@wits/next-themes';
 import clsx from 'clsx';
-import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';
 
 import './globals.css';

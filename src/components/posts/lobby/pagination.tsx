@@ -17,7 +17,6 @@ export default function Pagination({
         <div>
           {pagination.currentPage - 1 > 0 && (
             <Link
-              passHref
               href={{
                 pathname: isTopPage ? '/blog' : toPagePath,
                 query: {
@@ -54,7 +53,6 @@ export default function Pagination({
                   key={index}
                 >
                   <Link
-                    passHref
                     href={{
                       pathname: toPagePath,
                       query: {
@@ -75,7 +73,6 @@ export default function Pagination({
         <div>
           {pagination.currentPage + 1 <= pagination.totalPages && (
             <Link
-              passHref
               href={{
                 pathname: toPagePath,
                 query: {

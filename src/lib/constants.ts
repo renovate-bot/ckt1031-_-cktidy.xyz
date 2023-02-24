@@ -1,3 +1,5 @@
+import type { UrlObject } from 'node:url';
+
 export const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const config = {
@@ -21,31 +23,37 @@ export const config = {
   footer: {
     routes: [
       {
-        href: '/about',
+        href: { pathname: '/about' },
         name: 'About Me',
       },
       {
-        href: '/technology',
+        href: { pathname: '/technology' },
         name: 'Techs',
       },
-    ],
+    ] as {
+      name: string;
+      href: UrlObject;
+    }[],
   },
   github_project_url: 'https://github.com/ckt1031/cktidy.xyz',
   headbar: {
     routes: [
       {
-        href: '/',
+        href: { pathname: '/' },
         name: 'Home',
       },
       {
-        href: '/posts',
+        href: { pathname: '/posts' },
         name: 'Posts',
       },
       {
-        href: '/about',
+        href: { pathname: '/about' },
         name: 'About',
       },
-    ],
+    ] as {
+      name: string;
+      href: UrlObject;
+    }[],
   },
   name: 'cktidy',
   siteName: 'ckt',
