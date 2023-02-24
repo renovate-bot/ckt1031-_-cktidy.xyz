@@ -17,7 +17,7 @@ export default function ListPage({ posts, displayPosts, pagination }: BlogPostLo
 
   const fuse = useMemo(() => {
     return new Fuse(posts, {
-      keys: ['name', 'body'],
+      keys: ['title', 'body.raw', 'summary'],
       threshold: 0.4,
     });
   }, [posts]);
