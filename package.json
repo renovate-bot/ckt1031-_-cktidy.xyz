@@ -21,8 +21,8 @@
     }
   },
   "dependencies": {
-    "@next/env": "13.1.6",
-    "@next/font": "13.1.6",
+    "@next/env": "13.2.1",
+    "@next/font": "13.2.1",
     "@sentry/nextjs": "7.38.0",
     "@tabler/icons-react": "2.5.0",
     "@wits/next-themes": "0.2.16",
@@ -35,7 +35,7 @@
     "feed": "4.2.2",
     "fuse.js": "6.6.2",
     "is-ci": "3.0.1",
-    "next": "13.1.7-canary.28",
+    "next": "13.2.1",
     "next-contentlayer": "0.3.0",
     "next-sitemap": "3.1.52",
     "nextjs-routes": "1.0.8",
@@ -70,7 +70,7 @@
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
+    "eslint-config-next": "13.2.1",
     "husky": "8.0.3",
     "lint-staged": "13.1.2",
     "postcss": "8.4.21",
