@@ -7,7 +7,6 @@ specifiers:
   '@commitlint/cli': 17.4.4
   '@commitlint/config-conventional': 17.4.4
   '@next/env': 13.2.1
-  '@next/font': 13.2.1
   '@sentry/nextjs': 7.38.0
   '@tabler/icons-react': 2.5.0
   '@tailwindcss/typography': 0.5.9
@@ -58,7 +57,6 @@ specifiers:
 
 dependencies:
   '@next/env': 13.2.1
-  '@next/font': 13.2.1
   '@sentry/nextjs': 7.38.0_next@13.2.1+react@18.2.0
   '@tabler/icons-react': 2.5.0_react@18.2.0
   '@wits/next-themes': 0.2.16_qgtcjgzkkjtbiyvnx7d32fl5vu
@@ -1145,10 +1143,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.2.1:
-    resolution: {integrity: sha512-4sergLt7xp9+mZuKME/xM4tLlHGTcmL7naCq0qCTcAlof6NnttshYgiLOdhSiy0NcI+/yM3BjvdEk++O96UzTg==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.2.1:
     resolution: {integrity: sha512-Yua7mUpEd1wzIT6Jjl3dpRizIfGp9NR4F2xeRuQv+ae+SDI1Em2WyM9m46UL+oeW5GpMiEHoaBagr47RScZFmQ==}

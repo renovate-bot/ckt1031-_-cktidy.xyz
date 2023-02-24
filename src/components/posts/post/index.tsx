@@ -4,7 +4,7 @@ import Image from '$components/image';
 import mdxComponents from '$components/mdx-components';
 import type { BlogSinglePostProps } from '$lib/types';
 
-export function BlogDisplayPage({ post, readingTime, dateName }: BlogSinglePostProps) {
+export function PostDisplayingPage({ post, readingTime, dateName }: BlogSinglePostProps) {
   const readingMinutes =
     readingTime.minutes >= 1 ? Math.round(readingTime.minutes) : 'Less than 1 ' + 'minutes';
 
@@ -20,11 +20,11 @@ export function BlogDisplayPage({ post, readingTime, dateName }: BlogSinglePostP
         </div>
         {post.thumbnail && (
           <div className="relative mb-3 h-[250px] w-full md:h-[450px]">
-            <Image fill objectFit="contain" alt="Thumbnail" src={post.thumbnail} />
+            <Image fill object-fit="contain" alt="Thumbnail" src={post.thumbnail} />
           </div>
         )}
       </div>
-      <div className="prose mb-10 max-w-full dark:prose-dark">
+      <div className="prose prose-neutral mb-10 max-w-full dark:prose-dark">
         <MDXContent components={{ ...mdxComponents }} />
       </div>
     </article>

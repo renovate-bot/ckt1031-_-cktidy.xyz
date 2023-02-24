@@ -1,4 +1,5 @@
-import { Inter, Noto_Sans_TC } from '@next/font/google';
+import { Inter, Noto_Sans_TC } from 'next/font/google';
+
 import { ServerThemeProvider } from '@wits/next-themes';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
@@ -23,7 +24,7 @@ const notoSansTC = Noto_Sans_TC({
 
 export const metadata: Metadata = {
   title: {
-    default: "ckt's House",
+    default: "Cktsun's Site",
     template: '%s - Cktidy',
   },
   robots: {
@@ -36,6 +37,19 @@ export const metadata: Metadata = {
   },
   alternates: {
     types: { 'application/rss+xml': `${config.url}/feed.xml` },
+  },
+  manifest: `${config.url}/site.webmanifest`,
+  twitter: {
+    title: 'cktidy',
+    card: 'summary_large_image',
+  },
+  openGraph: {
+    title: config.name,
+    description: config.description,
+    url: config.url,
+    siteName: config.siteName,
+    locale: 'en-US',
+    type: 'website',
   },
 };
 

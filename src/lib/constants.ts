@@ -16,7 +16,7 @@ export const config = {
   blog: {
     maxDisplayPerPage: 10,
   },
-  description: `Welcome to CKT1031's cool website! Expect regular updates as I release exciting new content.
+  description: `Welcome to ckt1031's cool website! Expect regular updates as I release exciting new content.
   I started this site in June 2022, so stay tuned for all the latest updates!`,
   footer: {
     routes: [

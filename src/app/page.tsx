@@ -1,11 +1,10 @@
+import type { Metadata } from 'next';
+
 import Image from '$components/image';
 
-export function generateMetadata() {
-  return {
-    title: 'Home',
-    description: 'A cool website by ckt1031!',
-  };
-}
+export const metadata: Metadata = {
+  description: 'A cool website by ckt1031!',
+};
 
 export default function HomePage() {
   return (

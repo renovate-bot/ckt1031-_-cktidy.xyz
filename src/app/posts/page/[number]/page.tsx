@@ -17,8 +17,8 @@ export function generateStaticParams() {
   }));
 }
 
-const gettPosts = (params: string) => {
-  const pageNumber = Number(params);
+const getPosts = (page: string) => {
+  const pageNumber = Number(page);
 
   const posts = allPosts.sort((a, b) => {
     const dateA = dayjs(new Date(a.date));
@@ -42,8 +42,19 @@ const gettPosts = (params: string) => {
   };
 };
 
+export function generateMetadata({ params }: { params: { number: string } }) {
+  const posts = getPosts(params.number);
+
+  const hasPosts = posts.posts.length > 0;
+
+  return {
+    title: `Posts Page: ${params.number}`,
+    description: hasPosts ? 'Posts for cktidy' : 'No posts found',
+  };
+}
+
 export default function PostsPagination({ params }: { params: { number: string } }) {
-  const prop = gettPosts(params.number);
+  const prop = getPosts(params.number);
 
   return <BlogList {...prop} />;
 }
