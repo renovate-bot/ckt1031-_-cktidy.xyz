@@ -23,8 +23,9 @@
     "**/*.ts",
     "**/*.js",
     "*.js",
+    "*.cjs",
     ".contentlayer/generated",
     ".next/types/**/*.ts",
-    "src/app/providers.jsx"
+    "src/lib/generate-feed.cjs"
   ]
 }

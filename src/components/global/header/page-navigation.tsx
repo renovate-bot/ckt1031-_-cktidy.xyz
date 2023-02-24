@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { config } from '$lib/constants';
 
 export default function NavigationBarPages() {
-  const pathname = usePathname() ?? '/';
+  const pathname = usePathname();
 
   return (
     <nav className="hidden flex-row gap-1 md:flex">

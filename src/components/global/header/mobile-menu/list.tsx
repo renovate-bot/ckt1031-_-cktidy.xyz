@@ -11,7 +11,7 @@ interface PagesProp {
 }
 
 export default function MenuNavigationList({ showMenu, toggleMenu }: PagesProp) {
-  const pathname = usePathname() ?? '/';
+  const pathname = usePathname();
 
   return (
     <div

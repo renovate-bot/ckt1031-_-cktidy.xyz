@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
-const { withSentryConfig } = require('@sentry/nextjs');
-const { withContentlayer } = require('next-contentlayer');
-const isCI = require('is-ci');
+import { withSentryConfig } from '@sentry/nextjs';
+import isCI from 'is-ci';
+import { withContentlayer } from 'next-contentlayer';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -75,5 +75,4 @@ const sentryOptions = {
   silent: true,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-module.exports = withContentlayer(withSentryConfig(nextConfig, sentryOptions));
+export default withContentlayer(withSentryConfig(nextConfig, sentryOptions));

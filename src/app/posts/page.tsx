@@ -1,12 +1,9 @@
-import fs from 'node:fs';
-
 import { allPosts } from 'contentlayer/generated';
 import dayjs from 'dayjs';
 import type { Metadata } from 'next';
 
 import BlogList from '$components/posts/lobby';
 import { config } from '$lib/constants';
-import generateRSS from '$lib/generate-feed';
 
 const getPosts = () => {
   const posts = allPosts.sort((a, b) => {
@@ -20,12 +17,6 @@ const getPosts = () => {
     currentPage: 1,
     totalPages: Math.ceil(posts.length / config.blog.maxDisplayPerPage),
   };
-
-  // Feeds generation
-  const feed = generateRSS(posts);
-
-  // Write the feed to the public folder
-  fs.writeFileSync('./public/feed.xml', feed);
 
   return {
     posts,
