@@ -7,7 +7,7 @@
   "author": "ckt1031",
   "type": "module",
   "scripts": {
-    "build": "tsx ./src/scripts/generate-feed.ts && next build && next-sitemap",
+    "build": "contentlayer build && tsx ./src/scripts/generate-feed.ts && next build && next-sitemap",
     "commit": "cz",
     "dev": "next dev -p 4072",
     "format": "prettier . -w",
