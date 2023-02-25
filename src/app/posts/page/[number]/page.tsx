@@ -1,8 +1,11 @@
+import { notFound } from 'next/navigation';
+
 import { allPosts } from 'contentlayer/generated';
 import dayjs from 'dayjs';
 
-import BlogList from '$components/posts/lobby';
 import { config } from '$lib/constants';
+
+import BlogList from '../../content';
 
 export function generateStaticParams() {
   const posts = allPosts.sort((a, b) => {
@@ -55,6 +58,10 @@ export function generateMetadata({ params }: { params: { number: string } }) {
 
 export default function PostsPagination({ params }: { params: { number: string } }) {
   const prop = getPosts(params.number);
+
+  if (prop.displayPosts.length === 0) {
+    notFound();
+  }
 
   return <BlogList {...prop} />;
 }
