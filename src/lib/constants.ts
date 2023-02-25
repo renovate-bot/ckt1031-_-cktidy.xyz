@@ -43,6 +43,10 @@ export const config = {
         name: 'Home',
       },
       {
+        href: { pathname: '/projects' },
+        name: 'Projects',
+      },
+      {
         href: { pathname: '/posts' },
         name: 'Posts',
       },
@@ -59,4 +63,19 @@ export const config = {
   siteName: 'ckt',
   twitter: '@cktsun1031',
   url: 'https://cktidy.xyz',
+  projects: [
+    {
+      github: 'https://github.com/ckt1031/cktidy.xyz',
+      tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    },
+    {
+      github: 'https://github.com/ckt1031/nodejs-config',
+      tags: ['ESLint', 'Prettier', 'TypeScript', 'Node.js'],
+    },
+    {
+      github: 'https://github.com/ckt1031/android-toolbox',
+      tags: ['Android', 'Kotlin', 'Jetpack Compose'],
+      wip: true,
+    },
+  ],
 };

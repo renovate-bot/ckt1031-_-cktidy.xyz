@@ -13,7 +13,7 @@ export default function TechnologyPage() {
   const blueText = 'text-blue-500 dark:text-blue-300';
 
   return (
-    <div className="mt-5 flex flex-col items-center text-left">
+    <div className="mt-5 flex w-full flex-col items-center text-left">
       <PageTitle
         title="Technology"
         description="You can have a quick look of what technologies I have been using when building this website."
