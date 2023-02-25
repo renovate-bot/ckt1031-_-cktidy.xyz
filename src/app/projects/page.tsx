@@ -1,6 +1,6 @@
 import type { Metadata } from 'next/types';
 
-import axios from 'axios';
+import { z } from 'zod';
 
 import PageTitle from '$components/page-title';
 import { config } from '$lib/constants';
@@ -10,21 +10,22 @@ export const metadata: Metadata = {
   description: 'You can have a quick look of what projects I have been working on.',
 };
 
-const getGithubRepoInfo = async (url: string) => {
-  const repoApiURL = url.replace('github.com', 'api.github.com/repos');
-
-  const { data } = await axios.get<{
-    name: string;
-    description: string;
-  }>(repoApiURL);
-
-  return data;
-};
+const GithubRepositoryDataSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+});
 
 const getProjects = async () => {
   return await Promise.all(
     config.projects.map(async project => {
-      const repoInfo = await getGithubRepoInfo(project.github);
+      const response = await fetch(project.github);
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${project.github}`);
+      }
+
+      const _json = await response.json();
+      const repoInfo = GithubRepositoryDataSchema.parse(_json);
 
       return {
         ...project,
