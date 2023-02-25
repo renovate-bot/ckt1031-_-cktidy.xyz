@@ -3,8 +3,9 @@ import type { Metadata } from 'next/types';
 import { allPosts } from 'contentlayer/generated';
 import dayjs from 'dayjs';
 
-import BlogList from '$components/posts/lobby';
 import { config } from '$lib/constants';
+
+import PostListContent from './content';
 
 const getPosts = () => {
   const posts = allPosts.sort((a, b) => {
@@ -36,7 +37,7 @@ export default function PostsPage() {
 
   return (
     <section>
-      <BlogList {...prop} />
+      <PostListContent {...prop} />
     </section>
   );
 }

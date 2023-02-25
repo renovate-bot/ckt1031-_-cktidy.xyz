@@ -12,7 +12,7 @@ import type { BlogPostLobbyProps } from '$lib/types';
 import ExplorerBlogList from './list';
 import Pagination from './pagination';
 
-export default function ListPage({ posts, displayPosts, pagination }: BlogPostLobbyProps) {
+export default function PostListContent({ posts, displayPosts, pagination }: BlogPostLobbyProps) {
   const [queryPost, setQueryPost] = useState<BlogPostLobbyProps['posts']>();
 
   const fuse = useMemo(() => {
