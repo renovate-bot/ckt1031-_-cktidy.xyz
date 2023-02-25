@@ -1,5 +1,7 @@
 import type { Metadata } from 'next/types';
 
+import { IconBrandJavascript, IconBrandKotlin, IconBrandTypescript } from '@tabler/icons-react';
+import sAgo from 's-ago';
 import { z } from 'zod';
 
 import PageTitle from '$components/page-title';
@@ -12,13 +14,32 @@ export const metadata: Metadata = {
 
 const GithubRepositoryDataSchema = z.object({
   name: z.string(),
+  language: z.string(),
   description: z.string(),
+  pushed_at: z.coerce.date(),
 });
 
+const getIconByLanguage = (language: string) => {
+  switch (language) {
+    case 'TypeScript': {
+      return <IconBrandTypescript />;
+    }
+    case 'JavaScript': {
+      return <IconBrandJavascript />;
+    }
+    case 'Kotlin': {
+      return <IconBrandKotlin />;
+    }
+    default: {
+      return <IconBrandTypescript />;
+    }
+  }
+};
+
 const getProjects = async () => {
-  return await Promise.all(
+  const projects = await Promise.all(
     config.projects.map(async project => {
-      const response = await fetch(project.github);
+      const response = await fetch(project.github.replace('github.com', 'api.github.com/repos'));
 
       if (!response.ok) {
         throw new Error(`Failed to fetch ${project.github}`);
@@ -31,9 +52,15 @@ const getProjects = async () => {
         ...project,
         name: repoInfo.name,
         description: repoInfo.description,
+        pushed_at: repoInfo.pushed_at,
+        language: repoInfo.language,
+        icon: getIconByLanguage(repoInfo.language),
       };
     }),
   );
+
+  // Sort projects by last updated date
+  return projects.sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime());
 };
 
 export default async function ProjectsPage() {
@@ -66,6 +93,10 @@ export default async function ProjectsPage() {
                 </span>
               )}
             </div>
+            <div className="flex flex-row gap-1">
+              {project.icon}
+              <span>{project.language}</span>
+            </div>
             <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
             <div className="flex flex-row space-x-2">
               {project.tags.map(tag => (
@@ -77,6 +108,9 @@ export default async function ProjectsPage() {
                 </span>
               ))}
             </div>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Last Pushed: {sAgo(project.pushed_at)}
+            </p>
           </div>
         ))}
       </div>

@@ -77,5 +77,13 @@ export const config = {
       tags: ['Android', 'Kotlin', 'Jetpack Compose'],
       wip: true,
     },
+    {
+      github: 'https://github.com/ckt1031/DraconianBot',
+      tags: ['Discord.js', 'TypeScript', 'Node.js'],
+    },
+    {
+      github: 'https://github.com/ckt1031/discord-captcha-site',
+      tags: ['Discord.js', 'Express.js', 'TypeScript', 'Node.js'],
+    },
   ],
 };
