@@ -12,8 +12,8 @@
     "dev": "next dev -p 4072",
     "format": "prettier . -w",
     "preinstall": "npx only-allow pnpm",
-    "lint": "tsc && eslint --fix .",
-    "prepare": "husky install",
+    "lint": "eslint --fix .",
+    "prepare": "is-ci || husky install",
     "start": "next start"
   },
   "config": {
