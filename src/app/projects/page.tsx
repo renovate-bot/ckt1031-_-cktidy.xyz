@@ -7,6 +7,8 @@ import { z } from 'zod';
 import PageTitle from '$components/page-title';
 import { config } from '$lib/constants';
 
+export const revalidate = 1800; // revalidate this page every 30 minutes
+
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'You can have a quick look of what projects I have been working on.',
@@ -76,7 +78,7 @@ export default async function ProjectsPage() {
         {projects.map(project => (
           <div
             key={project.name}
-            className="base-border flex flex-col space-y-2 rounded-md border p-5"
+            className="base-border flex flex-col space-y-2 rounded-md border p-5 duration-150 hover:bg-gray-200 dark:hover:bg-gray-800"
           >
             <div className="flex flex-row items-center space-x-2">
               <a
@@ -89,7 +91,7 @@ export default async function ProjectsPage() {
               </a>
               {project.wip && (
                 <span className="rounded-lg bg-orange-500 p-1 text-xs font-medium text-gray-100 dark:bg-orange-700 dark:text-gray-300">
-                  Work In Progress
+                  WIP
                 </span>
               )}
             </div>
@@ -98,7 +100,7 @@ export default async function ProjectsPage() {
               <span>{project.language}</span>
             </div>
             <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
-            <div className="flex flex-row space-x-2">
+            <div className="flex flex-row flex-wrap gap-2">
               {project.tags.map(tag => (
                 <span
                   key={tag}

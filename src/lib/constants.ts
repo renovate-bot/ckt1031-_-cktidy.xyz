@@ -85,5 +85,9 @@ export const config = {
       github: 'https://github.com/ckt1031/discord-captcha-site',
       tags: ['Discord.js', 'Express.js', 'TypeScript', 'Node.js'],
     },
+    {
+      github: 'https://github.com/ckt1031/cktidy-manager',
+      tags: ['Next.js', 'Express.js', 'TypeScript', 'Node.js', 'React', 'React Native', 'Expo'],
+    },
   ],
 };
