@@ -57,9 +57,9 @@
     "zod": "3.20.6"
   },
   "devDependencies": {
-    "@ckt1031/eslint-config": "0.1.2",
-    "@ckt1031/prettier-config": "0.1.2",
-    "@ckt1031/tsconfig": "0.1.2",
+    "@ckt1031/eslint-config": "0.1.3",
+    "@ckt1031/prettier-config": "0.1.3",
+    "@ckt1031/tsconfig": "0.1.3",
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
     "@tailwindcss/typography": "0.5.9",
