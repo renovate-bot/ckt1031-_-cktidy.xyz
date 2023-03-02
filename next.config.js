@@ -70,6 +70,14 @@ const nextConfig = {
       transform: '@tabler/icons-react/dist/esm/icons/{{member}}',
     },
   },
+  webpack: config => {
+    config.infrastructureLogging = {
+      level: 'error',
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return config;
+  },
 };
 
 const sentryOptions = {
