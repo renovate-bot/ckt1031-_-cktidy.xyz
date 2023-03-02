@@ -34,7 +34,7 @@ specifiers:
   lint-staged: 13.1.2
   next: 13.2.3
   next-contentlayer: 0.3.0
-  next-sitemap: 3.1.55
+  next-sitemap: 4.0.1
   nextjs-routes: 1.0.8
   picocolors: 1.0.0
   postcss: 8.4.21
@@ -74,7 +74,7 @@ dependencies:
   is-ci: 3.0.1
   next: 13.2.3_rfdx5ocjtvb4b2h5j5ipjicct4
   next-contentlayer: 0.3.0_74ztgg3hwhj65l2egq3e6ry5vm
-  next-sitemap: 3.1.55_xeg3tdra7hobsncwzvo3da7vxi
+  next-sitemap: 4.0.1_xeg3tdra7hobsncwzvo3da7vxi
   nextjs-routes: 1.0.8_next@13.2.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -353,7 +353,7 @@ packages:
       '@commitlint/types': 17.4.4
       fs-extra: 11.1.0
       git-raw-commits: 2.0.11
-      minimist: 1.2.7
+      minimist: 1.2.8
     dev: true
 
   /@commitlint/resolve-extends/17.4.4:
@@ -518,8 +518,8 @@ packages:
       type-fest: 3.5.7
     dev: false
 
-  /@corex/deepmerge/4.0.29:
-    resolution: {integrity: sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==}
+  /@corex/deepmerge/4.0.37:
+    resolution: {integrity: sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==}
     dev: false
 
   /@cspotcode/source-map-support/0.8.1:
@@ -3266,7 +3266,7 @@ packages:
     dependencies:
       acorn-node: 1.8.2
       defined: 1.0.1
-      minimist: 1.2.7
+      minimist: 1.2.8
     dev: true
 
   /didyoumean/1.2.2:
@@ -5298,7 +5298,7 @@ packages:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
     hasBin: true
     dependencies:
-      minimist: 1.2.7
+      minimist: 1.2.8
     dev: true
 
   /jsonc-parser/3.2.0:
@@ -6209,12 +6209,16 @@ packages:
 
   /minimist/1.2.7:
     resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
+    dev: true
+
+  /minimist/1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
   /mkdirp/0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
     dependencies:
-      minimist: 1.2.7
+      minimist: 1.2.8
     dev: false
 
   /mlly/1.1.1:
@@ -6306,17 +6310,17 @@ packages:
       - supports-color
     dev: false
 
-  /next-sitemap/3.1.55_xeg3tdra7hobsncwzvo3da7vxi:
-    resolution: {integrity: sha512-ZjkRfkqoSLbU+e8W9TWWe0zfOGNA47lpvm35kNcUCmj73gpLX2PIn51gwHT/B6bgGVAFYY0OXixJDrxIIwcEHw==}
+  /next-sitemap/4.0.1_xeg3tdra7hobsncwzvo3da7vxi:
+    resolution: {integrity: sha512-dY6vKE/uayNYSfhXA64U9NZYSJtFzK01oBouY+XqgQieksKBG9BWNmq8yGSJUermyux4wCnNa9gLHwSk38emhA==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       '@next/env': '*'
       next: '*'
     dependencies:
-      '@corex/deepmerge': 4.0.29
+      '@corex/deepmerge': 4.0.37
       '@next/env': 13.2.3
-      minimist: 1.2.7
+      minimist: 1.2.8
       next: 13.2.3_rfdx5ocjtvb4b2h5j5ipjicct4
     dev: false
 
@@ -8521,7 +8525,7 @@ packages:
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.1
-      minimist: 1.2.7
+      minimist: 1.2.8
       strip-bom: 3.0.0
     dev: true
 
