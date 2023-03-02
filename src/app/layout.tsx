@@ -1,4 +1,4 @@
-import { Inter, Noto_Sans_TC } from 'next/font/google';
+import { Inter, Noto_Sans_SC, Noto_Sans_TC } from 'next/font/google';
 import type { Metadata } from 'next/types';
 
 import { ServerThemeProvider } from '@wits/next-themes';
@@ -18,6 +18,12 @@ const inter = Inter({
 
 const notoSansTC = Noto_Sans_TC({
   variable: '--font-noto-sans-tc',
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+});
+
+const notoSansSC = Noto_Sans_SC({
+  variable: '--font-noto-sans-sc',
   subsets: ['latin'],
   weight: ['400', '500', '700', '900'],
 });
@@ -56,8 +62,8 @@ export const metadata: Metadata = {
 export default function ApplicationLayout({ children }: PropsWithChildren) {
   return (
     <ServerThemeProvider enableSystem attribute="data-theme">
-      <html lang="en" className={clsx(inter.variable, notoSansTC.variable)}>
-        <body className={clsx('root', 'flex h-screen flex-col justify-between overflow-x-hidden')}>
+      <html lang="en" className={clsx(inter.variable, notoSansTC.variable, notoSansSC.variable)}>
+        <body className="root">
           <Header />
           <main className="m-auto flex w-full max-w-[800px] flex-1 flex-col items-center px-5">
             {children}

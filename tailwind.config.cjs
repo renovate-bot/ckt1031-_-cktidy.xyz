@@ -11,7 +11,7 @@ const config = {
         gray: neutral,
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'var(--font-noto-sans-tc)'],
+        sans: ['var(--font-inter)', 'var(--font-noto-sans-tc)', 'VAR(--font-noto-sans-sc)'],
       },
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
