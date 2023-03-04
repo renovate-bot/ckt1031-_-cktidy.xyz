@@ -56,7 +56,7 @@ specifiers:
   tailwindcss: 3.2.7
   tsx: 3.12.3
   typescript: 4.9.5
-  zod: 3.20.6
+  zod: 3.21.0
 
 dependencies:
   '@next/env': 13.2.3
@@ -90,7 +90,7 @@ dependencies:
   remark-parse: 10.0.1
   remark-unwrap-images: 3.0.1
   s-ago: 2.2.0
-  zod: 3.20.6
+  zod: 3.21.0
 
 devDependencies:
   '@ckt1031/eslint-config': 0.1.3_hoit3dlqqc55zy2tomi5pjtwty
@@ -465,7 +465,7 @@ packages:
       ts-pattern: 4.1.4
       unified: 10.1.2
       yaml: 1.10.2
-      zod: 3.20.6
+      zod: 3.21.0
     transitivePeerDependencies:
       - '@effect-ts/otel-node'
       - esbuild
@@ -9105,8 +9105,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /zod/3.20.6:
-    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+  /zod/3.21.0:
+    resolution: {integrity: sha512-UYdykTcVxB6lfdyLzAqLyyYAlOcpoluECvjsdoaqfQmz9p+3LRaIqYcNiL/J2kFYp66fBM8wwBvIGVEjq7KtZw==}
     dev: false
 
   /zwitch/2.0.2:

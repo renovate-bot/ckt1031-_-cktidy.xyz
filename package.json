@@ -54,7 +54,7 @@
     "remark-parse": "10.0.1",
     "remark-unwrap-images": "3.0.1",
     "s-ago": "2.2.0",
-    "zod": "3.20.6"
+    "zod": "3.21.0"
   },
   "devDependencies": {
     "@ckt1031/eslint-config": "0.1.3",
