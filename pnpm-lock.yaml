@@ -34,7 +34,7 @@ specifiers:
   lint-staged: 13.1.2
   next: 13.2.3
   next-contentlayer: 0.3.0
-  next-sitemap: 4.0.1
+  next-sitemap: 4.0.2
   nextjs-routes: 1.0.8
   picocolors: 1.0.0
   postcss: 8.4.21
@@ -74,7 +74,7 @@ dependencies:
   is-ci: 3.0.1
   next: 13.2.3_rfdx5ocjtvb4b2h5j5ipjicct4
   next-contentlayer: 0.3.0_gzyhf3yf2erhxxau4bnkah367q
-  next-sitemap: 4.0.1_xeg3tdra7hobsncwzvo3da7vxi
+  next-sitemap: 4.0.2_xeg3tdra7hobsncwzvo3da7vxi
   nextjs-routes: 1.0.8_next@13.2.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -6310,8 +6310,8 @@ packages:
       - supports-color
     dev: false
 
-  /next-sitemap/4.0.1_xeg3tdra7hobsncwzvo3da7vxi:
-    resolution: {integrity: sha512-dY6vKE/uayNYSfhXA64U9NZYSJtFzK01oBouY+XqgQieksKBG9BWNmq8yGSJUermyux4wCnNa9gLHwSk38emhA==}
+  /next-sitemap/4.0.2_xeg3tdra7hobsncwzvo3da7vxi:
+    resolution: {integrity: sha512-NQVzguzW6xkh0fZzmgZJ//H9f1DdvKmhJmTO1xuIPmDuZxM2Gd48CrKHXVnbK0zAx52hpyNe3ZUGkrExUWyljg==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
