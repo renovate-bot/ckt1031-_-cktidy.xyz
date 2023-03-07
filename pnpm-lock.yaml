@@ -8,7 +8,7 @@ specifiers:
   '@commitlint/config-conventional': 17.4.4
   '@next/env': 13.2.3
   '@sentry/nextjs': 7.41.0
-  '@tabler/icons-react': 2.7.0
+  '@tabler/icons-react': 2.8.0
   '@tailwindcss/typography': 0.5.9
   '@types/is-ci': 3.0.0
   '@types/node': 18.14.6
@@ -61,7 +61,7 @@ specifiers:
 dependencies:
   '@next/env': 13.2.3
   '@sentry/nextjs': 7.41.0_next@13.2.3+react@18.2.0
-  '@tabler/icons-react': 2.7.0_react@18.2.0
+  '@tabler/icons-react': 2.8.0_react@18.2.0
   '@wits/next-themes': 0.2.16_nvzgbose6yf6w7ijjprgspqefi
   clsx: 1.2.1
   contentlayer: 0.3.0_esbuild@0.17.11
@@ -1704,18 +1704,18 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@tabler/icons-react/2.7.0_react@18.2.0:
-    resolution: {integrity: sha512-WV2ZwMUuZN9QcCX4RPg9+G+ycUgoItzOWVCCQYVWbYKV581fH8szM2KVaQHQhMbttL4JYtOgf4ColJIDwsIgdw==}
+  /@tabler/icons-react/2.8.0_react@18.2.0:
+    resolution: {integrity: sha512-8d5nCsgIy6tVfu/mgwOnqgN4kgnLqj232f+VSHv/zie2PKlS6NEhkX5A3qB6/+xQ/y5Y0uiwXzjhzG+iM8whDQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@tabler/icons': 2.7.0
+      '@tabler/icons': 2.8.0
       prop-types: 15.8.1
       react: 18.2.0
     dev: false
 
-  /@tabler/icons/2.7.0:
-    resolution: {integrity: sha512-mSjUKhwN5fJHI9yITqFn9GXGnsJ4gBAyQDWyP4Ev5fk6hD78G7u6cHEF1KARr5FOOdiIKSZWCzNzUzyLhiNPrg==}
+  /@tabler/icons/2.8.0:
+    resolution: {integrity: sha512-8diABuB3J+NEUtdwIXJF0bJSE5VpnnyzWeiZGFq/XlcTYJNEF+36ijiPNUGpsV/QXY6syesJKmmPkUUwD+LxdA==}
     dev: false
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.2.7:
