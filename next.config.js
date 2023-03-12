@@ -28,7 +28,7 @@ const securityHeaders = [
 const nextConfig = {
   eslint: {
     // Disable linting because we have checked via GitHub Actions, no further check needed
-    ignoreDuringBuilds: !isCI,
+    ignoreDuringBuilds: isCI,
   },
   async headers() {
     return [
