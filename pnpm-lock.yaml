@@ -12,7 +12,7 @@ specifiers:
   '@tailwindcss/typography': 0.5.9
   '@types/is-ci': 3.0.0
   '@types/node': 18.15.10
-  '@types/react': 18.0.29
+  '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
   '@wits/next-themes': 0.2.16
   autoprefixer: 10.4.14
@@ -101,7 +101,7 @@ devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
   '@types/is-ci': 3.0.0
   '@types/node': 18.15.10
-  '@types/react': 18.0.29
+  '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
   autoprefixer: 10.4.14_postcss@8.4.21
   commitizen: 4.3.0
@@ -309,8 +309,8 @@ packages:
       '@commitlint/types': 17.4.4
     dev: true
 
-  /@commitlint/load/17.4.4:
-    resolution: {integrity: sha512-z6uFIQ7wfKX5FGBe1AkOF4l/ShOQsaa1ml/nLMkbW7R/xF8galGS7Zh0yHvzVp/srtfS0brC+0bUfQfmpMPFVQ==}
+  /@commitlint/load/17.5.0:
+    resolution: {integrity: sha512-l+4W8Sx4CD5rYFsrhHH8HP01/8jEP7kKf33Xlx2Uk2out/UKoKPYMOIRcDH5ppT8UXLMV+x6Wm5osdRKKgaD1Q==}
     engines: {node: '>=v14'}
     requiresBuild: true
     dependencies:
@@ -328,30 +328,6 @@ packages:
       resolve-from: 5.0.0
       ts-node: 10.9.1_z3vu5dg2hu3jqyh3anri5tms2q
       typescript: 4.9.5
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-    dev: true
-    optional: true
-
-  /@commitlint/load/17.5.0:
-    resolution: {integrity: sha512-l+4W8Sx4CD5rYFsrhHH8HP01/8jEP7kKf33Xlx2Uk2out/UKoKPYMOIRcDH5ppT8UXLMV+x6Wm5osdRKKgaD1Q==}
-    engines: {node: '>=v14'}
-    dependencies:
-      '@commitlint/config-validator': 17.4.4
-      '@commitlint/execute-rule': 17.4.0
-      '@commitlint/resolve-extends': 17.4.4
-      '@commitlint/types': 17.4.4
-      '@types/node': 18.15.10
-      chalk: 4.1.2
-      cosmiconfig: 8.0.0
-      cosmiconfig-typescript-loader: 4.2.0_pwxxb6ilmc3jak5ryej6f7jvx4
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      lodash.uniq: 4.5.0
-      resolve-from: 5.0.0
-      ts-node: 10.9.1_zd7fjxbseldtiwc6h6ujrbvxuy
-      typescript: 5.0.2
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -1891,11 +1867,11 @@ packages:
   /@types/react-dom/18.0.11:
     resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
     dependencies:
-      '@types/react': 18.0.29
+      '@types/react': 18.0.30
     dev: true
 
-  /@types/react/18.0.29:
-    resolution: {integrity: sha512-wXHktgUABxplw1+UnljseDq4+uztQyp2tlWZRIxHlpchsCFqiYkvaDS8JR7eKOQm8wziTH/el5qL7D6gYNkYcw==}
+  /@types/react/18.0.30:
+    resolution: {integrity: sha512-AnME2cHDH11Pxt/yYX6r0w448BfTwQOLEhQEjCdwB7QskEI7EKtxhGUsExTQe/MsY3D9D5rMtu62WRocw9A8FA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -3028,22 +3004,6 @@ packages:
       ts-node: 10.9.1_z3vu5dg2hu3jqyh3anri5tms2q
       typescript: 4.9.5
     dev: true
-    optional: true
-
-  /cosmiconfig-typescript-loader/4.2.0_pwxxb6ilmc3jak5ryej6f7jvx4:
-    resolution: {integrity: sha512-NkANeMnaHrlaSSlpKGyvn2R4rqUDeE/9E5YHx+b4nwo0R8dZyAqcih8/gxpCZvqWP9Vf6xuLpMSzSgdVEIM78g==}
-    engines: {node: '>=12', npm: '>=6'}
-    peerDependencies:
-      '@types/node': '*'
-      cosmiconfig: '>=7'
-      ts-node: '>=10'
-      typescript: '>=3'
-    dependencies:
-      '@types/node': 18.15.10
-      cosmiconfig: 8.0.0
-      ts-node: 10.9.1_zd7fjxbseldtiwc6h6ujrbvxuy
-      typescript: 5.0.2
-    dev: true
 
   /cosmiconfig/7.1.0:
     resolution: {integrity: sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==}
@@ -3215,7 +3175,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 17.4.4
+      '@commitlint/load': 17.5.0
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -8634,7 +8594,6 @@ packages:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
-    optional: true
 
   /ts-node/10.9.1_zd7fjxbseldtiwc6h6ujrbvxuy:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
@@ -8767,7 +8726,6 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
-    optional: true
 
   /typescript/5.0.2:
     resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}

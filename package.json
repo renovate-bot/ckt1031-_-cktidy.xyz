@@ -65,7 +65,7 @@
     "@tailwindcss/typography": "0.5.9",
     "@types/is-ci": "3.0.0",
     "@types/node": "18.15.10",
-    "@types/react": "18.0.29",
+    "@types/react": "18.0.30",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
     "commitizen": "4.3.0",
