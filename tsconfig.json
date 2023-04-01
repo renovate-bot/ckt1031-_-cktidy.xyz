@@ -16,7 +16,7 @@
     ],
     "strictNullChecks": true
   },
-  "exclude": ["node_modules", "types/nextjs-routes.d.ts"],
+  "exclude": ["node_modules"],
   "extends": "@ckt1031/tsconfig/web.json",
   "include": [
     "**/*.tsx",

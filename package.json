@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@next/env": "13.2.4",
-    "@sentry/nextjs": "7.45.0",
+    "@sentry/nextjs": "7.46.0",
     "@tabler/icons-react": "2.13.0",
     "@wits/next-themes": "0.2.16",
     "clsx": "1.2.1",
@@ -39,7 +39,6 @@
     "next": "13.2.4",
     "next-contentlayer": "0.3.1",
     "next-sitemap": "4.0.6",
-    "nextjs-routes": "1.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
@@ -92,7 +91,6 @@
       "@ckt1031/eslint-config/typescript-strict"
     ],
     "ignorePatterns": [
-      "types/nextjs-routes.d.ts",
       "next-env.d.ts",
       ".contentlayer"
     ],

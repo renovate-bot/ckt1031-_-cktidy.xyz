@@ -84,4 +84,4 @@ const sentryOptions = {
   silent: true,
 };
 
-export default withContentlayer(withSentryConfig(nextConfig, sentryOptions));
+export default withSentryConfig(withContentlayer(nextConfig), sentryOptions);

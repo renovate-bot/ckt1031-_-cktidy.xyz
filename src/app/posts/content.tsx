@@ -42,7 +42,7 @@ export default function PostListContent({ posts, displayPosts, pagination }: Blo
           title="Blog"
           description="Welcome to my blog, where I embark on a journey of sharing knowledge and meaningful insights with the world."
         />
-        <div className="base-border mt-3 mb-2 flex flex-row items-center space-x-3 rounded-md border bg-gray-100 py-1 px-3 dark:bg-gray-800">
+        <div className="base-border mb-2 mt-3 flex flex-row items-center space-x-3 rounded-md border bg-gray-100 px-3 py-1 dark:bg-gray-800">
           <IconSearch />
           <input
             placeholder="Search"
