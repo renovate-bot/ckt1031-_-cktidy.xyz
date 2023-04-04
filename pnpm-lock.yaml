@@ -8,8 +8,8 @@ dependencies:
     specifier: 7.46.0
     version: 7.46.0(next@13.2.4)(react@18.2.0)
   '@tabler/icons-react':
-    specifier: 2.13.2
-    version: 2.13.2(react@18.2.0)
+    specifier: 2.14.0
+    version: 2.14.0(react@18.2.0)
   '@wits/next-themes':
     specifier: 0.2.16
     version: 0.2.16(next@13.2.4)(react-dom@18.2.0)(react@18.2.0)
@@ -1801,18 +1801,18 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@tabler/icons-react@2.13.2(react@18.2.0):
-    resolution: {integrity: sha512-orkRLOOA3jpHE5prNhBzKEBlVCc5sO5SuRBRk9mjNen2uqoIeBJTkJqquhWIIR2uHqmhP+PUls0MtEqW+qjbIA==}
+  /@tabler/icons-react@2.14.0(react@18.2.0):
+    resolution: {integrity: sha512-5lsXkV2T+ygKwrernJnnbkRtNdbBp8JANP17gdPHhhhVEUIuvaTWU+lDEwJFgyaChlepl5AwcFoMMhcnlPO6Hw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@tabler/icons': 2.13.2
+      '@tabler/icons': 2.14.0
       prop-types: 15.8.1
       react: 18.2.0
     dev: false
 
-  /@tabler/icons@2.13.2:
-    resolution: {integrity: sha512-sMqkSTAwkLIYIV+Uu/B7MdomR7tHPpwE9YzMtBJgqhK/seiUk5iPoQbTHdS7lbEHqNluAsx2velLCVtM7QilWw==}
+  /@tabler/icons@2.14.0:
+    resolution: {integrity: sha512-q4qFe8P0M0cwRlQajPtjucjVrRPVkv/aFHWrCm+HZH9eOkjYSyyFtn7/Zz7lkjBcGiPUkh08d/d3IvJToP/zvw==}
     dev: false
 
   /@tailwindcss/typography@0.5.9(tailwindcss@3.3.1):
