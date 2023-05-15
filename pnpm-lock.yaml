@@ -97,8 +97,8 @@ devDependencies:
     specifier: 1.1.5
     version: 1.1.5(eslint@8.40.0)(prettier@2.8.8)(tailwindcss@3.3.2)(typescript@5.0.4)
   '@ckt1031/prettier-config':
-    specifier: 1.1.4
-    version: 1.1.4(eslint@8.40.0)(prettier@2.8.8)
+    specifier: 1.1.5
+    version: 1.1.5(eslint@8.40.0)(prettier@2.8.8)
   '@ckt1031/tsconfig':
     specifier: 1.1.4
     version: 1.1.4(typescript@5.0.4)
@@ -265,8 +265,8 @@ packages:
       - tailwindcss
     dev: true
 
-  /@ckt1031/prettier-config@1.1.4(eslint@8.40.0)(prettier@2.8.8):
-    resolution: {integrity: sha512-G86VdMrTCsZrMSCMR+jmr/RVbJ5Zh1hSkdIX+q+0MVPeP7RlSiBtRg/KysX6+jihRR6WjuHgRGNAOY/4qfqCMw==}
+  /@ckt1031/prettier-config@1.1.5(eslint@8.40.0)(prettier@2.8.8):
+    resolution: {integrity: sha512-E4qZ5qpyKUoNWHxyrcOMYy2O9twgaGhZC9A4rZz4r1sabosl7MX2+3P3rkl6VsHqeffVlRsltwtbzUdvfi8iyA==}
     peerDependencies:
       prettier: 2.x
     dependencies:
