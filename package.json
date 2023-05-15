@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@next/env": "13.4.2",
-    "@sentry/nextjs": "7.51.2",
+    "@sentry/nextjs": "7.52.1",
     "@tabler/icons-react": "2.18.0",
     "@wits/next-themes": "0.2.16",
     "clsx": "1.2.1",
