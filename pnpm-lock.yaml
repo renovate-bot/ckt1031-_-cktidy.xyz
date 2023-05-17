@@ -100,8 +100,8 @@ devDependencies:
     specifier: 1.1.5
     version: 1.1.5(eslint@8.40.0)(prettier@2.8.8)
   '@ckt1031/tsconfig':
-    specifier: 1.1.5
-    version: 1.1.5(typescript@5.0.4)
+    specifier: 1.1.6
+    version: 1.1.6(typescript@5.0.4)
   '@commitlint/cli':
     specifier: 17.6.3
     version: 17.6.3
@@ -308,8 +308,8 @@ packages:
       - webdriverio
     dev: true
 
-  /@ckt1031/tsconfig@1.1.5(typescript@5.0.4):
-    resolution: {integrity: sha512-jYMKKAk7eU6iK5ajyVvGKdB/mWjfZhl/iX65Oj2t9+xE4ChVgGsW9DVrvnD7kC1+Y9fNg7PHC10z5psXTpeLRA==}
+  /@ckt1031/tsconfig@1.1.6(typescript@5.0.4):
+    resolution: {integrity: sha512-JSDwiUp6RGovWKLwj3YLavih7EkUnHPAlMHUV3t3fe8WIuVsXYpuQUg9kLKSWzakB+nQJuuWpxkG17smh3m34g==}
     peerDependencies:
       typescript: 5.x
     dependencies:
