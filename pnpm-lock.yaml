@@ -97,8 +97,8 @@ devDependencies:
     specifier: 1.1.6
     version: 1.1.6(eslint@8.40.0)(prettier@2.8.8)(tailwindcss@3.3.2)(typescript@5.0.4)
   '@ckt1031/prettier-config':
-    specifier: 1.1.5
-    version: 1.1.5(eslint@8.40.0)(prettier@2.8.8)
+    specifier: 1.1.6
+    version: 1.1.6(eslint@8.40.0)(prettier@2.8.8)
   '@ckt1031/tsconfig':
     specifier: 1.1.6
     version: 1.1.6(typescript@5.0.4)
@@ -265,8 +265,8 @@ packages:
       - tailwindcss
     dev: true
 
-  /@ckt1031/prettier-config@1.1.5(eslint@8.40.0)(prettier@2.8.8):
-    resolution: {integrity: sha512-E4qZ5qpyKUoNWHxyrcOMYy2O9twgaGhZC9A4rZz4r1sabosl7MX2+3P3rkl6VsHqeffVlRsltwtbzUdvfi8iyA==}
+  /@ckt1031/prettier-config@1.1.6(eslint@8.40.0)(prettier@2.8.8):
+    resolution: {integrity: sha512-JZdxElRC5x5pwUyvXldTg7XBFHCOFOGa7K51T3VU8Z5JD4gPUCCXTZ6tKCcDomiu7yvN54Ml5bl81vrZQlS0GA==}
     peerDependencies:
       prettier: 2.x
     dependencies:
@@ -274,7 +274,7 @@ packages:
       prettier-plugin-package-perfection: 1.1.0(eslint@8.40.0)
       prettier-plugin-prisma: 4.13.0(prettier@2.8.8)
       prettier-plugin-sort-json: 1.0.0(prettier@2.8.8)
-      prettier-plugin-tailwindcss: 0.2.8(prettier@2.8.8)
+      prettier-plugin-tailwindcss: 0.3.0(prettier@2.8.8)
       vitest: 0.31.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -294,6 +294,7 @@ packages:
       - prettier-plugin-css-order
       - prettier-plugin-import-sort
       - prettier-plugin-jsdoc
+      - prettier-plugin-marko
       - prettier-plugin-organize-attributes
       - prettier-plugin-organize-imports
       - prettier-plugin-style-order
@@ -1216,7 +1217,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       jsbi: 4.3.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /@mdx-js/esbuild@2.3.0(esbuild@0.17.19):
@@ -2627,7 +2628,7 @@ packages:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /camelcase-css@2.0.1:
@@ -3830,7 +3831,7 @@ packages:
     dependencies:
       '@typescript-eslint/utils': 5.59.6(eslint@8.40.0)(typescript@5.0.4)
       eslint: 8.40.0
-      tslib: 2.5.0
+      tslib: 2.5.1
       tsutils: 3.21.0(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -5811,7 +5812,7 @@ packages:
   /lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /lru-cache@6.0.0:
@@ -6690,7 +6691,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /node-domexception@1.0.0:
@@ -7039,7 +7040,7 @@ packages:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: false
 
   /path-exists@4.0.0:
@@ -7526,7 +7527,7 @@ packages:
       eslint: 8.40.0
       prettier: 2.8.8
       prettier-package-json: 2.6.0
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: true
 
   /prettier-plugin-prisma@4.13.0(prettier@2.8.8):
@@ -7549,8 +7550,8 @@ packages:
       prettier: 2.8.8
     dev: true
 
-  /prettier-plugin-tailwindcss@0.2.8(prettier@2.8.8):
-    resolution: {integrity: sha512-KgPcEnJeIijlMjsA6WwYgRs5rh3/q76oInqtMXBA/EMcamrcYJpyhtRhyX1ayT9hnHlHTuO8sIifHF10WuSDKg==}
+  /prettier-plugin-tailwindcss@0.3.0(prettier@2.8.8):
+    resolution: {integrity: sha512-009/Xqdy7UmkcTBpwlq7jsViDqXAYSOMLDrHAdTMlVZOrKfM2o9Ci7EMWTMZ7SkKBFTG04UM9F9iM2+4i6boDA==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -7563,6 +7564,7 @@ packages:
       prettier-plugin-css-order: '*'
       prettier-plugin-import-sort: '*'
       prettier-plugin-jsdoc: '*'
+      prettier-plugin-marko: '*'
       prettier-plugin-organize-attributes: '*'
       prettier-plugin-organize-imports: '*'
       prettier-plugin-style-order: '*'
@@ -7586,6 +7588,8 @@ packages:
       prettier-plugin-import-sort:
         optional: true
       prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-marko:
         optional: true
       prettier-plugin-organize-attributes:
         optional: true
@@ -8136,7 +8140,7 @@ packages:
   /rxjs@7.8.0:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.5.1
     dev: true
 
   /s-ago@2.2.0:
@@ -8892,6 +8896,9 @@ packages:
 
   /tslib@2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+
+  /tslib@2.5.1:
+    resolution: {integrity: sha512-KaI6gPil5m9vF7DKaoXxx1ia9fxS4qG5YveErRRVknPDXXriu5M8h48YRjB6h5ZUOKuAKlSJYb0GaDe8I39fRw==}
 
   /tsutils@3.21.0(typescript@5.0.4):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
