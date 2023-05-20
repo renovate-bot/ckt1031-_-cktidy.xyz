@@ -7,7 +7,7 @@ import { z } from 'zod';
 import PageTitle from '$components/page-title';
 import { config } from '$lib/constants';
 
-export const revalidate = 1800; // revalidate this page every 30 minutes
+export const revalidate = 60 * 15; // revalidate this page every 15 minutes
 
 export const metadata: Metadata = {
   title: 'Projects',

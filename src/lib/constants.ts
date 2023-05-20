@@ -86,8 +86,20 @@ export const config = {
       tags: ['Discord.js', 'Express.js', 'TypeScript', 'Node.js'],
     },
     {
-      github: 'https://github.com/ckt1031/cktidy-manager',
-      tags: ['Next.js', 'Express.js', 'TypeScript', 'Node.js', 'React', 'React Native', 'Expo'],
+      github: 'https://github.com/ckt1031/nodejs-config',
+      tags: ['TypeScript', 'Node.js', 'ESLint', 'Prettier'],
+    },
+    {
+      github: 'https://github.com/ckt1031/cktidy.xyz-sanity',
+      tags: ['Sanity'],
+    },
+    {
+      github: 'https://github.com/ckt1031/revanced-build-script',
+      tags: ['Python', 'ReVanced'],
+    },
+    {
+      github: 'sentry-report',
+      tags: ['Node.js', 'Sentry'],
     },
   ],
 };
