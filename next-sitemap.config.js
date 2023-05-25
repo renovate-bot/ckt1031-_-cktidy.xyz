@@ -1,6 +1,8 @@
+import { env } from './src/env.mjs';
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.PRODUCTION_URL ?? 'localhost:4072',
+  siteUrl: env.PRODUCTION_URL,
   generateRobotsTxt: true,
   exclude: ['/api/*'],
   robotsTxtOptions: {

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { withSentryConfig } from '@sentry/nextjs';
 import isCI from 'is-ci';
-import { withContentlayer } from 'next-contentlayer';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -39,7 +38,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'cdn.sanity.io'],
   },
   experimental: {
     appDir: true,
@@ -84,4 +83,4 @@ const sentryOptions = {
   silent: true,
 };
 
-export default withSentryConfig(withContentlayer(nextConfig), sentryOptions);
+export default withSentryConfig(nextConfig, sentryOptions);

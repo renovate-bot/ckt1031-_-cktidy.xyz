@@ -86,10 +86,6 @@ export const config = {
       tags: ['Discord.js', 'Express.js', 'TypeScript', 'Node.js'],
     },
     {
-      github: 'https://github.com/ckt1031/nodejs-config',
-      tags: ['TypeScript', 'Node.js', 'ESLint', 'Prettier'],
-    },
-    {
       github: 'https://github.com/ckt1031/cktidy.xyz-sanity',
       tags: ['Sanity'],
     },
@@ -98,7 +94,7 @@ export const config = {
       tags: ['Python', 'ReVanced'],
     },
     {
-      github: 'sentry-report',
+      github: 'https://github.com/ckt1031/sentry-report',
       tags: ['Node.js', 'Sentry'],
     },
   ],

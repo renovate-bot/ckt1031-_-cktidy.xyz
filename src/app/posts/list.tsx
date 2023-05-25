@@ -1,19 +1,20 @@
 import Link from 'next/link';
 
 import clsx from 'clsx';
-import type { Post } from 'contentlayer/generated';
 import sAgo from 's-ago';
 
 import Image from '$components/image';
+import type { Post } from '$lib/sanity/schema';
+import { urlForImage } from '$lib/sanity/tools';
 
 export default function ExplorerBlogList({ postList }: { postList: Post[] }) {
   return (
     <div className="grid space-y-5 divide-y-2 divide-gray-400 dark:divide-gray-500">
       {postList.length > 0 ? (
-        postList.map(({ title, date, summary, thumbnail, url }) => {
+        postList.map(({ title, publishedAt, breif, thumbnail, slug }) => {
           return (
             <div
-              key={url}
+              key={slug.current}
               className="flex w-full flex-col justify-between py-4 md:flex-row md:space-x-5"
             >
               <div
@@ -26,22 +27,22 @@ export default function ExplorerBlogList({ postList }: { postList: Post[] }) {
                   <Link
                     className="cursor-pointer text-2xl hover:underline"
                     href={{
-                      pathname: url,
+                      pathname: `/posts/${slug.current}`,
                     }}
                   >
                     {title}
                   </Link>
-                  <p className="text-gray-600 dark:text-gray-300">{summary}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{breif}</p>
                 </div>
                 <p className="mt-3 text-gray-500 dark:text-gray-400">
-                  Published: {sAgo(new Date(date))}
+                  {sAgo(new Date(publishedAt))}
                 </p>
               </div>
               {thumbnail && (
                 <Image
                   alt="Thumbnail"
                   className="rounded md:mt-0"
-                  src={thumbnail}
+                  src={urlForImage(thumbnail).url()}
                   width={1600 * 0.15}
                   height={900 * 0.15}
                 />

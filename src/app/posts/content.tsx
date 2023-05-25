@@ -1,40 +1,10 @@
-'use client';
-
-import { useEffect, useMemo, useState } from 'react';
-
-import { IconSearch } from '@tabler/icons-react';
-import Fuse from 'fuse.js';
-import type { ChangeEvent } from 'react';
-
 import PageTitle from '$components/page-title';
 import type { BlogPostLobbyProps } from '$lib/types';
 
 import ExplorerBlogList from './list';
 import Pagination from './pagination';
 
-export default function PostListContent({ posts, displayPosts, pagination }: BlogPostLobbyProps) {
-  const [queryPost, setQueryPost] = useState<BlogPostLobbyProps['posts']>();
-
-  const fuse = useMemo(() => {
-    return new Fuse(posts, {
-      keys: ['title', 'body.raw', 'summary'],
-      threshold: 0.4,
-    });
-  }, [posts]);
-
-  useEffect(() => {
-    setQueryPost(posts);
-  }, [posts]);
-
-  const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    if (!value || value.length === 0) setQueryPost(displayPosts);
-    else {
-      const result = fuse.search(value);
-      setQueryPost(result.map(({ item }) => item));
-    }
-  };
-
+export default function PostListContent({ displayPosts, pagination }: BlogPostLobbyProps) {
   return (
     <div className="mt-5 w-full max-w-[1000px]">
       <div className="mb-2">
@@ -42,19 +12,12 @@ export default function PostListContent({ posts, displayPosts, pagination }: Blo
           title="Blog"
           description="Welcome to my blog, where I embark on a journey of sharing knowledge and meaningful insights with the world."
         />
-        <div className="base-border mb-2 mt-3 flex flex-row items-center space-x-3 rounded-md border bg-gray-100 px-3 py-1 dark:bg-gray-800">
-          <IconSearch />
-          <input
-            placeholder="Search"
-            onChange={onSearch}
-            className="w-full bg-transparent p-1 outline-none"
-          />
-        </div>
       </div>
-      {queryPost && <ExplorerBlogList postList={queryPost} />}
-      {queryPost?.length === 0 && pagination.totalPages > 0 && pagination.totalPages - 1 !== 0 && (
-        <Pagination pagination={pagination} />
-      )}
+      <div className="mb-3 border border-gray-200 dark:border-gray-700" />
+      <ExplorerBlogList postList={displayPosts} />
+      {displayPosts.length === 0 &&
+        pagination.totalPages > 0 &&
+        pagination.totalPages - 1 !== 0 && <Pagination pagination={pagination} />}
     </div>
   );
 }

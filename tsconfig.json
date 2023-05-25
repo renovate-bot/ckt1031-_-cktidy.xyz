@@ -6,8 +6,7 @@
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
-      "$*": ["src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "$*": ["src/*"]
     },
     "plugins": [
       {
@@ -18,14 +17,5 @@
   },
   "exclude": ["node_modules"],
   "extends": "@ckt1031/tsconfig/web.json",
-  "include": [
-    "**/*.tsx",
-    "**/*.ts",
-    "**/*.js",
-    "*.js",
-    "*.cjs",
-    ".contentlayer/generated",
-    ".next/types/**/*.ts",
-    "src/lib/generate-feed.cjs"
-  ]
+  "include": ["src", ".next/types/**/*.ts", "*.js", "*.cjs", "*.ts"]
 }

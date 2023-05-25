@@ -1,16 +1,16 @@
 import type { Metadata } from 'next/types';
 
-import { allPosts } from 'contentlayer/generated';
-import dayjs from 'dayjs';
-
 import { config } from '$lib/constants';
+import client from '$lib/sanity/client';
+import { allPostQuery } from '$lib/sanity/query';
+import type { Post } from '$lib/sanity/schema';
 
 import PostListContent from './content';
 
-const getPosts = () => {
-  const posts = allPosts.sort((a, b) => {
-    const dateA = dayjs(new Date(a.date));
-    return dateA.isAfter(new Date(b.date)) ? -1 : 1;
+const getPosts = async () => {
+  const posts = (await client.fetch<Post[]>(allPostQuery)).sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    return dateA > new Date(b.publishedAt) ? -1 : 1;
   });
 
   const displayPosts = posts.slice(0, config.blog.maxDisplayPerPage);
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   description: 'Latest post published from ckt1031!',
 };
 
-export default function PostsPage() {
-  const prop = getPosts();
+export default async function PostsPage() {
+  const prop = await getPosts();
 
   return (
     <section>

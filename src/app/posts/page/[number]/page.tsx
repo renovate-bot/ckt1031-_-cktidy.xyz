@@ -1,16 +1,16 @@
 import { notFound } from 'next/navigation';
 
-import { allPosts } from 'contentlayer/generated';
-import dayjs from 'dayjs';
-
 import { config } from '$lib/constants';
+import client from '$lib/sanity/client';
+import { allPostQuery } from '$lib/sanity/query';
+import type { Post } from '$lib/sanity/schema';
 
 import BlogList from '../../content';
 
-export function generateStaticParams() {
-  const posts = allPosts.sort((a, b) => {
-    const dateA = dayjs(new Date(a.date));
-    return dateA.isAfter(new Date(b.date)) ? -1 : 1;
+export async function generateStaticParams() {
+  const posts = (await client.fetch<Post[]>(allPostQuery)).sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    return dateA > new Date(b.publishedAt) ? -1 : 1;
   });
 
   const totalPagesNumber = Math.ceil(posts.length / config.blog.maxDisplayPerPage);
@@ -20,12 +20,12 @@ export function generateStaticParams() {
   }));
 }
 
-const getPosts = (page: string) => {
+const getPosts = async (page: string) => {
   const pageNumber = Number(page);
 
-  const posts = allPosts.sort((a, b) => {
-    const dateA = dayjs(new Date(a.date));
-    return dateA.isAfter(new Date(b.date)) ? -1 : 1;
+  const posts = (await client.fetch<Post[]>(allPostQuery)).sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    return dateA > new Date(b.publishedAt) ? -1 : 1;
   });
 
   const displayPosts = posts.slice(
@@ -45,8 +45,8 @@ const getPosts = (page: string) => {
   };
 };
 
-export function generateMetadata({ params }: { params: { number: string } }) {
-  const posts = getPosts(params.number);
+export async function generateMetadata({ params }: { params: { number: string } }) {
+  const posts = await getPosts(params.number);
 
   const hasPosts = posts.posts.length > 0;
 
@@ -56,8 +56,8 @@ export function generateMetadata({ params }: { params: { number: string } }) {
   };
 }
 
-export default function PostsPagination({ params }: { params: { number: string } }) {
-  const prop = getPosts(params.number);
+export default async function PostsPagination({ params }: { params: { number: string } }) {
+  const prop = await getPosts(params.number);
 
   if (prop.displayPosts.length === 0) {
     notFound();

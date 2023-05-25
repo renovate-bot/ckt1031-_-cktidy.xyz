@@ -1,5 +1,6 @@
-import type { Post } from 'contentlayer/generated';
 import type { ReadTimeResults } from 'reading-time';
+
+import type { Post } from '$lib/sanity/schema';
 
 export interface BlogSinglePostProps {
   post: Post;

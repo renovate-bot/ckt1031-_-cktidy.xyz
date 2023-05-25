@@ -27,9 +27,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Run contentlayer build
-        run: pnpm contentlayer build
-
       - name: Type Checking
         run: pnpm typecheck
 
