@@ -13,6 +13,14 @@ const getPosts = async () => {
   });
 };
 
+const removeUrlQuery = (url: string) => {
+  const _url = new URL(url);
+
+  _url.search = '';
+
+  return _url.href;
+};
+
 export async function GET() {
   const posts = await getPosts();
 
@@ -49,7 +57,7 @@ export async function GET() {
       title: post.title,
       ...(post.thumbnail && {
         enclosure: {
-          url: urlForImage(post.thumbnail).quality(25).url().replace('&fit=max&auto=format', ''),
+          url: removeUrlQuery(urlForImage(post.thumbnail).quality(25).url()),
         },
       }),
     });
@@ -58,6 +66,7 @@ export async function GET() {
   return new Response(feed.rss2(), {
     status: 200,
     headers: {
+      // Cache for 24 hours
       'Cache-control': 'public, s-maxage=86400, stale-while-revalidate',
       'content-type': 'application/xml',
     },
