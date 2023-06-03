@@ -25,7 +25,7 @@ export default function ExplorerBlogList({ postList }: { postList: Post[] }) {
               >
                 <div>
                   <Link
-                    className="cursor-pointer text-2xl hover:underline"
+                    className="cursor-pointer text-2xl font-semibold hover:underline"
                     href={{
                       pathname: `/posts/${slug.current}`,
                     }}
@@ -41,6 +41,7 @@ export default function ExplorerBlogList({ postList }: { postList: Post[] }) {
               {thumbnail && (
                 <Image
                   alt="Thumbnail"
+                  enableLightBox
                   className="rounded md:mt-0"
                   src={urlForImage(thumbnail).url()}
                   width={1600 * 0.15}

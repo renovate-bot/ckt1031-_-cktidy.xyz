@@ -11,6 +11,8 @@ import { allPostSlugsQuery, postSingleQuery } from '$lib/sanity/query';
 import type { Post } from '$lib/sanity/schema';
 import { urlForImage } from '$lib/sanity/tools';
 
+import PostTagComponent from './tags';
+
 export async function generateStaticParams() {
   const paths: string[] = await client.fetch<string[]>(allPostSlugsQuery);
 
@@ -64,7 +66,7 @@ export default async function PostArticlePage({ params }: { params: { slug: stri
 
   return (
     <section>
-      <article className="mt-5 w-full">
+      <article className="mb-20 mt-5 w-full">
         <div className="mb-3 min-w-max border-b border-gray-300 dark:border-gray-600">
           <div className="mb-2">
             <h1 className="text-2xl font-bold md:text-3xl">{post.title}</h1>
@@ -75,6 +77,7 @@ export default async function PostArticlePage({ params }: { params: { slug: stri
             <div className="relative mb-3 h-[250px] md:h-[450px]">
               <Image
                 fill
+                enableLightBox
                 alt="Thumbnail"
                 className="absolute h-full w-full object-cover"
                 src={urlForImage(post.thumbnail).url()}
@@ -82,7 +85,8 @@ export default async function PostArticlePage({ params }: { params: { slug: stri
             </div>
           )}
         </div>
-        <div className="prose prose-neutral mb-20 max-w-full dark:prose-dark">{content}</div>
+        <div className="prose prose-neutral max-w-full dark:prose-dark">{content}</div>
+        <PostTagComponent tags={post.tags} />
       </article>
     </section>
   );

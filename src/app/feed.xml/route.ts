@@ -1,6 +1,7 @@
 import { Feed } from 'feed';
 
 import { config } from '$lib/constants';
+import { getNextImageUrl } from '$lib/next-image-url';
 import client from '$lib/sanity/client';
 import { allPostQuery } from '$lib/sanity/query';
 import type { Post } from '$lib/sanity/schema';
@@ -42,6 +43,12 @@ export async function GET() {
 
     const postUrl = config.url + '/posts/' + post.slug.current;
 
+    const thumbnailCdnUrl = removeUrlQuery(
+      urlForImage(post.thumbnail ?? '')
+        .quality(25)
+        .url(),
+    );
+
     feed.addItem({
       author: [
         {
@@ -57,7 +64,8 @@ export async function GET() {
       title: post.title,
       ...(post.thumbnail && {
         enclosure: {
-          url: removeUrlQuery(urlForImage(post.thumbnail).quality(25).url()),
+          type: `image/${thumbnailCdnUrl.split('.').pop() ?? 'jpeg'}`,
+          url: getNextImageUrl(thumbnailCdnUrl, 50),
         },
       }),
     });

@@ -13,7 +13,6 @@ export default function PostListContent({ displayPosts, pagination }: BlogPostLo
           description="Welcome to my blog, where I embark on a journey of sharing knowledge and meaningful insights with the world."
         />
       </div>
-      <div className="mb-3 border border-gray-200 dark:border-gray-700" />
       <ExplorerBlogList postList={displayPosts} />
       {displayPosts.length === 0 &&
         pagination.totalPages > 0 &&
