@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <section>
-      <div className="my-10 flex flex-col items-center justify-center">
+      <div className="my-10 flex flex-col items-center justify-center text-center">
         <Image
           alt="ckt"
           src="/media/avatar.png"
@@ -18,7 +18,7 @@ export default function HomePage() {
           width={150}
         />
         <h1 className="mt-4 text-4xl font-bold">Chan Ka Tsun</h1>
-        <p className="mt-2 text-center text-lg font-medium italic text-gray-600 dark:text-gray-300">
+        <p className="mt-2 text-lg font-medium italic text-gray-600 dark:text-gray-300">
           A secondary school (Form 5) student in Hong Kong.
         </p>
       </div>

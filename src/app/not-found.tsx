@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="mt-5 flex flex-col items-center justify-center">
+    <div className="mb-10 mt-5 flex flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center text-center">
         <p className="mb-4 text-6xl font-bold">404</p>
         <p className="text-xl md:text-2xl">
