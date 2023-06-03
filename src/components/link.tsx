@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 interface Props {
   className?: string;
-  href: UrlObject | __next_route_internal_types__.RouteImpl<''>;
+  href: UrlObject;
   children?: React.ReactNode;
   [x: string]: unknown;
 }
