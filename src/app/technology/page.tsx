@@ -20,14 +20,48 @@ export default function TechnologyPage() {
       <div className="mb-10 mt-3 w-full space-y-6 text-left">
         <p>
           This website is crafted using{' '}
-          <LinkComponent href="https://www.typescriptlang.org/">TypeScript</LinkComponent>,{' '}
-          <LinkComponent href="https://tailwindcss.com/">TailwindCSS</LinkComponent>,{' '}
-          <LinkComponent href="https://nextjs.org/">Next.js</LinkComponent> and{' '}
-          <LinkComponent href="https://reactjs.org/">React</LinkComponent>.
+          <LinkComponent
+            href={{
+              pathname: 'https://www.typescriptlang.org/',
+            }}
+          >
+            TypeScript
+          </LinkComponent>
+          ,{' '}
+          <LinkComponent
+            href={{
+              pathname: 'https://tailwindcss.com/',
+            }}
+          >
+            TailwindCSS
+          </LinkComponent>
+          ,{' '}
+          <LinkComponent
+            href={{
+              pathname: 'https://nextjs.org/',
+            }}
+          >
+            Next.js
+          </LinkComponent>{' '}
+          and{' '}
+          <LinkComponent
+            href={{
+              pathname: 'https://reactjs.org/',
+            }}
+          >
+            React
+          </LinkComponent>
+          .
         </p>
         <p>
-          <LinkComponent href="https://sanity.io/">Sanity.io</LinkComponent> is utilized to manage
-          the contents of my website&apos;s posts.
+          <LinkComponent
+            href={{
+              pathname: 'https://www.sanity.io/',
+            }}
+          >
+            Sanity.io
+          </LinkComponent>{' '}
+          is utilized to manage the contents of my website&apos;s posts.
         </p>
         <p>
           The source code is hosted on{' '}
