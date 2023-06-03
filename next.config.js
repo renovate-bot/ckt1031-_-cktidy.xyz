@@ -8,6 +8,10 @@ const nextConfig = {
     // Disable linting because we have checked via GitHub Actions, no further check needed
     ignoreDuringBuilds: isCI,
   },
+  typescript: {
+    // Disable type checking because we have checked via GitHub Actions, no further check needed
+    ignoreBuildErrors: isCI,
+  },
   images: {
     domains: ['cdn.sanity.io'],
   },
