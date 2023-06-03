@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-interface Props extends LinkProps<HTMLAnchorElement> {
+interface Props extends LinkProps {
+  className?: string;
   children?: React.ReactNode;
 }
 
